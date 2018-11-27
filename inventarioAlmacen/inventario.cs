@@ -9,18 +9,11 @@ using System.Windows.Forms;
 
 namespace inventarioAlmacen
 {
-    public partial class Form1 : Form
+    public partial class inventario : Form
     {
-        public Form1()
+        public inventario()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Contenedor frm = new Contenedor();
-            frm.Show();
-            this.Hide();
         }
     }
 }
