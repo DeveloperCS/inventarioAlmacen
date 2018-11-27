@@ -9,11 +9,12 @@ using System.Windows.Forms;
 
 namespace inventarioAlmacen
 {
-    public partial class Form2 : Form
+    public partial class Prestamos : Form
     {
-        public Form2()
+        public Prestamos()
         {
             InitializeComponent();
         }
+
     }
 }
