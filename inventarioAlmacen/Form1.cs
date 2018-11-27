@@ -20,7 +20,7 @@ namespace inventarioAlmacen
         {
             home frm = new home();
             frm.Show();
-            this.Hide();
+            //this.Hide();
         }
     }
 }
