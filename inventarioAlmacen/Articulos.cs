@@ -9,16 +9,18 @@ using System.Windows.Forms;
 
 namespace inventarioAlmacen
 {
-    public partial class Form1 : Form
+    public partial class Articulos : Form
     {
-        public Form1()
+
+        public Articulos()
         {
             InitializeComponent();
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Pedir_Click(object sender, EventArgs e)
         {
-            Articulos frm = new Articulos();
+            Prestamos frm = new Prestamos();
             this.Hide();
             this.Show();
         }
