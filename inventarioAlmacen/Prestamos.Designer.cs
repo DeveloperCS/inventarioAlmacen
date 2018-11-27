@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prestamos));
             this.dgv_ProductosPedidos = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dud_cantidad = new System.Windows.Forms.DomainUpDown();
@@ -93,7 +94,7 @@
             // btn_pedido
             // 
             this.btn_pedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(240)))), ((int)(((byte)(179)))));
-            this.btn_pedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_pedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pedido.Location = new System.Drawing.Point(313, 116);
             this.btn_pedido.Name = "btn_pedido";
@@ -114,6 +115,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_personal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Prestamos";
             this.Text = "Prestamos";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ProductosPedidos)).EndInit();
