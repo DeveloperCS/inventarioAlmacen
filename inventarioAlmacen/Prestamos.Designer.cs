@@ -28,23 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cb_personal = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dud_cantidad = new System.Windows.Forms.DomainUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btn_pedido = new System.Windows.Forms.Button();
             this.dgv_ProductosPedidos = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dud_cantidad = new System.Windows.Forms.DomainUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_personal = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_pedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ProductosPedidos)).BeginInit();
             this.SuspendLayout();
             // 
-            // cb_personal
+            // dgv_ProductosPedidos
             // 
-            this.cb_personal.FormattingEnabled = true;
-            this.cb_personal.Location = new System.Drawing.Point(133, 27);
-            this.cb_personal.Name = "cb_personal";
-            this.cb_personal.Size = new System.Drawing.Size(121, 21);
-            this.cb_personal.TabIndex = 0;
+            this.dgv_ProductosPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ProductosPedidos.Location = new System.Drawing.Point(26, 153);
+            this.dgv_ProductosPedidos.Name = "dgv_ProductosPedidos";
+            this.dgv_ProductosPedidos.Size = new System.Drawing.Size(418, 150);
+            this.dgv_ProductosPedidos.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(201, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Lts/Pza";
+            // 
+            // dud_cantidad
+            // 
+            this.dud_cantidad.Location = new System.Drawing.Point(133, 73);
+            this.dud_cantidad.Name = "dud_cantidad";
+            this.dud_cantidad.Size = new System.Drawing.Size(47, 20);
+            this.dud_cantidad.TabIndex = 3;
             // 
             // label1
             // 
@@ -56,6 +72,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Cantidad";
             // 
+            // cb_personal
+            // 
+            this.cb_personal.FormattingEnabled = true;
+            this.cb_personal.Location = new System.Drawing.Point(133, 27);
+            this.cb_personal.Name = "cb_personal";
+            this.cb_personal.Size = new System.Drawing.Size(121, 21);
+            this.cb_personal.TabIndex = 0;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -65,22 +89,6 @@
             this.label2.Size = new System.Drawing.Size(92, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Personal";
-            // 
-            // dud_cantidad
-            // 
-            this.dud_cantidad.Location = new System.Drawing.Point(133, 73);
-            this.dud_cantidad.Name = "dud_cantidad";
-            this.dud_cantidad.Size = new System.Drawing.Size(47, 20);
-            this.dud_cantidad.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(201, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Lts/Pza";
             // 
             // btn_pedido
             // 
@@ -93,14 +101,6 @@
             this.btn_pedido.TabIndex = 5;
             this.btn_pedido.Text = "Pedir";
             this.btn_pedido.UseVisualStyleBackColor = false;
-            // 
-            // dgv_ProductosPedidos
-            // 
-            this.dgv_ProductosPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ProductosPedidos.Location = new System.Drawing.Point(26, 153);
-            this.dgv_ProductosPedidos.Name = "dgv_ProductosPedidos";
-            this.dgv_ProductosPedidos.Size = new System.Drawing.Size(418, 150);
-            this.dgv_ProductosPedidos.TabIndex = 6;
             // 
             // Prestamos
             // 
@@ -123,13 +123,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cb_personal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DomainUpDown dud_cantidad;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btn_pedido;
         private System.Windows.Forms.DataGridView dgv_ProductosPedidos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DomainUpDown dud_cantidad;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cb_personal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_pedido;
     }
 }
