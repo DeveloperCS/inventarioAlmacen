@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.colorEs = new System.Windows.Forms.Panel();
+            this.btnPrestamos = new System.Windows.Forms.Button();
+            this.btnInv = new System.Windows.Forms.Button();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
-            this.panelCentral = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.btnInv = new System.Windows.Forms.Button();
-            this.btnPrestamos = new System.Windows.Forms.Button();
-            this.colorEs = new System.Windows.Forms.Panel();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -53,24 +53,56 @@
             this.panelMenu.Size = new System.Drawing.Size(250, 650);
             this.panelMenu.TabIndex = 0;
             // 
+            // colorEs
+            // 
+            this.colorEs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.colorEs.Location = new System.Drawing.Point(-3, 153);
+            this.colorEs.Name = "colorEs";
+            this.colorEs.Size = new System.Drawing.Size(10, 50);
+            this.colorEs.TabIndex = 2;
+            // 
+            // btnPrestamos
+            // 
+            this.btnPrestamos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrestamos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnPrestamos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrestamos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrestamos.Location = new System.Drawing.Point(0, 200);
+            this.btnPrestamos.Name = "btnPrestamos";
+            this.btnPrestamos.Size = new System.Drawing.Size(250, 50);
+            this.btnPrestamos.TabIndex = 1;
+            this.btnPrestamos.Text = "Item2";
+            this.btnPrestamos.UseVisualStyleBackColor = true;
+            this.btnPrestamos.Click += new System.EventHandler(this.btnPrestamos_Click);
+            // 
+            // btnInv
+            // 
+            this.btnInv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInv.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnInv.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnInv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnInv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInv.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInv.Location = new System.Drawing.Point(0, 153);
+            this.btnInv.Name = "btnInv";
+            this.btnInv.Size = new System.Drawing.Size(250, 50);
+            this.btnInv.TabIndex = 0;
+            this.btnInv.Text = "Item1";
+            this.btnInv.UseVisualStyleBackColor = true;
+            this.btnInv.Click += new System.EventHandler(this.btnInv_Click);
+            // 
             // panelBarraSuperior
             // 
             this.panelBarraSuperior.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panelBarraSuperior.Controls.Add(this.btnMinimizar);
             this.panelBarraSuperior.Controls.Add(this.btnCerrar);
-            this.panelBarraSuperior.Location = new System.Drawing.Point(249, 0);
+            this.panelBarraSuperior.Location = new System.Drawing.Point(250, 0);
             this.panelBarraSuperior.Name = "panelBarraSuperior";
             this.panelBarraSuperior.Size = new System.Drawing.Size(1050, 50);
             this.panelBarraSuperior.TabIndex = 1;
             this.panelBarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraSuperior_MouseDown);
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.BackColor = System.Drawing.Color.Maroon;
-            this.panelCentral.Location = new System.Drawing.Point(250, 50);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(1050, 600);
-            this.panelCentral.TabIndex = 2;
             // 
             // btnMinimizar
             // 
@@ -94,44 +126,13 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // btnInv
+            // panelCentral
             // 
-            this.btnInv.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInv.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnInv.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnInv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnInv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInv.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInv.Location = new System.Drawing.Point(7, 50);
-            this.btnInv.Name = "btnInv";
-            this.btnInv.Size = new System.Drawing.Size(240, 50);
-            this.btnInv.TabIndex = 0;
-            this.btnInv.Text = "Item1";
-            this.btnInv.UseVisualStyleBackColor = true;
-            this.btnInv.Click += new System.EventHandler(this.btnInv_Click);
-            // 
-            // btnPrestamos
-            // 
-            this.btnPrestamos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrestamos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnPrestamos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrestamos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrestamos.Location = new System.Drawing.Point(8, 97);
-            this.btnPrestamos.Name = "btnPrestamos";
-            this.btnPrestamos.Size = new System.Drawing.Size(240, 50);
-            this.btnPrestamos.TabIndex = 1;
-            this.btnPrestamos.Text = "Item2";
-            this.btnPrestamos.UseVisualStyleBackColor = true;
-            // 
-            // colorEs
-            // 
-            this.colorEs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.colorEs.Location = new System.Drawing.Point(0, 50);
-            this.colorEs.Name = "colorEs";
-            this.colorEs.Size = new System.Drawing.Size(10, 50);
-            this.colorEs.TabIndex = 2;
+            this.panelCentral.BackColor = System.Drawing.Color.Maroon;
+            this.panelCentral.Location = new System.Drawing.Point(250, 50);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(1050, 600);
+            this.panelCentral.TabIndex = 2;
             // 
             // Contenedor
             // 

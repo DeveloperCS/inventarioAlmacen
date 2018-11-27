@@ -58,7 +58,14 @@ namespace inventarioAlmacen
         {
             AbrirFormInPanel(new inventario());
             colorEs.BackColor = Color.Aqua;
+            /*cambiar de posucion la barra de color*/
+            colorEs.Location = new Point(-3, btnInv.Location.Y);
+        }
 
+        private void btnPrestamos_Click(object sender, EventArgs e)
+        {
+            /*cambiar de posucion la barra de color*/
+            colorEs.Location = new Point(-3,btnPrestamos.Location.Y);
         }
     }
 }
