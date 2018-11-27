@@ -18,7 +18,7 @@ namespace inventarioAlmacen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            home frm = new home();
+            Prestamos frm = new Prestamos();
             frm.Show();
             //this.Hide();
         }
