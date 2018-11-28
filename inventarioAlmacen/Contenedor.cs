@@ -68,5 +68,17 @@ namespace inventarioAlmacen
             /*cambiar de posucion la barra de color*/
             colorEs.Location = new Point(-3,btnPrestamos.Location.Y);
         }
+
+        private void Contenedor_Load(object sender, EventArgs e)
+        {
+            txtTituloBar.Text = "Inicio";
+            colorEs.Location = new Point(-3, btnIni.Location.Y);
+        }
+
+        private void btnIni_Click(object sender, EventArgs e)
+        {
+            txtTituloBar.Text = "Inicio";
+            colorEs.Location = new Point(-3, btnIni.Location.Y);
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelCentral = new System.Windows.Forms.Panel();
             this.txtTituloBar = new System.Windows.Forms.Label();
+            this.btnIni = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -49,6 +50,7 @@
             this.panelMenu.Controls.Add(this.colorEs);
             this.panelMenu.Controls.Add(this.btnPrestamos);
             this.panelMenu.Controls.Add(this.btnInv);
+            this.panelMenu.Controls.Add(this.btnIni);
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 650);
@@ -57,7 +59,7 @@
             // colorEs
             // 
             this.colorEs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.colorEs.Location = new System.Drawing.Point(-3, 153);
+            this.colorEs.Location = new System.Drawing.Point(-3, 150);
             this.colorEs.Name = "colorEs";
             this.colorEs.Size = new System.Drawing.Size(10, 50);
             this.colorEs.TabIndex = 2;
@@ -70,7 +72,7 @@
             this.btnPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrestamos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrestamos.Location = new System.Drawing.Point(0, 200);
+            this.btnPrestamos.Location = new System.Drawing.Point(0, 249);
             this.btnPrestamos.Name = "btnPrestamos";
             this.btnPrestamos.Size = new System.Drawing.Size(250, 50);
             this.btnPrestamos.TabIndex = 1;
@@ -87,7 +89,7 @@
             this.btnInv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInv.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInv.Location = new System.Drawing.Point(0, 153);
+            this.btnInv.Location = new System.Drawing.Point(0, 202);
             this.btnInv.Name = "btnInv";
             this.btnInv.Size = new System.Drawing.Size(250, 50);
             this.btnInv.TabIndex = 0;
@@ -131,7 +133,7 @@
             // 
             // panelCentral
             // 
-            this.panelCentral.BackColor = System.Drawing.Color.Maroon;
+            this.panelCentral.BackColor = System.Drawing.Color.SpringGreen;
             this.panelCentral.Location = new System.Drawing.Point(250, 50);
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(1050, 600);
@@ -142,11 +144,28 @@
             this.txtTituloBar.AutoSize = true;
             this.txtTituloBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTituloBar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtTituloBar.Location = new System.Drawing.Point(53, 8);
+            this.txtTituloBar.Location = new System.Drawing.Point(17, 9);
             this.txtTituloBar.Name = "txtTituloBar";
             this.txtTituloBar.Size = new System.Drawing.Size(85, 29);
             this.txtTituloBar.TabIndex = 2;
             this.txtTituloBar.Text = "label1";
+            // 
+            // btnIni
+            // 
+            this.btnIni.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIni.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(4)))));
+            this.btnIni.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnIni.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
+            this.btnIni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIni.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnIni.Location = new System.Drawing.Point(0, 150);
+            this.btnIni.Name = "btnIni";
+            this.btnIni.Size = new System.Drawing.Size(250, 50);
+            this.btnIni.TabIndex = 3;
+            this.btnIni.Text = "Inicio";
+            this.btnIni.UseVisualStyleBackColor = true;
+            this.btnIni.Click += new System.EventHandler(this.btnIni_Click);
             // 
             // Contenedor
             // 
@@ -161,6 +180,7 @@
             this.Name = "Contenedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contenedor";
+            this.Load += new System.EventHandler(this.Contenedor_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelBarraSuperior.ResumeLayout(false);
             this.panelBarraSuperior.PerformLayout();
@@ -181,5 +201,6 @@
         private System.Windows.Forms.Button btnPrestamos;
         private System.Windows.Forms.Panel colorEs;
         private System.Windows.Forms.Label txtTituloBar;
+        private System.Windows.Forms.Button btnIni;
     }
 }

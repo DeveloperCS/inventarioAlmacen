@@ -7,5 +7,7 @@ namespace inventarioAlmacen.Funciones
 {
     class funciones
     {
+      
+     
     }
 }
