@@ -36,6 +36,7 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.txtTituloBar = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -84,18 +85,20 @@
             this.btnInv.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnInv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnInv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInv.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnInv.Location = new System.Drawing.Point(0, 153);
             this.btnInv.Name = "btnInv";
             this.btnInv.Size = new System.Drawing.Size(250, 50);
             this.btnInv.TabIndex = 0;
-            this.btnInv.Text = "Item1";
+            this.btnInv.Text = "Inventario";
             this.btnInv.UseVisualStyleBackColor = true;
             this.btnInv.Click += new System.EventHandler(this.btnInv_Click);
             // 
             // panelBarraSuperior
             // 
             this.panelBarraSuperior.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelBarraSuperior.Controls.Add(this.txtTituloBar);
             this.panelBarraSuperior.Controls.Add(this.btnMinimizar);
             this.panelBarraSuperior.Controls.Add(this.btnCerrar);
             this.panelBarraSuperior.Location = new System.Drawing.Point(250, 0);
@@ -134,6 +137,17 @@
             this.panelCentral.Size = new System.Drawing.Size(1050, 600);
             this.panelCentral.TabIndex = 2;
             // 
+            // txtTituloBar
+            // 
+            this.txtTituloBar.AutoSize = true;
+            this.txtTituloBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTituloBar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtTituloBar.Location = new System.Drawing.Point(53, 8);
+            this.txtTituloBar.Name = "txtTituloBar";
+            this.txtTituloBar.Size = new System.Drawing.Size(85, 29);
+            this.txtTituloBar.TabIndex = 2;
+            this.txtTituloBar.Text = "label1";
+            // 
             // Contenedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,6 +163,7 @@
             this.Text = "Contenedor";
             this.panelMenu.ResumeLayout(false);
             this.panelBarraSuperior.ResumeLayout(false);
+            this.panelBarraSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
@@ -165,5 +180,6 @@
         private System.Windows.Forms.Button btnInv;
         private System.Windows.Forms.Button btnPrestamos;
         private System.Windows.Forms.Panel colorEs;
+        private System.Windows.Forms.Label txtTituloBar;
     }
 }

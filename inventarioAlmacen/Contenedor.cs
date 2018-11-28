@@ -57,6 +57,7 @@ namespace inventarioAlmacen
         private void btnInv_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new inventario());
+            txtTituloBar.Text = "Inventario";
             colorEs.BackColor = Color.Aqua;
             /*cambiar de posucion la barra de color*/
             colorEs.Location = new Point(-3, btnInv.Location.Y);
