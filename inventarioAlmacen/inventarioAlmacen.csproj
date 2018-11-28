@@ -199,5 +199,8 @@
     <None Include="Resources\cerrar.png" />
     <None Include="Resources\boss_man-128.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="prueba\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
