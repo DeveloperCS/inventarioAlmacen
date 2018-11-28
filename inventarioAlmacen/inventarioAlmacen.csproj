@@ -91,12 +91,6 @@
     </Compile>
     <Compile Include="Datos\Datos.cs" />
     <Compile Include="Funciones\funciones.cs" />
-    <Compile Include="home.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="home.Designer.cs">
-      <DependentUpon>home.cs</DependentUpon>
-    </Compile>
     <Compile Include="inventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,9 +121,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Articulos.resx">
       <DependentUpon>Articulos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="home.resx">
-      <DependentUpon>home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inventario.resx">
       <DependentUpon>inventario.cs</DependentUpon>
@@ -192,6 +183,7 @@
       <DependentUpon>bdAlmacen.mdf</DependentUpon>
     </Content>
     <None Include="Resources\buscar.png" />
+    <None Include="Resources\icons8-home-32.png" />
     <Content Include="Resources\inicio.png" />
     <Content Include="Resources\inventario.png" />
     <Content Include="Resources\item.png" />

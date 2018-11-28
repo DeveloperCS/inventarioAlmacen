@@ -30,8 +30,7 @@ namespace inventarioAlmacen
 
         private void higieneYLimpiezaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Agregar frm = new Agregar();
-            frm.Show();
+            new Agregar().ShowDialog();
             
         }
 

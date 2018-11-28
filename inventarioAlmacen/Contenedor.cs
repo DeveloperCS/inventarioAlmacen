@@ -76,7 +76,7 @@ namespace inventarioAlmacen
             txtTituloBar.Text = "Inicio";
             colorEs.Location = new Point(-3, btnIni.Location.Y);
             btnIni.BackColor = Color.DodgerBlue;
-            pictureBoxInicio.BackColor = Color.DodgerBlue;
+            
 
         }
 
@@ -87,7 +87,7 @@ namespace inventarioAlmacen
             txtTituloBar.Text = "Inicio";
             colorEs.Location = new Point(-3, btnIni.Location.Y);
             btnIni.BackColor = Color.DodgerBlue;
-            pictureBoxInicio.BackColor = Color.DodgerBlue;
+            //pictureBoxInicio.BackColor = Color.DodgerBlue;
 
         }
 
@@ -138,7 +138,7 @@ namespace inventarioAlmacen
             btnPrestamos.BackColor = Color.DeepSkyBlue;
             button1.BackColor = Color.DeepSkyBlue;
             button2.BackColor = Color.DeepSkyBlue;
-            pictureBoxInicio.BackColor = Color.DeepSkyBlue;
+            //pictureBoxInicio.BackColor = Color.DeepSkyBlue;
             pictureBoxInventario.BackColor = Color.DeepSkyBlue;
             pictureBox3.BackColor = Color.DeepSkyBlue;
             pictureBox4.BackColor = Color.DeepSkyBlue;
