@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxInventario = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.colorEs = new System.Windows.Forms.Panel();
             this.btnPrestamos = new System.Windows.Forms.Button();
             this.btnInv = new System.Windows.Forms.Button();
+            this.btnIni = new System.Windows.Forms.Button();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
             this.txtTituloBar = new System.Windows.Forms.Label();
-            this.panelCentral = new System.Windows.Forms.Panel();
-            this.panelInicio = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxInventario = new System.Windows.Forms.PictureBox();
-            this.btnIni = new System.Windows.Forms.Button();
+            this.panelCentral = new System.Windows.Forms.Panel();
+            this.panelInicio = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
-            this.panelBarraSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInventario)).BeginInit();
+            this.panelBarraSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -72,6 +72,46 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 550);
             this.panelMenu.TabIndex = 0;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::inventarioAlmacen.Resource1.item;
+            this.pictureBox5.Location = new System.Drawing.Point(10, 240);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 10;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::inventarioAlmacen.Resource1.item;
+            this.pictureBox4.Location = new System.Drawing.Point(10, 180);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::inventarioAlmacen.Resource1.prestamo;
+            this.pictureBox3.Location = new System.Drawing.Point(10, 120);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBoxInventario
+            // 
+            this.pictureBoxInventario.Image = global::inventarioAlmacen.Resource1.inventario;
+            this.pictureBoxInventario.Location = new System.Drawing.Point(10, 60);
+            this.pictureBoxInventario.Name = "pictureBoxInventario";
+            this.pictureBoxInventario.Size = new System.Drawing.Size(60, 60);
+            this.pictureBoxInventario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxInventario.TabIndex = 7;
+            this.pictureBoxInventario.TabStop = false;
             // 
             // button2
             // 
@@ -158,6 +198,27 @@
             this.btnInv.UseVisualStyleBackColor = false;
             this.btnInv.Click += new System.EventHandler(this.btnInv_Click);
             // 
+            // btnIni
+            // 
+            this.btnIni.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIni.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnIni.FlatAppearance.BorderSize = 0;
+            this.btnIni.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnIni.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(163)))), ((int)(((byte)(225)))));
+            this.btnIni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnIni.Image = global::inventarioAlmacen.Resource1.icons8_home_32;
+            this.btnIni.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIni.Location = new System.Drawing.Point(0, 0);
+            this.btnIni.Name = "btnIni";
+            this.btnIni.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnIni.Size = new System.Drawing.Size(250, 60);
+            this.btnIni.TabIndex = 3;
+            this.btnIni.Text = "Inicio";
+            this.btnIni.UseVisualStyleBackColor = true;
+            this.btnIni.Click += new System.EventHandler(this.btnIni_Click);
+            // 
             // panelBarraSuperior
             // 
             this.panelBarraSuperior.BackColor = System.Drawing.Color.White;
@@ -180,22 +241,6 @@
             this.txtTituloBar.Size = new System.Drawing.Size(99, 33);
             this.txtTituloBar.TabIndex = 2;
             this.txtTituloBar.Text = "label1";
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.panelCentral.Location = new System.Drawing.Point(250, 100);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(1050, 550);
-            this.panelCentral.TabIndex = 2;
-            // 
-            // panelInicio
-            // 
-            this.panelInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.panelInicio.Location = new System.Drawing.Point(0, 0);
-            this.panelInicio.Name = "panelInicio";
-            this.panelInicio.Size = new System.Drawing.Size(250, 100);
-            this.panelInicio.TabIndex = 3;
             // 
             // btnMinimizar
             // 
@@ -223,66 +268,21 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // pictureBox5
+            // panelCentral
             // 
-            this.pictureBox5.Image = global::inventarioAlmacen.Resource1.item;
-            this.pictureBox5.Location = new System.Drawing.Point(10, 240);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 10;
-            this.pictureBox5.TabStop = false;
+            this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.panelCentral.Location = new System.Drawing.Point(250, 100);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(1050, 550);
+            this.panelCentral.TabIndex = 2;
             // 
-            // pictureBox4
+            // panelInicio
             // 
-            this.pictureBox4.Image = global::inventarioAlmacen.Resource1.item;
-            this.pictureBox4.Location = new System.Drawing.Point(10, 180);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::inventarioAlmacen.Resource1.prestamo;
-            this.pictureBox3.Location = new System.Drawing.Point(10, 120);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBoxInventario
-            // 
-            this.pictureBoxInventario.Image = global::inventarioAlmacen.Resource1.inventario;
-            this.pictureBoxInventario.Location = new System.Drawing.Point(10, 60);
-            this.pictureBoxInventario.Name = "pictureBoxInventario";
-            this.pictureBoxInventario.Size = new System.Drawing.Size(60, 60);
-            this.pictureBoxInventario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxInventario.TabIndex = 7;
-            this.pictureBoxInventario.TabStop = false;
-            // 
-            // btnIni
-            // 
-            this.btnIni.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIni.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnIni.FlatAppearance.BorderSize = 0;
-            this.btnIni.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnIni.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(163)))), ((int)(((byte)(225)))));
-            this.btnIni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnIni.Image = global::inventarioAlmacen.Resource1.icons8_home_32;
-            this.btnIni.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIni.Location = new System.Drawing.Point(0, 0);
-            this.btnIni.Name = "btnIni";
-            this.btnIni.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnIni.Size = new System.Drawing.Size(250, 60);
-            this.btnIni.TabIndex = 3;
-            this.btnIni.Text = "Inicio";
-            this.btnIni.UseVisualStyleBackColor = true;
-            this.btnIni.Click += new System.EventHandler(this.btnIni_Click);
+            this.panelInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.panelInicio.Location = new System.Drawing.Point(0, 0);
+            this.panelInicio.Name = "panelInicio";
+            this.panelInicio.Size = new System.Drawing.Size(250, 100);
+            this.panelInicio.TabIndex = 3;
             // 
             // Contenedor
             // 
@@ -295,19 +295,20 @@
             this.Controls.Add(this.panelBarraSuperior);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "Contenedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contenedor";
             this.Load += new System.EventHandler(this.Contenedor_Load);
             this.panelMenu.ResumeLayout(false);
-            this.panelBarraSuperior.ResumeLayout(false);
-            this.panelBarraSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInventario)).EndInit();
+            this.panelBarraSuperior.ResumeLayout(false);
+            this.panelBarraSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
