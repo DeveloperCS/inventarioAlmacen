@@ -42,12 +42,12 @@ namespace inventarioAlmacen
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        //Boton cerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        //Boton Minimizar
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -68,31 +68,81 @@ namespace inventarioAlmacen
             fn.Show();
         }
 
+        
+
+        private void Contenedor_Load(object sender, EventArgs e)
+        {
+            
+            txtTituloBar.Text = "Inicio";
+            colorEs.Location = new Point(-3, btnIni.Location.Y);
+            btnIni.BackColor = Color.DodgerBlue;
+            pictureBoxInicio.BackColor = Color.DodgerBlue;
+
+        }
+
+        private void btnIni_Click(object sender, EventArgs e)
+
+        {
+            retornarColor();
+            txtTituloBar.Text = "Inicio";
+            colorEs.Location = new Point(-3, btnIni.Location.Y);
+            btnIni.BackColor = Color.DodgerBlue;
+            pictureBoxInicio.BackColor = Color.DodgerBlue;
+
+        }
+
         private void btnInv_Click(object sender, EventArgs e)
         {
+            retornarColor();
             AbrirFormInPanel(new inventario());
             txtTituloBar.Text = "Inventario";
-            colorEs.BackColor = Color.Aqua;
+
             /*cambiar de posucion la barra de color*/
             colorEs.Location = new Point(-3, btnInv.Location.Y);
+            btnInv.BackColor = Color.DodgerBlue;
+            pictureBoxInventario.BackColor = Color.DodgerBlue;
         }
 
         private void btnPrestamos_Click(object sender, EventArgs e)
         {
+            retornarColor();
+            txtTituloBar.Text = "Prestamos";
             /*cambiar de posucion la barra de color*/
-            colorEs.Location = new Point(-3,btnPrestamos.Location.Y);
+            colorEs.Location = new Point(-3, btnPrestamos.Location.Y);
+            btnPrestamos.BackColor = Color.DodgerBlue;
+            pictureBox3.BackColor = Color.DodgerBlue;
         }
 
-        private void Contenedor_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            txtTituloBar.Text = "Inicio";
-            colorEs.Location = new Point(-3, btnIni.Location.Y);
+            retornarColor();
+            txtTituloBar.Text = "Item2";
+            colorEs.Location = new Point(-3, button1.Location.Y);
+            button1.BackColor = Color.DodgerBlue;
+            pictureBox4.BackColor = Color.DodgerBlue;
         }
 
-        private void btnIni_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            txtTituloBar.Text = "Inicio";
-            colorEs.Location = new Point(-3, btnIni.Location.Y);
+            retornarColor();
+            txtTituloBar.Text = "Item3";
+            colorEs.Location = new Point(-3, button2.Location.Y);
+            button2.BackColor = Color.DodgerBlue;
+            pictureBox5.BackColor = Color.DodgerBlue;
+        }
+
+        private void retornarColor()
+        {
+            btnIni.BackColor = Color.DeepSkyBlue;
+            btnInv.BackColor = Color.DeepSkyBlue;
+            btnPrestamos.BackColor = Color.DeepSkyBlue;
+            button1.BackColor = Color.DeepSkyBlue;
+            button2.BackColor = Color.DeepSkyBlue;
+            pictureBoxInicio.BackColor = Color.DeepSkyBlue;
+            pictureBoxInventario.BackColor = Color.DeepSkyBlue;
+            pictureBox3.BackColor = Color.DeepSkyBlue;
+            pictureBox4.BackColor = Color.DeepSkyBlue;
+            pictureBox5.BackColor = Color.DeepSkyBlue;
         }
     }
 }

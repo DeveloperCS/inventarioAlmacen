@@ -78,7 +78,7 @@
             // 
             // colorEs
             // 
-            this.colorEs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.colorEs.BackColor = System.Drawing.Color.Aqua;
             this.colorEs.Location = new System.Drawing.Point(1, 0);
             this.colorEs.Name = "colorEs";
             this.colorEs.Size = new System.Drawing.Size(10, 60);
@@ -98,12 +98,14 @@
             this.btnPrestamos.Name = "btnPrestamos";
             this.btnPrestamos.Size = new System.Drawing.Size(180, 60);
             this.btnPrestamos.TabIndex = 1;
-            this.btnPrestamos.Text = "Item1";
+            this.btnPrestamos.Text = "Prestamos";
+            this.btnPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrestamos.UseVisualStyleBackColor = true;
             this.btnPrestamos.Click += new System.EventHandler(this.btnPrestamos_Click);
             // 
             // btnInv
             // 
+            this.btnInv.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnInv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInv.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.btnInv.FlatAppearance.BorderSize = 0;
@@ -117,7 +119,8 @@
             this.btnInv.Size = new System.Drawing.Size(180, 60);
             this.btnInv.TabIndex = 0;
             this.btnInv.Text = "Inventario";
-            this.btnInv.UseVisualStyleBackColor = true;
+            this.btnInv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInv.UseVisualStyleBackColor = false;
             this.btnInv.Click += new System.EventHandler(this.btnInv_Click);
             // 
             // panelBarraSuperior
@@ -135,11 +138,11 @@
             // txtTituloBar
             // 
             this.txtTituloBar.AutoSize = true;
-            this.txtTituloBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTituloBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTituloBar.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.txtTituloBar.Location = new System.Drawing.Point(86, 36);
             this.txtTituloBar.Name = "txtTituloBar";
-            this.txtTituloBar.Size = new System.Drawing.Size(85, 29);
+            this.txtTituloBar.Size = new System.Drawing.Size(99, 33);
             this.txtTituloBar.TabIndex = 2;
             this.txtTituloBar.Text = "label1";
             // 
@@ -166,7 +169,9 @@
             this.button1.Size = new System.Drawing.Size(180, 60);
             this.button1.TabIndex = 4;
             this.button1.Text = "Item2";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -183,11 +188,13 @@
             this.button2.Size = new System.Drawing.Size(180, 60);
             this.button2.TabIndex = 5;
             this.button2.Text = "Item3";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panelInicio
             // 
-            this.panelInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(206)))), ((int)(((byte)(233)))));
+            this.panelInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panelInicio.Location = new System.Drawing.Point(0, 0);
             this.panelInicio.Name = "panelInicio";
             this.panelInicio.Size = new System.Drawing.Size(250, 100);
@@ -208,14 +215,16 @@
             this.btnIni.Size = new System.Drawing.Size(180, 60);
             this.btnIni.TabIndex = 3;
             this.btnIni.Text = "Inicio";
+            this.btnIni.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIni.UseVisualStyleBackColor = true;
             this.btnIni.Click += new System.EventHandler(this.btnIni_Click);
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
-            this.btnMinimizar.Location = new System.Drawing.Point(963, 36);
+            this.btnMinimizar.Location = new System.Drawing.Point(977, 22);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -225,9 +234,10 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerrar;
-            this.btnCerrar.Location = new System.Drawing.Point(1004, 36);
+            this.btnCerrar.Location = new System.Drawing.Point(1013, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 25);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -257,7 +267,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::inventarioAlmacen.Resource1.item;
+            this.pictureBox3.Image = global::inventarioAlmacen.Resource1.prestamo;
             this.pictureBox3.Location = new System.Drawing.Point(10, 120);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(60, 60);

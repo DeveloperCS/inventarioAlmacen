@@ -17,11 +17,26 @@ namespace inventarioAlmacen
             InitializeComponent();
         }
 
+       
         private void inventario_Load(object sender, EventArgs e)
         {
+           
             Datos dts = new Datos();
             String qy = "";
             datosTabla.DataSource = dts.consulta(qy="Select * FROM Articulos").Tables[0];
+
+        }
+
+
+        private void higieneYLimpiezaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Agregar frm = new Agregar();
+            frm.Show();
+            
+        }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
