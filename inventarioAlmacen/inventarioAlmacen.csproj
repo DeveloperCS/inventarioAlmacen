@@ -181,6 +181,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>bdAlmacen.mdf</DependentUpon>
     </Content>
+    <Content Include="Resources\inicio.png" />
+    <Content Include="Resources\inventario.png" />
+    <Content Include="Resources\item.png" />
     <None Include="Resources\minimazar.png" />
     <None Include="Resources\if_plus_1646001.png" />
     <None Include="Resources\if_error_1646012.png" />
