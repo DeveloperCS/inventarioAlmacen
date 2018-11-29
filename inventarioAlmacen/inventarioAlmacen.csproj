@@ -182,9 +182,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>bdAlmacen.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\prestar.png" />
     <None Include="Resources\buscar.png" />
     <None Include="Resources\icons8-home-32.png" />
+    <None Include="Resources\eninven.png" />
     <Content Include="Resources\inicio.png" />
+    <None Include="Resources\inventar.png" />
     <Content Include="Resources\inventario.png" />
     <Content Include="Resources\item.png" />
     <None Include="Resources\prestamo.png" />

@@ -42,6 +42,29 @@ namespace inventarioAlmacen
 
         }
 
+        private void txtNombre_Enter(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "Buscar")
+            {
+                txtNombre.Text = "";
+                txtNombre.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txtNombre_Leave(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "")
+            {
+                txtNombre.Text = "Buscar";
+                txtNombre.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         /*private void Agregar(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

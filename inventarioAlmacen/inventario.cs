@@ -33,15 +33,10 @@ namespace inventarioAlmacen
         }
 
 
-        private void higieneYLimpiezaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Agregar().ShowDialog();
-            
-        }
 
         private void productoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new Agregar().ShowDialog();
         }
 
         private void txtBuscar_Enter(object sender, EventArgs e)

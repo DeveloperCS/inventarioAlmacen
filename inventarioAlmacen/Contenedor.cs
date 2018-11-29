@@ -75,8 +75,8 @@ namespace inventarioAlmacen
             
             txtTituloBar.Text = "Inicio";
             colorEs.Location = new Point(-3, btnIni.Location.Y);
-            btnIni.BackColor = Color.DodgerBlue;
-            
+            btnIni.BackColor = Color.FromArgb(83, 164, 227);
+
 
         }
 
@@ -86,7 +86,7 @@ namespace inventarioAlmacen
             retornarColor();
             txtTituloBar.Text = "Inicio";
             colorEs.Location = new Point(-3, btnIni.Location.Y);
-            btnIni.BackColor = Color.DodgerBlue;
+            btnIni.BackColor = Color.FromArgb(83, 164, 227);
             //pictureBoxInicio.BackColor = Color.DodgerBlue;
 
         }
@@ -99,8 +99,7 @@ namespace inventarioAlmacen
 
             /*cambiar de posucion la barra de color*/
             colorEs.Location = new Point(-3, btnInv.Location.Y);
-            btnInv.BackColor = Color.DodgerBlue;
-            pictureBoxInventario.BackColor = Color.DodgerBlue;
+            btnInv.BackColor = Color.FromArgb(83, 164, 227);
         }
 
         private void btnPrestamos_Click(object sender, EventArgs e)
@@ -109,8 +108,7 @@ namespace inventarioAlmacen
             txtTituloBar.Text = "Prestamos";
             /*cambiar de posucion la barra de color*/
             colorEs.Location = new Point(-3, btnPrestamos.Location.Y);
-            btnPrestamos.BackColor = Color.DodgerBlue;
-            pictureBox3.BackColor = Color.DodgerBlue;
+            btnPrestamos.BackColor = Color.FromArgb(83, 164, 227);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -118,8 +116,7 @@ namespace inventarioAlmacen
             retornarColor();
             txtTituloBar.Text = "Item2";
             colorEs.Location = new Point(-3, button1.Location.Y);
-            button1.BackColor = Color.DodgerBlue;
-            pictureBox4.BackColor = Color.DodgerBlue;
+            button1.BackColor = Color.FromArgb(83, 164, 227);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -127,22 +124,16 @@ namespace inventarioAlmacen
             retornarColor();
             txtTituloBar.Text = "Item3";
             colorEs.Location = new Point(-3, button2.Location.Y);
-            button2.BackColor = Color.DodgerBlue;
-            pictureBox5.BackColor = Color.DodgerBlue;
+            button2.BackColor = Color.FromArgb(83, 164, 227);
         }
 
         private void retornarColor()
         {
-            btnIni.BackColor = Color.DeepSkyBlue;
-            btnInv.BackColor = Color.DeepSkyBlue;
-            btnPrestamos.BackColor = Color.DeepSkyBlue;
-            button1.BackColor = Color.DeepSkyBlue;
-            button2.BackColor = Color.DeepSkyBlue;
-            //pictureBoxInicio.BackColor = Color.DeepSkyBlue;
-            pictureBoxInventario.BackColor = Color.DeepSkyBlue;
-            pictureBox3.BackColor = Color.DeepSkyBlue;
-            pictureBox4.BackColor = Color.DeepSkyBlue;
-            pictureBox5.BackColor = Color.DeepSkyBlue;
+            btnIni.BackColor = Color.FromArgb(34, 49, 65);
+            btnInv.BackColor = Color.FromArgb(34, 49, 65);
+            btnPrestamos.BackColor = Color.FromArgb(34, 49, 65);
+            button1.BackColor = Color.FromArgb(34, 49, 65);
+            button2.BackColor = Color.FromArgb(34, 49, 65);
         }
     }
 }
