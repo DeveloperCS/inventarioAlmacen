@@ -36,6 +36,18 @@ namespace inventarioAlmacen {
         
         private UsuarioDataTable tableUsuario;
         
+        private global::System.Data.DataRelation relationFK_Articulos_Electronico;
+        
+        private global::System.Data.DataRelation relationFK_Usuario_Electronico;
+        
+        private global::System.Data.DataRelation relationFK_Articulos_Recibos;
+        
+        private global::System.Data.DataRelation relationFK_Empleados_Recibos;
+        
+        private global::System.Data.DataRelation relationUsuario_Recibos;
+        
+        private global::System.Data.DataRelation relationEmpleados_Electronico;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -314,6 +326,12 @@ namespace inventarioAlmacen {
                     this.tableUsuario.InitVars();
                 }
             }
+            this.relationFK_Articulos_Electronico = this.Relations["FK_Articulos_Electronico"];
+            this.relationFK_Usuario_Electronico = this.Relations["FK_Usuario_Electronico"];
+            this.relationFK_Articulos_Recibos = this.Relations["FK_Articulos_Recibos"];
+            this.relationFK_Empleados_Recibos = this.Relations["FK_Empleados_Recibos"];
+            this.relationUsuario_Recibos = this.Relations["Usuario_Recibos"];
+            this.relationEmpleados_Electronico = this.Relations["Empleados_Electronico"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,6 +354,59 @@ namespace inventarioAlmacen {
             base.Tables.Add(this.tableRecibos);
             this.tableUsuario = new UsuarioDataTable();
             base.Tables.Add(this.tableUsuario);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Articulos_Electronico", new global::System.Data.DataColumn[] {
+                        this.tableArticulos.IdArticuloColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElectronico.IdArticuloColumn});
+            this.tableElectronico.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Usuario_Electronico", new global::System.Data.DataColumn[] {
+                        this.tableUsuario.IdUsuarioColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElectronico.IdUsuarioColumn});
+            this.tableElectronico.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Articulos_Recibos", new global::System.Data.DataColumn[] {
+                        this.tableArticulos.IdArticuloColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRecibos.IdArticuloColumn});
+            this.tableRecibos.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Empleados_Recibos", new global::System.Data.DataColumn[] {
+                        this.tableEmpleados.IdEmpleadoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRecibos.IdEmpleadoColumn});
+            this.tableRecibos.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            this.relationFK_Articulos_Electronico = new global::System.Data.DataRelation("FK_Articulos_Electronico", new global::System.Data.DataColumn[] {
+                        this.tableArticulos.IdArticuloColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElectronico.IdArticuloColumn}, false);
+            this.Relations.Add(this.relationFK_Articulos_Electronico);
+            this.relationFK_Usuario_Electronico = new global::System.Data.DataRelation("FK_Usuario_Electronico", new global::System.Data.DataColumn[] {
+                        this.tableUsuario.IdUsuarioColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElectronico.IdUsuarioColumn}, false);
+            this.Relations.Add(this.relationFK_Usuario_Electronico);
+            this.relationFK_Articulos_Recibos = new global::System.Data.DataRelation("FK_Articulos_Recibos", new global::System.Data.DataColumn[] {
+                        this.tableArticulos.IdArticuloColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRecibos.IdArticuloColumn}, false);
+            this.Relations.Add(this.relationFK_Articulos_Recibos);
+            this.relationFK_Empleados_Recibos = new global::System.Data.DataRelation("FK_Empleados_Recibos", new global::System.Data.DataColumn[] {
+                        this.tableEmpleados.IdEmpleadoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRecibos.IdEmpleadoColumn}, false);
+            this.Relations.Add(this.relationFK_Empleados_Recibos);
+            this.relationUsuario_Recibos = new global::System.Data.DataRelation("Usuario_Recibos", new global::System.Data.DataColumn[] {
+                        this.tableUsuario.IdUsuarioColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRecibos.IdUsuarioColumn}, false);
+            this.Relations.Add(this.relationUsuario_Recibos);
+            this.relationEmpleados_Electronico = new global::System.Data.DataRelation("Empleados_Electronico", new global::System.Data.DataColumn[] {
+                        this.tableEmpleados.ClaveEmpleadoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElectronico.ClaveEmpleadoColumn}, false);
+            this.Relations.Add(this.relationEmpleados_Electronico);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -947,16 +1018,25 @@ namespace inventarioAlmacen {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ElectronicoRow AddElectronicoRow(string IdElectronico, string IdUsuario, string IdArticulo, string NombreArticulo, int CantidadArticulo, System.DateTime FechaSalida, string ClaveEmpleado) {
+            public ElectronicoRow AddElectronicoRow(string IdElectronico, UsuarioRow parentUsuarioRowByFK_Usuario_Electronico, ArticulosRow parentArticulosRowByFK_Articulos_Electronico, string NombreArticulo, int CantidadArticulo, System.DateTime FechaSalida, EmpleadosRow parentEmpleadosRowByEmpleados_Electronico) {
                 ElectronicoRow rowElectronicoRow = ((ElectronicoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdElectronico,
-                        IdUsuario,
-                        IdArticulo,
+                        null,
+                        null,
                         NombreArticulo,
                         CantidadArticulo,
                         FechaSalida,
-                        ClaveEmpleado};
+                        null};
+                if ((parentUsuarioRowByFK_Usuario_Electronico != null)) {
+                    columnValuesArray[1] = parentUsuarioRowByFK_Usuario_Electronico[0];
+                }
+                if ((parentArticulosRowByFK_Articulos_Electronico != null)) {
+                    columnValuesArray[2] = parentArticulosRowByFK_Articulos_Electronico[0];
+                }
+                if ((parentEmpleadosRowByEmpleados_Electronico != null)) {
+                    columnValuesArray[6] = parentEmpleadosRowByEmpleados_Electronico[1];
+                }
                 rowElectronicoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowElectronicoRow);
                 return rowElectronicoRow;
@@ -1160,6 +1240,8 @@ namespace inventarioAlmacen {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class EmpleadosDataTable : global::System.Data.TypedTableBase<EmpleadosRow> {
             
+            private global::System.Data.DataColumn columnIdEmpleado;
+            
             private global::System.Data.DataColumn columnClaveEmpleado;
             
             private global::System.Data.DataColumn columnNombreEmpleado;
@@ -1201,6 +1283,14 @@ namespace inventarioAlmacen {
             protected EmpleadosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdEmpleadoColumn {
+                get {
+                    return this.columnIdEmpleado;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1280,9 +1370,10 @@ namespace inventarioAlmacen {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpleadosRow AddEmpleadosRow(string ClaveEmpleado, string NombreEmpleado, string ApellidoPaterno, string ApellidoMaterno, string Puesto) {
+            public EmpleadosRow AddEmpleadosRow(string IdEmpleado, string ClaveEmpleado, string NombreEmpleado, string ApellidoPaterno, string ApellidoMaterno, string Puesto) {
                 EmpleadosRow rowEmpleadosRow = ((EmpleadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        IdEmpleado,
                         ClaveEmpleado,
                         NombreEmpleado,
                         ApellidoPaterno,
@@ -1295,9 +1386,9 @@ namespace inventarioAlmacen {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpleadosRow FindByClaveEmpleado(string ClaveEmpleado) {
+            public EmpleadosRow FindByIdEmpleado(string IdEmpleado) {
                 return ((EmpleadosRow)(this.Rows.Find(new object[] {
-                            ClaveEmpleado})));
+                            IdEmpleado})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1317,6 +1408,7 @@ namespace inventarioAlmacen {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnIdEmpleado = base.Columns["IdEmpleado"];
                 this.columnClaveEmpleado = base.Columns["ClaveEmpleado"];
                 this.columnNombreEmpleado = base.Columns["NombreEmpleado"];
                 this.columnApellidoPaterno = base.Columns["ApellidoPaterno"];
@@ -1327,6 +1419,8 @@ namespace inventarioAlmacen {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnIdEmpleado = new global::System.Data.DataColumn("IdEmpleado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdEmpleado);
                 this.columnClaveEmpleado = new global::System.Data.DataColumn("ClaveEmpleado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClaveEmpleado);
                 this.columnNombreEmpleado = new global::System.Data.DataColumn("NombreEmpleado", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1338,18 +1432,21 @@ namespace inventarioAlmacen {
                 this.columnPuesto = new global::System.Data.DataColumn("Puesto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPuesto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnClaveEmpleado}, true));
+                                this.columnIdEmpleado}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnClaveEmpleado}, false));
+                this.columnIdEmpleado.AllowDBNull = false;
+                this.columnIdEmpleado.Unique = true;
+                this.columnIdEmpleado.MaxLength = 4;
                 this.columnClaveEmpleado.AllowDBNull = false;
                 this.columnClaveEmpleado.Unique = true;
-                this.columnClaveEmpleado.MaxLength = 4;
+                this.columnClaveEmpleado.MaxLength = 20;
                 this.columnNombreEmpleado.AllowDBNull = false;
                 this.columnNombreEmpleado.MaxLength = 20;
                 this.columnApellidoPaterno.AllowDBNull = false;
                 this.columnApellidoPaterno.MaxLength = 20;
                 this.columnApellidoMaterno.AllowDBNull = false;
-                this.columnApellidoMaterno.MaxLength = 20;
-                this.columnPuesto.AllowDBNull = false;
-                this.columnPuesto.MaxLength = 50;
+                this.columnApellidoMaterno.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1805,7 +1902,7 @@ namespace inventarioAlmacen {
             
             private global::System.Data.DataColumn columnDescripcion;
             
-            private global::System.Data.DataColumn columnClaveEmpleado;
+            private global::System.Data.DataColumn columnIdEmpleado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1898,9 +1995,9 @@ namespace inventarioAlmacen {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ClaveEmpleadoColumn {
+            public global::System.Data.DataColumn IdEmpleadoColumn {
                 get {
-                    return this.columnClaveEmpleado;
+                    return this.columnIdEmpleado;
                 }
             }
             
@@ -1941,17 +2038,26 @@ namespace inventarioAlmacen {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public RecibosRow AddRecibosRow(string IdRecibo, string IdUsuario, string IdArticulo, string NombreArticulo, System.DateTime FechaSalida, System.DateTime FechaEntrega, string Descripcion, string ClaveEmpleado) {
+            public RecibosRow AddRecibosRow(string IdRecibo, UsuarioRow parentUsuarioRowByUsuario_Recibos, ArticulosRow parentArticulosRowByFK_Articulos_Recibos, string NombreArticulo, System.DateTime FechaSalida, System.DateTime FechaEntrega, string Descripcion, EmpleadosRow parentEmpleadosRowByFK_Empleados_Recibos) {
                 RecibosRow rowRecibosRow = ((RecibosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdRecibo,
-                        IdUsuario,
-                        IdArticulo,
+                        null,
+                        null,
                         NombreArticulo,
                         FechaSalida,
                         FechaEntrega,
                         Descripcion,
-                        ClaveEmpleado};
+                        null};
+                if ((parentUsuarioRowByUsuario_Recibos != null)) {
+                    columnValuesArray[1] = parentUsuarioRowByUsuario_Recibos[0];
+                }
+                if ((parentArticulosRowByFK_Articulos_Recibos != null)) {
+                    columnValuesArray[2] = parentArticulosRowByFK_Articulos_Recibos[0];
+                }
+                if ((parentEmpleadosRowByFK_Empleados_Recibos != null)) {
+                    columnValuesArray[7] = parentEmpleadosRowByFK_Empleados_Recibos[0];
+                }
                 rowRecibosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRecibosRow);
                 return rowRecibosRow;
@@ -1988,7 +2094,7 @@ namespace inventarioAlmacen {
                 this.columnFechaSalida = base.Columns["FechaSalida"];
                 this.columnFechaEntrega = base.Columns["FechaEntrega"];
                 this.columnDescripcion = base.Columns["Descripcion"];
-                this.columnClaveEmpleado = base.Columns["ClaveEmpleado"];
+                this.columnIdEmpleado = base.Columns["IdEmpleado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2008,8 +2114,8 @@ namespace inventarioAlmacen {
                 base.Columns.Add(this.columnFechaEntrega);
                 this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescripcion);
-                this.columnClaveEmpleado = new global::System.Data.DataColumn("ClaveEmpleado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClaveEmpleado);
+                this.columnIdEmpleado = new global::System.Data.DataColumn("IdEmpleado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdEmpleado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdRecibo}, true));
                 this.columnIdRecibo.AllowDBNull = false;
@@ -2025,8 +2131,8 @@ namespace inventarioAlmacen {
                 this.columnFechaEntrega.AllowDBNull = false;
                 this.columnDescripcion.AllowDBNull = false;
                 this.columnDescripcion.MaxLength = 500;
-                this.columnClaveEmpleado.AllowDBNull = false;
-                this.columnClaveEmpleado.MaxLength = 4;
+                this.columnIdEmpleado.AllowDBNull = false;
+                this.columnIdEmpleado.MaxLength = 4;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2598,6 +2704,28 @@ namespace inventarioAlmacen {
                     this[this.tableArticulos.EstadoColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RecibosRow[] GetRecibosRows() {
+                if ((this.Table.ChildRelations["FK_Articulos_Recibos"] == null)) {
+                    return new RecibosRow[0];
+                }
+                else {
+                    return ((RecibosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Articulos_Recibos"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ElectronicoRow[] GetElectronicoRows() {
+                if ((this.Table.ChildRelations["FK_Articulos_Electronico"] == null)) {
+                    return new ElectronicoRow[0];
+                }
+                else {
+                    return ((ElectronicoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Articulos_Electronico"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2690,6 +2818,39 @@ namespace inventarioAlmacen {
                     this[this.tableElectronico.ClaveEmpleadoColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ArticulosRow ArticulosRow {
+                get {
+                    return ((ArticulosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Articulos_Electronico"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Articulos_Electronico"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public UsuarioRow UsuarioRow {
+                get {
+                    return ((UsuarioRow)(this.GetParentRow(this.Table.ParentRelations["FK_Usuario_Electronico"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Usuario_Electronico"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EmpleadosRow EmpleadosRow {
+                get {
+                    return ((EmpleadosRow)(this.GetParentRow(this.Table.ParentRelations["Empleados_Electronico"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Empleados_Electronico"]);
+                }
+            }
         }
         
         /// <summary>
@@ -2704,6 +2865,17 @@ namespace inventarioAlmacen {
             internal EmpleadosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableEmpleados = ((EmpleadosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string IdEmpleado {
+                get {
+                    return ((string)(this[this.tableEmpleados.IdEmpleadoColumn]));
+                }
+                set {
+                    this[this.tableEmpleados.IdEmpleadoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2754,10 +2926,49 @@ namespace inventarioAlmacen {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Puesto {
                 get {
-                    return ((string)(this[this.tableEmpleados.PuestoColumn]));
+                    try {
+                        return ((string)(this[this.tableEmpleados.PuestoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Puesto\' de la tabla \'Empleados\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableEmpleados.PuestoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPuestoNull() {
+                return this.IsNull(this.tableEmpleados.PuestoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPuestoNull() {
+                this[this.tableEmpleados.PuestoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RecibosRow[] GetRecibosRows() {
+                if ((this.Table.ChildRelations["FK_Empleados_Recibos"] == null)) {
+                    return new RecibosRow[0];
+                }
+                else {
+                    return ((RecibosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Empleados_Recibos"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ElectronicoRow[] GetElectronicoRows() {
+                if ((this.Table.ChildRelations["Empleados_Electronico"] == null)) {
+                    return new ElectronicoRow[0];
+                }
+                else {
+                    return ((ElectronicoRow[])(base.GetChildRows(this.Table.ChildRelations["Empleados_Electronico"])));
                 }
             }
         }
@@ -2931,12 +3142,45 @@ namespace inventarioAlmacen {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ClaveEmpleado {
+            public string IdEmpleado {
                 get {
-                    return ((string)(this[this.tableRecibos.ClaveEmpleadoColumn]));
+                    return ((string)(this[this.tableRecibos.IdEmpleadoColumn]));
                 }
                 set {
-                    this[this.tableRecibos.ClaveEmpleadoColumn] = value;
+                    this[this.tableRecibos.IdEmpleadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ArticulosRow ArticulosRow {
+                get {
+                    return ((ArticulosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Articulos_Recibos"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Articulos_Recibos"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EmpleadosRow EmpleadosRow {
+                get {
+                    return ((EmpleadosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Empleados_Recibos"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Empleados_Recibos"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public UsuarioRow UsuarioRow {
+                get {
+                    return ((UsuarioRow)(this.GetParentRow(this.Table.ParentRelations["Usuario_Recibos"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Usuario_Recibos"]);
                 }
             }
         }
@@ -3029,6 +3273,28 @@ namespace inventarioAlmacen {
                 }
                 set {
                     this[this.tableUsuario.ContraseñaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ElectronicoRow[] GetElectronicoRows() {
+                if ((this.Table.ChildRelations["FK_Usuario_Electronico"] == null)) {
+                    return new ElectronicoRow[0];
+                }
+                else {
+                    return ((ElectronicoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Usuario_Electronico"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RecibosRow[] GetRecibosRows() {
+                if ((this.Table.ChildRelations["Usuario_Recibos"] == null)) {
+                    return new RecibosRow[0];
+                }
+                else {
+                    return ((RecibosRow[])(base.GetChildRows(this.Table.ChildRelations["Usuario_Recibos"])));
                 }
             }
         }
@@ -4250,11 +4516,11 @@ SELECT IdElectronico, IdUsuario, IdArticulo, NombreArticulo, CantidadArticulo, F
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Empleados";
-            tableMapping.ColumnMappings.Add("ClaveEmpleado", "ClaveEmpleado");
-            tableMapping.ColumnMappings.Add("NombreEmpleado", "NombreEmpleado");
-            tableMapping.ColumnMappings.Add("ApellidoPaterno", "ApellidoPaterno");
-            tableMapping.ColumnMappings.Add("ApellidoMaterno", "ApellidoMaterno");
-            tableMapping.ColumnMappings.Add("Puesto", "Puesto");
+            tableMapping.ColumnMappings.Add("ClaveEmpleado", "IdEmpleado");
+            tableMapping.ColumnMappings.Add("NombreEmpleado", "ClaveEmpleado");
+            tableMapping.ColumnMappings.Add("ApellidoPaterno", "NombreEmpleado");
+            tableMapping.ColumnMappings.Add("ApellidoMaterno", "ApellidoPaterno");
+            tableMapping.ColumnMappings.Add("Puesto", "ApellidoMaterno");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -4544,14 +4810,6 @@ SELECT ClaveEmpleado, NombreEmpleado, ApellidoPaterno, ApellidoMaterno, Puesto F
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NombreEmpleado, string ApellidoPaterno, string ApellidoMaterno, string Puesto, string Original_ClaveEmpleado, string Original_NombreEmpleado, string Original_ApellidoPaterno, string Original_ApellidoMaterno, string Original_Puesto) {
-            return this.Update(Original_ClaveEmpleado, NombreEmpleado, ApellidoPaterno, ApellidoMaterno, Puesto, Original_ClaveEmpleado, Original_NombreEmpleado, Original_ApellidoPaterno, Original_ApellidoMaterno, Original_Puesto);
         }
     }
     
@@ -5064,7 +5322,7 @@ SELECT IdPedido, ClaveEmpleado, IdArticulo, CantidadPedido FROM Pedios WHERE (Id
             tableMapping.ColumnMappings.Add("FechaSalida", "FechaSalida");
             tableMapping.ColumnMappings.Add("FechaEntrega", "FechaEntrega");
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
-            tableMapping.ColumnMappings.Add("ClaveEmpleado", "ClaveEmpleado");
+            tableMapping.ColumnMappings.Add("ClaveEmpleado", "IdEmpleado");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -6126,21 +6384,30 @@ SELECT IdUsuario, NombreUsuario, ApellidoPaterno, ApellidoMaterno, Usuario, Tipo
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._electronicoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Electronico.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._electronicoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._empleadosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Empleados.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._empleadosTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._usuarioTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Usuario.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._usuarioTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._electronicoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Electronico.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._electronicoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6162,15 +6429,6 @@ SELECT IdUsuario, NombreUsuario, ApellidoPaterno, ApellidoMaterno, Usuario, Tipo
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._usuarioTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Usuario.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._usuarioTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -6189,19 +6447,27 @@ SELECT IdUsuario, NombreUsuario, ApellidoPaterno, ApellidoMaterno, Usuario, Tipo
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._electronicoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Electronico.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._electronicoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._empleadosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Empleados.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._empleadosTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._usuarioTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Usuario.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._usuarioTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._electronicoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Electronico.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._electronicoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -6221,14 +6487,6 @@ SELECT IdUsuario, NombreUsuario, ApellidoPaterno, ApellidoMaterno, Usuario, Tipo
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._usuarioTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Usuario.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._usuarioTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -6239,14 +6497,6 @@ SELECT IdUsuario, NombreUsuario, ApellidoPaterno, ApellidoMaterno, Usuario, Tipo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(bdAlmacenDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._usuarioTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Usuario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._usuarioTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._recibosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Recibos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -6263,19 +6513,27 @@ SELECT IdUsuario, NombreUsuario, ApellidoPaterno, ApellidoMaterno, Usuario, Tipo
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._empleadosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Empleados.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._empleadosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._electronicoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Electronico.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._electronicoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._usuarioTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Usuario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._usuarioTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._empleadosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Empleados.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._empleadosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
