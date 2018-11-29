@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventarioAlmacen.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace inventarioAlmacen
             txtNombre.ForeColor = Color.DimGray;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            btnMinimizar.Visible = false;
             
         }
 
@@ -77,11 +79,52 @@ namespace inventarioAlmacen
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        Datos datos = new Datos();
+        String qy = "";
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Agregar Producto?","Agrega",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
+                {
+                    qy = "INSERT INTO Articulos values('Ar-0004','"+txtNombre.Text+"','"+comboBoxCategoria.Text+"',10,10,'"+comboBoxMedida.Text+"','N/A')";
+                    if (datos.insertar(qy)==true)
+                    {
+                        MessageBox.Show("Articulo Agregado!!");
+                        limpiar();
+                        //new inventario().consult();
+                        this.Close();
+                       
+                    }
+                }
+                else if(comboBoxCategoria.Text.Equals("Herramientas y Otros"))
+                {
+                    qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "',10,10,'" + comboBoxMedida.Text + "','Bueno')";
+                    if (datos.insertar(qy) == true)
+                    {
+                        MessageBox.Show("Articulo Agregado!!");
+                        limpiar();
+                       // new inventario().consult();
+                        this.Close();
+                       
+                    }
+                }
 
-        /*private void Agregar(object sender, MouseEventArgs e)
+            }
+        }
+        private void limpiar()
+        {
+            txtNombre.Text = "";
+            comboBoxCategoria.Text = "";
+            domainUpDownCantidad.Text = "0";
+            comboBoxMedida.Text = "";
+        }
+
+        private void bar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }*/
+        }
+
     }
 }

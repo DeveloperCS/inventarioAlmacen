@@ -20,23 +20,32 @@ namespace inventarioAlmacen
         }
 
         DataView miFiltro;
+        Datos dts = new Datos();
         private void inventario_Load(object sender, EventArgs e)
         {
-           
-            Datos dts = new Datos();
+
+
+            consult();
+
+            if (datosTabla.Rows.Count<=0)
+            {
+                MessageBox.Show("No Tienie Registros, \nAñade nuevos Registros","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                
+            }
+
+        }
+        public void consult()
+        {
             String qy = "";
 
             this.miFiltro = dts.consulta(qy = "Select * FROM Articulos").Tables[0].DefaultView;
-
             datosTabla.DataSource = miFiltro;
-
         }
-
 
 
         private void productoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Agregar().ShowDialog();
+            new Agregar().Show();
         }
 
         private void txtBuscar_Enter(object sender, EventArgs e)
@@ -74,6 +83,30 @@ namespace inventarioAlmacen
                 }
             }
             this.miFiltro.RowFilter = salida;
+        }
+        string qy = "";
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Eliminar?","Eliminar", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                string valor = "";
+
+                valor = Funciones.funciones.obString(datosTabla,0);
+
+                //MessageBox.Show(valor);
+                string qy1 = "";
+                qy1 = "DELETE FROM Articulos WHERE IdArticulo='"+valor+"'";
+
+                if(dts.eliminar(qy1) == true)
+                {
+                    MessageBox.Show("Exito");
+                    consult();
+                }
+                    
+               
+               
+
+            }
         }
     }
 }
