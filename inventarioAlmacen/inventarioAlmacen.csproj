@@ -66,6 +66,9 @@
     <Compile Include="Agregar.Designer.cs">
       <DependentUpon>Agregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="bdAlmacenDataSet.cs">
+      <DependentUpon>bdAlmacenDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="bdAlmacenDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
