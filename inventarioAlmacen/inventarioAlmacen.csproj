@@ -97,6 +97,7 @@
     <Compile Include="inventario.Designer.cs">
       <DependentUpon>inventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="ppppp.cs" />
     <Compile Include="Prestamos.cs">
       <SubType>Form</SubType>
     </Compile>
