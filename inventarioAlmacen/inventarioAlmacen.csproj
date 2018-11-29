@@ -185,10 +185,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>bdAlmacen.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Unidad.png" />
+    <None Include="Resources\nombreArticulo.png" />
     <None Include="Resources\prestar.png" />
     <None Include="Resources\buscar.png" />
     <None Include="Resources\icons8-home-32.png" />
     <None Include="Resources\eninven.png" />
+    <None Include="Resources\cerr.png" />
+    <None Include="Resources\Categoria.png" />
+    <None Include="Resources\Cantidad.png" />
     <Content Include="Resources\inicio.png" />
     <None Include="Resources\inventar.png" />
     <Content Include="Resources\inventario.png" />
