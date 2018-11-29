@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="bdAlmacenConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="bdAlmacenConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.inventarioAlmacen.Properties.Settings.GlobalReference.Default.bdAlmacenConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="bdAlmacenConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="bdAlmacenConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.inventarioAlmacen.Properties.Settings.GlobalReference.Default.bdAlmacenConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ArticulosTableAdapter" GeneratorDataComponentClassName="ArticulosTableAdapter" Name="Articulos" UserDataComponentName="ArticulosTableAdapter">
@@ -702,6 +702,10 @@ SELECT IdUsuario, NombreUsuario, ApellidoPaterno, ApellidoMaterno, Usuario, Tipo
     <xs:unique name="Empleados_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Empleados" />
       <xs:field xpath="mstns:IdEmpleado" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:Empleados" />
+      <xs:field xpath="mstns:ClaveEmpleado" />
     </xs:unique>
     <xs:unique name="Pedios_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Pedios" />
