@@ -15,8 +15,11 @@ namespace inventarioAlmacen
         public Agregar()
         {
             InitializeComponent();
+            txtNombre.Text = "Nombre";
+            txtNombre.ForeColor = Color.DimGray;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            
         }
 
         //Redondear esquinas
@@ -44,7 +47,7 @@ namespace inventarioAlmacen
 
         private void txtNombre_Enter(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "Buscar")
+            if (txtNombre.Text == "Nombre")
             {
                 txtNombre.Text = "";
                 txtNombre.ForeColor = Color.DimGray;
@@ -55,14 +58,24 @@ namespace inventarioAlmacen
         {
             if (txtNombre.Text == "")
             {
-                txtNombre.Text = "Buscar";
-                txtNombre.ForeColor = Color.LightGray;
+                txtNombre.Text = "Nombre";
+                txtNombre.ForeColor = Color.DimGray;
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         /*private void Agregar(object sender, MouseEventArgs e)
