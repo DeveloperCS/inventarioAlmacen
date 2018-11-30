@@ -29,6 +29,28 @@ end
 
 exec AGIDE
 
+CREATE PROC AGIDRe
+AS
+BEGIN
+Select
+LEFT(MAX(IdRecibo),3),RIGHT('000'+
+convert(Varchar(7), RIGHT(MAX(IdRecibo),4)+1),4) from Recibos
+end
+
+exec AGIDR
+
+CREATE PROC AGIDEl
+AS
+BEGIN
+Select
+LEFT(MAX(IdElectronico),3),RIGHT('000'+
+convert(Varchar(7), RIGHT(MAX(IdElectronico),4)+1),4) from Electronico
+end
+
+exec AGIDEl
+
+
+
  CREATE VIEW ArticulosCategoriaHL
   AS SELECT * FROM Articulos WHERE Categoria= 'Higiene y Limpieza'
 
