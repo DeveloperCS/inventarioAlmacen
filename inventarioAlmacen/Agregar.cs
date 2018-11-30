@@ -19,8 +19,8 @@ namespace inventarioAlmacen
 
             txtNombre.Text = "Nombre del Articulo";
             txtNombre.ForeColor = Color.FromArgb(210, 210, 210);
-            domainUpDownCantidad.Text = "Cantidad";
-            domainUpDownCantidad.ForeColor = Color.FromArgb(210, 210, 210);
+            //domainUpDownCantidad.Text = "Cantidad";
+            //domainUpDownCantidad.ForeColor = Color.FromArgb(210, 210, 210);
             comboBoxCategoria.Text = "Categoria";
             comboBoxCategoria.ForeColor = Color.FromArgb(210, 210, 210);
             comboBoxMedida.Text = "Tipo de Medida";

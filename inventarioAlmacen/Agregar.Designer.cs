@@ -35,27 +35,28 @@
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.comboBoxMedida = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.bar = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.nmCantidad = new System.Windows.Forms.NumericUpDown();
-            this.domainUpDownCantidad = new System.Windows.Forms.DomainUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.lbID = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.bar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).BeginInit();
             this.panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -67,7 +68,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(12, 341);
+            this.btnCancelar.Location = new System.Drawing.Point(12, 376);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 0;
@@ -84,7 +85,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(132, 341);
+            this.btnAgregar.Location = new System.Drawing.Point(132, 376);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(223, 35);
             this.btnAgregar.TabIndex = 1;
@@ -153,8 +154,21 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(367, 388);
+            this.panel1.Size = new System.Drawing.Size(367, 430);
             this.panel1.TabIndex = 9;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerrarGris;
+            this.btnCerrar.Location = new System.Drawing.Point(334, 6);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 15;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // bar
             // 
@@ -167,9 +181,23 @@
             this.bar.TabIndex = 17;
             this.bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bar_MouseDown);
             // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
+            this.btnMinimizar.Location = new System.Drawing.Point(303, 6);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimizar.TabIndex = 16;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.lbID);
             this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.panel3);
@@ -177,9 +205,9 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 64);
+            this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 258);
+            this.groupBox1.Size = new System.Drawing.Size(343, 290);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles del Producto";
@@ -188,7 +216,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel5.Controls.Add(this.comboBoxMedida);
-            this.panel5.Location = new System.Drawing.Point(25, 191);
+            this.panel5.Location = new System.Drawing.Point(25, 222);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(295, 36);
             this.panel5.TabIndex = 11;
@@ -196,86 +224,25 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.nmCantidad);
-            this.panel4.Controls.Add(this.domainUpDownCantidad);
-            this.panel4.Location = new System.Drawing.Point(25, 139);
+            this.panel4.Location = new System.Drawing.Point(25, 170);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(295, 36);
+            this.panel4.Size = new System.Drawing.Size(211, 36);
             this.panel4.TabIndex = 12;
             // 
             // nmCantidad
             // 
-            this.nmCantidad.Location = new System.Drawing.Point(9, 7);
+            this.nmCantidad.Location = new System.Drawing.Point(80, 8);
             this.nmCantidad.Name = "nmCantidad";
             this.nmCantidad.Size = new System.Drawing.Size(120, 21);
             this.nmCantidad.TabIndex = 5;
-            // 
-            // domainUpDownCantidad
-            // 
-            this.domainUpDownCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.domainUpDownCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.domainUpDownCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.domainUpDownCantidad.Items.Add("1");
-            this.domainUpDownCantidad.Items.Add("2");
-            this.domainUpDownCantidad.Items.Add("3");
-            this.domainUpDownCantidad.Items.Add("4");
-            this.domainUpDownCantidad.Items.Add("5");
-            this.domainUpDownCantidad.Items.Add("6");
-            this.domainUpDownCantidad.Items.Add("7");
-            this.domainUpDownCantidad.Items.Add("8");
-            this.domainUpDownCantidad.Items.Add("9");
-            this.domainUpDownCantidad.Items.Add("10");
-            this.domainUpDownCantidad.Items.Add("11");
-            this.domainUpDownCantidad.Items.Add("12");
-            this.domainUpDownCantidad.Items.Add("13");
-            this.domainUpDownCantidad.Items.Add("14");
-            this.domainUpDownCantidad.Items.Add("15");
-            this.domainUpDownCantidad.Items.Add("16");
-            this.domainUpDownCantidad.Items.Add("17");
-            this.domainUpDownCantidad.Items.Add("18");
-            this.domainUpDownCantidad.Items.Add("19");
-            this.domainUpDownCantidad.Items.Add("20");
-            this.domainUpDownCantidad.Items.Add("21");
-            this.domainUpDownCantidad.Items.Add("22");
-            this.domainUpDownCantidad.Items.Add("23");
-            this.domainUpDownCantidad.Items.Add("24");
-            this.domainUpDownCantidad.Items.Add("25");
-            this.domainUpDownCantidad.Items.Add("26");
-            this.domainUpDownCantidad.Items.Add("27");
-            this.domainUpDownCantidad.Items.Add("28");
-            this.domainUpDownCantidad.Items.Add("29");
-            this.domainUpDownCantidad.Items.Add("30");
-            this.domainUpDownCantidad.Items.Add("31");
-            this.domainUpDownCantidad.Items.Add("32");
-            this.domainUpDownCantidad.Items.Add("34");
-            this.domainUpDownCantidad.Items.Add("35");
-            this.domainUpDownCantidad.Items.Add("36");
-            this.domainUpDownCantidad.Items.Add("37");
-            this.domainUpDownCantidad.Items.Add("38");
-            this.domainUpDownCantidad.Items.Add("39");
-            this.domainUpDownCantidad.Items.Add("40");
-            this.domainUpDownCantidad.Items.Add("41");
-            this.domainUpDownCantidad.Items.Add("42");
-            this.domainUpDownCantidad.Items.Add("43");
-            this.domainUpDownCantidad.Items.Add("45");
-            this.domainUpDownCantidad.Items.Add("46");
-            this.domainUpDownCantidad.Items.Add("47");
-            this.domainUpDownCantidad.Items.Add("48");
-            this.domainUpDownCantidad.Items.Add("49");
-            this.domainUpDownCantidad.Items.Add("50");
-            this.domainUpDownCantidad.Location = new System.Drawing.Point(196, 7);
-            this.domainUpDownCantidad.Name = "domainUpDownCantidad";
-            this.domainUpDownCantidad.Size = new System.Drawing.Size(92, 22);
-            this.domainUpDownCantidad.TabIndex = 4;
-            this.domainUpDownCantidad.SelectedItemChanged += new System.EventHandler(this.domainUpDown1_SelectedItemChanged);
-            this.domainUpDownCantidad.Enter += new System.EventHandler(this.domainUpDownCantidad_Enter);
-            this.domainUpDownCantidad.Leave += new System.EventHandler(this.domainUpDownCantidad_Leave);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel3.Controls.Add(this.comboBoxCategoria);
-            this.panel3.Location = new System.Drawing.Point(25, 87);
+            this.panel3.Location = new System.Drawing.Point(25, 118);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(295, 36);
             this.panel3.TabIndex = 11;
@@ -284,7 +251,7 @@
             // 
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Panel2.Controls.Add(this.txtNombre);
-            this.Panel2.Location = new System.Drawing.Point(25, 35);
+            this.Panel2.Location = new System.Drawing.Point(25, 66);
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(295, 36);
             this.Panel2.TabIndex = 10;
@@ -302,37 +269,29 @@
             this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
-            // btnCerrar
+            // lbID
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerrarGris;
-            this.btnCerrar.Location = new System.Drawing.Point(334, 6);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 15;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.lbID.AutoSize = true;
+            this.lbID.Location = new System.Drawing.Point(269, 21);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(47, 15);
+            this.lbID.TabIndex = 13;
+            this.lbID.Text = "label2";
             // 
-            // btnMinimizar
+            // label3
             // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
-            this.btnMinimizar.Location = new System.Drawing.Point(303, 6);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinimizar.TabIndex = 16;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Cantida";
             // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 388);
+            this.ClientSize = new System.Drawing.Size(367, 430);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -340,17 +299,19 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.bar.ResumeLayout(false);
             this.bar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).EndInit();
             this.panel3.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,7 +333,8 @@
         internal System.Windows.Forms.Panel panel3;
         internal System.Windows.Forms.Panel panel4;
         internal System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DomainUpDown domainUpDownCantidad;
         private System.Windows.Forms.NumericUpDown nmCantidad;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lbID;
     }
 }
