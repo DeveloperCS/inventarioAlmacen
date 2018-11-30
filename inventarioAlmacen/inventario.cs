@@ -16,7 +16,7 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             txtBuscar.Text = "Buscar";
-            txtBuscar.ForeColor = Color.LightGray;
+            txtBuscar.ForeColor = Color.FromArgb(210, 210, 210);
         }
 
         DataView miFiltro;
@@ -62,7 +62,7 @@ namespace inventarioAlmacen
             if (txtBuscar.Text == "")
             {
                 txtBuscar.Text = "Buscar";
-                txtBuscar.ForeColor = Color.LightGray;
+                txtBuscar.ForeColor = Color.FromArgb(210, 210, 210);
             }
 
         }
@@ -102,11 +102,19 @@ namespace inventarioAlmacen
                     MessageBox.Show("Exito");
                     consult();
                 }
-                    
-               
-               
+                                
 
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Editar().Show();
         }
     }
 }

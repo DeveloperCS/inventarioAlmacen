@@ -16,12 +16,18 @@ namespace inventarioAlmacen
         public Agregar()
         {
             InitializeComponent();
-            txtNombre.Text = "Nombre";
-            txtNombre.ForeColor = Color.DimGray;
+
+            txtNombre.Text = "Nombre del Articulo";
+            txtNombre.ForeColor = Color.FromArgb(210, 210, 210);
+            domainUpDownCantidad.Text = "Cantidad";
+            domainUpDownCantidad.ForeColor = Color.FromArgb(210, 210, 210);
+            comboBoxCategoria.Text = "Categoria";
+            comboBoxCategoria.ForeColor = Color.FromArgb(210, 210, 210);
+            comboBoxMedida.Text = "Tipo de Medida";
+            comboBoxMedida.ForeColor = Color.FromArgb(210, 210, 210);
+
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            btnMinimizar.Visible = false;
-            
         }
 
         //Redondear esquinas
@@ -47,24 +53,7 @@ namespace inventarioAlmacen
 
         }
 
-        private void txtNombre_Enter(object sender, EventArgs e)
-        {
-            if (txtNombre.Text == "Nombre")
-            {
-                txtNombre.Text = "";
-                txtNombre.ForeColor = Color.DimGray;
-            }
-        }
-
-        private void txtNombre_Leave(object sender, EventArgs e)
-        {
-            if (txtNombre.Text == "")
-            {
-                txtNombre.Text = "Nombre";
-                txtNombre.ForeColor = Color.DimGray;
-            }
-        }
-
+ 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -126,5 +115,113 @@ namespace inventarioAlmacen
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_Enter(object sender, EventArgs e)
+        {
+            foco(8);
+        }
+
+        private void txtNombre_Leave(object sender, EventArgs e)
+        {
+            foco(7);
+        }
+
+        private void comboBoxCategoria_Enter(object sender, EventArgs e)
+        {
+            foco(6);
+        }
+
+        private void comboBoxCategoria_Leave(object sender, EventArgs e)
+        {
+            foco(5);
+        }
+
+        private void domainUpDownCantidad_Enter(object sender, EventArgs e)
+        {
+            foco(4);
+        }
+
+        private void domainUpDownCantidad_Leave(object sender, EventArgs e)
+        {
+            foco(3);
+        }
+
+        private void comboBoxMedida_Enter(object sender, EventArgs e)
+        {
+            foco(1);
+        }
+
+        private void comboBoxMedida_Leave(object sender, EventArgs e)
+        {
+            foco(2);
+        }
+
+        public void foco(int nom)
+        {
+            switch (nom)
+            {
+                case 1:
+                    if (comboBoxMedida.Text == "Tipo de Medida")
+                    {
+                        comboBoxMedida.Text = "";
+                        comboBoxMedida.ForeColor = Color.DimGray;
+                    }
+                    break;
+                case 2:
+                    if (comboBoxMedida.Text == "")
+                    {
+                        comboBoxMedida.Text = "Tipo de Medida";
+                        comboBoxMedida.ForeColor = Color.FromArgb(210, 210, 210);
+                    }
+                    break;
+                case 3:
+                    if (domainUpDownCantidad.Text == "")
+                    {
+                        domainUpDownCantidad.Text = "Cantidad";
+                        domainUpDownCantidad.ForeColor = Color.FromArgb(210, 210, 210);
+                    }
+                    break;
+                case 4:
+                    if (domainUpDownCantidad.Text == "Cantidad")
+                    {
+                        domainUpDownCantidad.Text = "";
+                        domainUpDownCantidad.ForeColor = Color.DimGray;
+                    }
+                    break;
+                case 5:
+                    if (comboBoxCategoria.Text == "")
+                    {
+                        comboBoxCategoria.Text = "Categoria";
+                        comboBoxCategoria.ForeColor = Color.FromArgb(210, 210, 210);
+                    }
+                    break;
+                case 6:
+                    if (comboBoxCategoria.Text == "Categoria")
+                    {
+                        comboBoxCategoria.Text = "";
+                        comboBoxCategoria.ForeColor = Color.DimGray;
+                    }
+                    break;
+                case 7:
+                    if (txtNombre.Text == "")
+                    {
+                        txtNombre.Text = "Nombre del Articulo";
+                        txtNombre.ForeColor = Color.FromArgb(210, 210, 210);
+                    }
+                    break;
+                case 8:
+                    if (txtNombre.Text == "Nombre del Articulo")
+                    {
+                        txtNombre.Text = "";
+                        txtNombre.ForeColor = Color.DimGray;
+                    }
+                    break;
+            }
+                
+        }
     }
 }

@@ -80,6 +80,12 @@
     <Compile Include="Contenedor.Designer.cs">
       <DependentUpon>Contenedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Contenedor.resx">
       <DependentUpon>Contenedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -185,6 +194,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>bdAlmacen.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\user.png" />
     <None Include="Resources\Unidad.png" />
     <None Include="Resources\nombreArticulo.png" />
     <None Include="Resources\prestar.png" />
@@ -194,6 +204,7 @@
     <None Include="Resources\cerr.png" />
     <None Include="Resources\Categoria.png" />
     <None Include="Resources\Cantidad.png" />
+    <None Include="Resources\cerrarGris.png" />
     <Content Include="Resources\inicio.png" />
     <None Include="Resources\inventar.png" />
     <Content Include="Resources\inventario.png" />

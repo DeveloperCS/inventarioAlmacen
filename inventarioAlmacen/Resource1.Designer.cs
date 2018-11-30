@@ -123,6 +123,16 @@ namespace inventarioAlmacen {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cerrarGris {
+            get {
+                object obj = ResourceManager.GetObject("cerrarGris", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dolar {
             get {
                 object obj = ResourceManager.GetObject("dolar", resourceCulture);
@@ -306,6 +316,16 @@ namespace inventarioAlmacen {
         internal static System.Drawing.Bitmap Unidad {
             get {
                 object obj = ResourceManager.GetObject("Unidad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

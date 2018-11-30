@@ -135,5 +135,10 @@ namespace inventarioAlmacen
             button1.BackColor = Color.FromArgb(34, 49, 65);
             button2.BackColor = Color.FromArgb(34, 49, 65);
         }
+
+        private void panelCentral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
