@@ -76,7 +76,7 @@ namespace inventarioAlmacen
             {
                 if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
                 {
-                    qy = "INSERT INTO Articulos values('Ar-0004','"+txtNombre.Text+"','"+comboBoxCategoria.Text+"',10,10,'"+comboBoxMedida.Text+"','N/A')";
+                    qy = "INSERT INTO Articulos values('Ar-0004','"+txtNombre.Text+"','"+comboBoxCategoria.Text+"','"+nmCantidad.Value+"','"+ nmCantidad.Value + "','"+comboBoxMedida.Text+"','N/A')";
                     if (datos.insertar(qy)==true)
                     {
                         MessageBox.Show("Articulo Agregado!!");
@@ -88,7 +88,7 @@ namespace inventarioAlmacen
                 }
                 else if(comboBoxCategoria.Text.Equals("Herramientas y Otros"))
                 {
-                    qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "',10,10,'" + comboBoxMedida.Text + "','Bueno')";
+                    qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','"+ nmCantidad.Value + "','"+ nmCantidad.Value + "','" + comboBoxMedida.Text + "','Bueno')";
                     if (datos.insertar(qy) == true)
                     {
                         MessageBox.Show("Articulo Agregado!!");
@@ -105,7 +105,7 @@ namespace inventarioAlmacen
         {
             txtNombre.Text = "";
             comboBoxCategoria.Text = "";
-            domainUpDownCantidad.Text = "0";
+          //  domainUpDownCantidad.Text = "0";
             comboBoxMedida.Text = "";
         }
 
@@ -179,18 +179,18 @@ namespace inventarioAlmacen
                     }
                     break;
                 case 3:
-                    if (domainUpDownCantidad.Text == "")
+                   /*if (domainUpDownCantidad.Text == "")
                     {
                         domainUpDownCantidad.Text = "Cantidad";
                         domainUpDownCantidad.ForeColor = Color.FromArgb(210, 210, 210);
-                    }
+                    }*/
                     break;
                 case 4:
-                    if (domainUpDownCantidad.Text == "Cantidad")
+                   /* if (domainUpDownCantidad.Text == "Cantidad")
                     {
                         domainUpDownCantidad.Text = "";
                         domainUpDownCantidad.ForeColor = Color.DimGray;
-                    }
+                    }*/
                     break;
                 case 5:
                     if (comboBoxCategoria.Text == "")

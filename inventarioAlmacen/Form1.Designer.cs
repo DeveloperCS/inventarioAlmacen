@@ -96,7 +96,7 @@
             this.Label2.Location = new System.Drawing.Point(188, 315);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(122, 15);
-            this.Label2.TabIndex = 14;
+            this.Label2.TabIndex = 6;
             this.Label2.Text = "Forgot Password?";
             // 
             // CheckBox1
@@ -106,7 +106,7 @@
             this.CheckBox1.Location = new System.Drawing.Point(60, 314);
             this.CheckBox1.Name = "CheckBox1";
             this.CheckBox1.Size = new System.Drawing.Size(121, 19);
-            this.CheckBox1.TabIndex = 13;
+            this.CheckBox1.TabIndex = 5;
             this.CheckBox1.Text = "Remember Me";
             this.CheckBox1.UseVisualStyleBackColor = true;
             // 
@@ -120,7 +120,7 @@
             this.btnSignIn.Location = new System.Drawing.Point(60, 271);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(250, 36);
-            this.btnSignIn.TabIndex = 12;
+            this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
@@ -141,8 +141,9 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(9, 7);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(233, 19);
-            this.txtPassword.TabIndex = 4;
+            this.txtPassword.TabIndex = 3;
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
@@ -154,7 +155,7 @@
             this.Label1.Location = new System.Drawing.Point(130, 114);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(123, 37);
-            this.Label1.TabIndex = 9;
+            this.Label1.TabIndex = 1;
             this.Label1.Text = "Sign In";
             // 
             // Panel2
@@ -174,7 +175,7 @@
             this.txtUser.Location = new System.Drawing.Point(9, 7);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(233, 19);
-            this.txtUser.TabIndex = 4;
+            this.txtUser.TabIndex = 2;
             this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
             this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
