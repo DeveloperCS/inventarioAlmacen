@@ -72,40 +72,49 @@ namespace inventarioAlmacen
         String qy = "";
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea Agregar Producto?","Agrega",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (rec().Equals(false))
             {
-                if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
-                {
-                    qy = "INSERT INTO Articulos values('Ar-0004','"+txtNombre.Text+"','"+comboBoxCategoria.Text+"',10,10,'"+comboBoxMedida.Text+"','N/A')";
-                    if (datos.insertar(qy)==true)
-                    {
-                        MessageBox.Show("Articulo Agregado!!");
-                        limpiar();
-                        //new inventario().consult();
-                        this.Close();
-                       
-                    }
-                }
-                else if(comboBoxCategoria.Text.Equals("Herramientas y Otros"))
-                {
-                    qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "',10,10,'" + comboBoxMedida.Text + "','Bueno')";
-                    if (datos.insertar(qy) == true)
-                    {
-                        MessageBox.Show("Articulo Agregado!!");
-                        limpiar();
-                       // new inventario().consult();
-                        this.Close();
-                       
-                    }
-                }
+                MessageBox.Show("Falto Completar algún Campo \n Verificalos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
 
+
+                if (MessageBox.Show("¿Desea Agregar Producto?", "Agrega", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
+                    {
+                        qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','" + nmCantidad.Value + "','" + nmCantidad.Value + "','" + comboBoxMedida.Text + "','N/A')";
+                        if (datos.insertar(qy) == true)
+                        {
+                            MessageBox.Show("Articulo Agregado!!");
+                            limpiar();
+                            //new inventario().consult();
+                            this.Close();
+
+                        }
+                    }
+                    else if (comboBoxCategoria.Text.Equals("Herramientas y Otros"))
+                    {
+                        qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','" + nmCantidad.Value + "','" + nmCantidad.Value + "','" + comboBoxMedida.Text + "','Bueno')";
+                        if (datos.insertar(qy) == true)
+                        {
+                            MessageBox.Show("Articulo Agregado!!");
+                            limpiar();
+                            // new inventario().consult();
+                            this.Close();
+
+                        }
+                    }
+
+                }
             }
         }
         private void limpiar()
         {
             txtNombre.Text = "";
             comboBoxCategoria.Text = "";
-            domainUpDownCantidad.Text = "0";
+          //  domainUpDownCantidad.Text = "0";
             comboBoxMedida.Text = "";
         }
 
@@ -179,18 +188,18 @@ namespace inventarioAlmacen
                     }
                     break;
                 case 3:
-                    if (domainUpDownCantidad.Text == "")
+                   /*if (domainUpDownCantidad.Text == "")
                     {
                         domainUpDownCantidad.Text = "Cantidad";
                         domainUpDownCantidad.ForeColor = Color.FromArgb(210, 210, 210);
-                    }
+                    }*/
                     break;
                 case 4:
-                    if (domainUpDownCantidad.Text == "Cantidad")
+                   /* if (domainUpDownCantidad.Text == "Cantidad")
                     {
                         domainUpDownCantidad.Text = "";
                         domainUpDownCantidad.ForeColor = Color.DimGray;
-                    }
+                    }*/
                     break;
                 case 5:
                     if (comboBoxCategoria.Text == "")
@@ -217,11 +226,34 @@ namespace inventarioAlmacen
                     if (txtNombre.Text == "Nombre del Articulo")
                     {
                         txtNombre.Text = "";
-                        txtNombre.ForeColor = Color.DimGray;
+                        txtNombre.ForeColor = Color.Red;
                     }
                     break;
             }
                 
+        }
+        // agraga letra mayuscula
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            txtNombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombre.Text);
+            txtNombre.SelectionStart = txtNombre.Text.Length;
+        }
+        //comprobaciones 
+        public bool rec()
+        {
+            bool resT =false;
+            if (comboBoxCategoria.Text !="Categoria"&& txtNombre.Text!="Nombre del Articulo"&& comboBoxMedida.Text!="Tipo de Medida"&&nmCantidad.Value!=0)
+            {
+                
+                resT = true;
+            }
+            else
+            {
+               
+                resT = false;
+            }
+           
+            return resT;
         }
     }
 }
