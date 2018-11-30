@@ -20,7 +20,7 @@ namespace inventarioAlmacen
             txtUser.Text = "Escriba su nombre de usuario";
             txtUser.ForeColor = Color.LightGray;
             txtPassword.Text = "Escriba su contraseña";
-            txtPassword.ForeColor = Color.FromArgb(210, 210, 210);
+            txtPassword.ForeColor = Color.DimGray;
         }
 
         //Redondear esquinas
@@ -76,7 +76,7 @@ namespace inventarioAlmacen
             if (txtPassword.Text == "Escriba su contraseña")
             {
                 txtPassword.Text = "";
-                txtPassword.ForeColor = Color.FromArgb(180, 180, 180);
+                txtPassword.ForeColor = Color.DimGray;
             }
         }
 
