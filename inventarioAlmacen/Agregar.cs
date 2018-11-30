@@ -72,33 +72,42 @@ namespace inventarioAlmacen
         String qy = "";
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea Agregar Producto?","Agrega",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (rec().Equals(false))
             {
-                if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
-                {
-                    qy = "INSERT INTO Articulos values('Ar-0004','"+txtNombre.Text+"','"+comboBoxCategoria.Text+"','"+nmCantidad.Value+"','"+ nmCantidad.Value + "','"+comboBoxMedida.Text+"','N/A')";
-                    if (datos.insertar(qy)==true)
-                    {
-                        MessageBox.Show("Articulo Agregado!!");
-                        limpiar();
-                        //new inventario().consult();
-                        this.Close();
-                       
-                    }
-                }
-                else if(comboBoxCategoria.Text.Equals("Herramientas y Otros"))
-                {
-                    qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','"+ nmCantidad.Value + "','"+ nmCantidad.Value + "','" + comboBoxMedida.Text + "','Bueno')";
-                    if (datos.insertar(qy) == true)
-                    {
-                        MessageBox.Show("Articulo Agregado!!");
-                        limpiar();
-                       // new inventario().consult();
-                        this.Close();
-                       
-                    }
-                }
+                MessageBox.Show("Falto Completar algún Campo \n Verificalos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
 
+
+                if (MessageBox.Show("¿Desea Agregar Producto?", "Agrega", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
+                    {
+                        qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','" + nmCantidad.Value + "','" + nmCantidad.Value + "','" + comboBoxMedida.Text + "','N/A')";
+                        if (datos.insertar(qy) == true)
+                        {
+                            MessageBox.Show("Articulo Agregado!!");
+                            limpiar();
+                            //new inventario().consult();
+                            this.Close();
+
+                        }
+                    }
+                    else if (comboBoxCategoria.Text.Equals("Herramientas y Otros"))
+                    {
+                        qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','" + nmCantidad.Value + "','" + nmCantidad.Value + "','" + comboBoxMedida.Text + "','Bueno')";
+                        if (datos.insertar(qy) == true)
+                        {
+                            MessageBox.Show("Articulo Agregado!!");
+                            limpiar();
+                            // new inventario().consult();
+                            this.Close();
+
+                        }
+                    }
+
+                }
             }
         }
         private void limpiar()
@@ -217,11 +226,34 @@ namespace inventarioAlmacen
                     if (txtNombre.Text == "Nombre del Articulo")
                     {
                         txtNombre.Text = "";
-                        txtNombre.ForeColor = Color.DimGray;
+                        txtNombre.ForeColor = Color.Red;
                     }
                     break;
             }
                 
+        }
+        // agraga letra mayuscula
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            txtNombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombre.Text);
+            txtNombre.SelectionStart = txtNombre.Text.Length;
+        }
+        //comprobaciones 
+        public bool rec()
+        {
+            bool resT =false;
+            if (comboBoxCategoria.Text !="Categoria"&& txtNombre.Text!="Nombre del Articulo"&& comboBoxMedida.Text!="Tipo de Medida"&&nmCantidad.Value!=0)
+            {
+                
+                resT = true;
+            }
+            else
+            {
+               
+                resT = false;
+            }
+           
+            return resT;
         }
     }
 }
