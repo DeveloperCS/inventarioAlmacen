@@ -31,6 +31,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.comboBoxMedida = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,8 +46,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.bar.SuspendLayout();
@@ -103,6 +103,23 @@
             this.label1.Size = new System.Drawing.Size(114, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Articulos";
+            // 
+            // lbID
+            // 
+            this.lbID.Location = new System.Drawing.Point(216, 17);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(100, 23);
+            this.lbID.TabIndex = 0;
+            this.lbID.Text = "ID";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(6, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Cantidad:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // comboBoxCategoria
             // 
@@ -227,12 +244,12 @@
             this.panel4.Controls.Add(this.nmCantidad);
             this.panel4.Location = new System.Drawing.Point(25, 170);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(211, 36);
+            this.panel4.Size = new System.Drawing.Size(248, 36);
             this.panel4.TabIndex = 12;
             // 
             // nmCantidad
             // 
-            this.nmCantidad.Location = new System.Drawing.Point(80, 8);
+            this.nmCantidad.Location = new System.Drawing.Point(112, 7);
             this.nmCantidad.Name = "nmCantidad";
             this.nmCantidad.Size = new System.Drawing.Size(120, 21);
             this.nmCantidad.TabIndex = 5;
@@ -268,32 +285,6 @@
             this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerrarGris;
-            this.btnCerrar.Location = new System.Drawing.Point(334, 6);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 15;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
-            this.btnMinimizar.Location = new System.Drawing.Point(303, 6);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinimizar.TabIndex = 16;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,10 +301,8 @@
             this.bar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).EndInit();
             this.panel3.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
