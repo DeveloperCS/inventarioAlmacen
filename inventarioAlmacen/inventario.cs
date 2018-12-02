@@ -23,9 +23,11 @@ namespace inventarioAlmacen
         Datos dts = new Datos();
         private void inventario_Load(object sender, EventArgs e)
         {
-
-
-            consult();
+            
+            if (rdTodo.Checked ==true)
+            {
+                consult();
+            }
 
             if (datosTabla.Rows.Count<=0)
             {
@@ -114,7 +116,121 @@ namespace inventarioAlmacen
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Editar().Show();
+            Editar ed =new Editar();
+            String id, nom, cat, tipo, edo;
+            int c,c2,cate=0,tipoT=0,est=0;
+
+            id = datosTabla.Rows[datosTabla.CurrentRow.Index].Cells[0].Value.ToString();
+            nom = datosTabla.Rows[datosTabla.CurrentRow.Index].Cells[1].Value.ToString();
+            cat = datosTabla.Rows[datosTabla.CurrentRow.Index].Cells[2].Value.ToString();
+            c = Convert.ToInt32(datosTabla.Rows[datosTabla.CurrentRow.Index].Cells[4].Value.ToString());
+            c2 = Convert.ToInt32(datosTabla.Rows[datosTabla.CurrentRow.Index].Cells[3].Value.ToString());
+            tipo = datosTabla.Rows[datosTabla.CurrentRow.Index].Cells[5].Value.ToString();
+            edo = datosTabla.Rows[datosTabla.CurrentRow.Index].Cells[6].Value.ToString();
+            //Higiene y Limpieza
+            //Herramientas y Otros
+            if (cat.Equals("Higiene y Limpieza")){
+                cate = 0;
+            }
+            else{
+                cate = 1;
+            }
+            /*
+             * kg
+                g
+                L
+                ml
+                unidad
+             */
+
+            switch (tipo)
+            {
+                case "kg":
+                    tipoT = 0;
+                    break;
+                case "g":
+                    tipoT = 1;
+                    break;
+                case "L":
+                    tipoT = 2;
+                    break;
+                case "ml":
+                    tipoT = 3;
+                    break;
+                case "Unidad":
+                    tipoT = 4;
+                    break;
+            }
+            if (edo.Equals("N/A"))
+            {
+                est = 0;
+            }
+            else { est = 1; }
+            if (c>0)
+            {
+                if (MessageBox.Show("Aun tiene la cantidiad suficiente\n \n¿Desea agregar mas ?","Atencion",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ed.labelID.Text = id;
+                    ed.txtNombre.Text = nom;
+                    ed.comboBoxCategoria.SelectedIndex =cate;
+                   // ed.numCant.Value = c;
+                    ed.comboBoxMedida.SelectedIndex = tipoT;
+                    ed.comboBoxEstado.SelectedIndex = est;
+                    ed.cIni(c2);
+                    ed.Show();
+                }
+            }
+            else
+            {
+                ed.labelID.Text = id;
+                ed.txtNombre.Text = nom;
+                ed.comboBoxCategoria.SelectedIndex = cate;
+               // ed.numCant.Value = c;
+                ed.comboBoxMedida.SelectedIndex = tipoT;
+                ed.comboBoxEstado.SelectedIndex = est;
+                //ed.cIni(c2);
+                ed.Show();
+            }
+
+            
+        }
+
+        private void rdHer_CheckedChanged(object sender, EventArgs e)
+        {
+
+            String salida="";
+            String p = "Her";
+                if (salida.Length == 0)
+                {
+                    salida = "(Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%' )";
+                }
+                else
+                {
+                    salida += "AND (Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%')";
+                }
+            
+            this.miFiltro.RowFilter = salida;
+        }
+
+        private void rdHi_CheckedChanged(object sender, EventArgs e)
+        {
+            String salida = "";
+            String p = "Hig";
+            if (salida.Length == 0)
+            {
+                salida = "(Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%' )";
+            }
+            else
+            {
+                salida += "AND (Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%')";
+            }
+
+            this.miFiltro.RowFilter = salida;
+        }
+
+        private void rdTodo_CheckedChanged(object sender, EventArgs e)
+        {
+            consult();
         }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datosTabla = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -40,9 +40,9 @@
             this.bdAlmacenDataSet = new inventarioAlmacen.bdAlmacenDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdHi = new System.Windows.Forms.RadioButton();
+            this.rdHer = new System.Windows.Forms.RadioButton();
+            this.rdTodo = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).BeginInit();
@@ -57,22 +57,22 @@
             // 
             this.datosTabla.AllowUserToAddRows = false;
             this.datosTabla.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.datosTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.datosTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.datosTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datosTabla.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datosTabla.DefaultCellStyle = dataGridViewCellStyle8;
             this.datosTabla.Location = new System.Drawing.Point(12, 116);
             this.datosTabla.Name = "datosTabla";
             this.datosTabla.Size = new System.Drawing.Size(1026, 399);
@@ -164,9 +164,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rdHi);
+            this.groupBox1.Controls.Add(this.rdHer);
+            this.groupBox1.Controls.Add(this.rdTodo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 43);
@@ -177,41 +177,43 @@
             this.groupBox1.Text = "Filtros";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // radioButton3
+            // rdHi
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(287, 26);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(149, 22);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Higiene y Limpieza";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdHi.AutoSize = true;
+            this.rdHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdHi.Location = new System.Drawing.Point(287, 26);
+            this.rdHi.Name = "rdHi";
+            this.rdHi.Size = new System.Drawing.Size(149, 22);
+            this.rdHi.TabIndex = 2;
+            this.rdHi.Text = "Higiene y Limpieza";
+            this.rdHi.UseVisualStyleBackColor = true;
+            this.rdHi.CheckedChanged += new System.EventHandler(this.rdHi_CheckedChanged);
             // 
-            // radioButton2
+            // rdHer
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(104, 27);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(168, 22);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Herramientas y Otros";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdHer.AutoSize = true;
+            this.rdHer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdHer.Location = new System.Drawing.Point(104, 27);
+            this.rdHer.Name = "rdHer";
+            this.rdHer.Size = new System.Drawing.Size(168, 22);
+            this.rdHer.TabIndex = 1;
+            this.rdHer.Text = "Herramientas y Otros";
+            this.rdHer.UseVisualStyleBackColor = true;
+            this.rdHer.CheckedChanged += new System.EventHandler(this.rdHer_CheckedChanged);
             // 
-            // radioButton1
+            // rdTodo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(19, 27);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(61, 22);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Todo";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdTodo.AutoSize = true;
+            this.rdTodo.Checked = true;
+            this.rdTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdTodo.Location = new System.Drawing.Point(19, 27);
+            this.rdTodo.Name = "rdTodo";
+            this.rdTodo.Size = new System.Drawing.Size(61, 22);
+            this.rdTodo.TabIndex = 0;
+            this.rdTodo.TabStop = true;
+            this.rdTodo.Text = "Todo";
+            this.rdTodo.UseVisualStyleBackColor = true;
+            this.rdTodo.CheckedChanged += new System.EventHandler(this.rdTodo_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -275,9 +277,9 @@
         private bdAlmacenDataSet bdAlmacenDataSet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdHi;
+        private System.Windows.Forms.RadioButton rdHer;
+        private System.Windows.Forms.RadioButton rdTodo;
         private System.Windows.Forms.ToolStripMenuItem generarReporteToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
     }

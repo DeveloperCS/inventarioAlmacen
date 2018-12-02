@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventarioAlmacen.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,11 @@ namespace inventarioAlmacen
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+        }
+        int ci = 0;
+        public  void cIni(int c1)
+        {
+            ci = c1;
         }
 
         //Redondear esquinas
@@ -57,7 +63,44 @@ namespace inventarioAlmacen
         {
             this.Close();
         }
+        Datos d = new Datos();
+        String q;
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Editar los Registros?","Editar",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                /*
+	                [IdArticulo] 
+                    [NombreArticulo
+                    [Categoria]
+                    [CantidadInicial
+                    [CantidadAlmacen] 
+	                [TipoMedida] 
+	                [Estado
+                 * 
+                 */
+                
+                if (ci>0)
+                {
+                    ci = ci +Convert.ToInt32( numCant.Value);
+                    q = "UPDATE Articulos Set NombreArticulo='" + txtNombre.Text + "',Categoria='" + comboBoxCategoria.Text + "',CantidadInicial='"+ci+ "',CantidadAlmacen='" + ci + "',TipoMedida='"+comboBoxMedida.Text+"',Estado='"+comboBoxEstado.Text+"'  WHERE IdArticulo='" + labelID.Text + "' ";
+                    //MessageBox.Show(""+ci);
+                }
+                else if(ci==0)
+                {
+                    q = "UPDATE Articulos Set NombreArticulo='" + txtNombre.Text + "',Categoria='" + comboBoxCategoria.Text + "',CantidadInicial='"+numCant.Value+"',CantidadAlmacen='"+numCant.Value+ "',TipoMedida='" + comboBoxMedida.Text + "',Estado='" + comboBoxEstado.Text + "'  WHERE IdArticulo='" + labelID.Text + "' ";
+                }
 
-        
+
+                if (d.update(q)==true)
+                {
+                    MessageBox.Show("Datos Actualizados!!","Exito",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    ci = 0;
+                    this.Close();
+                }
+               
+            }
+            
+        }
     }
 }

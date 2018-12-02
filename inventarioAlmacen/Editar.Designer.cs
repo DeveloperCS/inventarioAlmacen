@@ -30,31 +30,32 @@
         {
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.bar = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelID = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.comboBoxMedida = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.domainUpDownCantidad = new System.Windows.Forms.DomainUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
-            this.labelID = new System.Windows.Forms.Label();
+            this.numCant = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.bar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.Panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numCant)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMinimizar
@@ -81,6 +82,19 @@
             this.bar.Size = new System.Drawing.Size(367, 45);
             this.bar.TabIndex = 22;
             this.bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bar_MouseDown);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerrarGris;
+            this.btnCerrar.Location = new System.Drawing.Point(336, 6);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 17;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -133,6 +147,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles del Producto";
             // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelID.Location = new System.Drawing.Point(22, 33);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(66, 20);
+            this.labelID.TabIndex = 13;
+            this.labelID.Text = "labelID";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.comboBoxEstado);
+            this.panel1.Location = new System.Drawing.Point(25, 273);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(295, 36);
+            this.panel1.TabIndex = 12;
+            // 
+            // comboBoxEstado
+            // 
+            this.comboBoxEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.comboBoxEstado.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBoxEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstado.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxEstado.FormattingEnabled = true;
+            this.comboBoxEstado.Items.AddRange(new object[] {
+            "N/A",
+            "Bueno",
+            "Regular",
+            "Dañado"});
+            this.comboBoxEstado.Location = new System.Drawing.Point(7, 4);
+            this.comboBoxEstado.Name = "comboBoxEstado";
+            this.comboBoxEstado.Size = new System.Drawing.Size(281, 28);
+            this.comboBoxEstado.TabIndex = 6;
+            this.comboBoxEstado.Text = "Estado";
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -153,8 +205,8 @@
             "kg",
             "g",
             "L",
-            "l",
-            "unidad"});
+            "ml",
+            "Unidad"});
             this.comboBoxMedida.Location = new System.Drawing.Point(7, 4);
             this.comboBoxMedida.Name = "comboBoxMedida";
             this.comboBoxMedida.Size = new System.Drawing.Size(281, 28);
@@ -164,70 +216,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel4.Controls.Add(this.domainUpDownCantidad);
+            this.panel4.Controls.Add(this.numCant);
             this.panel4.Location = new System.Drawing.Point(25, 168);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(295, 36);
             this.panel4.TabIndex = 12;
-            // 
-            // domainUpDownCantidad
-            // 
-            this.domainUpDownCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.domainUpDownCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.domainUpDownCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.domainUpDownCantidad.Items.Add("1");
-            this.domainUpDownCantidad.Items.Add("2");
-            this.domainUpDownCantidad.Items.Add("3");
-            this.domainUpDownCantidad.Items.Add("4");
-            this.domainUpDownCantidad.Items.Add("5");
-            this.domainUpDownCantidad.Items.Add("6");
-            this.domainUpDownCantidad.Items.Add("7");
-            this.domainUpDownCantidad.Items.Add("8");
-            this.domainUpDownCantidad.Items.Add("9");
-            this.domainUpDownCantidad.Items.Add("10");
-            this.domainUpDownCantidad.Items.Add("11");
-            this.domainUpDownCantidad.Items.Add("12");
-            this.domainUpDownCantidad.Items.Add("13");
-            this.domainUpDownCantidad.Items.Add("14");
-            this.domainUpDownCantidad.Items.Add("15");
-            this.domainUpDownCantidad.Items.Add("16");
-            this.domainUpDownCantidad.Items.Add("17");
-            this.domainUpDownCantidad.Items.Add("18");
-            this.domainUpDownCantidad.Items.Add("19");
-            this.domainUpDownCantidad.Items.Add("20");
-            this.domainUpDownCantidad.Items.Add("21");
-            this.domainUpDownCantidad.Items.Add("22");
-            this.domainUpDownCantidad.Items.Add("23");
-            this.domainUpDownCantidad.Items.Add("24");
-            this.domainUpDownCantidad.Items.Add("25");
-            this.domainUpDownCantidad.Items.Add("26");
-            this.domainUpDownCantidad.Items.Add("27");
-            this.domainUpDownCantidad.Items.Add("28");
-            this.domainUpDownCantidad.Items.Add("29");
-            this.domainUpDownCantidad.Items.Add("30");
-            this.domainUpDownCantidad.Items.Add("31");
-            this.domainUpDownCantidad.Items.Add("32");
-            this.domainUpDownCantidad.Items.Add("34");
-            this.domainUpDownCantidad.Items.Add("35");
-            this.domainUpDownCantidad.Items.Add("36");
-            this.domainUpDownCantidad.Items.Add("37");
-            this.domainUpDownCantidad.Items.Add("38");
-            this.domainUpDownCantidad.Items.Add("39");
-            this.domainUpDownCantidad.Items.Add("40");
-            this.domainUpDownCantidad.Items.Add("41");
-            this.domainUpDownCantidad.Items.Add("42");
-            this.domainUpDownCantidad.Items.Add("43");
-            this.domainUpDownCantidad.Items.Add("45");
-            this.domainUpDownCantidad.Items.Add("46");
-            this.domainUpDownCantidad.Items.Add("47");
-            this.domainUpDownCantidad.Items.Add("48");
-            this.domainUpDownCantidad.Items.Add("49");
-            this.domainUpDownCantidad.Items.Add("50");
-            this.domainUpDownCantidad.Location = new System.Drawing.Point(8, 7);
-            this.domainUpDownCantidad.Name = "domainUpDownCantidad";
-            this.domainUpDownCantidad.Size = new System.Drawing.Size(280, 22);
-            this.domainUpDownCantidad.TabIndex = 4;
-            this.domainUpDownCantidad.Text = "Cantidad";
             // 
             // panel3
             // 
@@ -270,6 +263,7 @@
             this.btnAgregar.TabIndex = 20;
             this.btnAgregar.Text = "Guardar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
@@ -288,56 +282,12 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnCerrar
+            // numCant
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerrarGris;
-            this.btnCerrar.Location = new System.Drawing.Point(336, 6);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 17;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel1.Controls.Add(this.comboBoxEstado);
-            this.panel1.Location = new System.Drawing.Point(25, 273);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(295, 36);
-            this.panel1.TabIndex = 12;
-            // 
-            // comboBoxEstado
-            // 
-            this.comboBoxEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.comboBoxEstado.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBoxEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEstado.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxEstado.FormattingEnabled = true;
-            this.comboBoxEstado.Items.AddRange(new object[] {
-            "N/A",
-            "Bueno",
-            "Regular",
-            "Dañado"});
-            this.comboBoxEstado.Location = new System.Drawing.Point(7, 4);
-            this.comboBoxEstado.Name = "comboBoxEstado";
-            this.comboBoxEstado.Size = new System.Drawing.Size(281, 28);
-            this.comboBoxEstado.TabIndex = 6;
-            this.comboBoxEstado.Text = "Estado";
-            // 
-            // labelID
-            // 
-            this.labelID.AutoSize = true;
-            this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.Location = new System.Drawing.Point(22, 33);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(66, 20);
-            this.labelID.TabIndex = 13;
-            this.labelID.Text = "labelID";
+            this.numCant.Location = new System.Drawing.Point(154, 4);
+            this.numCant.Name = "numCant";
+            this.numCant.Size = new System.Drawing.Size(120, 21);
+            this.numCant.TabIndex = 0;
             // 
             // Editar
             // 
@@ -355,15 +305,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.bar.ResumeLayout(false);
             this.bar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numCant)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,18 +326,18 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Panel Panel2;
-        internal System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox comboBoxMedida;
         internal System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DomainUpDown domainUpDownCantidad;
         internal System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboBoxCategoria;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label labelID;
         internal System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBoxEstado;
+        public System.Windows.Forms.NumericUpDown numCant;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.ComboBox comboBoxMedida;
+        public System.Windows.Forms.ComboBox comboBoxCategoria;
+        public System.Windows.Forms.Label labelID;
+        public System.Windows.Forms.ComboBox comboBoxEstado;
     }
 }
