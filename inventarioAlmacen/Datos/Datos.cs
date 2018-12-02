@@ -40,7 +40,7 @@ namespace inventarioAlmacen.Funciones
             return ds1;
 
         }
-        /* public SqlDataReader consultaCB(string qr1)
+       /* public SqlDataReader consultaCB(string qr1)
          {
              //generamos la conexion
              SqlConnection conn = new SqlConnection(cadena);
@@ -67,6 +67,35 @@ namespace inventarioAlmacen.Funciones
              }
              return daR;
          }*/
+        #endregion
+        #region Sp
+        public DataTable spID(String SP)
+        {
+            // DataSet ds1 = new DataSet();
+            DataTable dt = new DataTable();
+
+            SqlConnection conn = new SqlConnection(cadena);
+
+            try
+            {
+                conn.Open();
+                //ejecuta la instruccion
+                SqlCommand command = new SqlCommand(SP, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                da.Fill(dt);
+
+            }
+            catch (Exception s)
+            {
+                // MessageBox.Show(s.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
         #endregion
 
         #region insertar
@@ -151,5 +180,7 @@ namespace inventarioAlmacen.Funciones
 
         }
         #endregion
+
+        
     }
 }

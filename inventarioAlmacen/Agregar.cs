@@ -84,7 +84,7 @@ namespace inventarioAlmacen
                 {
                     if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
                     {
-                        qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','" + nmCantidad.Value + "','" + nmCantidad.Value + "','" + comboBoxMedida.Text + "','N/A')";
+                        qy = "INSERT INTO Articulos values('"+lbID.Text+"','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','" + nmCantidad.Value + "','" + nmCantidad.Value + "','" + comboBoxMedida.Text + "','N/A')";
                         if (datos.insertar(qy) == true)
                         {
                             MessageBox.Show("Articulo Agregado!!");
@@ -96,7 +96,7 @@ namespace inventarioAlmacen
                     }
                     else if (comboBoxCategoria.Text.Equals("Herramientas y Otros"))
                     {
-                        qy = "INSERT INTO Articulos values('Ar-0004','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','" + nmCantidad.Value + "','" + nmCantidad.Value + "','" + comboBoxMedida.Text + "','Bueno')";
+                        qy = "INSERT INTO Articulos values('"+lbID.Text+"','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','" + nmCantidad.Value + "','" + nmCantidad.Value + "','" + comboBoxMedida.Text + "','Bueno')";
                         if (datos.insertar(qy) == true)
                         {
                             MessageBox.Show("Articulo Agregado!!");
@@ -259,6 +259,19 @@ namespace inventarioAlmacen
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Agregar_Load(object sender, EventArgs e)
+        {
+            String id = "";
+            DataTable dt = new DataTable();
+            dt = datos.spID("AGIDA");
+            
+            foreach(DataRow row in dt.Rows)
+            {
+                id = row[1].ToString();
+            }
+            lbID.Text = "Ar-" + id;
         }
     }
 }
