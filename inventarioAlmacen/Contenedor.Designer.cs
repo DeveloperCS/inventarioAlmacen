@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contenedor));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.colorEs = new System.Windows.Forms.Panel();
             this.btnPrestamos = new System.Windows.Forms.Button();
             this.btnInv = new System.Windows.Forms.Button();
             this.btnIni = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
             this.txtTituloBar = new System.Windows.Forms.Label();
@@ -41,13 +44,11 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelCentral = new System.Windows.Forms.Panel();
             this.panelInicio = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelUser = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -59,12 +60,34 @@
             this.panelMenu.Controls.Add(this.btnPrestamos);
             this.panelMenu.Controls.Add(this.btnInv);
             this.panelMenu.Controls.Add(this.btnIni);
-            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Location = new System.Drawing.Point(0, 70);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 580);
             this.panelMenu.TabIndex = 0;
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelUser.Location = new System.Drawing.Point(118, 36);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(74, 24);
+            this.labelUser.TabIndex = 7;
+            this.labelUser.Text = "Usuario";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::inventarioAlmacen.Resource1.user;
+            this.pictureBox1.Location = new System.Drawing.Point(53, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // colorEs
             // 
@@ -141,27 +164,27 @@
             this.btnIni.UseVisualStyleBackColor = true;
             this.btnIni.Click += new System.EventHandler(this.btnIni_Click);
             // 
-            // button1
+            // btnReportes
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::inventarioAlmacen.Resource1.item;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 280);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(250, 60);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "     Item2";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportes.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.Image = global::inventarioAlmacen.Resource1.item;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 280);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(250, 60);
+            this.btnReportes.TabIndex = 4;
+            this.btnReportes.Text = "     Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -251,28 +274,6 @@
             this.panelInicio.Size = new System.Drawing.Size(250, 70);
             this.panelInicio.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::inventarioAlmacen.Resource1.user;
-            this.pictureBox1.Location = new System.Drawing.Point(53, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.labelUser.Location = new System.Drawing.Point(118, 36);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(74, 24);
-            this.labelUser.TabIndex = 7;
-            this.labelUser.Text = "Usuario";
-            // 
             // Contenedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,6 +285,7 @@
             this.Controls.Add(this.panelBarraSuperior);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Contenedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -291,11 +293,11 @@
             this.Load += new System.EventHandler(this.Contenedor_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelBarraSuperior.ResumeLayout(false);
             this.panelBarraSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,7 +315,7 @@
         private System.Windows.Forms.Label txtTituloBar;
         private System.Windows.Forms.Button btnIni;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Panel panelInicio;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -12,6 +12,7 @@ namespace inventarioAlmacen
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace inventarioAlmacen
             txtUser.Text = "Escriba su nombre de usuario";
             txtUser.ForeColor = Color.LightGray;
             txtPassword.Text = "Escriba su contraseña";
-            txtPassword.ForeColor = Color.FromArgb(210, 210, 210);
+            txtPassword.ForeColor = Color.LightGray;
         }
 
         //Redondear esquinas
@@ -76,7 +77,8 @@ namespace inventarioAlmacen
             if (txtPassword.Text == "Escriba su contraseña")
             {
                 txtPassword.Text = "";
-                txtPassword.ForeColor = Color.FromArgb(180, 180, 180);
+                txtPassword.ForeColor = Color.DimGray;
+                
             }
         }
 
@@ -85,7 +87,7 @@ namespace inventarioAlmacen
             if (txtPassword.Text == "")
             {
                 txtPassword.Text = "Escriba su contraseña";
-                txtPassword.ForeColor = Color.FromArgb(210, 210, 210);
+                txtPassword.ForeColor = Color.LightGray;
             }
         }
 

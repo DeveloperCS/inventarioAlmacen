@@ -116,8 +116,8 @@ namespace inventarioAlmacen
         {
             retornarColor();
             txtTituloBar.Text = "Item2";
-            colorEs.Location = new Point(-3, button1.Location.Y);
-            button1.BackColor = Color.FromArgb(83, 164, 227);
+            colorEs.Location = new Point(-3, btnReportes.Location.Y);
+            btnReportes.BackColor = Color.FromArgb(83, 164, 227);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace inventarioAlmacen
             btnIni.BackColor = Color.FromArgb(34, 49, 65);
             btnInv.BackColor = Color.FromArgb(34, 49, 65);
             btnPrestamos.BackColor = Color.FromArgb(34, 49, 65);
-            button1.BackColor = Color.FromArgb(34, 49, 65);
+            btnReportes.BackColor = Color.FromArgb(34, 49, 65);
             button2.BackColor = Color.FromArgb(34, 49, 65);
         }
 

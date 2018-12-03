@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.bar = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -41,35 +39,25 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.comboBoxMedida = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.numCant = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.numCant = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.bar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.Panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCant)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
-            this.btnMinimizar.Location = new System.Drawing.Point(305, 3);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinimizar.TabIndex = 16;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // bar
             // 
@@ -82,19 +70,6 @@
             this.bar.Size = new System.Drawing.Size(367, 45);
             this.bar.TabIndex = 22;
             this.bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bar_MouseDown);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerrarGris;
-            this.btnCerrar.Location = new System.Drawing.Point(336, 6);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 17;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -126,7 +101,8 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(273, 19);
             this.txtNombre.TabIndex = 4;
-            this.txtNombre.Text = "Nombre";
+            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
+            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
             // groupBox1
             // 
@@ -183,7 +159,8 @@
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(281, 28);
             this.comboBoxEstado.TabIndex = 6;
-            this.comboBoxEstado.Text = "Estado";
+            this.comboBoxEstado.Enter += new System.EventHandler(this.comboBoxEstado_Enter);
+            this.comboBoxEstado.Leave += new System.EventHandler(this.comboBoxEstado_Leave);
             // 
             // panel5
             // 
@@ -211,16 +188,26 @@
             this.comboBoxMedida.Name = "comboBoxMedida";
             this.comboBoxMedida.Size = new System.Drawing.Size(281, 28);
             this.comboBoxMedida.TabIndex = 7;
-            this.comboBoxMedida.Text = "Tipo de medida";
+            this.comboBoxMedida.Enter += new System.EventHandler(this.comboBoxMedida_Enter);
+            this.comboBoxMedida.Leave += new System.EventHandler(this.comboBoxMedida_Leave);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.numCant);
             this.panel4.Location = new System.Drawing.Point(25, 168);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(295, 36);
             this.panel4.TabIndex = 12;
+            // 
+            // numCant
+            // 
+            this.numCant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.numCant.Location = new System.Drawing.Point(164, 7);
+            this.numCant.Name = "numCant";
+            this.numCant.Size = new System.Drawing.Size(120, 21);
+            this.numCant.TabIndex = 0;
             // 
             // panel3
             // 
@@ -246,7 +233,8 @@
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(281, 28);
             this.comboBoxCategoria.TabIndex = 6;
-            this.comboBoxCategoria.Text = "Categoria";
+            this.comboBoxCategoria.Enter += new System.EventHandler(this.comboBoxCategoria_Enter);
+            this.comboBoxCategoria.Leave += new System.EventHandler(this.comboBoxCategoria_Leave);
             // 
             // btnAgregar
             // 
@@ -282,12 +270,41 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // numCant
+            // label2
             // 
-            this.numCant.Location = new System.Drawing.Point(154, 4);
-            this.numCant.Name = "numCant";
-            this.numCant.Size = new System.Drawing.Size(120, 21);
-            this.numCant.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Cantidad:";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerr;
+            this.btnCerrar.Location = new System.Drawing.Point(336, 6);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 17;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
+            this.btnMinimizar.Location = new System.Drawing.Point(305, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimizar.TabIndex = 16;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // Editar
             // 
@@ -302,10 +319,8 @@
             this.Name = "Editar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar";
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.bar.ResumeLayout(false);
             this.bar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -313,8 +328,11 @@
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCant)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +357,6 @@
         public System.Windows.Forms.ComboBox comboBoxCategoria;
         public System.Windows.Forms.Label labelID;
         public System.Windows.Forms.ComboBox comboBoxEstado;
+        private System.Windows.Forms.Label label2;
     }
 }

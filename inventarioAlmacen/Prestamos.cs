@@ -30,5 +30,10 @@ namespace inventarioAlmacen
         {
             new Clave().Show();
         }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EditarPedido().Show();
+        }
     }
 }

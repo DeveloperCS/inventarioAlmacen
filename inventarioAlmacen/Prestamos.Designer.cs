@@ -121,6 +121,7 @@
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(86, 28);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // Prestamos
             // 

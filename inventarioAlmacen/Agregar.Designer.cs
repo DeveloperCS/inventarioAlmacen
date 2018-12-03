@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregar));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -116,7 +117,8 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(6, 5);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 23);
             this.label3.TabIndex = 0;
@@ -253,6 +255,7 @@
             // nmCantidad
             // 
             this.nmCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nmCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.nmCantidad.Location = new System.Drawing.Point(112, 7);
             this.nmCantidad.Name = "nmCantidad";
             this.nmCantidad.Size = new System.Drawing.Size(120, 21);
@@ -296,6 +299,7 @@
             this.ClientSize = new System.Drawing.Size(367, 430);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Agregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar";

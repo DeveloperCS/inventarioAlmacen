@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clave));
             this.lbID = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -64,6 +65,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(9, 6);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.PasswordChar = '•';
             this.txtNombre.Size = new System.Drawing.Size(141, 24);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
@@ -114,6 +116,7 @@
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Clave";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clave";
