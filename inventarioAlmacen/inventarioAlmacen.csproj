@@ -66,6 +66,12 @@
     <Compile Include="Agregar.Designer.cs">
       <DependentUpon>Agregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="agregarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agregarPedido.Designer.cs">
+      <DependentUpon>agregarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="bdAlmacenDataSet.cs">
       <DependentUpon>bdAlmacenDataSet.xsd</DependentUpon>
     </Compile>
@@ -73,6 +79,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>bdAlmacenDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clave.Designer.cs">
+      <DependentUpon>Clave.cs</DependentUpon>
     </Compile>
     <Compile Include="Contenedor.cs">
       <SubType>Form</SubType>
@@ -121,6 +133,12 @@
     </Compile>
     <EmbeddedResource Include="Agregar.resx">
       <DependentUpon>Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agregarPedido.resx">
+      <DependentUpon>agregarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clave.resx">
+      <DependentUpon>Clave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contenedor.resx">
       <DependentUpon>Contenedor.cs</DependentUpon>

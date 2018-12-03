@@ -29,109 +29,128 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prestamos));
-            this.dgv_ProductosPedidos = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dud_cantidad = new System.Windows.Forms.DomainUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cb_personal = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_pedido = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProductosPedidos)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnPrestar = new System.Windows.Forms.Button();
+            this.lbID = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgv_ProductosPedidos
+            // dataGridView1
             // 
-            this.dgv_ProductosPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ProductosPedidos.Location = new System.Drawing.Point(26, 153);
-            this.dgv_ProductosPedidos.Name = "dgv_ProductosPedidos";
-            this.dgv_ProductosPedidos.Size = new System.Drawing.Size(418, 150);
-            this.dgv_ProductosPedidos.TabIndex = 6;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(43, 129);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(945, 335);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // label3
+            // btnPrestar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(201, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Lts/Pza";
+            this.btnPrestar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
+            this.btnPrestar.FlatAppearance.BorderSize = 0;
+            this.btnPrestar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnPrestar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnPrestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrestar.ForeColor = System.Drawing.Color.White;
+            this.btnPrestar.Location = new System.Drawing.Point(729, 492);
+            this.btnPrestar.Name = "btnPrestar";
+            this.btnPrestar.Size = new System.Drawing.Size(259, 47);
+            this.btnPrestar.TabIndex = 2;
+            this.btnPrestar.Text = "Prestar";
+            this.btnPrestar.UseVisualStyleBackColor = false;
+            this.btnPrestar.Click += new System.EventHandler(this.btnPrestar_Click);
             // 
-            // dud_cantidad
+            // lbID
             // 
-            this.dud_cantidad.Location = new System.Drawing.Point(133, 73);
-            this.dud_cantidad.Name = "dud_cantidad";
-            this.dud_cantidad.Size = new System.Drawing.Size(47, 20);
-            this.dud_cantidad.TabIndex = 3;
+            this.lbID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.lbID.Location = new System.Drawing.Point(39, 103);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(177, 23);
+            this.lbID.TabIndex = 3;
+            this.lbID.Text = "Lista de Articulos";
             // 
-            // label1
+            // menuStrip1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cantidad";
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productoToolStripMenuItem,
+            this.eliminarToolStripMenuItem,
+            this.editarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1034, 32);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // cb_personal
+            // productoToolStripMenuItem
             // 
-            this.cb_personal.FormattingEnabled = true;
-            this.cb_personal.Location = new System.Drawing.Point(133, 27);
-            this.cb_personal.Name = "cb_personal";
-            this.cb_personal.Size = new System.Drawing.Size(121, 21);
-            this.cb_personal.TabIndex = 0;
+            this.productoToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.productoToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.if_plus_1646001;
+            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(106, 28);
+            this.productoToolStripMenuItem.Text = "Agregar";
+            this.productoToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
-            // label2
+            // eliminarToolStripMenuItem
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Personal";
+            this.eliminarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.eliminarToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.if_error_1646012;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(106, 28);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
-            // btn_pedido
+            // editarToolStripMenuItem
             // 
-            this.btn_pedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(240)))), ((int)(((byte)(179)))));
-            this.btn_pedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pedido.Location = new System.Drawing.Point(313, 116);
-            this.btn_pedido.Name = "btn_pedido";
-            this.btn_pedido.Size = new System.Drawing.Size(131, 31);
-            this.btn_pedido.TabIndex = 5;
-            this.btn_pedido.Text = "Pedir";
-            this.btn_pedido.UseVisualStyleBackColor = false;
+            this.editarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.editarToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.icons8_sincronizar_64;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(86, 28);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Prestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 315);
-            this.Controls.Add(this.dgv_ProductosPedidos);
-            this.Controls.Add(this.btn_pedido);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dud_cantidad);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cb_personal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(1034, 562);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.lbID);
+            this.Controls.Add(this.btnPrestar);
+            this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Prestamos";
             this.Text = "Prestamos";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProductosPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgv_ProductosPedidos;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DomainUpDown dud_cantidad;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cb_personal;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_pedido;
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnPrestar;
+        public System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
     }
 }

@@ -18,13 +18,11 @@ namespace inventarioAlmacen
             InitializeComponent();
 
             txtNombre.Text = "Nombre del Articulo";
-            txtNombre.ForeColor = Color.FromArgb(210, 210, 210);
-            //domainUpDownCantidad.Text = "Cantidad";
-            //domainUpDownCantidad.ForeColor = Color.FromArgb(210, 210, 210);
+            txtNombre.ForeColor = Color.LightGray;
             comboBoxCategoria.Text = "Categoria";
-            comboBoxCategoria.ForeColor = Color.FromArgb(210, 210, 210);
+            comboBoxCategoria.ForeColor = Color.LightGray;
             comboBoxMedida.Text = "Tipo de Medida";
-            comboBoxMedida.ForeColor = Color.FromArgb(210, 210, 210);
+            comboBoxMedida.ForeColor = Color.LightGray;
 
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -48,12 +46,6 @@ namespace inventarioAlmacen
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-        }
-
- 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -129,24 +121,25 @@ namespace inventarioAlmacen
 
         }
 
-        private void txtNombre_Enter(object sender, EventArgs e)
-        {
-            foco(8);
-        }
-
-        private void txtNombre_Leave(object sender, EventArgs e)
-        {
-            foco(7);
-        }
-
-        private void comboBoxCategoria_Enter(object sender, EventArgs e)
+        private void txtNombre_Enter_1(object sender, EventArgs e)
         {
             foco(6);
         }
 
-        private void comboBoxCategoria_Leave(object sender, EventArgs e)
+        private void txtNombre_Leave_1(object sender, EventArgs e)
         {
             foco(5);
+        }
+
+
+        private void comboBoxCategoria_Enter(object sender, EventArgs e)
+        {
+            foco(4);
+        }
+
+        private void comboBoxCategoria_Leave(object sender, EventArgs e)
+        {
+            foco(3);
         }
 
         private void domainUpDownCantidad_Enter(object sender, EventArgs e)
@@ -184,51 +177,38 @@ namespace inventarioAlmacen
                     if (comboBoxMedida.Text == "")
                     {
                         comboBoxMedida.Text = "Tipo de Medida";
-                        comboBoxMedida.ForeColor = Color.FromArgb(210, 210, 210);
+                        comboBoxMedida.ForeColor = Color.LightGray;
                     }
                     break;
                 case 3:
-                   /*if (domainUpDownCantidad.Text == "")
-                    {
-                        domainUpDownCantidad.Text = "Cantidad";
-                        domainUpDownCantidad.ForeColor = Color.FromArgb(210, 210, 210);
-                    }*/
-                    break;
-                case 4:
-                   /* if (domainUpDownCantidad.Text == "Cantidad")
-                    {
-                        domainUpDownCantidad.Text = "";
-                        domainUpDownCantidad.ForeColor = Color.DimGray;
-                    }*/
-                    break;
-                case 5:
                     if (comboBoxCategoria.Text == "")
                     {
                         comboBoxCategoria.Text = "Categoria";
-                        comboBoxCategoria.ForeColor = Color.FromArgb(210, 210, 210);
+                        comboBoxCategoria.ForeColor = Color.LightGray;
                     }
                     break;
-                case 6:
+                case 4:
                     if (comboBoxCategoria.Text == "Categoria")
                     {
                         comboBoxCategoria.Text = "";
                         comboBoxCategoria.ForeColor = Color.DimGray;
                     }
                     break;
-                case 7:
+                case 5:
                     if (txtNombre.Text == "")
                     {
                         txtNombre.Text = "Nombre del Articulo";
-                        txtNombre.ForeColor = Color.FromArgb(210, 210, 210);
+                        txtNombre.ForeColor = Color.LightGray;
                     }
                     break;
-                case 8:
+                case 6:
                     if (txtNombre.Text == "Nombre del Articulo")
                     {
                         txtNombre.Text = "";
-                        txtNombre.ForeColor = Color.Red;
+                        txtNombre.ForeColor = Color.DimGray;
                     }
                     break;
+
             }
                 
         }
@@ -238,6 +218,7 @@ namespace inventarioAlmacen
             txtNombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombre.Text);
             txtNombre.SelectionStart = txtNombre.Text.Length;
         }
+
         //comprobaciones 
         public bool rec()
         {
@@ -273,5 +254,8 @@ namespace inventarioAlmacen
             }
             lbID.Text = "Ar-" + id;
         }
+
+       
+        
     }
 }

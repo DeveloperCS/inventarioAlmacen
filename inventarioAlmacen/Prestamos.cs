@@ -16,5 +16,19 @@ namespace inventarioAlmacen
             InitializeComponent();
         }
 
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new agregarPedido().Show();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrestar_Click(object sender, EventArgs e)
+        {
+            new Clave().Show();
+        }
     }
 }

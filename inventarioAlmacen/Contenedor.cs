@@ -104,6 +104,7 @@ namespace inventarioAlmacen
 
         private void btnPrestamos_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new Prestamos());
             retornarColor();
             txtTituloBar.Text = "Prestamos";
             /*cambiar de posucion la barra de color*/

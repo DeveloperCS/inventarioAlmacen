@@ -36,8 +36,8 @@
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.comboBoxMedida = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.bar = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -47,8 +47,8 @@
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.bar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -61,6 +61,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.DimGray;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightBlue;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
@@ -78,6 +79,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
@@ -124,7 +126,7 @@
             // comboBoxCategoria
             // 
             this.comboBoxCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.comboBoxCategoria.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBoxCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCategoria.ForeColor = System.Drawing.Color.DimGray;
@@ -142,6 +144,7 @@
             // comboBoxMedida
             // 
             this.comboBoxMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.comboBoxMedida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMedida.ForeColor = System.Drawing.Color.DimGray;
@@ -162,7 +165,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.bar);
@@ -173,22 +175,10 @@
             this.panel1.Size = new System.Drawing.Size(367, 430);
             this.panel1.TabIndex = 9;
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerrarGris;
-            this.btnCerrar.Location = new System.Drawing.Point(334, 6);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 15;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // bar
             // 
             this.bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
+            this.bar.Controls.Add(this.btnCerrar);
             this.bar.Controls.Add(this.btnMinimizar);
             this.bar.Controls.Add(this.label1);
             this.bar.Location = new System.Drawing.Point(0, 0);
@@ -196,6 +186,19 @@
             this.bar.Size = new System.Drawing.Size(367, 45);
             this.bar.TabIndex = 17;
             this.bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bar_MouseDown);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerr;
+            this.btnCerrar.Location = new System.Drawing.Point(332, 9);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 15;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnMinimizar
             // 
@@ -249,6 +252,7 @@
             // 
             // nmCantidad
             // 
+            this.nmCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nmCantidad.Location = new System.Drawing.Point(112, 7);
             this.nmCantidad.Name = "nmCantidad";
             this.nmCantidad.Size = new System.Drawing.Size(120, 21);
@@ -279,11 +283,11 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(9, 8);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(273, 19);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.Size = new System.Drawing.Size(279, 19);
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
-            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
+            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter_1);
+            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave_1);
             // 
             // Agregar
             // 
@@ -297,9 +301,9 @@
             this.Text = "Agregar";
             this.Load += new System.EventHandler(this.Agregar_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.bar.ResumeLayout(false);
             this.bar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -321,16 +325,16 @@
         private System.Windows.Forms.ComboBox comboBoxMedida;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnMinimizar;
-        private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Panel bar;
         private System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.Panel Panel2;
-        internal System.Windows.Forms.TextBox txtNombre;
         internal System.Windows.Forms.Panel panel3;
         internal System.Windows.Forms.Panel panel4;
         internal System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.NumericUpDown nmCantidad;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }
