@@ -31,24 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contenedor));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.labelUser = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.colorEs = new System.Windows.Forms.Panel();
+            this.panelBarraSuperior = new System.Windows.Forms.Panel();
+            this.txtTituloBar = new System.Windows.Forms.Label();
+            this.panelCentral = new System.Windows.Forms.Panel();
+            this.panelInicio = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPrestamos = new System.Windows.Forms.Button();
             this.btnInv = new System.Windows.Forms.Button();
             this.btnIni = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panelBarraSuperior = new System.Windows.Forms.Panel();
-            this.txtTituloBar = new System.Windows.Forms.Label();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.panelCentral = new System.Windows.Forms.Panel();
-            this.panelInicio = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBarraSuperior.SuspendLayout();
+            this.panelInicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -79,6 +82,91 @@
             this.labelUser.TabIndex = 7;
             this.labelUser.Text = "Usuario";
             // 
+            // colorEs
+            // 
+            this.colorEs.BackColor = System.Drawing.Color.Aqua;
+            this.colorEs.Location = new System.Drawing.Point(1, 100);
+            this.colorEs.Name = "colorEs";
+            this.colorEs.Size = new System.Drawing.Size(10, 60);
+            this.colorEs.TabIndex = 2;
+            // 
+            // panelBarraSuperior
+            // 
+            this.panelBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
+            this.panelBarraSuperior.Controls.Add(this.txtTituloBar);
+            this.panelBarraSuperior.Controls.Add(this.btnMinimizar);
+            this.panelBarraSuperior.Controls.Add(this.btnCerrar);
+            this.panelBarraSuperior.Location = new System.Drawing.Point(250, 0);
+            this.panelBarraSuperior.Name = "panelBarraSuperior";
+            this.panelBarraSuperior.Size = new System.Drawing.Size(1050, 70);
+            this.panelBarraSuperior.TabIndex = 1;
+            this.panelBarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraSuperior_MouseDown);
+            // 
+            // txtTituloBar
+            // 
+            this.txtTituloBar.AutoSize = true;
+            this.txtTituloBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTituloBar.ForeColor = System.Drawing.Color.White;
+            this.txtTituloBar.Location = new System.Drawing.Point(96, 20);
+            this.txtTituloBar.Name = "txtTituloBar";
+            this.txtTituloBar.Size = new System.Drawing.Size(99, 33);
+            this.txtTituloBar.TabIndex = 2;
+            this.txtTituloBar.Text = "label1";
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.panelCentral.Location = new System.Drawing.Point(250, 70);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(1050, 580);
+            this.panelCentral.TabIndex = 2;
+            this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentral_Paint);
+            // 
+            // panelInicio
+            // 
+            this.panelInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.panelInicio.Controls.Add(this.pictureBox2);
+            this.panelInicio.Location = new System.Drawing.Point(0, 0);
+            this.panelInicio.Name = "panelInicio";
+            this.panelInicio.Size = new System.Drawing.Size(250, 70);
+            this.panelInicio.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::inventarioAlmacen.Resource1.logoContenedor;
+            this.pictureBox2.Location = new System.Drawing.Point(37, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(185, 70);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
+            this.btnMinimizar.Location = new System.Drawing.Point(982, 12);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimizar.TabIndex = 1;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerr;
+            this.btnCerrar.Location = new System.Drawing.Point(1013, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::inventarioAlmacen.Resource1.user;
@@ -88,14 +176,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // colorEs
-            // 
-            this.colorEs.BackColor = System.Drawing.Color.Aqua;
-            this.colorEs.Location = new System.Drawing.Point(1, 100);
-            this.colorEs.Name = "colorEs";
-            this.colorEs.Size = new System.Drawing.Size(10, 60);
-            this.colorEs.TabIndex = 2;
             // 
             // btnPrestamos
             // 
@@ -208,72 +288,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // panelBarraSuperior
-            // 
-            this.panelBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
-            this.panelBarraSuperior.Controls.Add(this.txtTituloBar);
-            this.panelBarraSuperior.Controls.Add(this.btnMinimizar);
-            this.panelBarraSuperior.Controls.Add(this.btnCerrar);
-            this.panelBarraSuperior.Location = new System.Drawing.Point(250, 0);
-            this.panelBarraSuperior.Name = "panelBarraSuperior";
-            this.panelBarraSuperior.Size = new System.Drawing.Size(1050, 70);
-            this.panelBarraSuperior.TabIndex = 1;
-            this.panelBarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraSuperior_MouseDown);
-            // 
-            // txtTituloBar
-            // 
-            this.txtTituloBar.AutoSize = true;
-            this.txtTituloBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTituloBar.ForeColor = System.Drawing.Color.White;
-            this.txtTituloBar.Location = new System.Drawing.Point(96, 20);
-            this.txtTituloBar.Name = "txtTituloBar";
-            this.txtTituloBar.Size = new System.Drawing.Size(99, 33);
-            this.txtTituloBar.TabIndex = 2;
-            this.txtTituloBar.Text = "label1";
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
-            this.btnMinimizar.Location = new System.Drawing.Point(982, 12);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinimizar.TabIndex = 1;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerr;
-            this.btnCerrar.Location = new System.Drawing.Point(1013, 12);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.panelCentral.Location = new System.Drawing.Point(250, 70);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(1050, 580);
-            this.panelCentral.TabIndex = 2;
-            this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentral_Paint);
-            // 
-            // panelInicio
-            // 
-            this.panelInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.panelInicio.Location = new System.Drawing.Point(0, 0);
-            this.panelInicio.Name = "panelInicio";
-            this.panelInicio.Size = new System.Drawing.Size(250, 70);
-            this.panelInicio.TabIndex = 3;
-            // 
             // Contenedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,11 +307,13 @@
             this.Load += new System.EventHandler(this.Contenedor_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelBarraSuperior.ResumeLayout(false);
             this.panelBarraSuperior.PerformLayout();
+            this.panelInicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,5 +335,6 @@
         private System.Windows.Forms.Panel panelInicio;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

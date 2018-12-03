@@ -221,6 +221,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>bdAlmacen.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\logoContenedor.png" />
+    <None Include="Resources\logoLogin.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\Unidad.png" />
     <None Include="Resources\nombreArticulo.png" />
