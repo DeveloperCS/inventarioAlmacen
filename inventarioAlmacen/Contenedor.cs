@@ -114,18 +114,19 @@ namespace inventarioAlmacen
 
         private void button1_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new Usuarios());
             retornarColor();
-            txtTituloBar.Text = "Item2";
-            colorEs.Location = new Point(-3, btnReportes.Location.Y);
-            btnReportes.BackColor = Color.FromArgb(83, 164, 227);
+            txtTituloBar.Text = "Usuarios";
+            colorEs.Location = new Point(-3, btnUsers.Location.Y);
+            btnUsers.BackColor = Color.FromArgb(83, 164, 227);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             retornarColor();
-            txtTituloBar.Text = "Item3";
-            colorEs.Location = new Point(-3, button2.Location.Y);
-            button2.BackColor = Color.FromArgb(83, 164, 227);
+            txtTituloBar.Text = "Reportes";
+            colorEs.Location = new Point(-3, btnReportes.Location.Y);
+            btnReportes.BackColor = Color.FromArgb(83, 164, 227);
         }
 
         private void retornarColor()
@@ -133,8 +134,8 @@ namespace inventarioAlmacen
             btnIni.BackColor = Color.FromArgb(34, 49, 65);
             btnInv.BackColor = Color.FromArgb(34, 49, 65);
             btnPrestamos.BackColor = Color.FromArgb(34, 49, 65);
+            btnUsers.BackColor = Color.FromArgb(34, 49, 65);
             btnReportes.BackColor = Color.FromArgb(34, 49, 65);
-            button2.BackColor = Color.FromArgb(34, 49, 65);
         }
 
         private void panelCentral_Paint(object sender, PaintEventArgs e)
