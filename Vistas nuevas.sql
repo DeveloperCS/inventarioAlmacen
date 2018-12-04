@@ -27,3 +27,4 @@
  AS SELECT IdArticulo AS [Clave Articulo], NombreArticulo AS [Articulo], Categoria [Categoria]
  FROM Articulos
  WHERE CantidadAlmacen = 0
+
