@@ -61,6 +61,7 @@
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(106, 28);
             this.productoToolStripMenuItem.Text = "Agregar";
             this.productoToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
@@ -81,6 +82,7 @@
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(86, 28);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // lbID
             // 

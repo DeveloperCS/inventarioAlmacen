@@ -73,6 +73,12 @@
     <Compile Include="agregarPedido.Designer.cs">
       <DependentUpon>agregarPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarUser.Designer.cs">
+      <DependentUpon>AgregarUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="bdAlmacenDataSet.cs">
       <DependentUpon>bdAlmacenDataSet.xsd</DependentUpon>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="EditarPedido.Designer.cs">
       <DependentUpon>EditarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarUser.Designer.cs">
+      <DependentUpon>EditarUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -150,6 +162,9 @@
     <EmbeddedResource Include="agregarPedido.resx">
       <DependentUpon>agregarPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarUser.resx">
+      <DependentUpon>AgregarUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clave.resx">
       <DependentUpon>Clave.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarPedido.resx">
       <DependentUpon>EditarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarUser.resx">
+      <DependentUpon>EditarUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

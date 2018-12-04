@@ -15,5 +15,15 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
         }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AgregarUser().Show();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EditarUser().Show();
+        }
     }
 }

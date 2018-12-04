@@ -10,26 +10,14 @@ using System.Windows.Forms;
 
 namespace inventarioAlmacen
 {
-    public partial class AgregarUser : Form
+    public partial class EditarUser : Form
     {
-        public AgregarUser()
+        public EditarUser()
         {
             InitializeComponent();
-            txtNombreUser.Text = "Nombre de Usuario";
-            txtNombreUser.ForeColor = Color.LightGray;
-            txtPuesto.Text = "Puesto de Usuario";
-            txtPuesto.ForeColor = Color.LightGray;
-            comboBoxTipoUser.Text = "Tipo de Usuario";
-            comboBoxTipoUser.ForeColor = Color.LightGray;
-            txtContraseña.Text = "Contraseña";
-            txtContraseña.ForeColor = Color.LightGray;
-            txtConfirmarContraseña.Text = "Confirmar Contraseña";
-            txtConfirmarContraseña.ForeColor = Color.LightGray;
-
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-
         //Redondear esquinas
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -47,55 +35,10 @@ namespace inventarioAlmacen
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-        private void txtNombreUser_Enter(object sender, EventArgs e)
+        private void bar_MouseDown(object sender, MouseEventArgs e)
         {
-            foco(1);
-        }
-
-        private void txtNombreUser_Leave(object sender, EventArgs e)
-        {
-            foco(2);
-        }
-
-        private void txtPuesto_Enter(object sender, EventArgs e)
-        {
-            foco(3);
-        }
-
-        private void txtPuesto_Leave(object sender, EventArgs e)
-        {
-            foco(4);
-        }
-
-        private void comboBoxTipoUser_Enter(object sender, EventArgs e)
-        {
-            foco(5);
-        }
-
-        private void comboBoxTipoUser_Leave(object sender, EventArgs e)
-        {
-            foco(6);
-        }
-
-        private void txtContraseña_Enter(object sender, EventArgs e)
-        {
-            foco(7);
-        }
-
-        private void txtContraseña_Leave(object sender, EventArgs e)
-        {
-            foco(8);
-        }
-
-        private void txtConfirmarContraseña_Enter(object sender, EventArgs e)
-        {
-            foco(9);
-        }
-
-        private void txtConfirmarContraseña_Leave(object sender, EventArgs e)
-        {
-            foco(0);
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         public void foco(int nom)
@@ -147,44 +90,112 @@ namespace inventarioAlmacen
                     }
                     break;
                 case 7:
-                    if (txtContraseña.Text == "Contraseña")
+                    if (txtContraseñaActual.Text == "Contraseña Actual")
                     {
-                        txtContraseña.Text = "";
-                        txtContraseña.ForeColor = Color.DimGray;
+                        txtContraseñaActual.Text = "";
+                        txtContraseñaActual.ForeColor = Color.DimGray;
                     }
 
                     break;
                 case 8:
-                    if (txtContraseña.Text == "")
+                    if (txtContraseñaActual.Text == "")
                     {
-                        txtContraseña.Text = "Contraseña";
-                        txtContraseña.ForeColor = Color.LightGray;
+                        txtContraseñaActual.Text = "Contraseña Actual";
+                        txtContraseñaActual.ForeColor = Color.LightGray;
                     }
                     break;
                 case 9:
-                    if (txtConfirmarContraseña.Text == "Confirmar Contraseña")
+                    if (txtContraseñaNueva.Text == "Contraseña Nueva")
                     {
-                        txtConfirmarContraseña.Text = "";
-                        txtConfirmarContraseña.ForeColor = Color.DimGray;
+                        txtContraseñaNueva.Text = "";
+                        txtContraseñaNueva.ForeColor = Color.DimGray;
                     }
 
                     break;
-                case 0:
-                    if (txtConfirmarContraseña.Text == "")
+                case 10:
+                    if (txtContraseñaNueva.Text == "")
                     {
-                        txtConfirmarContraseña.Text = "Confirmar Contraseña";
-                        txtConfirmarContraseña.ForeColor = Color.LightGray;
+                        txtContraseñaNueva.Text = "Contraseña Nueva";
+                        txtContraseñaNueva.ForeColor = Color.LightGray;
                     }
                     break;
 
+                case 11:
+                    if (txtConfirmarContraseñaNueva.Text == "Confirmar Contraseña")
+                    {
+                        txtConfirmarContraseñaNueva.Text = "";
+                        txtConfirmarContraseñaNueva.ForeColor = Color.DimGray;
+                    }
 
+                    break;
+                case 12:
+                    if (txtConfirmarContraseñaNueva.Text == "")
+                    {
+                        txtConfirmarContraseñaNueva.Text = "Confirmar Contraseña";
+                        txtConfirmarContraseñaNueva.ForeColor = Color.LightGray;
+                    }
+                    break;
             }
         }
 
-        private void bar_MouseDown(object sender, MouseEventArgs e)
+        private void txtNombreUser_Enter(object sender, EventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            foco(1);
+        }
+
+        private void txtNombreUser_Leave(object sender, EventArgs e)
+        {
+            foco(2);
+        }
+
+        private void txtPuesto_Enter(object sender, EventArgs e)
+        {
+            foco(3);
+        }
+
+        private void txtPuesto_Leave(object sender, EventArgs e)
+        {
+            foco(4);
+        }
+
+        private void comboBoxTipoUser_Enter(object sender, EventArgs e)
+        {
+            foco(5);
+        }
+
+        private void comboBoxTipoUser_Leave(object sender, EventArgs e)
+        {
+            foco(6);
+        }
+
+        private void txtContraseñaActual_Enter(object sender, EventArgs e)
+        {
+            foco(7);
+        }
+
+        private void txtContraseñaActual_Leave(object sender, EventArgs e)
+        {
+            foco(8);
+        }
+
+        private void txtContraseñaNueva_Enter(object sender, EventArgs e)
+        {
+            foco(9);
+        }
+
+        private void txtContraseñaNueva_Leave(object sender, EventArgs e)
+        {
+            foco(10);
+        }
+
+        private void txtConfirmarContraseñaNueva_Enter(object sender, EventArgs e)
+        {
+            foco(11);
+        }
+
+        private void txtConfirmarContraseñaNueva_Leave(object sender, EventArgs e)
+        {
+            foco(12);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -194,7 +205,7 @@ namespace inventarioAlmacen
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

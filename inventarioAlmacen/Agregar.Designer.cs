@@ -38,8 +38,6 @@
             this.comboBoxMedida = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bar = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -47,16 +45,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.bar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).BeginInit();
             this.panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -114,6 +114,7 @@
             this.lbID.Size = new System.Drawing.Size(100, 23);
             this.lbID.TabIndex = 0;
             this.lbID.Text = "ID";
+            this.lbID.Click += new System.EventHandler(this.lbID_Click);
             // 
             // label3
             // 
@@ -140,6 +141,7 @@
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(281, 28);
             this.comboBoxCategoria.TabIndex = 6;
+            this.comboBoxCategoria.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategoria_SelectedIndexChanged);
             this.comboBoxCategoria.Enter += new System.EventHandler(this.comboBoxCategoria_Enter);
             this.comboBoxCategoria.Leave += new System.EventHandler(this.comboBoxCategoria_Leave);
             // 
@@ -161,6 +163,7 @@
             this.comboBoxMedida.Name = "comboBoxMedida";
             this.comboBoxMedida.Size = new System.Drawing.Size(281, 28);
             this.comboBoxMedida.TabIndex = 7;
+            this.comboBoxMedida.SelectedIndexChanged += new System.EventHandler(this.comboBoxMedida_SelectedIndexChanged);
             this.comboBoxMedida.Enter += new System.EventHandler(this.comboBoxMedida_Enter);
             this.comboBoxMedida.Leave += new System.EventHandler(this.comboBoxMedida_Leave);
             // 
@@ -176,6 +179,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(367, 430);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // bar
             // 
@@ -187,7 +191,91 @@
             this.bar.Name = "bar";
             this.bar.Size = new System.Drawing.Size(367, 45);
             this.bar.TabIndex = 17;
+            this.bar.Paint += new System.Windows.Forms.PaintEventHandler(this.bar_Paint);
             this.bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bar_MouseDown);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.lbID);
+            this.groupBox1.Controls.Add(this.panel5);
+            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.Panel2);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.groupBox1.Location = new System.Drawing.Point(12, 67);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(343, 290);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Detalles del Producto";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel5.Controls.Add(this.comboBoxMedida);
+            this.panel5.Location = new System.Drawing.Point(25, 222);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(295, 36);
+            this.panel5.TabIndex = 11;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.nmCantidad);
+            this.panel4.Location = new System.Drawing.Point(25, 170);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(248, 36);
+            this.panel4.TabIndex = 12;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // nmCantidad
+            // 
+            this.nmCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nmCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.nmCantidad.Location = new System.Drawing.Point(112, 7);
+            this.nmCantidad.Name = "nmCantidad";
+            this.nmCantidad.Size = new System.Drawing.Size(120, 21);
+            this.nmCantidad.TabIndex = 5;
+            this.nmCantidad.ValueChanged += new System.EventHandler(this.nmCantidad_ValueChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel3.Controls.Add(this.comboBoxCategoria);
+            this.panel3.Location = new System.Drawing.Point(25, 118);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(295, 36);
+            this.panel3.TabIndex = 11;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // Panel2
+            // 
+            this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.Panel2.Controls.Add(this.txtNombre);
+            this.Panel2.Location = new System.Drawing.Point(25, 66);
+            this.Panel2.Name = "Panel2";
+            this.Panel2.Size = new System.Drawing.Size(295, 36);
+            this.Panel2.TabIndex = 10;
+            this.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(9, 8);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(279, 19);
+            this.txtNombre.TabIndex = 0;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter_1);
+            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave_1);
             // 
             // btnCerrar
             // 
@@ -215,83 +303,6 @@
             this.btnMinimizar.TabStop = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.lbID);
-            this.groupBox1.Controls.Add(this.panel5);
-            this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Controls.Add(this.Panel2);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 67);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 290);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Detalles del Producto";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel5.Controls.Add(this.comboBoxMedida);
-            this.panel5.Location = new System.Drawing.Point(25, 222);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(295, 36);
-            this.panel5.TabIndex = 11;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.nmCantidad);
-            this.panel4.Location = new System.Drawing.Point(25, 170);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(248, 36);
-            this.panel4.TabIndex = 12;
-            // 
-            // nmCantidad
-            // 
-            this.nmCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nmCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.nmCantidad.Location = new System.Drawing.Point(112, 7);
-            this.nmCantidad.Name = "nmCantidad";
-            this.nmCantidad.Size = new System.Drawing.Size(120, 21);
-            this.nmCantidad.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel3.Controls.Add(this.comboBoxCategoria);
-            this.panel3.Location = new System.Drawing.Point(25, 118);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(295, 36);
-            this.panel3.TabIndex = 11;
-            // 
-            // Panel2
-            // 
-            this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.Panel2.Controls.Add(this.txtNombre);
-            this.Panel2.Location = new System.Drawing.Point(25, 66);
-            this.Panel2.Name = "Panel2";
-            this.Panel2.Size = new System.Drawing.Size(295, 36);
-            this.Panel2.TabIndex = 10;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(9, 8);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(279, 19);
-            this.txtNombre.TabIndex = 0;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter_1);
-            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave_1);
-            // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,8 +318,6 @@
             this.panel1.ResumeLayout(false);
             this.bar.ResumeLayout(false);
             this.bar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -316,6 +325,8 @@
             this.panel3.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.ResumeLayout(false);
 
         }
