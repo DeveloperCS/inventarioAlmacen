@@ -83,6 +83,7 @@
             this.rdHi.TabIndex = 2;
             this.rdHi.Text = "Higiene y Limpieza";
             this.rdHi.UseVisualStyleBackColor = true;
+            this.rdHi.CheckedChanged += new System.EventHandler(this.rdHi_CheckedChanged);
             // 
             // rdHer
             // 
@@ -95,6 +96,7 @@
             this.rdHer.TabIndex = 1;
             this.rdHer.Text = "Herramientas y Otros";
             this.rdHer.UseVisualStyleBackColor = true;
+            this.rdHer.CheckedChanged += new System.EventHandler(this.rdHer_CheckedChanged);
             // 
             // rdTodo
             // 
@@ -109,6 +111,7 @@
             this.rdTodo.TabStop = true;
             this.rdTodo.Text = "Todo";
             this.rdTodo.UseVisualStyleBackColor = true;
+            this.rdTodo.CheckedChanged += new System.EventHandler(this.rdTodo_CheckedChanged);
             // 
             // label1
             // 
@@ -304,6 +307,7 @@
             this.Name = "agregarPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "agregarPedido";
+            this.Load += new System.EventHandler(this.agregarPedido_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).EndInit();

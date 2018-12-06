@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventarioAlmacen.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -80,6 +81,60 @@ namespace inventarioAlmacen
             }
         }
 
-        
+        public void consult()
+        {
+            String qy = "";
+
+            this.miFiltro = dts.consulta(qy = "Select * FROM InventarioArticulo").Tables[0].DefaultView;
+            datosTabla.DataSource = miFiltro;
+        }
+
+        DataView miFiltro;
+        Datos dts = new Datos();
+        private void agregarPedido_Load(object sender, EventArgs e)
+        {
+            if (rdTodo.Checked == true)
+            {
+                consult();
+            }
+
+        }
+
+        private void rdHer_CheckedChanged(object sender, EventArgs e)
+        {
+            String salida = "";
+            String p = "Her";
+            if (salida.Length == 0)
+            {
+                salida = "(Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%' )";
+            }
+            else
+            {
+                salida += "AND (Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%')";
+            }
+
+            this.miFiltro.RowFilter = salida;
+        }
+
+        private void rdHi_CheckedChanged(object sender, EventArgs e)
+        {
+            String salida = "";
+            String p = "Hig";
+            if (salida.Length == 0)
+            {
+                salida = "(Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%' )";
+            }
+            else
+            {
+                salida += "AND (Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%')";
+            }
+
+            this.miFiltro.RowFilter = salida;
+        }
+
+        private void rdTodo_CheckedChanged(object sender, EventArgs e)
+        {
+            consult();
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace inventarioAlmacen
         {
             String qy = "";
 
-            this.miFiltro = dts.consulta(qy = "Select * FROM Articulos").Tables[0].DefaultView;
+            this.miFiltro = dts.consulta(qy = "Select * FROM InventarioArticulo").Tables[0].DefaultView;
             datosTabla.DataSource = miFiltro;
         }
 
@@ -77,11 +77,11 @@ namespace inventarioAlmacen
             {
                 if (salida.Length == 0)
                 {
-                    salida = "(NombreArticulo LIKE '% " + p + "%' OR NombreArticulo LIKE '" + p + "%' OR Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%' )";
+                    salida = "(Articulo LIKE '% " + p + "%' OR Articulo LIKE '" + p + "%' OR Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%' )";
                 }
                 else
                 {
-                    salida += "AND (NombreArticulo LIKE '% " + p + "%' OR NombreArticulo LIKE '" + p + "%' OR Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%')";
+                    salida += "AND (Articulo LIKE '% " + p + "%' OR Articulo LIKE '" + p + "%' OR Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%')";
                 }
             }
             this.miFiltro.RowFilter = salida;
