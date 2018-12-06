@@ -17,7 +17,7 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             comboBoxMedida.Text = "Tipo de Medida";
-            comboBoxMedida.ForeColor = Color.LightGray;
+            comboBoxMedida.ForeColor = Color.DarkGray;
 
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -77,7 +77,7 @@ namespace inventarioAlmacen
             if (comboBoxMedida.Text == "")
             {
                 comboBoxMedida.Text = "Tipo de Medida";
-                comboBoxMedida.ForeColor = Color.LightGray;
+                comboBoxMedida.ForeColor = Color.DarkGray;
             }
         }
 
@@ -135,6 +135,12 @@ namespace inventarioAlmacen
         private void rdTodo_CheckedChanged(object sender, EventArgs e)
         {
             consult();
+        }
+
+        private void label2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

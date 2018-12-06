@@ -123,6 +123,7 @@ namespace inventarioAlmacen
 
         private void button2_Click(object sender, EventArgs e)
         {
+            AbrirFormInPanel(new Reportes());
             retornarColor();
             txtTituloBar.Text = "Reportes";
             colorEs.Location = new Point(-3, btnReportes.Location.Y);
@@ -141,6 +142,24 @@ namespace inventarioAlmacen
         private void panelCentral_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtTituloBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panelInicio_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

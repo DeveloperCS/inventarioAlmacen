@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregarPedido));
@@ -48,6 +49,7 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.bar = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).BeginInit();
             this.panel5.SuspendLayout();
@@ -82,6 +84,7 @@
             this.rdHi.Size = new System.Drawing.Size(149, 22);
             this.rdHi.TabIndex = 2;
             this.rdHi.Text = "Higiene y Limpieza";
+            this.toolTip1.SetToolTip(this.rdHi, "Higiene y Limpieza");
             this.rdHi.UseVisualStyleBackColor = true;
             this.rdHi.CheckedChanged += new System.EventHandler(this.rdHi_CheckedChanged);
             // 
@@ -95,6 +98,7 @@
             this.rdHer.Size = new System.Drawing.Size(168, 22);
             this.rdHer.TabIndex = 1;
             this.rdHer.Text = "Herramientas y Otros";
+            this.toolTip1.SetToolTip(this.rdHer, "Herramientas y Otros");
             this.rdHer.UseVisualStyleBackColor = true;
             this.rdHer.CheckedChanged += new System.EventHandler(this.rdHer_CheckedChanged);
             // 
@@ -110,6 +114,7 @@
             this.rdTodo.TabIndex = 0;
             this.rdTodo.TabStop = true;
             this.rdTodo.Text = "Todo";
+            this.toolTip1.SetToolTip(this.rdTodo, "Todo");
             this.rdTodo.UseVisualStyleBackColor = true;
             this.rdTodo.CheckedChanged += new System.EventHandler(this.rdTodo_CheckedChanged);
             // 
@@ -173,6 +178,7 @@
             this.comboBoxMedida.Name = "comboBoxMedida";
             this.comboBoxMedida.Size = new System.Drawing.Size(142, 28);
             this.comboBoxMedida.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.comboBoxMedida, "Medida");
             this.comboBoxMedida.Enter += new System.EventHandler(this.comboBoxMedida_Enter);
             this.comboBoxMedida.Leave += new System.EventHandler(this.comboBoxMedida_Leave);
             // 
@@ -183,26 +189,27 @@
             this.panel4.Controls.Add(this.nmCantidad);
             this.panel4.Location = new System.Drawing.Point(12, 374);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(149, 36);
+            this.panel4.Size = new System.Drawing.Size(168, 36);
             this.panel4.TabIndex = 14;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.label3.Location = new System.Drawing.Point(4, 10);
+            this.label3.Location = new System.Drawing.Point(4, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 23);
+            this.label3.Size = new System.Drawing.Size(80, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Cantidad:";
             // 
             // nmCantidad
             // 
             this.nmCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nmCantidad.Location = new System.Drawing.Point(71, 8);
+            this.nmCantidad.Location = new System.Drawing.Point(90, 8);
             this.nmCantidad.Name = "nmCantidad";
             this.nmCantidad.Size = new System.Drawing.Size(70, 20);
             this.nmCantidad.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.nmCantidad, "Cantidad");
             // 
             // btnAgregar
             // 
@@ -219,6 +226,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(223, 35);
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
+            this.toolTip1.SetToolTip(this.btnAgregar, "Agregar Prestamo");
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
@@ -236,6 +244,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -250,6 +259,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCerrar.TabIndex = 18;
             this.btnCerrar.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar");
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnMinimizar
@@ -263,6 +273,7 @@
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimizar.TabIndex = 16;
             this.btnMinimizar.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnMinimizar, "Minimizar");
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // bar
@@ -288,6 +299,7 @@
             this.label2.Size = new System.Drawing.Size(192, 29);
             this.label2.TabIndex = 2;
             this.label2.Text = "Prestar Articulo";
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
             // agregarPedido
             // 
@@ -341,5 +353,6 @@
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.Panel bar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

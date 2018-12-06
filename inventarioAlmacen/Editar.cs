@@ -82,7 +82,7 @@ namespace inventarioAlmacen
                     if (txtNombre.Text == "")
                     {
                         txtNombre.Text = "Nombre del Articulo";
-                        txtNombre.ForeColor = Color.LightGray;
+                        txtNombre.ForeColor = Color.DarkGray;
                     }
 
 
@@ -99,7 +99,7 @@ namespace inventarioAlmacen
                     if (comboBoxCategoria.Text == "")
                     {
                         comboBoxCategoria.Text = "Categoria";
-                        comboBoxCategoria.ForeColor = Color.LightGray;
+                        comboBoxCategoria.ForeColor = Color.DarkGray;
                     }
                     break;
                 case 5:
@@ -113,7 +113,7 @@ namespace inventarioAlmacen
                     if (comboBoxMedida.Text == "")
                     {
                         comboBoxMedida.Text = "Tipo de Medida";
-                        comboBoxMedida.ForeColor = Color.LightGray;
+                        comboBoxMedida.ForeColor = Color.DarkGray;
                     }
                     break;
                 case 7:
@@ -127,7 +127,7 @@ namespace inventarioAlmacen
                     if (comboBoxEstado.Text == "")
                     {
                         comboBoxEstado.Text = "Estado";
-                        comboBoxEstado.ForeColor = Color.LightGray;
+                        comboBoxEstado.ForeColor = Color.DarkGray;
                     }
                     break;
 
@@ -215,8 +215,10 @@ namespace inventarioAlmacen
             
         }
 
-        
-
-        
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

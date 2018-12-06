@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prestamos));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnPrestar = new System.Windows.Forms.Button();
@@ -36,16 +37,18 @@
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 129);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 85);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(945, 335);
+            this.dataGridView1.Size = new System.Drawing.Size(1026, 399);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnPrestar
@@ -57,11 +60,12 @@
             this.btnPrestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrestar.ForeColor = System.Drawing.Color.White;
-            this.btnPrestar.Location = new System.Drawing.Point(729, 492);
+            this.btnPrestar.Location = new System.Drawing.Point(779, 499);
             this.btnPrestar.Name = "btnPrestar";
-            this.btnPrestar.Size = new System.Drawing.Size(259, 47);
+            this.btnPrestar.Size = new System.Drawing.Size(259, 63);
             this.btnPrestar.TabIndex = 2;
             this.btnPrestar.Text = "Prestar";
+            this.toolTip1.SetToolTip(this.btnPrestar, "Prestar Articulo");
             this.btnPrestar.UseVisualStyleBackColor = false;
             this.btnPrestar.Click += new System.EventHandler(this.btnPrestar_Click);
             // 
@@ -70,7 +74,7 @@
             this.lbID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.lbID.Location = new System.Drawing.Point(39, 103);
+            this.lbID.Location = new System.Drawing.Point(8, 59);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(177, 23);
             this.lbID.TabIndex = 3;
@@ -86,7 +90,7 @@
             this.editarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1034, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1050, 32);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -127,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 562);
+            this.ClientSize = new System.Drawing.Size(1050, 600);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.btnPrestar);
@@ -153,5 +157,6 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
