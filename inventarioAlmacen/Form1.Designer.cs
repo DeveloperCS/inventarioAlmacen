@@ -221,6 +221,7 @@
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox1.TabIndex = 10;
             this.PictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.PictureBox1, "chechstore");
             // 
             // Form1
             // 

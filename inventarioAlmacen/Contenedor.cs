@@ -15,6 +15,7 @@ namespace inventarioAlmacen
         public Contenedor()
         {
             InitializeComponent();
+            AbrirFormInPanel(new Inicio());
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -84,6 +85,7 @@ namespace inventarioAlmacen
 
         {
             retornarColor();
+            AbrirFormInPanel(new Inicio());
             txtTituloBar.Text = "Inicio";
             colorEs.Location = new Point(-3, btnIni.Location.Y);
             btnIni.BackColor = Color.FromArgb(83, 164, 227);
