@@ -25,11 +25,11 @@ namespace inventarioAlmacen
             {
                 if (tip.Equals("Herramientas y Otros"))
                 {
-                    gr.tipo = "Her";
+                    //gr.tipo = "Her";
                 }
                 else if (tip.Equals("Higiene y Limpieza"))
                 {
-                    gr.tipo = "Hig";
+//                    gr.tipo = "Hig";
                 }
 
                
