@@ -75,6 +75,7 @@
             this.datosTabla.DefaultCellStyle = dataGridViewCellStyle2;
             this.datosTabla.Location = new System.Drawing.Point(12, 116);
             this.datosTabla.Name = "datosTabla";
+            this.datosTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datosTabla.Size = new System.Drawing.Size(1026, 399);
             this.datosTabla.TabIndex = 1;
             // 

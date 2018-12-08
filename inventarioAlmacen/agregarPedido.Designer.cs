@@ -48,6 +48,9 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.bar = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtBusc = new System.Windows.Forms.TextBox();
+            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).BeginInit();
             this.panel5.SuspendLayout();
@@ -71,6 +74,7 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            this.groupBox1.Visible = false;
             // 
             // rdHi
             // 
@@ -124,6 +128,7 @@
             // datosTabla
             // 
             this.datosTabla.AllowUserToAddRows = false;
+            this.datosTabla.AllowUserToDeleteRows = false;
             this.datosTabla.BackgroundColor = System.Drawing.SystemColors.Info;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -133,6 +138,9 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.datosTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.datosTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datosTabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.item,
+            this.Desc});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,8 +150,11 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.datosTabla.DefaultCellStyle = dataGridViewCellStyle2;
             this.datosTabla.Location = new System.Drawing.Point(12, 159);
+            this.datosTabla.MultiSelect = false;
             this.datosTabla.Name = "datosTabla";
-            this.datosTabla.Size = new System.Drawing.Size(343, 204);
+            this.datosTabla.ReadOnly = true;
+            this.datosTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datosTabla.Size = new System.Drawing.Size(419, 204);
             this.datosTabla.TabIndex = 9;
             // 
             // panel5
@@ -214,12 +225,13 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(132, 433);
+            this.btnAgregar.Location = new System.Drawing.Point(186, 433);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(223, 35);
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
@@ -231,7 +243,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(12, 433);
+            this.btnCancelar.Location = new System.Drawing.Point(66, 433);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 15;
@@ -244,7 +256,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerr;
-            this.btnCerrar.Location = new System.Drawing.Point(333, 9);
+            this.btnCerrar.Location = new System.Drawing.Point(412, 9);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 25);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -257,7 +269,7 @@
             this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
-            this.btnMinimizar.Location = new System.Drawing.Point(303, 6);
+            this.btnMinimizar.Location = new System.Drawing.Point(382, 7);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -273,7 +285,7 @@
             this.bar.Controls.Add(this.label2);
             this.bar.Location = new System.Drawing.Point(0, 0);
             this.bar.Name = "bar";
-            this.bar.Size = new System.Drawing.Size(367, 45);
+            this.bar.Size = new System.Drawing.Size(443, 45);
             this.bar.TabIndex = 19;
             this.bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bar_MouseDown);
             // 
@@ -283,23 +295,47 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(68, 9);
+            this.label2.Location = new System.Drawing.Point(121, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 29);
             this.label2.TabIndex = 2;
             this.label2.Text = "Prestar Articulo";
             // 
+            // txtBusc
+            // 
+            this.txtBusc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusc.Location = new System.Drawing.Point(225, 127);
+            this.txtBusc.Name = "txtBusc";
+            this.txtBusc.Size = new System.Drawing.Size(171, 26);
+            this.txtBusc.TabIndex = 20;
+            this.txtBusc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBusc_KeyUp);
+            // 
+            // item
+            // 
+            this.item.DataPropertyName = "item";
+            this.item.HeaderText = "item";
+            this.item.Name = "item";
+            this.item.ReadOnly = true;
+            // 
+            // Desc
+            // 
+            this.Desc.DataPropertyName = "Desc";
+            this.Desc.HeaderText = "Descripsion";
+            this.Desc.Name = "Desc";
+            this.Desc.ReadOnly = true;
+            // 
             // agregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 485);
+            this.ClientSize = new System.Drawing.Size(443, 485);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtBusc);
             this.Controls.Add(this.bar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.datosTabla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -341,5 +377,8 @@
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.Panel bar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBusc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Desc;
     }
 }

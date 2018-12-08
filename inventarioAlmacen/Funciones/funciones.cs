@@ -134,7 +134,7 @@ namespace inventarioAlmacen.Funciones
         }
 
         #endregion
-
+       
 
 
     }
