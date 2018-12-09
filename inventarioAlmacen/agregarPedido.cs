@@ -95,10 +95,7 @@ namespace inventarioAlmacen
         Datos dts = new Datos();
         private void agregarPedido_Load(object sender, EventArgs e)
         {
-            if (rdTodo.Checked == true)
-            {
-                consult();
-            }
+            
 
         }
 
