@@ -50,8 +50,8 @@
             this.bar = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).BeginInit();
@@ -134,6 +134,7 @@
             // datosTabla
             // 
             this.datosTabla.AllowUserToAddRows = false;
+            this.datosTabla.AllowUserToDeleteRows = false;
             this.datosTabla.BackgroundColor = System.Drawing.SystemColors.Info;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -153,6 +154,7 @@
             this.datosTabla.DefaultCellStyle = dataGridViewCellStyle2;
             this.datosTabla.Location = new System.Drawing.Point(12, 159);
             this.datosTabla.Name = "datosTabla";
+            this.datosTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datosTabla.Size = new System.Drawing.Size(516, 204);
             this.datosTabla.TabIndex = 9;
             // 
@@ -233,6 +235,7 @@
             this.btnAgregar.Text = "Agregar";
             this.toolTip1.SetToolTip(this.btnAgregar, "Agregar Prestamo");
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
@@ -306,15 +309,6 @@
             this.label2.Text = "Prestar Articulo";
             this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(215, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 35);
-            this.panel1.TabIndex = 21;
-            // 
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -328,7 +322,17 @@
             this.txtBuscar.Tag = "";
             this.toolTip1.SetToolTip(this.txtBuscar, "Buscar");
             this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.txtBuscar);
+            this.panel1.Location = new System.Drawing.Point(215, 110);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(280, 35);
+            this.panel1.TabIndex = 21;
             // 
             // pictureBox1
             // 

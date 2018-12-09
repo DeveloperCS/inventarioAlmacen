@@ -52,6 +52,7 @@ namespace inventarioAlmacen
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            new Prestamos().cbCategorias.Enabled = true;
             this.Close();
         }
 
@@ -83,11 +84,12 @@ namespace inventarioAlmacen
             }
         }
 
+        public String cat;
         public void consult()
         {
             String qy = "";
 
-            this.miFiltro = dts.consulta(qy = "Select * FROM InventarioArticulo").Tables[0].DefaultView;
+            this.miFiltro = dts.consulta(qy = "Select Folio,Articulo,Categoria FROM InventarioArticulo Where Categoria like '"+cat+"%'").Tables[0].DefaultView;
             datosTabla.DataSource = miFiltro;
         }
 
@@ -95,6 +97,7 @@ namespace inventarioAlmacen
         Datos dts = new Datos();
         private void agregarPedido_Load(object sender, EventArgs e)
         {
+            groupBox1.Visible = false;
             if (rdTodo.Checked == true)
             {
                 consult();
@@ -108,11 +111,11 @@ namespace inventarioAlmacen
             String p = "Her";
             if (salida.Length == 0)
             {
-                salida = "(Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%' )";
+                salida = "(Articulo LIKE '%" + p + "%' OR Articulo LIKE '" + p + "%' )";
             }
             else
             {
-                salida += "AND (Categoria LIKE '%" + p + "%' OR Categoria LIKE '" + p + "%')";
+                salida += "AND (Articulo LIKE '%" + p + "%' OR Articulo LIKE '" + p + "%')";
             }
 
             this.miFiltro.RowFilter = salida;
@@ -160,6 +163,70 @@ namespace inventarioAlmacen
             {
                 txtBuscar.Text = "Buscar";
                 txtBuscar.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            String salida = "";
+          
+            if (salida.Length == 0)
+            {
+                salida = "(Articulo LIKE '%" + txtBuscar.Text + "%' OR Articulo LIKE '" + txtBuscar.Text + "%' )";
+            }
+            else
+            {
+                salida += "AND (Articulo LIKE '%" + txtBuscar.Text
+                    + "%' OR Articulo LIKE '" + txtBuscar.Text + "%')";
+            }
+
+            this.miFiltro.RowFilter = salida;
+        }
+
+        private String F, Ar, Cate,CantT;
+        private int cant = 0;
+        public String idEmp ="";
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+            cant = Convert.ToInt32( nmCantidad.Value);
+            F = datosTabla.CurrentRow.Cells[0].Value.ToString();
+            Ar = datosTabla.CurrentRow.Cells[1].Value.ToString();
+            Cate = datosTabla.CurrentRow.Cells[2].Value.ToString();
+            CantT = Convert.ToString(cant)+comboBoxMedida.Text;
+            if (cant>0)
+            {
+                if (comboBoxMedida.Text == "Tipo de Medida")
+                {
+                    MessageBox.Show("Seleccione en un tipo de Medida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (MessageBox.Show("Detalles del producto a Agregar: \n -Nombre:"+Ar+" \n -Cantidad:"+CantT, "Agregar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            String q = "INSERT INTO listaArPrestamos Values('"+F+"','"+Ar+"','"+ Cate + "','"+CantT+"','"+idEmp+"' ); ";
+                            if (dts.insertar(q)==true)
+                            {
+                                MessageBox.Show("Artitculo agregado");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message.ToString(),"Error");
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Seleccion Uno o Más Articulos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

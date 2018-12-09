@@ -1,0 +1,1 @@
+﻿alter view listaAr as select id as [#],folio as [Folio],articulo as [Articulo],categoria as [Categoria],cantidad as [Cantidad],idEmpleado as [# Empleado] from listaArPrestamos
