@@ -91,6 +91,7 @@
             this.btnAgregar.Text = "Prestar";
             this.toolTip1.SetToolTip(this.btnAgregar, "Prestar Articulo(s)");
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
@@ -125,6 +126,7 @@
             this.Name = "Clave";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clave";
+            this.Load += new System.EventHandler(this.Clave_Load);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
             this.ResumeLayout(false);

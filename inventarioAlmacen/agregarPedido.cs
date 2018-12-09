@@ -210,6 +210,8 @@ namespace inventarioAlmacen
                             if (dts.insertar(q)==true)
                             {
                                 MessageBox.Show("Artitculo agregado");
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
                             }
                         }
                         catch (Exception ex)
