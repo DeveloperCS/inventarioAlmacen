@@ -16,7 +16,7 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             txtBuscar.Text = "Buscar";
-            txtBuscar.ForeColor = Color.FromArgb(210, 210, 210);
+            txtBuscar.ForeColor = Color.DarkGray;
         }
 
         DataView miFiltro;
@@ -64,7 +64,7 @@ namespace inventarioAlmacen
             if (txtBuscar.Text == "")
             {
                 txtBuscar.Text = "Buscar";
-                txtBuscar.ForeColor = Color.FromArgb(210, 210, 210);
+                txtBuscar.ForeColor = Color.DarkGray;
             }
 
         }
@@ -231,6 +231,11 @@ namespace inventarioAlmacen
         private void rdTodo_CheckedChanged(object sender, EventArgs e)
         {
             consult();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,6 +16,8 @@ namespace inventarioAlmacen
         public agregarPedido()
         {
             InitializeComponent();
+            txtBuscar.Text = "Buscar";
+            txtBuscar.ForeColor = Color.DarkGray;
             comboBoxMedida.Text = "Tipo de Medida";
             comboBoxMedida.ForeColor = Color.DarkGray;
 
@@ -93,7 +95,6 @@ namespace inventarioAlmacen
         Datos dts = new Datos();
         private void agregarPedido_Load(object sender, EventArgs e)
         {
-            grupFiltro.Visible = false; 
             if (rdTodo.Checked == true)
             {
                 consult();
@@ -142,6 +143,24 @@ namespace inventarioAlmacen
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar")
+            {
+                txtBuscar.Text = "";
+                txtBuscar.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                txtBuscar.Text = "Buscar";
+                txtBuscar.ForeColor = Color.DarkGray;
+            }
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel5 = new System.Windows.Forms.Panel();
             this.comboBoxMedida = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -40,19 +41,22 @@
             this.bar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.bar.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel5.Controls.Add(this.comboBoxMedida);
-            this.panel5.Location = new System.Drawing.Point(35, 146);
+            this.panel5.Location = new System.Drawing.Point(35, 194);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(295, 36);
             this.panel5.TabIndex = 13;
@@ -73,7 +77,8 @@
             this.comboBoxMedida.Location = new System.Drawing.Point(7, 4);
             this.comboBoxMedida.Name = "comboBoxMedida";
             this.comboBoxMedida.Size = new System.Drawing.Size(281, 28);
-            this.comboBoxMedida.TabIndex = 2;
+            this.comboBoxMedida.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.comboBoxMedida, "Medida");
             this.comboBoxMedida.Enter += new System.EventHandler(this.comboBoxMedida_Enter);
             this.comboBoxMedida.Leave += new System.EventHandler(this.comboBoxMedida_Leave);
             // 
@@ -82,7 +87,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.numCant);
-            this.panel4.Location = new System.Drawing.Point(35, 94);
+            this.panel4.Location = new System.Drawing.Point(35, 142);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(295, 36);
             this.panel4.TabIndex = 7;
@@ -95,7 +100,7 @@
             this.label2.Location = new System.Drawing.Point(10, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 8;
             this.label2.Text = "Cantidad:";
             // 
             // numCant
@@ -104,7 +109,8 @@
             this.numCant.Location = new System.Drawing.Point(164, 8);
             this.numCant.Name = "numCant";
             this.numCant.Size = new System.Drawing.Size(120, 20);
-            this.numCant.TabIndex = 1;
+            this.numCant.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.numCant, "Cantidad");
             // 
             // btnAgregar
             // 
@@ -115,11 +121,12 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(132, 238);
+            this.btnAgregar.Location = new System.Drawing.Point(132, 270);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(223, 35);
-            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Guardar";
+            this.toolTip1.SetToolTip(this.btnAgregar, "Guardar Prestamo");
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
@@ -131,11 +138,12 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(12, 238);
+            this.btnCancelar.Location = new System.Drawing.Point(12, 270);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -150,6 +158,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCerrar.TabIndex = 17;
             this.btnCerrar.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar");
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnMinimizar
@@ -163,6 +172,7 @@
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimizar.TabIndex = 16;
             this.btnMinimizar.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnMinimizar, "Minimizar");
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // bar
@@ -186,25 +196,37 @@
             this.label1.Location = new System.Drawing.Point(77, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 29);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Editar Prestamo";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.groupBox1.Location = new System.Drawing.Point(10, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(338, 145);
+            this.groupBox1.Size = new System.Drawing.Size(338, 191);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Prestamo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(211, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "ID Prestamo";
+            this.toolTip1.SetToolTip(this.label3, "ID Prestamo");
             // 
             // EditarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 285);
+            this.ClientSize = new System.Drawing.Size(367, 327);
             this.Controls.Add(this.bar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnCancelar);
@@ -222,6 +244,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.bar.ResumeLayout(false);
             this.bar.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -240,5 +264,7 @@
         private System.Windows.Forms.Panel bar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label3;
     }
 }
