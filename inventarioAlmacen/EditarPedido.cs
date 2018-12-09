@@ -50,7 +50,7 @@ namespace inventarioAlmacen
             if (comboBoxMedida.Text == "")
             {
                 comboBoxMedida.Text = "Tipo de Medida";
-                comboBoxMedida.ForeColor = Color.DarkGray;
+                comboBoxMedida.ForeColor = Color.LightGray;
             }
         }
 
@@ -73,12 +73,6 @@ namespace inventarioAlmacen
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void label1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -19,9 +19,9 @@ namespace inventarioAlmacen
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             txtUser.Text = "Escriba su nombre de usuario";
-            txtUser.ForeColor = Color.DarkGray;
+            txtUser.ForeColor = Color.LightGray;
             txtPassword.Text = "Escriba su contraseña";
-            txtPassword.ForeColor = Color.DarkGray;
+            txtPassword.ForeColor = Color.LightGray;
         }
 
         //Redondear esquinas
@@ -68,7 +68,7 @@ namespace inventarioAlmacen
             if (txtUser.Text == "")
             {
                 txtUser.Text = "Escriba su nombre de usuario";
-                txtUser.ForeColor = Color.DarkGray;
+                txtUser.ForeColor = Color.LightGray;
             }
         }
 
@@ -87,7 +87,7 @@ namespace inventarioAlmacen
             if (txtPassword.Text == "")
             {
                 txtPassword.Text = "Escriba su contraseña";
-                txtPassword.ForeColor = Color.DarkGray;
+                txtPassword.ForeColor = Color.LightGray;
             }
         }
 

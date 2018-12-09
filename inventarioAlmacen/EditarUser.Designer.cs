@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarUser));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -42,25 +41,24 @@
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombreUser = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtContraseñaActual = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Usuarios = new System.Windows.Forms.Label();
             this.bar = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtContraseñaActual = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -78,7 +76,6 @@
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
-            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -100,7 +97,6 @@
             this.txtConfirmarContraseñaNueva.Name = "txtConfirmarContraseñaNueva";
             this.txtConfirmarContraseñaNueva.Size = new System.Drawing.Size(279, 19);
             this.txtConfirmarContraseñaNueva.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtConfirmarContraseñaNueva, "Confirmar Contraseña");
             this.txtConfirmarContraseñaNueva.Enter += new System.EventHandler(this.txtConfirmarContraseñaNueva_Enter);
             this.txtConfirmarContraseñaNueva.Leave += new System.EventHandler(this.txtConfirmarContraseñaNueva_Leave);
             // 
@@ -122,7 +118,6 @@
             this.txtContraseñaNueva.Name = "txtContraseñaNueva";
             this.txtContraseñaNueva.Size = new System.Drawing.Size(279, 19);
             this.txtContraseñaNueva.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtContraseñaNueva, "Contraseña Nueva");
             this.txtContraseñaNueva.Enter += new System.EventHandler(this.txtContraseñaNueva_Enter);
             this.txtContraseñaNueva.Leave += new System.EventHandler(this.txtContraseñaNueva_Leave);
             // 
@@ -151,7 +146,6 @@
             this.comboBoxTipoUser.Name = "comboBoxTipoUser";
             this.comboBoxTipoUser.Size = new System.Drawing.Size(281, 28);
             this.comboBoxTipoUser.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.comboBoxTipoUser, "Tipo de Usuario");
             this.comboBoxTipoUser.Enter += new System.EventHandler(this.comboBoxTipoUser_Enter);
             this.comboBoxTipoUser.Leave += new System.EventHandler(this.comboBoxTipoUser_Leave);
             // 
@@ -170,7 +164,6 @@
             this.btnAgregar.Size = new System.Drawing.Size(223, 35);
             this.btnAgregar.TabIndex = 20;
             this.btnAgregar.Text = "Guardar";
-            this.toolTip1.SetToolTip(this.btnAgregar, "Guardar Usuario");
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -183,7 +176,6 @@
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(279, 19);
             this.txtPuesto.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtPuesto, "Puesto");
             this.txtPuesto.Enter += new System.EventHandler(this.txtPuesto_Enter);
             this.txtPuesto.Leave += new System.EventHandler(this.txtPuesto_Leave);
             // 
@@ -205,7 +197,6 @@
             this.txtNombreUser.Name = "txtNombreUser";
             this.txtNombreUser.Size = new System.Drawing.Size(279, 19);
             this.txtNombreUser.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtNombreUser, "Nombre");
             this.txtNombreUser.Enter += new System.EventHandler(this.txtNombreUser_Enter);
             this.txtNombreUser.Leave += new System.EventHandler(this.txtNombreUser_Leave);
             // 
@@ -229,38 +220,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editar Usuario";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel1.Controls.Add(this.txtContraseñaActual);
-            this.panel1.Location = new System.Drawing.Point(24, 189);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(295, 36);
-            this.panel1.TabIndex = 13;
-            // 
-            // txtContraseñaActual
-            // 
-            this.txtContraseñaActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtContraseñaActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseñaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseñaActual.Location = new System.Drawing.Point(9, 8);
-            this.txtContraseñaActual.Name = "txtContraseñaActual";
-            this.txtContraseñaActual.Size = new System.Drawing.Size(279, 19);
-            this.txtContraseñaActual.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtContraseñaActual, "Contraseña Actual");
-            this.txtContraseñaActual.Enter += new System.EventHandler(this.txtContraseñaActual_Enter);
-            this.txtContraseñaActual.Leave += new System.EventHandler(this.txtContraseñaActual_Leave);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(265, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "IDUser";
-            this.toolTip1.SetToolTip(this.label1, "ID Usuario");
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -281,7 +240,6 @@
             this.Usuarios.Size = new System.Drawing.Size(116, 29);
             this.Usuarios.TabIndex = 2;
             this.Usuarios.Text = "Usuarios";
-            this.Usuarios.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Usuarios_MouseDown);
             // 
             // bar
             // 
@@ -306,7 +264,6 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCerrar.TabIndex = 15;
             this.btnCerrar.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar");
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnMinimizar
@@ -320,8 +277,37 @@
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimizar.TabIndex = 16;
             this.btnMinimizar.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnMinimizar, "Minimizar");
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(265, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "IDUser";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.txtContraseñaActual);
+            this.panel1.Location = new System.Drawing.Point(24, 189);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(295, 36);
+            this.panel1.TabIndex = 13;
+            // 
+            // txtContraseñaActual
+            // 
+            this.txtContraseñaActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtContraseñaActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContraseñaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseñaActual.Location = new System.Drawing.Point(9, 8);
+            this.txtContraseñaActual.Name = "txtContraseñaActual";
+            this.txtContraseñaActual.Size = new System.Drawing.Size(279, 19);
+            this.txtContraseñaActual.TabIndex = 0;
+            this.txtContraseñaActual.Enter += new System.EventHandler(this.txtContraseñaActual_Enter);
+            this.txtContraseñaActual.Leave += new System.EventHandler(this.txtContraseñaActual_Leave);
             // 
             // EditarUser
             // 
@@ -346,14 +332,14 @@
             this.Panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.bar.ResumeLayout(false);
             this.bar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -380,6 +366,5 @@
         internal System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtContraseñaActual;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

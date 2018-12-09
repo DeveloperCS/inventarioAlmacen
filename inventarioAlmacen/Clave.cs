@@ -16,7 +16,7 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             txtNombre.Text = "Digite su clave";
-            txtNombre.ForeColor = Color.DarkGray;
+            txtNombre.ForeColor = Color.LightGray;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -52,7 +52,7 @@ namespace inventarioAlmacen
             if (txtNombre.Text == "")
             {
                 txtNombre.Text = "Digite su clave";
-                txtNombre.ForeColor = Color.DarkGray;
+                txtNombre.ForeColor = Color.LightGray;
             }
         }
     }
