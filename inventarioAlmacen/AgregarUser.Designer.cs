@@ -28,36 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.comboBoxTipoUser = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombreUser = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtPuesto = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.bar = new System.Windows.Forms.Panel();
             this.Usuarios = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtPuesto = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.bar.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -75,7 +73,6 @@
             this.btnAgregar.Size = new System.Drawing.Size(223, 35);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
-            this.toolTip1.SetToolTip(this.btnAgregar, "Agregar Usuario");
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -94,7 +91,6 @@
             this.comboBoxTipoUser.Name = "comboBoxTipoUser";
             this.comboBoxTipoUser.Size = new System.Drawing.Size(281, 28);
             this.comboBoxTipoUser.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.comboBoxTipoUser, "Tipo de Usuario");
             this.comboBoxTipoUser.Enter += new System.EventHandler(this.comboBoxTipoUser_Enter);
             this.comboBoxTipoUser.Leave += new System.EventHandler(this.comboBoxTipoUser_Leave);
             // 
@@ -125,7 +121,6 @@
             this.txtNombreUser.Name = "txtNombreUser";
             this.txtNombreUser.Size = new System.Drawing.Size(279, 19);
             this.txtNombreUser.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtNombreUser, "Nombre");
             this.txtNombreUser.Enter += new System.EventHandler(this.txtNombreUser_Enter);
             this.txtNombreUser.Leave += new System.EventHandler(this.txtNombreUser_Leave);
             // 
@@ -147,72 +142,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel4.Controls.Add(this.txtPuesto);
-            this.panel4.Location = new System.Drawing.Point(24, 83);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(295, 36);
-            this.panel4.TabIndex = 11;
-            // 
-            // txtPuesto
-            // 
-            this.txtPuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtPuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPuesto.Location = new System.Drawing.Point(9, 8);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(279, 19);
-            this.txtPuesto.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtPuesto, "Puesto");
-            this.txtPuesto.Enter += new System.EventHandler(this.txtPuesto_Enter);
-            this.txtPuesto.Leave += new System.EventHandler(this.txtPuesto_Leave);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel5.Controls.Add(this.txtContraseña);
-            this.panel5.Location = new System.Drawing.Point(24, 178);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(295, 36);
-            this.panel5.TabIndex = 11;
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(9, 8);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(279, 19);
-            this.txtContraseña.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtContraseña, "Contraseña");
-            this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
-            this.txtContraseña.Leave += new System.EventHandler(this.txtContraseña_Leave);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel6.Controls.Add(this.txtConfirmarContraseña);
-            this.panel6.Location = new System.Drawing.Point(24, 226);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(295, 36);
-            this.panel6.TabIndex = 11;
-            // 
-            // txtConfirmarContraseña
-            // 
-            this.txtConfirmarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtConfirmarContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarContraseña.Location = new System.Drawing.Point(9, 8);
-            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
-            this.txtConfirmarContraseña.Size = new System.Drawing.Size(279, 19);
-            this.txtConfirmarContraseña.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtConfirmarContraseña, "Confirmar Contraseña");
-            this.txtConfirmarContraseña.Enter += new System.EventHandler(this.txtConfirmarContraseña_Enter);
-            this.txtConfirmarContraseña.Leave += new System.EventHandler(this.txtConfirmarContraseña_Leave);
-            // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
@@ -224,7 +153,6 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCerrar.TabIndex = 15;
             this.btnCerrar.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar");
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnMinimizar
@@ -238,7 +166,6 @@
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimizar.TabIndex = 16;
             this.btnMinimizar.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnMinimizar, "Minimizar");
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnCancelar
@@ -256,7 +183,6 @@
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
-            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -283,7 +209,6 @@
             this.Usuarios.Size = new System.Drawing.Size(116, 29);
             this.Usuarios.TabIndex = 2;
             this.Usuarios.Text = "Usuarios";
-            this.Usuarios.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Usuarios_MouseDown);
             // 
             // panel1
             // 
@@ -297,6 +222,69 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(367, 430);
             this.panel1.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel4.Controls.Add(this.txtPuesto);
+            this.panel4.Location = new System.Drawing.Point(24, 83);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(295, 36);
+            this.panel4.TabIndex = 11;
+            // 
+            // txtPuesto
+            // 
+            this.txtPuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtPuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPuesto.Location = new System.Drawing.Point(9, 8);
+            this.txtPuesto.Name = "txtPuesto";
+            this.txtPuesto.Size = new System.Drawing.Size(279, 19);
+            this.txtPuesto.TabIndex = 0;
+            this.txtPuesto.Enter += new System.EventHandler(this.txtPuesto_Enter);
+            this.txtPuesto.Leave += new System.EventHandler(this.txtPuesto_Leave);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel5.Controls.Add(this.txtContraseña);
+            this.panel5.Location = new System.Drawing.Point(24, 178);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(295, 36);
+            this.panel5.TabIndex = 11;
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.Location = new System.Drawing.Point(9, 8);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(279, 19);
+            this.txtContraseña.TabIndex = 0;
+            this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
+            this.txtContraseña.Leave += new System.EventHandler(this.txtContraseña_Leave);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel6.Controls.Add(this.txtConfirmarContraseña);
+            this.panel6.Location = new System.Drawing.Point(24, 226);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(295, 36);
+            this.panel6.TabIndex = 11;
+            // 
+            // txtConfirmarContraseña
+            // 
+            this.txtConfirmarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtConfirmarContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarContraseña.Location = new System.Drawing.Point(9, 8);
+            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
+            this.txtConfirmarContraseña.Size = new System.Drawing.Size(279, 19);
+            this.txtConfirmarContraseña.TabIndex = 0;
+            this.txtConfirmarContraseña.Enter += new System.EventHandler(this.txtConfirmarContraseña_Enter);
+            this.txtConfirmarContraseña.Leave += new System.EventHandler(this.txtConfirmarContraseña_Leave);
             // 
             // AgregarUser
             // 
@@ -312,17 +300,17 @@
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            this.bar.ResumeLayout(false);
+            this.bar.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            this.bar.ResumeLayout(false);
-            this.bar.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -347,6 +335,5 @@
         private System.Windows.Forms.Panel bar;
         private System.Windows.Forms.Label Usuarios;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

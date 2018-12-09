@@ -56,7 +56,7 @@ namespace inventarioAlmacen
                     if (txtNombreUser.Text == "")
                     {
                         txtNombreUser.Text = "Nombre de Usuario";
-                        txtNombreUser.ForeColor = Color.DarkGray;
+                        txtNombreUser.ForeColor = Color.LightGray;
                     }
                     break;
                 case 3:
@@ -71,7 +71,7 @@ namespace inventarioAlmacen
                     if (txtPuesto.Text == "")
                     {
                         txtPuesto.Text = "Puesto de Usuario";
-                        txtPuesto.ForeColor = Color.DarkGray;
+                        txtPuesto.ForeColor = Color.LightGray;
                     }
                     break;
                 case 5:
@@ -86,7 +86,7 @@ namespace inventarioAlmacen
                     if (comboBoxTipoUser.Text == "")
                     {
                         comboBoxTipoUser.Text = "Tipo de Usuario";
-                        comboBoxTipoUser.ForeColor = Color.DarkGray;
+                        comboBoxTipoUser.ForeColor = Color.LightGray;
                     }
                     break;
                 case 7:
@@ -101,7 +101,7 @@ namespace inventarioAlmacen
                     if (txtContraseñaActual.Text == "")
                     {
                         txtContraseñaActual.Text = "Contraseña Actual";
-                        txtContraseñaActual.ForeColor = Color.DarkGray;
+                        txtContraseñaActual.ForeColor = Color.LightGray;
                     }
                     break;
                 case 9:
@@ -116,7 +116,7 @@ namespace inventarioAlmacen
                     if (txtContraseñaNueva.Text == "")
                     {
                         txtContraseñaNueva.Text = "Contraseña Nueva";
-                        txtContraseñaNueva.ForeColor = Color.DarkGray;
+                        txtContraseñaNueva.ForeColor = Color.LightGray;
                     }
                     break;
 
@@ -132,7 +132,7 @@ namespace inventarioAlmacen
                     if (txtConfirmarContraseñaNueva.Text == "")
                     {
                         txtConfirmarContraseñaNueva.Text = "Confirmar Contraseña";
-                        txtConfirmarContraseñaNueva.ForeColor = Color.DarkGray;
+                        txtConfirmarContraseñaNueva.ForeColor = Color.LightGray;
                     }
                     break;
             }
@@ -216,12 +216,6 @@ namespace inventarioAlmacen
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Usuarios_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

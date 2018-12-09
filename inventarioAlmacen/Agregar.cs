@@ -18,11 +18,11 @@ namespace inventarioAlmacen
             InitializeComponent();
 
             txtNombre.Text = "Nombre del Articulo";
-            txtNombre.ForeColor = Color.DarkGray;
+            txtNombre.ForeColor = Color.LightGray;
             comboBoxCategoria.Text = "Categoria";
-            comboBoxCategoria.ForeColor = Color.DarkGray;
+            comboBoxCategoria.ForeColor = Color.LightGray;
             comboBoxMedida.Text = "Tipo de Medida";
-            comboBoxMedida.ForeColor = Color.DarkGray;
+            comboBoxMedida.ForeColor = Color.LightGray;
 
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -177,14 +177,14 @@ namespace inventarioAlmacen
                     if (comboBoxMedida.Text == "")
                     {
                         comboBoxMedida.Text = "Tipo de Medida";
-                        comboBoxMedida.ForeColor = Color.DarkGray;
+                        comboBoxMedida.ForeColor = Color.LightGray;
                     }
                     break;
                 case 3:
                     if (comboBoxCategoria.Text == "")
                     {
                         comboBoxCategoria.Text = "Categoria";
-                        comboBoxCategoria.ForeColor = Color.DarkGray;
+                        comboBoxCategoria.ForeColor = Color.LightGray;
                     }
                     break;
                 case 4:
@@ -198,7 +198,7 @@ namespace inventarioAlmacen
                     if (txtNombre.Text == "")
                     {
                         txtNombre.Text = "Nombre del Articulo";
-                        txtNombre.ForeColor = Color.DarkGray;
+                        txtNombre.ForeColor = Color.LightGray;
                     }
                     break;
                 case 6:
@@ -308,12 +308,6 @@ namespace inventarioAlmacen
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void label1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

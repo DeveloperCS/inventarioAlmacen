@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datosTabla = new System.Windows.Forms.DataGridView();
@@ -37,6 +36,7 @@
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarReporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bdAlmacenDataSet = new inventarioAlmacen.bdAlmacenDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -45,7 +45,6 @@
             this.rdTodo = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdAlmacenDataSet)).BeginInit();
@@ -76,6 +75,7 @@
             this.datosTabla.DefaultCellStyle = dataGridViewCellStyle2;
             this.datosTabla.Location = new System.Drawing.Point(12, 116);
             this.datosTabla.Name = "datosTabla";
+            this.datosTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datosTabla.Size = new System.Drawing.Size(1026, 399);
             this.datosTabla.TabIndex = 1;
             // 
@@ -84,14 +84,12 @@
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.Color.Gray;
+            this.txtBuscar.ForeColor = System.Drawing.Color.DimGray;
             this.txtBuscar.Location = new System.Drawing.Point(8, 5);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(340, 24);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Tag = "";
-            this.toolTip1.SetToolTip(this.txtBuscar, "Buscar");
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
             this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
@@ -103,7 +101,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productoToolStripMenuItem,
             this.eliminarToolStripMenuItem,
-            this.editarToolStripMenuItem});
+            this.editarToolStripMenuItem,
+            this.generarReporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1050, 32);
@@ -143,6 +142,14 @@
             this.editarToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
+            // generarReporteToolStripMenuItem
+            // 
+            this.generarReporteToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generarReporteToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.generarReporteToolStripMenuItem.Name = "generarReporteToolStripMenuItem";
+            this.generarReporteToolStripMenuItem.Size = new System.Drawing.Size(163, 28);
+            this.generarReporteToolStripMenuItem.Text = "Generar Reporte";
+            // 
             // bdAlmacenDataSet
             // 
             this.bdAlmacenDataSet.DataSetName = "bdAlmacenDataSet";
@@ -180,7 +187,6 @@
             this.rdHi.Size = new System.Drawing.Size(149, 22);
             this.rdHi.TabIndex = 2;
             this.rdHi.Text = "Higiene y Limpieza";
-            this.toolTip1.SetToolTip(this.rdHi, "Higiene y Limpieza");
             this.rdHi.UseVisualStyleBackColor = true;
             this.rdHi.CheckedChanged += new System.EventHandler(this.rdHi_CheckedChanged);
             // 
@@ -193,7 +199,6 @@
             this.rdHer.Size = new System.Drawing.Size(168, 22);
             this.rdHer.TabIndex = 1;
             this.rdHer.Text = "Herramientas y Otros";
-            this.toolTip1.SetToolTip(this.rdHer, "Herramientas y Otros");
             this.rdHer.UseVisualStyleBackColor = true;
             this.rdHer.CheckedChanged += new System.EventHandler(this.rdHer_CheckedChanged);
             // 
@@ -208,7 +213,6 @@
             this.rdTodo.TabIndex = 0;
             this.rdTodo.TabStop = true;
             this.rdTodo.Text = "Todo";
-            this.toolTip1.SetToolTip(this.rdTodo, "Todo");
             this.rdTodo.UseVisualStyleBackColor = true;
             this.rdTodo.CheckedChanged += new System.EventHandler(this.rdTodo_CheckedChanged);
             // 
@@ -277,7 +281,7 @@
         private System.Windows.Forms.RadioButton rdHi;
         private System.Windows.Forms.RadioButton rdHer;
         private System.Windows.Forms.RadioButton rdTodo;
+        private System.Windows.Forms.ToolStripMenuItem generarReporteToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

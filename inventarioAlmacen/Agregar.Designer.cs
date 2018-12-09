@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregar));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -39,8 +38,6 @@
             this.comboBoxMedida = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bar = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -48,17 +45,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.bar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).BeginInit();
             this.panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -76,7 +74,6 @@
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
-            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -95,7 +92,6 @@
             this.btnAgregar.Size = new System.Drawing.Size(223, 35);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
-            this.toolTip1.SetToolTip(this.btnAgregar, "Agregar Articulo");
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -110,7 +106,6 @@
             this.label1.Size = new System.Drawing.Size(114, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Articulos";
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // lbID
             // 
@@ -119,7 +114,6 @@
             this.lbID.Size = new System.Drawing.Size(100, 23);
             this.lbID.TabIndex = 0;
             this.lbID.Text = "ID";
-            this.toolTip1.SetToolTip(this.lbID, "ID Articulo");
             this.lbID.Click += new System.EventHandler(this.lbID_Click);
             // 
             // label3
@@ -147,7 +141,6 @@
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(281, 28);
             this.comboBoxCategoria.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.comboBoxCategoria, "Categoria");
             this.comboBoxCategoria.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategoria_SelectedIndexChanged);
             this.comboBoxCategoria.Enter += new System.EventHandler(this.comboBoxCategoria_Enter);
             this.comboBoxCategoria.Leave += new System.EventHandler(this.comboBoxCategoria_Leave);
@@ -170,7 +163,6 @@
             this.comboBoxMedida.Name = "comboBoxMedida";
             this.comboBoxMedida.Size = new System.Drawing.Size(281, 28);
             this.comboBoxMedida.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.comboBoxMedida, "Medida");
             this.comboBoxMedida.SelectedIndexChanged += new System.EventHandler(this.comboBoxMedida_SelectedIndexChanged);
             this.comboBoxMedida.Enter += new System.EventHandler(this.comboBoxMedida_Enter);
             this.comboBoxMedida.Leave += new System.EventHandler(this.comboBoxMedida_Leave);
@@ -202,34 +194,6 @@
             this.bar.Paint += new System.Windows.Forms.PaintEventHandler(this.bar_Paint);
             this.bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bar_MouseDown);
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerr;
-            this.btnCerrar.Location = new System.Drawing.Point(332, 9);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 15;
-            this.btnCerrar.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar");
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
-            this.btnMinimizar.Location = new System.Drawing.Point(303, 6);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinimizar.TabIndex = 16;
-            this.btnMinimizar.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnMinimizar, "Minimizar");
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
@@ -246,7 +210,7 @@
             this.groupBox1.Size = new System.Drawing.Size(343, 290);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Detalles del Articulo";
+            this.groupBox1.Text = "Detalles del Producto";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // panel5
@@ -278,7 +242,6 @@
             this.nmCantidad.Name = "nmCantidad";
             this.nmCantidad.Size = new System.Drawing.Size(120, 21);
             this.nmCantidad.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.nmCantidad, "Cantidad");
             this.nmCantidad.ValueChanged += new System.EventHandler(this.nmCantidad_ValueChanged);
             // 
             // panel3
@@ -310,10 +273,35 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(279, 19);
             this.txtNombre.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtNombre, "Nombre");
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter_1);
             this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave_1);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerr;
+            this.btnCerrar.Location = new System.Drawing.Point(332, 9);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 15;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
+            this.btnMinimizar.Location = new System.Drawing.Point(303, 6);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimizar.TabIndex = 16;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // Agregar
             // 
@@ -330,8 +318,6 @@
             this.panel1.ResumeLayout(false);
             this.bar.ResumeLayout(false);
             this.bar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -339,6 +325,8 @@
             this.panel3.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,6 +351,5 @@
         public System.Windows.Forms.Label lbID;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

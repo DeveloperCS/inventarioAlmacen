@@ -123,14 +123,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Datos\Datos.cs" />
-    <Compile Include="Funciones\funciones.cs" />
-    <Compile Include="Inicio.cs">
+    <Compile Include="Articulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="Articulos.Designer.cs">
+      <DependentUpon>Articulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datos\Datos.cs" />
+    <Compile Include="Funciones\funciones.cs" />
     <Compile Include="inventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,24 +145,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReporteInventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReporteInventario.Designer.cs">
-      <DependentUpon>ReporteInventario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReportePretamos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportePretamos.Designer.cs">
-      <DependentUpon>ReportePretamos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes.Designer.cs">
-      <DependentUpon>Reportes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,8 +183,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Articulos.resx">
+      <DependentUpon>Articulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inventario.resx">
       <DependentUpon>inventario.cs</DependentUpon>
@@ -220,19 +202,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReporteInventario.resx">
-      <DependentUpon>ReporteInventario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportePretamos.resx">
-      <DependentUpon>ReportePretamos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes.resx">
-      <DependentUpon>Reportes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
@@ -277,10 +249,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>bdAlmacen.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\Usuario.png" />
-    <None Include="Resources\Reporte.png" />
-    <None Include="Resources\Reportes.png" />
-    <None Include="Resources\Usuarios.png" />
     <None Include="Resources\logoContenedor.png" />
     <None Include="Resources\logoLogin.png" />
     <None Include="Resources\user.png" />
@@ -294,7 +262,6 @@
     <None Include="Resources\Categoria.png" />
     <None Include="Resources\Cantidad.png" />
     <None Include="Resources\cerrarGris.png" />
-    <None Include="Resources\Info.png" />
     <Content Include="Resources\inicio.png" />
     <None Include="Resources\inventar.png" />
     <Content Include="Resources\inventario.png" />

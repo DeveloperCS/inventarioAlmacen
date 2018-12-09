@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Panel1 = new System.Windows.Forms.Panel();
             this.Label4 = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Panel1.SuspendLayout();
             this.Panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
@@ -100,7 +98,6 @@
             this.Label2.Size = new System.Drawing.Size(122, 15);
             this.Label2.TabIndex = 6;
             this.Label2.Text = "Forgot Password?";
-            this.toolTip1.SetToolTip(this.Label2, "Olvidaste tu Contraseña");
             // 
             // CheckBox1
             // 
@@ -111,7 +108,6 @@
             this.CheckBox1.Size = new System.Drawing.Size(121, 19);
             this.CheckBox1.TabIndex = 5;
             this.CheckBox1.Text = "Remember Me";
-            this.toolTip1.SetToolTip(this.CheckBox1, "Recordar Usuario");
             this.CheckBox1.UseVisualStyleBackColor = true;
             // 
             // btnSignIn
@@ -126,7 +122,6 @@
             this.btnSignIn.Size = new System.Drawing.Size(250, 36);
             this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "Sign In";
-            this.toolTip1.SetToolTip(this.btnSignIn, "Entrar");
             this.btnSignIn.UseVisualStyleBackColor = false;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
@@ -149,7 +144,6 @@
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(233, 19);
             this.txtPassword.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.txtPassword, "Ingresar Contraseña");
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
@@ -167,11 +161,10 @@
             this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(9, 8);
+            this.txtUser.Location = new System.Drawing.Point(9, 7);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(233, 19);
             this.txtUser.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.txtUser, "Usuario");
             this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
             this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
@@ -194,7 +187,6 @@
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimizar.TabIndex = 17;
             this.btnMinimizar.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnMinimizar, "Minimizar");
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnCerrar
@@ -208,7 +200,6 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCerrar.TabIndex = 16;
             this.btnCerrar.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar");
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // PictureBox1
@@ -221,7 +212,6 @@
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox1.TabIndex = 10;
             this.PictureBox1.TabStop = false;
-            this.toolTip1.SetToolTip(this.PictureBox1, "chechstore");
             // 
             // Form1
             // 
@@ -274,7 +264,6 @@
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Panel panelBarraSuperior;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

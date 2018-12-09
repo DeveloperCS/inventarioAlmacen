@@ -16,15 +16,15 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             txtNombreUser.Text = "Nombre de Usuario";
-            txtNombreUser.ForeColor = Color.DarkGray;
+            txtNombreUser.ForeColor = Color.LightGray;
             txtPuesto.Text = "Puesto de Usuario";
-            txtPuesto.ForeColor = Color.DarkGray;
+            txtPuesto.ForeColor = Color.LightGray;
             comboBoxTipoUser.Text = "Tipo de Usuario";
-            comboBoxTipoUser.ForeColor = Color.DarkGray;
+            comboBoxTipoUser.ForeColor = Color.LightGray;
             txtContraseña.Text = "Contraseña";
-            txtContraseña.ForeColor = Color.DarkGray;
+            txtContraseña.ForeColor = Color.LightGray;
             txtConfirmarContraseña.Text = "Confirmar Contraseña";
-            txtConfirmarContraseña.ForeColor = Color.DarkGray;
+            txtConfirmarContraseña.ForeColor = Color.LightGray;
 
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -113,7 +113,7 @@ namespace inventarioAlmacen
                     if (txtNombreUser.Text == "")
                     {
                         txtNombreUser.Text = "Nombre de Usuario";
-                        txtNombreUser.ForeColor = Color.DarkGray;
+                        txtNombreUser.ForeColor = Color.LightGray;
                     }
                     break;
                 case 3:
@@ -128,7 +128,7 @@ namespace inventarioAlmacen
                     if (txtPuesto.Text == "")
                     {
                         txtPuesto.Text = "Puesto de Usuario";
-                        txtPuesto.ForeColor = Color.DarkGray;
+                        txtPuesto.ForeColor = Color.LightGray;
                     }
                     break;
                 case 5:
@@ -143,7 +143,7 @@ namespace inventarioAlmacen
                     if (comboBoxTipoUser.Text == "")
                     {
                         comboBoxTipoUser.Text = "Tipo de Usuario";
-                        comboBoxTipoUser.ForeColor = Color.DarkGray;
+                        comboBoxTipoUser.ForeColor = Color.LightGray;
                     }
                     break;
                 case 7:
@@ -158,7 +158,7 @@ namespace inventarioAlmacen
                     if (txtContraseña.Text == "")
                     {
                         txtContraseña.Text = "Contraseña";
-                        txtContraseña.ForeColor = Color.DarkGray;
+                        txtContraseña.ForeColor = Color.LightGray;
                     }
                     break;
                 case 9:
@@ -173,7 +173,7 @@ namespace inventarioAlmacen
                     if (txtConfirmarContraseña.Text == "")
                     {
                         txtConfirmarContraseña.Text = "Confirmar Contraseña";
-                        txtConfirmarContraseña.ForeColor = Color.DarkGray;
+                        txtConfirmarContraseña.ForeColor = Color.LightGray;
                     }
                     break;
 
@@ -205,12 +205,6 @@ namespace inventarioAlmacen
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Usuarios_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
