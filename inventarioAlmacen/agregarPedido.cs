@@ -95,6 +95,7 @@ namespace inventarioAlmacen
         Datos dts = new Datos();
         private void agregarPedido_Load(object sender, EventArgs e)
         {
+            grupFiltro.Visible = false; 
             if (rdTodo.Checked == true)
             {
                 consult();

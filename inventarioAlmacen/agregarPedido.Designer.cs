@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregarPedido));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grupFiltro = new System.Windows.Forms.GroupBox();
             this.rdHi = new System.Windows.Forms.RadioButton();
             this.rdHer = new System.Windows.Forms.RadioButton();
             this.rdTodo = new System.Windows.Forms.RadioButton();
@@ -50,10 +50,10 @@
             this.bar = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
+            this.grupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -65,19 +65,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grupFiltro
             // 
-            this.groupBox1.Controls.Add(this.rdHi);
-            this.groupBox1.Controls.Add(this.rdHer);
-            this.groupBox1.Controls.Add(this.rdTodo);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(197, 96);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
+            this.grupFiltro.Controls.Add(this.rdHi);
+            this.grupFiltro.Controls.Add(this.rdHer);
+            this.grupFiltro.Controls.Add(this.rdTodo);
+            this.grupFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grupFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.grupFiltro.Location = new System.Drawing.Point(12, 53);
+            this.grupFiltro.Name = "grupFiltro";
+            this.grupFiltro.Size = new System.Drawing.Size(197, 96);
+            this.grupFiltro.TabIndex = 11;
+            this.grupFiltro.TabStop = false;
+            this.grupFiltro.Text = "Filtros";
             // 
             // rdHi
             // 
@@ -306,15 +306,6 @@
             this.label2.Text = "Prestar Articulo";
             this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(215, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 35);
-            this.panel1.TabIndex = 21;
-            // 
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -329,6 +320,15 @@
             this.toolTip1.SetToolTip(this.txtBuscar, "Buscar");
             this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
             this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.txtBuscar);
+            this.panel1.Location = new System.Drawing.Point(215, 110);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(280, 35);
+            this.panel1.TabIndex = 21;
             // 
             // pictureBox1
             // 
@@ -353,7 +353,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grupFiltro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.datosTabla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -362,8 +362,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "agregarPedido";
             this.Load += new System.EventHandler(this.agregarPedido_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grupFiltro.ResumeLayout(false);
+            this.grupFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -381,7 +381,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grupFiltro;
         private System.Windows.Forms.RadioButton rdHi;
         private System.Windows.Forms.RadioButton rdHer;
         private System.Windows.Forms.RadioButton rdTodo;
