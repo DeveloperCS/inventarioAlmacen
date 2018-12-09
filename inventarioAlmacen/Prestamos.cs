@@ -97,24 +97,42 @@ namespace inventarioAlmacen
             if (dataLista.Rows.Count > 0)
             {
                 fClave.id = emp;
-                string idAr,nomAr,descrip;
+                string idAr,nomAr,descrip,cant;
                 
                 if(fClave.ShowDialog()==DialogResult.Yes)
                 {
                     String qIn = "";
                     if (carte.Equals("Herramientas y  Otros"))
                     {
-                        qIn = "INSERT INTO Recibos VALUES('"+ emp + "',)";
-                        if (datos.insertar(qIn)==true)
+                        for (int i =0; i<dataLista.Rows.Count;i++)
                         {
+                            idAr= dataLista.Rows[i].Cells[1].Value.ToString();
+                            nomAr = dataLista.Rows[i].Cells[2].Value.ToString();
+                            descrip  = "Cantida:"+dataLista.Rows[i].Cells[4].Value.ToString() + "Categoria:"+dataLista.Rows[i].Cells[3].Value.ToString();
 
+                            qIn = "INSERT INTO Recibos VALUES('" + emp + "','"+idAr+"','"+emp+"','"+nomAr+"','fehS','fentra','"+descrip+"')";
+                            if (datos.insertar(qIn) == true)
+                            {
+
+                            }
                         }
 
-                    }else if (carte.Equals("Higiene y  Limpieza"))
+                    }
+                    else if (carte.Equals("Higiene y  Limpieza"))
                     {
                         if (datos.insertar(qIn) == true)
                         {
+                            for (int i = 0; i < dataLista.Rows.Count; i++)
+                            {
+                                idAr = dataLista.Rows[i].Cells[1].Value.ToString();
+                                nomAr = dataLista.Rows[i].Cells[2].Value.ToString();
+                                cant = dataLista.Rows[i].Cells[4].Value.ToString();
+                                qIn = "INSERT INTO Recibos VALUES('" + emp + "','" + idAr + "','" + emp + "','" + nomAr + "','"+cant+"','fentra')";
+                                if (datos.insertar(qIn) == true)
+                                {
 
+                                }
+                            }
                         }
                     }
                 }
