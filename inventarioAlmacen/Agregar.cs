@@ -81,7 +81,8 @@ namespace inventarioAlmacen
                         {
                             MessageBox.Show("Articulo Agregado!!");
                             limpiar();
-                            //new inventario().consult();
+                           
+                            this.DialogResult = DialogResult.OK;
                             this.Close();
 
                         }
@@ -93,7 +94,7 @@ namespace inventarioAlmacen
                         {
                             MessageBox.Show("Articulo Agregado!!");
                             limpiar();
-                            // new inventario().consult();
+                            this.DialogResult = DialogResult.OK;
                             this.Close();
 
                         }

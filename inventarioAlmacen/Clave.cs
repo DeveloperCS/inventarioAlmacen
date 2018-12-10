@@ -67,7 +67,7 @@ namespace inventarioAlmacen
 
                 if (claIngr.Equals(clav))
                 {
-                    this.DialogResult = DialogResult.Yes;
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
@@ -81,12 +81,11 @@ namespace inventarioAlmacen
         DataTable tabla = new DataTable();
         private void Clave_Load(object sender, EventArgs e)
         {
-            string q = "select ClaveEmpleado as clave from Empleados where idEmpleado = '" +id + "'";
+            string q = "select ClaveEmpleado as clave from Empleados where idEmpleado LIKE '" +id + "%'  OR  idEmpleado LIKE '%" + id + "'";
             DataSet dtSet = new DataSet();
             dtSet = dts.consulta(q);
             tabla= dtSet.Tables[0];
           
-           
         }
     }
 }

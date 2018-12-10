@@ -23,16 +23,16 @@ namespace inventarioAlmacen
         Datos dts = new Datos();
         private void inventario_Load(object sender, EventArgs e)
         {
-            
-            if (rdTodo.Checked ==true)
+
+            if (rdTodo.Checked == true)
             {
                 consult();
             }
 
-            if (datosTabla.Rows.Count<=0)
+            if (datosTabla.Rows.Count <= 0)
             {
-                MessageBox.Show("No Tienie Registros, \nAñade nuevos Registros","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Stop);
-                
+                MessageBox.Show("No Tienie Registros, \nAñade nuevos Registros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
             }
 
         }
@@ -47,7 +47,12 @@ namespace inventarioAlmacen
 
         private void productoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Agregar().Show();
+            Agregar ar =new Agregar();
+
+            if (ar.ShowDialog() == DialogResult.OK)
+            {
+                consult();
+            }
         }
 
         private void txtBuscar_Enter(object sender, EventArgs e)

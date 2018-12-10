@@ -206,13 +206,65 @@ namespace inventarioAlmacen
                     {
                         try
                         {
-                            String q = "INSERT INTO listaArPrestamos Values('"+F+"','"+Ar+"','"+ Cate + "','"+CantT+"','"+idEmp+"' ); ";
-                            if (dts.insertar(q)==true)
+                            string q1 = "select folio as f, cantidad as c from listaArPrestamos ";
+                            DataSet dtSet = new DataSet();
+                            DataTable tabla = new DataTable();
+                            dtSet = dts.consulta(q1);
+                            tabla = dtSet.Tables[0];
+                            string clav = "", claIngr = "";
+                            int con = 0;
+                            string[] cantidadSola =null;
+                            foreach (DataRow row in tabla.Rows)
                             {
-                                MessageBox.Show("Artitculo agregado");
-                                this.DialogResult = DialogResult.OK;
-                                this.Close();
+                                clav = row["f"].ToString();
+                                
+                                if (F.Equals(clav))
+                                {
+                                    con++;
+                                    claIngr = row["c"].ToString();
+                                    cantidadSola = claIngr.Split(' ');
+                                }
                             }
+                            if (con>0)
+                            {
+                                int cantidadDefinitiva = 0;
+                                cantidadDefinitiva = int.Parse(cantidadSola[0])+cant;
+
+                                if (comprobarExis(F, cantidadDefinitiva)==true)
+                                {
+                                    String q = "UPDATE listaArPrestamos SET cantidad='" + Convert.ToString(cantidadDefinitiva) + " " + comboBoxMedida.Text + "' WHERE folio='" + F + "'";
+                                    if (dts.update(q) == true)
+                                    {
+                                        MessageBox.Show("Artitculo agregado");
+                                        this.DialogResult = DialogResult.OK;
+                                        this.Close();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No Cuentas con suficientes articulos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                                }
+                                
+                            }
+                            else if(con<=0)
+                            {
+                                if (comprobarExis(F, cant) == true)
+                                {
+                                    String q = "INSERT INTO listaArPrestamos Values('" + F + "','" + Ar + "','" + Cate + "','" + CantT + "','" + idEmp + "' ); ";
+                                    if (dts.insertar(q) == true)
+                                    {
+                                        MessageBox.Show("Artitculo agregado");
+                                        this.DialogResult = DialogResult.OK;
+                                        this.Close();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No Cuentas con suficientes articulos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+                            }
+                            
                         }
                         catch (Exception ex)
                         {
@@ -230,6 +282,34 @@ namespace inventarioAlmacen
             {
                 MessageBox.Show("Seleccion Uno o Más Articulos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+        }
+     
+        public bool comprobarExis(String f,int cantDef)
+        {
+
+            string q1 = "select CantidadAlmacen as c from Articulos WHERE idArticulo='"+f+"' ";
+            DataSet dtSet = new DataSet();
+            DataTable tabla = new DataTable();
+            dtSet = dts.consulta(q1);
+            tabla = dtSet.Tables[0];
+            string claIngr = "";
+            int con = 0;
+            Boolean res = false;
+            foreach (DataRow row in tabla.Rows)
+            {
+                claIngr = row["c"].ToString();
+                con = int.Parse(claIngr);
+                if (con >= cantDef)
+                {
+                    res =true;
+                }
+                else
+                {
+                    res= false;
+                }
+            }
+
+            return res;
         }
     }
 }

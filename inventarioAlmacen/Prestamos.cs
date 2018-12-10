@@ -97,10 +97,11 @@ namespace inventarioAlmacen
             Clave fClave =new Clave();
             if (dataLista.Rows.Count > 0)
             {
-                fClave.id = emp;
+               
+                fClave.id = emp1;
                 string idAr,nomAr,descrip,cant;
                 
-                if(fClave.ShowDialog()==DialogResult.Yes)
+                if(fClave.ShowDialog()==DialogResult.OK)
                 {
                     String qIn = "";
                     
@@ -117,25 +118,25 @@ namespace inventarioAlmacen
                             descrip  = "Cantida:"+dataLista.Rows[i].Cells[4].Value.ToString() + "Categoria:"+dataLista.Rows[i].Cells[3].Value.ToString();
                            
 
-                            qIn = "INSERT INTO Recibos VALUES('Re-0002','" + emp + "','"+idAr+"','"+emp+"','"+nomAr+"',GETDATE(),GETDATE(),'"+descrip+"');";
+                            qIn = "INSERT INTO Recibos VALUES('Re-0002','" + emp1 + "','"+idAr+"','"+emp1+"','"+nomAr+"',GETDATE(),GETDATE(),'"+descrip+"');";
                             if (datos.insertar(qIn) == true)
                             {
                                 qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0] + "' WHERE idArticulo= '" + idAr + "'";
                                 if (datos.update(qIn) == true)
                                 {
                                     eliminarLista();
-                                    MessageBox.Show("siinsert");
+                                    MessageBox.Show("siinsert herr");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("noinsert");
+                                MessageBox.Show("noinsert herr");
                             }
                             
                         }
 
                     }
-                    else if (carte.Equals("Higiene y  Limpieza"))
+                    else if (carte.Equals("Higiene y Limpieza"))
                     {
                        
                             for (int i = 0; i < dataLista.Rows.Count; i++)
@@ -145,22 +146,22 @@ namespace inventarioAlmacen
                                     String nC = "";
                                     nC = dataLista.Rows[i].Cells[4].Value.ToString();
                                     string[] cantidadSola = nC.Split(' ');
-
                                     cant = dataLista.Rows[i].Cells[4].Value.ToString();
-                                qIn = "INSERT INTO Electronico VALUES('El-0002','" + emp + "','" + idAr + "','" + emp + "','" + nomAr + "','"+cant+"',GETDATE());";
+                         
+                                qIn = "INSERT INTO Electronico VALUES('El-0002','" + emp1 + "','" + idAr + "','" + emp1 + "','" + nomAr + "','"+cant+"',GETDATE());";
                                 if (datos.insertar(qIn) == true)
                                 {
                                     qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0]+"' WHERE idArticulo= '"+idAr+"'";
                                     if (datos.update(qIn)==true)
                                     {
                                         eliminarLista();
-                                        MessageBox.Show("siinsert");
-                                     }
+                                        MessageBox.Show("siinsert hig");
+                                    }
                                    
                                 }
                                 else
                                 {
-                                    MessageBox.Show("noinsert");
+                                    MessageBox.Show("noinsert hig");
                                 }   
                             }
                         
@@ -168,12 +169,12 @@ namespace inventarioAlmacen
                 }
                 else
                 {
-
+                    MessageBox.Show("noinsert dialor");
                 }
             }
             else
             {
-                MessageBox.Show("Si productos!!! \n \n Agrege productos a la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sin productos!!! \n \n Agrege productos a la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -223,19 +224,16 @@ namespace inventarioAlmacen
             }
             
         }
-        String carte, emp;
+        String carte="", emp1="";
         public void comprobarExis()
         {
            
-
-
-
             if (dataLista.Rows.Count > 0)
             {
                 carte = dataLista.CurrentRow.Cells[3].Value.ToString();
-                emp = dataLista.CurrentRow.Cells[5].Value.ToString();
-               // MessageBox.Show("Tienes Un Prestamo pendiente !!","Prestamo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
+                emp1 = dataLista.CurrentRow.Cells[5].Value.ToString();
+              
+                //reposisciona cb
                 for (int x = 0; x <= cbEmpleados.Items.Count - 1; x++)
                 {
                     cbEmpleados.SelectedIndex = x;
@@ -243,7 +241,7 @@ namespace inventarioAlmacen
                     nEm = cbEmpleados.SelectedValue.ToString();
                     string[] emp = nEm.Split('/');
 
-                    if (emp[0].Equals(emp))
+                    if (emp[0].Equals(emp1))
                     {
 
                         break;
@@ -263,7 +261,7 @@ namespace inventarioAlmacen
                     }
                 }
 
-                if (carte.Equals("Higiene y  Limpieza"))
+                if (carte.Equals("Higiene y Limpieza"))
                 {
                     lbDev.Visible = false;
                     dtRegreso.Visible = false;
