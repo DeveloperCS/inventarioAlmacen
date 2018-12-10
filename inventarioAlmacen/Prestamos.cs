@@ -173,20 +173,24 @@ namespace inventarioAlmacen
                                     string[] cantidadSola = nC.Split(' ');
                                     cant = dataLista.Rows[i].Cells[4].Value.ToString();
                          
-                                qIn = "INSERT INTO Electronico VALUES('El-0003','" + emp1 + "','" + idAr + "','" + emp1 + "','" + nomAr + "','"+cant+"',GETDATE());";
-                                if (datos.insertar(qIn) == true)
-                                {
-                                    qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0]+"' WHERE idArticulo= '"+idAr+"'";
-                                    if (datos.update(qIn)==true)
+                            string qIn1 = "INSERT INTO Electronico VALUES('El-0003','" + emp1 + "','" + idAr + "','" + emp1 + "','" + nomAr + "','"+cantidadSola[0]+"', GETDATE() );";
+                            //string qIn1 = "INSERT INTO Electronico VALUES('El-0003','aa','aa','aa','aa','aa',GETDATE() );";
+                            if (datos.insertar(qIn1) == true)
+                            {
+                                    qIn1 = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0]+"' WHERE IdArticulo= '"+idAr+"'";
+                                    if (datos.update(qIn1)==true)
                                     {
                                         eliminarLista();
-                                        MessageBox.Show("siinsert hig");
+                                        cbCategorias.Enabled = true;
+                                        cbEmpleados.Enabled = true;
+                                        comprobarExis();
+                                        MessageBox.Show("Prestamo Aprobado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                                     }
                                    
                                 }
                                 else
                                 {
-                                    MessageBox.Show("noinsert hig");
+                                   
                                 }   
                             }
                         
