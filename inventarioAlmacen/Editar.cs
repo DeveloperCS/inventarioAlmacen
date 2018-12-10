@@ -208,6 +208,7 @@ namespace inventarioAlmacen
                 {
                     MessageBox.Show("Datos Actualizados!!","Exito",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                     ci = 0;
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                

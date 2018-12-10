@@ -253,7 +253,7 @@ namespace inventarioAlmacen
                                     String q = "INSERT INTO listaArPrestamos Values('" + F + "','" + Ar + "','" + Cate + "','" + CantT + "','" + idEmp + "' ); ";
                                     if (dts.insertar(q) == true)
                                     {
-                                        MessageBox.Show("Artitculo agregado");
+                                        MessageBox.Show("Artitculo agregado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                                         this.DialogResult = DialogResult.OK;
                                         this.Close();
                                     }

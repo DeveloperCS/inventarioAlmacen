@@ -182,7 +182,11 @@ namespace inventarioAlmacen
                     ed.comboBoxMedida.SelectedIndex = tipoT;
                     ed.comboBoxEstado.SelectedIndex = est;
                     ed.cIni(c2);
-                    ed.Show();
+                    
+                    if (ed.ShowDialog() == DialogResult.OK)
+                    {
+                        consult();
+                    }
                 }
             }
             else
@@ -194,7 +198,10 @@ namespace inventarioAlmacen
                 ed.comboBoxMedida.SelectedIndex = tipoT;
                 ed.comboBoxEstado.SelectedIndex = est;
                 //ed.cIni(c2);
-                ed.Show();
+                if (ed.ShowDialog() == DialogResult.OK)
+                {
+                    consult();
+                }
             }
 
             

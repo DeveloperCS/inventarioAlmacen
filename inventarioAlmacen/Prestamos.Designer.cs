@@ -151,8 +151,8 @@
             this.cbCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategorias.FormattingEnabled = true;
             this.cbCategorias.Items.AddRange(new object[] {
-            "Herramientas y  Otros",
-            "Higiene y  Limpieza"});
+            "Herramientas y Otros",
+            "Higiene y Limpieza"});
             this.cbCategorias.Location = new System.Drawing.Point(444, 54);
             this.cbCategorias.Name = "cbCategorias";
             this.cbCategorias.Size = new System.Drawing.Size(232, 28);
