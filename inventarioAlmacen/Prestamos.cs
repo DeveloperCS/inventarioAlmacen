@@ -40,6 +40,7 @@ namespace inventarioAlmacen
                         cbCategorias.Enabled = false;
                         lbDev.Visible = true;
                         dtRegreso.Visible = true;
+                        dtRegreso.MinDate = DateTime.Today;
                         btnCancelar.Enabled = true;
                         cbEmpleados.Enabled = false;
                         
@@ -102,38 +103,67 @@ namespace inventarioAlmacen
                 if(fClave.ShowDialog()==DialogResult.Yes)
                 {
                     String qIn = "";
-                    if (carte.Equals("Herramientas y  Otros"))
+                    
+                    if (carte.Equals("Herramientas y Otros"))
                     {
                         for (int i =0; i<dataLista.Rows.Count;i++)
                         {
                             idAr= dataLista.Rows[i].Cells[1].Value.ToString();
                             nomAr = dataLista.Rows[i].Cells[2].Value.ToString();
-                            descrip  = "Cantida:"+dataLista.Rows[i].Cells[4].Value.ToString() + "Categoria:"+dataLista.Rows[i].Cells[3].Value.ToString();
+                            String nC = "";
+                            nC = dataLista.Rows[i].Cells[4].Value.ToString();
+                            string[] cantidadSola = nC.Split(' ');
 
-                            qIn = "INSERT INTO Recibos VALUES('" + emp + "','"+idAr+"','"+emp+"','"+nomAr+"','fehS','fentra','"+descrip+"')";
+                            descrip  = "Cantida:"+dataLista.Rows[i].Cells[4].Value.ToString() + "Categoria:"+dataLista.Rows[i].Cells[3].Value.ToString();
+                           
+
+                            qIn = "INSERT INTO Recibos VALUES('Re-0002','" + emp + "','"+idAr+"','"+emp+"','"+nomAr+"',GETDATE(),GETDATE(),'"+descrip+"');";
                             if (datos.insertar(qIn) == true)
                             {
-
+                                qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0] + "' WHERE idArticulo= '" + idAr + "'";
+                                if (datos.update(qIn) == true)
+                                {
+                                    eliminarLista();
+                                    MessageBox.Show("siinsert");
+                                }
                             }
+                            else
+                            {
+                                MessageBox.Show("noinsert");
+                            }
+                            
                         }
 
                     }
                     else if (carte.Equals("Higiene y  Limpieza"))
                     {
-                        if (datos.insertar(qIn) == true)
-                        {
+                       
                             for (int i = 0; i < dataLista.Rows.Count; i++)
                             {
                                 idAr = dataLista.Rows[i].Cells[1].Value.ToString();
                                 nomAr = dataLista.Rows[i].Cells[2].Value.ToString();
-                                cant = dataLista.Rows[i].Cells[4].Value.ToString();
-                                qIn = "INSERT INTO Recibos VALUES('" + emp + "','" + idAr + "','" + emp + "','" + nomAr + "','"+cant+"','fentra')";
+                                    String nC = "";
+                                    nC = dataLista.Rows[i].Cells[4].Value.ToString();
+                                    string[] cantidadSola = nC.Split(' ');
+
+                                    cant = dataLista.Rows[i].Cells[4].Value.ToString();
+                                qIn = "INSERT INTO Electronico VALUES('El-0002','" + emp + "','" + idAr + "','" + emp + "','" + nomAr + "','"+cant+"',GETDATE());";
                                 if (datos.insertar(qIn) == true)
                                 {
-
+                                    qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0]+"' WHERE idArticulo= '"+idAr+"'";
+                                    if (datos.update(qIn)==true)
+                                    {
+                                        eliminarLista();
+                                        MessageBox.Show("siinsert");
+                                     }
+                                   
                                 }
+                                else
+                                {
+                                    MessageBox.Show("noinsert");
+                                }   
                             }
-                        }
+                        
                     }
                 }
                 else

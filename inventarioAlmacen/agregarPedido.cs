@@ -193,7 +193,7 @@ namespace inventarioAlmacen
             F = datosTabla.CurrentRow.Cells[0].Value.ToString();
             Ar = datosTabla.CurrentRow.Cells[1].Value.ToString();
             Cate = datosTabla.CurrentRow.Cells[2].Value.ToString();
-            CantT = Convert.ToString(cant)+comboBoxMedida.Text;
+            CantT = Convert.ToString(cant)+" "+comboBoxMedida.Text;
             if (cant>0)
             {
                 if (comboBoxMedida.Text == "Tipo de Medida")
