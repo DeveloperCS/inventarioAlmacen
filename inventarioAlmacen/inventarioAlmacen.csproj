@@ -49,16 +49,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\..\..\Documents\empresa\Control de Gimmnacio\gimmnacio madero\GymControl\Control_Gimmnacio\Control_Gimmnacio\bin\Debug\itextsharp.dll</HintPath>
+      <HintPath>G:\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp.pdfa">
-      <HintPath>..\..\..\..\..\..\Documents\empresa\Control de Gimmnacio\gimmnacio madero\GymControl\Control_Gimmnacio\Control_Gimmnacio\bin\Debug\itextsharp.pdfa.dll</HintPath>
+      <HintPath>G:\itextsharp.pdfa.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp.xtra">
-      <HintPath>..\..\..\..\..\..\Documents\empresa\Control de Gimmnacio\gimmnacio madero\GymControl\Control_Gimmnacio\Control_Gimmnacio\bin\Debug\itextsharp.xtra.dll</HintPath>
+      <HintPath>G:\itextsharp.xtra.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks">
-      <HintPath>..\..\..\..\..\..\Documents\empresa\Control de Gimmnacio\gimmnacio madero\GymControl\Control_Gimmnacio\Control_Gimmnacio\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+      <HintPath>G:\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

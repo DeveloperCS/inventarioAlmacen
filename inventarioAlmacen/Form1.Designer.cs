@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.Label4 = new System.Windows.Forms.Label();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.CheckBox1 = new System.Windows.Forms.CheckBox();
@@ -56,26 +55,12 @@
             // Panel1
             // 
             this.Panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.Panel1.Controls.Add(this.Label4);
             this.Panel1.Controls.Add(this.Label3);
             this.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panel1.Location = new System.Drawing.Point(0, 382);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(370, 58);
             this.Panel1.TabIndex = 1;
-            // 
-            // Label4
-            // 
-            this.Label4.AutoSize = true;
-            this.Label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
-            this.Label4.Location = new System.Drawing.Point(186, 21);
-            this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(124, 18);
-            this.Label4.TabIndex = 1;
-            this.Label4.Text = "Create Account";
             // 
             // Label3
             // 
@@ -261,7 +246,6 @@
         #endregion
 
         internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.CheckBox CheckBox1;
