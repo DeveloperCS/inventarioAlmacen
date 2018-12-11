@@ -264,15 +264,7 @@ namespace inventarioAlmacen
             llenarCbEm();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            lbDev.Visible = false;
-            dtRegreso.Visible = false;
-            cbCategorias.Enabled = true;
-            eliminarLista();
-            this.btnCancelar.Enabled = false;
-            cbEmpleados.Enabled = true;
-        }
+       
 
 
         Datos datos = new Datos();
@@ -357,6 +349,16 @@ namespace inventarioAlmacen
                // llenarCbEm();
                 consultaLis();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lbDev.Visible = false;
+            dtRegreso.Visible = false;
+            cbCategorias.Enabled = true;
+            eliminarLista();
+            this.btnCancelar.Enabled = false;
+            cbEmpleados.Enabled = true;
         }
 
         public string idPrestamo(string tipo)
