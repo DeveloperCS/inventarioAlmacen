@@ -19,6 +19,7 @@ CREATE TABLE [dbo].[Recibos]
 	[IdArticulo] NVARCHAR(7) NOT NULL,
 	[IdEmpleado] NVARCHAR(7) NOT NULL,
 	[NombreArticulo] NVARCHAR(50) NOT NULL,
+	[CantidadArticulo] INT NOT NULL,
     [FechaSalida] DATE NOT NULL, 
     [FechaEntrega] DATE NOT NULL, 
     [Descripcion] NVARCHAR(500) NOT NULL,
