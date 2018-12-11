@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventarioAlmacen.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -79,6 +80,104 @@ namespace inventarioAlmacen
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        public String id, cantida, medida,F;
+        Datos dts = new Datos();
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Actualizar?","Actualizar",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                string q1 = "select folio as f, cantidad as c from listaArPrestamos ";
+                DataSet dtSet = new DataSet();
+                DataTable tabla = new DataTable();
+                dtSet = dts.consulta(q1);
+                tabla = dtSet.Tables[0];
+                string clav = "", claIngr = "";
+                int con = 0;
+                string[] cantidadSola = null;
+                foreach (DataRow row in tabla.Rows)
+                {
+                    clav = row["f"].ToString();
+
+                    if (F.Equals(clav))
+                    {
+                        con++;
+                        claIngr = row["c"].ToString();
+                        cantidadSola = claIngr.Split(' ');
+                    }
+                }
+                if (con > 0)
+                {
+                    int cant = Convert.ToInt32(numCant.Value);
+                    int cantidadDefinitiva = 0;
+                    cantidadDefinitiva = cant; //int.Parse(cantidadSola[0])+cant;
+                 
+                    if (comprobarExis(F, cantidadDefinitiva) == true)
+                    {
+                        String q = "UPDATE listaArPrestamos SET cantidad='" + Convert.ToString(numCant.Value) + " " + comboBoxMedida.Text + "' WHERE Id='" + lbId.Text + "'";
+                        if (dts.update(q) == true)
+                        {
+                            MessageBox.Show("Artitculo Editado");
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Cuentas con suficientes articulos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+                }
+
+               
+            }
+        }
+
+        private void EditarPedido_Load(object sender, EventArgs e)
+        {
+            lbId.Text = id;
+            numCant.Value = int.Parse(cantida);
+
+            int con = 0;
+            foreach (object o in comboBoxMedida.Items)
+            {
+
+                if (o.Equals(medida))
+                {
+                    comboBoxMedida.SelectedIndex = con;
+                    break;
+                }
+                con++;
+            }
+        }
+        public bool comprobarExis(String f, int cantDef)
+        {
+
+            string q1 = "select CantidadAlmacen as c from Articulos WHERE IdArticulo='" + f + "' ";
+            DataSet dtSet = new DataSet();
+            DataTable tabla = new DataTable();
+            dtSet = dts.consulta(q1);
+            tabla = dtSet.Tables[0];
+            string claIngr = "";
+            int con = 0;
+            Boolean res = false;
+            foreach (DataRow row in tabla.Rows)
+            {
+                claIngr = row["c"].ToString();
+                con = int.Parse(claIngr);
+                if (con >= cantDef)
+                {
+                    res = true;
+                }
+                else
+                {
+                    res = false;
+                }
+            }
+
+            return res;
         }
     }
 }

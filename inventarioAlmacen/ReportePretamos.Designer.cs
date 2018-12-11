@@ -31,11 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBoxEmpleados = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataRepEmp = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.rdHi = new System.Windows.Forms.RadioButton();
+            this.rdHer = new System.Windows.Forms.RadioButton();
+            this.grupfiltro = new System.Windows.Forms.GroupBox();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepEmp)).BeginInit();
+            this.grupfiltro.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -69,17 +73,22 @@
             this.comboBoxEmpleados.Size = new System.Drawing.Size(281, 28);
             this.comboBoxEmpleados.TabIndex = 6;
             this.toolTip1.SetToolTip(this.comboBoxEmpleados, "Empleados");
+            this.comboBoxEmpleados.SelectedIndexChanged += new System.EventHandler(this.comboBoxEmpleados_SelectedIndexChanged);
             this.comboBoxEmpleados.Enter += new System.EventHandler(this.comboBoxEmpleados_Enter);
             this.comboBoxEmpleados.Leave += new System.EventHandler(this.comboBoxEmpleados_Leave);
             // 
-            // dataGridView1
+            // dataRepEmp
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1026, 351);
-            this.dataGridView1.TabIndex = 13;
+            this.dataRepEmp.AllowUserToAddRows = false;
+            this.dataRepEmp.AllowUserToDeleteRows = false;
+            this.dataRepEmp.AllowUserToOrderColumns = true;
+            this.dataRepEmp.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataRepEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataRepEmp.Location = new System.Drawing.Point(12, 87);
+            this.dataRepEmp.Name = "dataRepEmp";
+            this.dataRepEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataRepEmp.Size = new System.Drawing.Size(1026, 351);
+            this.dataRepEmp.TabIndex = 13;
             // 
             // btnAgregar
             // 
@@ -98,20 +107,68 @@
             this.btnAgregar.Text = "Generar Reporte";
             this.toolTip1.SetToolTip(this.btnAgregar, "Generar Reporte");
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // rdHi
+            // 
+            this.rdHi.AutoSize = true;
+            this.rdHi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdHi.Location = new System.Drawing.Point(190, 22);
+            this.rdHi.Name = "rdHi";
+            this.rdHi.Size = new System.Drawing.Size(149, 22);
+            this.rdHi.TabIndex = 2;
+            this.rdHi.Text = "Higiene y Limpieza";
+            this.toolTip1.SetToolTip(this.rdHi, "Higiene y Limpieza");
+            this.rdHi.UseVisualStyleBackColor = true;
+            this.rdHi.CheckedChanged += new System.EventHandler(this.rdHi_CheckedChanged);
+            // 
+            // rdHer
+            // 
+            this.rdHer.AutoSize = true;
+            this.rdHer.Checked = true;
+            this.rdHer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdHer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdHer.Location = new System.Drawing.Point(16, 22);
+            this.rdHer.Name = "rdHer";
+            this.rdHer.Size = new System.Drawing.Size(168, 22);
+            this.rdHer.TabIndex = 1;
+            this.rdHer.TabStop = true;
+            this.rdHer.Text = "Herramientas y Otros";
+            this.toolTip1.SetToolTip(this.rdHer, "Herramientas y Otros");
+            this.rdHer.UseVisualStyleBackColor = true;
+            this.rdHer.CheckedChanged += new System.EventHandler(this.rdHer_CheckedChanged);
+            // 
+            // grupfiltro
+            // 
+            this.grupfiltro.Controls.Add(this.rdHi);
+            this.grupfiltro.Controls.Add(this.rdHer);
+            this.grupfiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grupfiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.grupfiltro.Location = new System.Drawing.Point(335, 12);
+            this.grupfiltro.Name = "grupfiltro";
+            this.grupfiltro.Size = new System.Drawing.Size(354, 56);
+            this.grupfiltro.TabIndex = 22;
+            this.grupfiltro.TabStop = false;
+            this.grupfiltro.Text = "Filtros";
             // 
             // ReportePretamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 568);
+            this.Controls.Add(this.grupfiltro);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataRepEmp);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReportePretamos";
             this.Text = "ReportePretamos";
+            this.Load += new System.EventHandler(this.ReportePretamos_Load);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepEmp)).EndInit();
+            this.grupfiltro.ResumeLayout(false);
+            this.grupfiltro.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -120,8 +177,11 @@
 
         internal System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.ComboBox comboBoxEmpleados;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataRepEmp;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox grupfiltro;
+        private System.Windows.Forms.RadioButton rdHi;
+        private System.Windows.Forms.RadioButton rdHer;
     }
 }

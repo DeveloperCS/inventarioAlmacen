@@ -41,6 +41,7 @@
             this.bar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbId = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
@@ -128,6 +129,7 @@
             this.btnAgregar.Text = "Guardar";
             this.toolTip1.SetToolTip(this.btnAgregar, "Guardar Prestamo");
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
@@ -203,6 +205,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lbId);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.groupBox1.Location = new System.Drawing.Point(10, 63);
@@ -212,15 +215,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Prestamo";
             // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Location = new System.Drawing.Point(311, 11);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(19, 20);
+            this.lbId.TabIndex = 0;
+            this.lbId.Text = "1";
+            this.toolTip1.SetToolTip(this.lbId, "ID Prestamo");
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(211, 41);
+            this.label3.Location = new System.Drawing.Point(291, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.Size = new System.Drawing.Size(24, 20);
             this.label3.TabIndex = 0;
-            this.label3.Text = "ID Prestamo";
-            this.toolTip1.SetToolTip(this.label3, "ID Prestamo");
+            this.label3.Text = "#:";
             // 
             // EditarPedido
             // 
@@ -235,7 +247,9 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarPedido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarPedido";
+            this.Load += new System.EventHandler(this.EditarPedido_Load);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -265,6 +279,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Label label3;
     }
 }

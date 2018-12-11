@@ -180,7 +180,7 @@
             "g",
             "L",
             "l",
-            "unidad"});
+            "Unidad"});
             this.comboBoxMedida.Location = new System.Drawing.Point(5, 4);
             this.comboBoxMedida.Name = "comboBoxMedida";
             this.comboBoxMedida.Size = new System.Drawing.Size(142, 28);
