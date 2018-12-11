@@ -91,6 +91,14 @@ namespace inventarioAlmacen
 
             this.miFiltro = dts.consulta(qy = "Select Folio,Articulo,Categoria FROM InventarioArticulo Where Categoria like '"+cat+"%'").Tables[0].DefaultView;
             datosTabla.DataSource = miFiltro;
+
+
+            if (cat.Equals("Her"))
+            {
+                comboBoxMedida.Enabled = false;
+                comboBoxMedida.SelectedIndex = 4;
+            }
+            
         }
 
         DataView miFiltro;
@@ -98,11 +106,11 @@ namespace inventarioAlmacen
         private void agregarPedido_Load(object sender, EventArgs e)
         {
             groupBox1.Visible = false;
-            if (rdTodo.Checked == true)
-            {
-                consult();
-            }
-
+           
+            consult();
+           
+            
+            
         }
 
         private void rdHer_CheckedChanged(object sender, EventArgs e)
