@@ -34,10 +34,10 @@
             this.rdHer = new System.Windows.Forms.RadioButton();
             this.rdTodo = new System.Windows.Forms.RadioButton();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datosTabla = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -67,6 +67,7 @@
             this.rdHi.Text = "Higiene y Limpieza";
             this.toolTip1.SetToolTip(this.rdHi, "Higiene y Limpieza");
             this.rdHi.UseVisualStyleBackColor = true;
+            this.rdHi.CheckedChanged += new System.EventHandler(this.rdHi_CheckedChanged);
             // 
             // rdHer
             // 
@@ -80,6 +81,7 @@
             this.rdHer.Text = "Herramientas y Otros";
             this.toolTip1.SetToolTip(this.rdHer, "Herramientas y Otros");
             this.rdHer.UseVisualStyleBackColor = true;
+            this.rdHer.CheckedChanged += new System.EventHandler(this.rdHer_CheckedChanged);
             // 
             // rdTodo
             // 
@@ -95,6 +97,7 @@
             this.rdTodo.Text = "Todo";
             this.toolTip1.SetToolTip(this.rdTodo, "Todo");
             this.rdTodo.UseVisualStyleBackColor = true;
+            this.rdTodo.CheckedChanged += new System.EventHandler(this.rdTodo_CheckedChanged);
             // 
             // btnAgregar
             // 
@@ -113,15 +116,20 @@
             this.btnAgregar.Text = "Generar Reporte";
             this.toolTip1.SetToolTip(this.btnAgregar, "Generar Reporte");
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // dataGridView1
+            // datosTabla
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1026, 351);
-            this.dataGridView1.TabIndex = 22;
+            this.datosTabla.AllowUserToAddRows = false;
+            this.datosTabla.AllowUserToDeleteRows = false;
+            this.datosTabla.AllowUserToOrderColumns = true;
+            this.datosTabla.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.datosTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datosTabla.Location = new System.Drawing.Point(12, 87);
+            this.datosTabla.Name = "datosTabla";
+            this.datosTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datosTabla.Size = new System.Drawing.Size(1026, 351);
+            this.datosTabla.TabIndex = 22;
             // 
             // ReporteInventario
             // 
@@ -129,14 +137,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 568);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datosTabla);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReporteInventario";
             this.Text = "ReporteInventario";
+            this.Load += new System.EventHandler(this.ReporteInventario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,7 +157,7 @@
         private System.Windows.Forms.RadioButton rdHer;
         private System.Windows.Forms.RadioButton rdTodo;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datosTabla;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

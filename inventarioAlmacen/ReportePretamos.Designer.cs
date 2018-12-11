@@ -34,9 +34,9 @@
             this.dataRepEmp = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.grupfiltro = new System.Windows.Forms.GroupBox();
             this.rdHi = new System.Windows.Forms.RadioButton();
             this.rdHer = new System.Windows.Forms.RadioButton();
+            this.grupfiltro = new System.Windows.Forms.GroupBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataRepEmp)).BeginInit();
             this.grupfiltro.SuspendLayout();
@@ -107,19 +107,7 @@
             this.btnAgregar.Text = "Generar Reporte";
             this.toolTip1.SetToolTip(this.btnAgregar, "Generar Reporte");
             this.btnAgregar.UseVisualStyleBackColor = false;
-            // 
-            // grupfiltro
-            // 
-            this.grupfiltro.Controls.Add(this.rdHi);
-            this.grupfiltro.Controls.Add(this.rdHer);
-            this.grupfiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grupfiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.grupfiltro.Location = new System.Drawing.Point(335, 12);
-            this.grupfiltro.Name = "grupfiltro";
-            this.grupfiltro.Size = new System.Drawing.Size(354, 56);
-            this.grupfiltro.TabIndex = 22;
-            this.grupfiltro.TabStop = false;
-            this.grupfiltro.Text = "Filtros";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // rdHi
             // 
@@ -150,6 +138,19 @@
             this.toolTip1.SetToolTip(this.rdHer, "Herramientas y Otros");
             this.rdHer.UseVisualStyleBackColor = true;
             this.rdHer.CheckedChanged += new System.EventHandler(this.rdHer_CheckedChanged);
+            // 
+            // grupfiltro
+            // 
+            this.grupfiltro.Controls.Add(this.rdHi);
+            this.grupfiltro.Controls.Add(this.rdHer);
+            this.grupfiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grupfiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.grupfiltro.Location = new System.Drawing.Point(335, 12);
+            this.grupfiltro.Name = "grupfiltro";
+            this.grupfiltro.Size = new System.Drawing.Size(354, 56);
+            this.grupfiltro.TabIndex = 22;
+            this.grupfiltro.TabStop = false;
+            this.grupfiltro.Text = "Filtros";
             // 
             // ReportePretamos
             // 
