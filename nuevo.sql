@@ -30,7 +30,6 @@ CREATE TABLE [dbo].[Electronico]
     [FechaSalida] DATE NOT NULL
 )
 
-
 CREATE TABLE [dbo].[Recibos]
 (
 	[IdRecibo] NVARCHAR(11) NOT NULL PRIMARY KEY, 
@@ -60,3 +59,15 @@ ADD FOREIGN KEY (IdEmpleado) REFERENCES Empleados(IdEmpleado);
 
 ALTER TABLE Recibos
 ADD FOREIGN KEY (IdArticulo) REFERENCES Articulos(IdArticulo);
+
+
+select * from PrestadosR
+
+ CREATE VIEW ConsumoE
+ AS SELECT IdUsuario AS [Clave Usuario],IdEmpleado AS [ Clave Empleado],NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad], FechaSalida AS [Fecha Salida]
+ FROM Electronico
+
+ CREATE VIEW PrestadosR
+ AS SELECT IdUsuario AS [Clave Usuario],IdEmpleado AS [CLave Empleado], NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad],FechaSalida AS [Fecha Salida], 
+ FechaEntrega AS [Fecha Entrada]
+ FROM Recibos
