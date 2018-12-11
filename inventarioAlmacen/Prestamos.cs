@@ -369,9 +369,15 @@ namespace inventarioAlmacen
             foreach (DataRow row in dt.Rows)
             {
                 id1 = row[1].ToString();
+
+                //MessageBox.Show(row[0]+"\n"+row[1]);
             }
             id = "El" + id1;
-
+            /*
+             * El-0001/1
+             * El-0001/2
+             * Re-0001/1
+             */
             return id;
         }
       
