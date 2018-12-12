@@ -43,6 +43,10 @@ namespace inventarioAlmacen
 
             this.miFiltro = dts.consulta(qy = "Select * FROM InventarioArticulo").Tables[0].DefaultView;
             datosTabla.DataSource = miFiltro;
+            datosTabla.Columns["Stock Inicial"].DefaultCellStyle.Format = "N2";
+            datosTabla.Columns["Stock Inicial"].DefaultCellStyle.NullValue = "0.00";
+            datosTabla.Columns["Stock Disponible"].DefaultCellStyle.Format = "N2";
+            datosTabla.Columns["Stock Disponible"].DefaultCellStyle.NullValue = "0.00";
         }
 
 

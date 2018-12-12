@@ -5,6 +5,7 @@ using System.Text;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace inventarioAlmacen.Funciones
 {
@@ -88,7 +89,7 @@ namespace inventarioAlmacen.Funciones
             }
             catch (Exception s)
             {
-                // MessageBox.Show(s.Message);
+                 MessageBox.Show(s.Message);
             }
             finally
             {
@@ -116,7 +117,7 @@ namespace inventarioAlmacen.Funciones
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
 
                 res = false;
             }

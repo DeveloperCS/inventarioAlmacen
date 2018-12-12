@@ -64,6 +64,7 @@ namespace inventarioAlmacen
         }
         Datos datos = new Datos();
         String qy = "";
+        Decimal vI, vS;
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (rec().Equals(false))
@@ -78,6 +79,7 @@ namespace inventarioAlmacen
                 {
                     if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
                     {
+                        vI = nmCantidad.Value;
                         qy = "INSERT INTO Articulos values('"+lbID.Text+"','" + txtNombre.Text + "','" + comboBoxCategoria.Text + "','" + nmCantidad.Value + "','" + nmCantidad.Value + "','" + comboBoxMedida.Text + "','N/A')";
                         if (datos.insertar(qy) == true)
                         {
@@ -254,6 +256,10 @@ namespace inventarioAlmacen
             foreach(DataRow row in dt.Rows)
             {
                 id = row[1].ToString();
+                if (id.Equals(""))
+                {
+                    id = "0001";
+                }
             }
             lbID.Text = "Ar-" + id;
         }
