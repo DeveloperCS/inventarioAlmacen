@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDevolver = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbID = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.txtClave = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@
             this.btnDevolver.Size = new System.Drawing.Size(223, 35);
             this.btnDevolver.TabIndex = 14;
             this.btnDevolver.Text = "Devolver";
+            this.toolTip1.SetToolTip(this.btnDevolver, "Devolver");
             this.btnDevolver.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
@@ -68,6 +71,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -104,6 +108,7 @@
             this.txtClave.Size = new System.Drawing.Size(141, 24);
             this.txtClave.TabIndex = 2;
             this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtClave, "Clave Empleado");
             this.txtClave.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtClave.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
@@ -133,5 +138,6 @@
         public System.Windows.Forms.Label lbID;
         internal System.Windows.Forms.Panel Panel2;
         private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

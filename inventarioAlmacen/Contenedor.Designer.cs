@@ -200,7 +200,7 @@
             this.btnDevoluciones.TabIndex = 9;
             this.btnDevoluciones.Text = "     Devoluciones";
             this.btnDevoluciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.btnDevoluciones, "Prestamos");
+            this.toolTip1.SetToolTip(this.btnDevoluciones, "Devoluciones");
             this.btnDevoluciones.UseVisualStyleBackColor = true;
             this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
             // 

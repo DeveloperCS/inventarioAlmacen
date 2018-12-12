@@ -16,7 +16,7 @@ namespace inventarioAlmacen
         public Clave()
         {
             InitializeComponent();
-            txtClave.Text = "Digite su clave";
+            txtClave.Text = "clav";
             txtClave.ForeColor = Color.DarkGray;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -41,7 +41,7 @@ namespace inventarioAlmacen
 
         private void txtNombre_Enter(object sender, EventArgs e)
         {
-            if (txtClave.Text == "Digite su clave")
+            if (txtClave.Text == "clav")
             {
                 txtClave.Text = "";
                 txtClave.ForeColor = Color.DimGray;
@@ -52,7 +52,7 @@ namespace inventarioAlmacen
         {
             if (txtClave.Text == "")
             {
-                txtClave.Text = "Digite su clave";
+                txtClave.Text = "clav";
                 txtClave.ForeColor = Color.DarkGray;
             }
         }
