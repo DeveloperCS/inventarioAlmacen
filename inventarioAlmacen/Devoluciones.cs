@@ -38,8 +38,8 @@ namespace inventarioAlmacen
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            ClaveDevolucion claveD = new ClaveDevolucion();
-            claveD.Show();
+          //  ClaveDevolucion claveD = new ClaveDevolucion();
+           // claveD.Show();
         }
     }
 }
