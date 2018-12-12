@@ -169,6 +169,7 @@
             this.cbCategorias.Size = new System.Drawing.Size(232, 28);
             this.cbCategorias.TabIndex = 7;
             this.cbCategorias.Text = "Selecciona Categoria..";
+            this.toolTip1.SetToolTip(this.cbCategorias, "Categoria");
             // 
             // cbEmpleados
             // 
@@ -178,6 +179,7 @@
             this.cbEmpleados.Name = "cbEmpleados";
             this.cbEmpleados.Size = new System.Drawing.Size(173, 28);
             this.cbEmpleados.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.cbEmpleados, "Empleado");
             // 
             // label1
             // 
@@ -218,6 +220,7 @@
             this.dtRegreso.Name = "dtRegreso";
             this.dtRegreso.Size = new System.Drawing.Size(200, 20);
             this.dtRegreso.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.dtRegreso, "Fecha de Devolucion");
             // 
             // Prestamos
             // 

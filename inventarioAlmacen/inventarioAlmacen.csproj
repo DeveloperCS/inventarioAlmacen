@@ -328,6 +328,11 @@
     <None Include="Resources\Info.png" />
     <Content Include="img\logoT.png" />
     <Content Include="img\logotec.png" />
+    <None Include="Resources\IconoInvent.png" />
+    <None Include="Resources\icons100.png" />
+    <None Include="Resources\icons64.png" />
+    <None Include="Resources\icons48.png" />
+    <None Include="Resources\icons8-tomar-prestado-un-libro-48.png" />
     <Content Include="Resources\inicio.png" />
     <None Include="Resources\inventar.png" />
     <Content Include="Resources\inventario.png" />

@@ -103,6 +103,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 36);
             this.panel5.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.panel5, "Medida");
             // 
             // comboBoxMedida
             // 
