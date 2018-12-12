@@ -41,10 +41,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbCategorias = new System.Windows.Forms.ComboBox();
             this.cbEmpleados = new System.Windows.Forms.ComboBox();
+            this.dtRegreso = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbDev = new System.Windows.Forms.Label();
-            this.dtRegreso = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataLista)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -159,6 +159,7 @@
             // 
             // cbCategorias
             // 
+            this.cbCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategorias.FormattingEnabled = true;
             this.cbCategorias.Items.AddRange(new object[] {
@@ -173,6 +174,7 @@
             // 
             // cbEmpleados
             // 
+            this.cbEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEmpleados.FormattingEnabled = true;
             this.cbEmpleados.Location = new System.Drawing.Point(865, 52);
@@ -180,6 +182,14 @@
             this.cbEmpleados.Size = new System.Drawing.Size(173, 28);
             this.cbEmpleados.TabIndex = 7;
             this.toolTip1.SetToolTip(this.cbEmpleados, "Empleado");
+            // 
+            // dtRegreso
+            // 
+            this.dtRegreso.Location = new System.Drawing.Point(838, 101);
+            this.dtRegreso.Name = "dtRegreso";
+            this.dtRegreso.Size = new System.Drawing.Size(200, 20);
+            this.dtRegreso.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.dtRegreso, "Fecha de Devolucion");
             // 
             // label1
             // 
@@ -213,14 +223,6 @@
             this.lbDev.Size = new System.Drawing.Size(102, 23);
             this.lbDev.TabIndex = 3;
             this.lbDev.Text = "Devolucion:";
-            // 
-            // dtRegreso
-            // 
-            this.dtRegreso.Location = new System.Drawing.Point(838, 101);
-            this.dtRegreso.Name = "dtRegreso";
-            this.dtRegreso.Size = new System.Drawing.Size(200, 20);
-            this.dtRegreso.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.dtRegreso, "Fecha de Devolucion");
             // 
             // Prestamos
             // 
