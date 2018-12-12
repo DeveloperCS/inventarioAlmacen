@@ -22,6 +22,7 @@ namespace inventarioAlmacen
             InitializeComponent();
             comboBoxEmpleados.Text = "Empleados";
             comboBoxEmpleados.ForeColor = Color.DarkGray;
+            comboBoxEmpleados.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void comboBoxEmpleados_Enter(object sender, EventArgs e)

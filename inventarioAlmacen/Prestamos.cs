@@ -15,6 +15,8 @@ namespace inventarioAlmacen
         public Prestamos()
         {
             InitializeComponent();
+            cbCategorias.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbEmpleados.DropDownStyle = ComboBoxStyle.DropDownList;
             comprobarExis();
             llenarCbEm();
 
@@ -128,25 +130,26 @@ namespace inventarioAlmacen
                 if(fClave.ShowDialog()==DialogResult.OK)
                 {
                     String qIn = "";
-                    int contador = 0;
+                    int contador = 0,t=0;
                     contador = dataLista.Rows.Count;
                     if (carte.Equals("Herramientas y Otros"))
                     {
                         foreach (DataGridViewRow row in dataLista.Rows)
                         {
                             
-                           
+                           t= int.Parse(dataLista[0, row.Index].Value.ToString());
                             idAr = dataLista[1, row.Index].Value.ToString();
                             nomAr = dataLista[2, row.Index].Value.ToString();
                             String nC = "";
                             nC = dataLista[4, row.Index].Value.ToString();
                             string[] cantidadSola = nC.Split(' ');
 
-                            descrip = "Cantida:" + nC + "Categoria:" + dataLista[3, row.Index].Value.ToString();
+                            //descrip = "Cantida:" + nC + "Categoria:" + dataLista[3, row.Index].Value.ToString();
+                            descrip = "Cantida:" + nC ;
 
-                            idNuevo = idPrestamo(carte);
+                            idNuevo = idPrestamo(t);
                             //idNuevo = "Ele";
-                            qIn = "INSERT INTO Recibos VALUES('"+idNuevo+ "" + row.Index + "','" + emp1 + "','"+idAr+"','"+emp1+"','"+nomAr+"',GETDATE(),'"+ dtRegreso.Value.ToString("yyyy/MM/dd") + "','"+descrip+"');";
+                            qIn = "INSERT INTO Recibos VALUES('"+idNuevo+"','" + emp1 + "','"+idAr+"','"+emp1+"','"+nomAr+"',GETDATE(),'"+ dtRegreso.Value.ToString("yyyy/MM/dd") + "','"+descrip+"');";
                             if (datos.insertar(qIn) == true)
                             {
                                 qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0] + "' WHERE idArticulo= '" + idAr + "'";
@@ -181,19 +184,19 @@ namespace inventarioAlmacen
 
                         foreach (DataGridViewRow row in dataLista.Rows)
                         {
-                           
+                            t = int.Parse(dataLista[0, row.Index].Value.ToString());
                             idAr = dataLista[1, row.Index].Value.ToString();
                                 nomAr = dataLista[2, row.Index].Value.ToString();
                                     String nC = "";
                                     nC = dataLista[4, row.Index].Value.ToString();
                                     string[] cantidadSola = nC.Split(' ');
                                     cant = dataLista[4, row.Index].Value.ToString();
-                            idNuevo = idPrestamo(carte);
-                            string qIn1 = "INSERT INTO Electronico VALUES('"+idNuevo+""+row.Index+"','" + emp1 + "','" + idAr + "','" + emp1 + "','" + nomAr + "','"+cantidadSola[0]+"', GETDATE() );";
+                            idNuevo = idPrestamo(t);
+                            string qIn1 = "INSERT INTO Electronico VALUES('"+idNuevo+"','" + emp1 + "','" + idAr + "','" + emp1 + "','" + nomAr + "','"+int.Parse(cantidadSola[0])+"', GETDATE() );";
                      
                             if (datos.insertar(qIn1) == true)
                             {
-                                    qIn1 = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0]+"' WHERE IdArticulo= '"+idAr+"'";
+                                    qIn1 = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + int.Parse(cantidadSola[0]) + "' WHERE IdArticulo= '"+idAr+"'";
                                     if (datos.update(qIn1)==true)
                                     {
                                          contador--;
@@ -361,20 +364,31 @@ namespace inventarioAlmacen
             cbEmpleados.Enabled = true;
         }
 
-        public string idPrestamo(string tipo)
+        public string idPrestamo(int t)
         {
             String id1 = "";
             String id = "";
             DataTable dt = new DataTable();
-            dt = datos.spID("AGIDE");
+             
 
+            if (cbCategorias.Text.Equals("Herramientas y Otros"))
+            {
+                //dt = datos.spID("AGIDRe");
+                dt = datos.spID("AGIDE");
+            }
+            else if (cbCategorias.Text.Equals("Higiene y Limpieza"))
+            {
+                //dt = datos.spID("AGIDEl");
+                dt = datos.spID("AGIDE");
+            }
+            
             foreach (DataRow row in dt.Rows)
             {
-                id1 = row[1].ToString();
+                id1 = row[0].ToString()+row[1].ToString();
 
-                //MessageBox.Show(row[0]+"\n"+row[1]);
             }
-            id = "El-" + id1;
+            id = id1 +"/"+ t.ToString();
+            MessageBox.Show(id+"");
             /*
              * El-0001/1
              * El-0001/2

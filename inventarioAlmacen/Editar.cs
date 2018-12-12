@@ -16,7 +16,9 @@ namespace inventarioAlmacen
         public Editar()
         {
             InitializeComponent();
-
+            comboBoxCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMedida.DropDownStyle = ComboBoxStyle.DropDownList;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }

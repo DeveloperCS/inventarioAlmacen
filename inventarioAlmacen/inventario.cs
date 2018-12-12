@@ -17,6 +17,7 @@ namespace inventarioAlmacen
             InitializeComponent();
             txtBuscar.Text = "Buscar";
             txtBuscar.ForeColor = Color.DarkGray;
+            
         }
 
         DataView miFiltro;

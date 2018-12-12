@@ -20,7 +20,7 @@ namespace inventarioAlmacen
             txtBuscar.ForeColor = Color.DarkGray;
             comboBoxMedida.Text = "Tipo de Medida";
             comboBoxMedida.ForeColor = Color.DarkGray;
-
+            comboBoxMedida.DropDownStyle = ComboBoxStyle.DropDownList;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
