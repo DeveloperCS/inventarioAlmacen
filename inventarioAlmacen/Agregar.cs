@@ -220,8 +220,8 @@ namespace inventarioAlmacen
         // agraga letra mayuscula
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            txtNombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombre.Text);
-            txtNombre.SelectionStart = txtNombre.Text.Length;
+         /*   txtNombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombre.Text);
+            txtNombre.SelectionStart = txtNombre.Text.Length;*/
         }
 
         //comprobaciones 

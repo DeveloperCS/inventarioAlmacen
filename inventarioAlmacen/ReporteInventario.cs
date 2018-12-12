@@ -125,10 +125,10 @@ namespace inventarioAlmacen
                         Document doc = new Document(PageSize.A4, 30, 30, 15, 15);
                        
                         var image = iTextSharp.text.Image.GetInstance(@"../../img/Encabezado.png");
-                        var scalePercent = (PageSize.A4.Width / image.Width) * 100;
+                        var scalePercent = (PageSize.A4.Width / image.Width) * 90;
                         image.ScalePercent(scalePercent);
                         Chunk head = new Chunk("Instituto Tecnológico Superior de San Pedro de las Colonias",FontFactory.GetFont("Arial", 18,1));
-                        Chunk encab = new Chunk("CHECHSTORE:" + "Reporte de Inventario - " + TipRep, FontFactory.GetFont("Arial", 14));
+                        Chunk encab = new Chunk("CHECHSTORE: " + "Reporte de Inventario - " + TipRep, FontFactory.GetFont("Arial", 14));
                         
                         Chunk fechaC = new Chunk(f + "." + "\n" + h, FontFactory.GetFont("Arial", 12));
                         //  Chunk Usuario = new Chunk("Usuario: " + lbNomUS2.Text, FontFactory.GetFont("COURIER", 14));

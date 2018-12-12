@@ -191,7 +191,7 @@ namespace inventarioAlmacen
                                     nC = dataLista[4, row.Index].Value.ToString();
                                     string[] cantidadSola = nC.Split(' ');
                                     cant = dataLista[4, row.Index].Value.ToString();
-                            MessageBox.Show(cantidadSola[0]);
+                           
                             idNuevo = idPrestamo(t);
                             string qIn1 = "INSERT INTO Electronico VALUES('"+idNuevo+ "','Us-0001','" + idAr + "','" + emp1 + "','" + nomAr + "','"+int.Parse(cantidadSola[0])+"', GETDATE() );";
                      
@@ -389,7 +389,7 @@ namespace inventarioAlmacen
 
             }
             id = id1 +"/"+ t.ToString();
-            MessageBox.Show(id+"");
+           
             /*
              * El-0001/1
              * El-0001/2
