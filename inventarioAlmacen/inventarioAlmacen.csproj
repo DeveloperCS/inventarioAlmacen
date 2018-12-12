@@ -105,6 +105,12 @@
     <Compile Include="Clave.Designer.cs">
       <DependentUpon>Clave.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClaveDevolucionescs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClaveDevolucionescs.Designer.cs">
+      <DependentUpon>ClaveDevolucionescs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contenedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clave.resx">
       <DependentUpon>Clave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClaveDevolucionescs.resx">
+      <DependentUpon>ClaveDevolucionescs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contenedor.resx">
       <DependentUpon>Contenedor.cs</DependentUpon>
