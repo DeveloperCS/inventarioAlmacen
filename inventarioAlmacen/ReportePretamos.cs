@@ -50,7 +50,7 @@ namespace inventarioAlmacen
             idbuscar = comboBoxEmpleados.SelectedValue.ToString();
 
             consult(separa(idbuscar),"2");
-            
+            idbuscar="";
         }
         DataView miFiltro;
         Datos datos = new Datos();
