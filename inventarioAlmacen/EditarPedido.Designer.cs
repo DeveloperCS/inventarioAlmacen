@@ -41,9 +41,9 @@
             this.bar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCant)).BeginInit();
@@ -215,24 +215,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Prestamo";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(241, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Numero:";
+            // 
             // lbId
             // 
             this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(311, 11);
+            this.lbId.Location = new System.Drawing.Point(313, 23);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(19, 20);
             this.lbId.TabIndex = 0;
             this.lbId.Text = "1";
             this.toolTip1.SetToolTip(this.lbId, "ID Prestamo");
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(291, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "#:";
             // 
             // EditarPedido
             // 

@@ -48,6 +48,7 @@
             this.panelInicio = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnDevoluciones = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,6 +62,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.panelMenu.Controls.Add(this.btnDevoluciones);
             this.panelMenu.Controls.Add(this.pictureBox3);
             this.panelMenu.Controls.Add(this.labelUser);
             this.panelMenu.Controls.Add(this.pictureBox1);
@@ -317,6 +319,29 @@
             this.toolTip1.SetToolTip(this.pictureBox2, "CheckStore");
             this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
             // 
+            // btnDevoluciones
+            // 
+            this.btnDevoluciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDevoluciones.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnDevoluciones.FlatAppearance.BorderSize = 0;
+            this.btnDevoluciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDevoluciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
+            this.btnDevoluciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevoluciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevoluciones.ForeColor = System.Drawing.Color.White;
+            this.btnDevoluciones.Image = global::inventarioAlmacen.Resource1.prestar;
+            this.btnDevoluciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDevoluciones.Location = new System.Drawing.Point(0, 280);
+            this.btnDevoluciones.Name = "btnDevoluciones";
+            this.btnDevoluciones.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnDevoluciones.Size = new System.Drawing.Size(250, 60);
+            this.btnDevoluciones.TabIndex = 9;
+            this.btnDevoluciones.Text = "     Devoluciones";
+            this.btnDevoluciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.btnDevoluciones, "Prestamos");
+            this.btnDevoluciones.UseVisualStyleBackColor = true;
+            this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
+            // 
             // Contenedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,5 +393,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnDevoluciones;
     }
 }

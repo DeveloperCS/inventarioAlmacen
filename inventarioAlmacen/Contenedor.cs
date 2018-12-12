@@ -172,6 +172,8 @@ namespace inventarioAlmacen
             colorEs.Location = new Point(-3, btnDevoluciones.Location.Y);
             btnDevoluciones.BackColor = Color.FromArgb(83, 164, 227);
         }
+
+
         /* public DataTable tmpEntrada = new DataTable();
 public void tablaT()
 {
