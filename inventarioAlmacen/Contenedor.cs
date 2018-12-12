@@ -138,6 +138,7 @@ namespace inventarioAlmacen
             btnPrestamos.BackColor = Color.FromArgb(34, 49, 65);
             btnUsers.BackColor = Color.FromArgb(34, 49, 65);
             btnReportes.BackColor = Color.FromArgb(34, 49, 65);
+            btnDevoluciones.BackColor = Color.FromArgb(34, 49, 65);
         }
 
         private void panelCentral_Paint(object sender, PaintEventArgs e)
@@ -162,26 +163,35 @@ namespace inventarioAlmacen
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-       /* public DataTable tmpEntrada = new DataTable();
-        public void tablaT()
-        {
-            //>Definimos la tabla para las ventas Temporales
-            DataColumn idColumn = new DataColumn("id", typeof(int));
-            idColumn.Unique = true;
-            idColumn.AutoIncrement = true;
-            idColumn.AutoIncrementSeed = 1;
-            idColumn.AutoIncrementStep = 1;
-            tmpEntrada.Columns.Add(idColumn);
-            //declaramos el resto de los campos
-            tmpEntrada.Columns.Add("Folio", typeof(string));
-            tmpEntrada.Columns.Add("Articulo", typeof(string));
-            tmpEntrada.Columns.Add("Categoria", typeof(string));
-            tmpEntrada.Columns.Add("Cantidad", typeof(string));
 
-            //agregamos un primary key
-            tmpEntrada.PrimaryKey = new DataColumn[] { tmpEntrada.Columns["id"] };
-            //<termina la deficinicón de la tabla temporal
-        }*/
+        private void btnDevoluciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Devoluciones());
+            retornarColor();
+            txtTituloBar.Text = "Devoluciones";
+            colorEs.Location = new Point(-3, btnDevoluciones.Location.Y);
+            btnDevoluciones.BackColor = Color.FromArgb(83, 164, 227);
+        }
+        /* public DataTable tmpEntrada = new DataTable();
+public void tablaT()
+{
+    //>Definimos la tabla para las ventas Temporales
+    DataColumn idColumn = new DataColumn("id", typeof(int));
+    idColumn.Unique = true;
+    idColumn.AutoIncrement = true;
+    idColumn.AutoIncrementSeed = 1;
+    idColumn.AutoIncrementStep = 1;
+    tmpEntrada.Columns.Add(idColumn);
+    //declaramos el resto de los campos
+    tmpEntrada.Columns.Add("Folio", typeof(string));
+    tmpEntrada.Columns.Add("Articulo", typeof(string));
+    tmpEntrada.Columns.Add("Categoria", typeof(string));
+    tmpEntrada.Columns.Add("Cantidad", typeof(string));
+
+    //agregamos un primary key
+    tmpEntrada.PrimaryKey = new DataColumn[] { tmpEntrada.Columns["id"] };
+    //<termina la deficinicón de la tabla temporal
+}*/
 
     }
 }
