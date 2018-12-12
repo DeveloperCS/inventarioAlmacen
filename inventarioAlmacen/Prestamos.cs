@@ -149,7 +149,7 @@ namespace inventarioAlmacen
 
                             idNuevo = idPrestamo(t);
                             //idNuevo = "Ele";
-                            qIn = "INSERT INTO Recibos VALUES('"+idNuevo+"','" + emp1 + "','"+idAr+"','"+emp1+"','"+nomAr+"',GETDATE(),'"+ dtRegreso.Value.ToString("yyyy/MM/dd") + "','"+descrip+"');";
+                            qIn = "INSERT INTO Recibos VALUES('"+idNuevo+ "','Us-0001','"+idAr+"','"+emp1+"','"+nomAr+"','"+cantidadSola[0]+"',GETDATE(),'"+ dtRegreso.Value.ToString("yyyy/MM/dd") + "','"+descrip+"');";
                             if (datos.insertar(qIn) == true)
                             {
                                 qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0] + "' WHERE idArticulo= '" + idAr + "'";
@@ -191,8 +191,9 @@ namespace inventarioAlmacen
                                     nC = dataLista[4, row.Index].Value.ToString();
                                     string[] cantidadSola = nC.Split(' ');
                                     cant = dataLista[4, row.Index].Value.ToString();
+                            MessageBox.Show(cantidadSola[0]);
                             idNuevo = idPrestamo(t);
-                            string qIn1 = "INSERT INTO Electronico VALUES('"+idNuevo+"','" + emp1 + "','" + idAr + "','" + emp1 + "','" + nomAr + "','"+int.Parse(cantidadSola[0])+"', GETDATE() );";
+                            string qIn1 = "INSERT INTO Electronico VALUES('"+idNuevo+ "','Us-0001','" + idAr + "','" + emp1 + "','" + nomAr + "','"+int.Parse(cantidadSola[0])+"', GETDATE() );";
                      
                             if (datos.insertar(qIn1) == true)
                             {

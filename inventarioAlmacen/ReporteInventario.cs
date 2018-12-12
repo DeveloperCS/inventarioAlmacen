@@ -124,10 +124,8 @@ namespace inventarioAlmacen
                         //lef, right   top,button
                         Document doc = new Document(PageSize.A4, 30, 30, 15, 15);
                        
-                        var image = iTextSharp.text.Image.GetInstance(@"../../img/logoT.png");
-                        var scalePercent = (PageSize.A4.Width / image.Width) * 10;
-                       
-
+                        var image = iTextSharp.text.Image.GetInstance(@"../../img/Encabezado.png");
+                        var scalePercent = (PageSize.A4.Width / image.Width) * 100;
                         image.ScalePercent(scalePercent);
                         Chunk head = new Chunk("Instituto Tecnológico Superior de San Pedro de las Colonias",FontFactory.GetFont("Arial", 18,1));
                         Chunk encab = new Chunk("CHECHSTORE:" + "Reporte de Inventario - " + TipRep, FontFactory.GetFont("Arial", 14));
@@ -146,7 +144,7 @@ namespace inventarioAlmacen
                             doc.Open();
 
                             Paragraph pi = new Paragraph();
-                            pi.Alignment = Element.ALIGN_RIGHT;
+                            pi.Alignment = Element.ALIGN_CENTER;
                             pi.Add(image);
                             doc.Add(pi);
                           
