@@ -105,6 +105,12 @@
     <Compile Include="Clave.Designer.cs">
       <DependentUpon>Clave.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClaveDevolucionescs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClaveDevolucionescs.Designer.cs">
+      <DependentUpon>ClaveDevolucionescs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contenedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clave.resx">
       <DependentUpon>Clave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClaveDevolucionescs.resx">
+      <DependentUpon>ClaveDevolucionescs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contenedor.resx">
       <DependentUpon>Contenedor.cs</DependentUpon>
@@ -317,8 +326,14 @@
     <None Include="Resources\Cantidad.png" />
     <None Include="Resources\cerrarGris.png" />
     <None Include="Resources\Info.png" />
+    <Content Include="img\Encabezado.png" />
     <Content Include="img\logoT.png" />
     <Content Include="img\logotec.png" />
+    <None Include="Resources\IconoInvent.png" />
+    <None Include="Resources\icons100.png" />
+    <None Include="Resources\icons64.png" />
+    <None Include="Resources\icons48.png" />
+    <None Include="Resources\icons8-tomar-prestado-un-libro-48.png" />
     <Content Include="Resources\inicio.png" />
     <None Include="Resources\inventar.png" />
     <Content Include="Resources\inventario.png" />

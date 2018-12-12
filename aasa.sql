@@ -1,0 +1,1 @@
+﻿Select  * from information_schema.columns WHERE TABLE_NAME='Electronico'
