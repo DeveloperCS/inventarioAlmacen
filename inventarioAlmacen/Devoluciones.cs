@@ -35,5 +35,11 @@ namespace inventarioAlmacen
                 txtBuscar.ForeColor = Color.DarkGray;
             }
         }
+
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+            ClaveDevolucion claveD = new ClaveDevolucion();
+            claveD.Show();
+        }
     }
 }

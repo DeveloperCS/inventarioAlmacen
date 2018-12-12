@@ -105,6 +105,12 @@
     <Compile Include="Clave.Designer.cs">
       <DependentUpon>Clave.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClaveDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClaveDevolucion.Designer.cs">
+      <DependentUpon>ClaveDevolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contenedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clave.resx">
       <DependentUpon>Clave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClaveDevolucion.resx">
+      <DependentUpon>ClaveDevolucion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contenedor.resx">
       <DependentUpon>Contenedor.cs</DependentUpon>
@@ -317,6 +326,9 @@
     <None Include="Resources\Cantidad.png" />
     <None Include="Resources\cerrarGris.png" />
     <None Include="Resources\Info.png" />
+    <None Include="Resources\Devolucion.png" />
+    <None Include="Resources\Dev.png" />
+    <None Include="Resources\Devol.png" />
     <Content Include="Resources\inicio.png" />
     <None Include="Resources\inventar.png" />
     <Content Include="Resources\inventario.png" />

@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.dataLista = new System.Windows.Forms.DataGridView();
-            this.btnPrestar = new System.Windows.Forms.Button();
+            this.btnDevolver = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLista)).BeginInit();
@@ -118,28 +118,29 @@
             this.dataLista.Size = new System.Drawing.Size(1026, 353);
             this.dataLista.TabIndex = 24;
             // 
-            // btnPrestar
+            // btnDevolver
             // 
-            this.btnPrestar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
-            this.btnPrestar.FlatAppearance.BorderSize = 0;
-            this.btnPrestar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.btnPrestar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnPrestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrestar.ForeColor = System.Drawing.Color.White;
-            this.btnPrestar.Location = new System.Drawing.Point(768, 499);
-            this.btnPrestar.Name = "btnPrestar";
-            this.btnPrestar.Size = new System.Drawing.Size(270, 56);
-            this.btnPrestar.TabIndex = 28;
-            this.btnPrestar.Text = "Devolver";
-            this.btnPrestar.UseVisualStyleBackColor = false;
+            this.btnDevolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
+            this.btnDevolver.FlatAppearance.BorderSize = 0;
+            this.btnDevolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnDevolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolver.ForeColor = System.Drawing.Color.White;
+            this.btnDevolver.Location = new System.Drawing.Point(768, 499);
+            this.btnDevolver.Name = "btnDevolver";
+            this.btnDevolver.Size = new System.Drawing.Size(270, 56);
+            this.btnDevolver.TabIndex = 28;
+            this.btnDevolver.Text = "Devolver";
+            this.btnDevolver.UseVisualStyleBackColor = false;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
             // Devoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 600);
-            this.Controls.Add(this.btnPrestar);
+            this.Controls.Add(this.btnDevolver);
             this.Controls.Add(this.cbEmpleados);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbID);
@@ -166,6 +167,6 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lbID;
         private System.Windows.Forms.DataGridView dataLista;
-        private System.Windows.Forms.Button btnPrestar;
+        private System.Windows.Forms.Button btnDevolver;
     }
 }
