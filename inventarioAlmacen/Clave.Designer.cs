@@ -138,10 +138,10 @@
         #endregion
 
         public System.Windows.Forms.Label lbID;
-        internal System.Windows.Forms.Panel Panel2;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Button btnPrestar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ToolTip toolTip1;
+        internal System.Windows.Forms.Panel Panel2;
     }
 }
