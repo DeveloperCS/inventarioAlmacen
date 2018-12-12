@@ -41,6 +41,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnDevoluciones = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPrestamos = new System.Windows.Forms.Button();
@@ -61,15 +62,16 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.panelMenu.Controls.Add(this.colorEs);
             this.panelMenu.Controls.Add(this.pictureBox3);
             this.panelMenu.Controls.Add(this.labelUser);
             this.panelMenu.Controls.Add(this.pictureBox1);
-            this.panelMenu.Controls.Add(this.colorEs);
             this.panelMenu.Controls.Add(this.btnPrestamos);
             this.panelMenu.Controls.Add(this.btnInv);
             this.panelMenu.Controls.Add(this.btnIni);
             this.panelMenu.Controls.Add(this.btnUsers);
             this.panelMenu.Controls.Add(this.btnReportes);
+            this.panelMenu.Controls.Add(this.btnDevoluciones);
             this.panelMenu.Location = new System.Drawing.Point(0, 70);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 580);
@@ -179,6 +181,29 @@
             this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar");
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // btnDevoluciones
+            // 
+            this.btnDevoluciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDevoluciones.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnDevoluciones.FlatAppearance.BorderSize = 0;
+            this.btnDevoluciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDevoluciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
+            this.btnDevoluciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevoluciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevoluciones.ForeColor = System.Drawing.Color.White;
+            this.btnDevoluciones.Image = global::inventarioAlmacen.Resource1.Devol;
+            this.btnDevoluciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDevoluciones.Location = new System.Drawing.Point(0, 280);
+            this.btnDevoluciones.Name = "btnDevoluciones";
+            this.btnDevoluciones.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnDevoluciones.Size = new System.Drawing.Size(250, 60);
+            this.btnDevoluciones.TabIndex = 9;
+            this.btnDevoluciones.Text = "     Devoluciones";
+            this.btnDevoluciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.btnDevoluciones, "Devoluciones");
+            this.btnDevoluciones.UseVisualStyleBackColor = true;
+            this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -283,7 +308,7 @@
             this.btnUsers.ForeColor = System.Drawing.Color.White;
             this.btnUsers.Image = global::inventarioAlmacen.Resource1.Usuario;
             this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsers.Location = new System.Drawing.Point(0, 340);
+            this.btnUsers.Location = new System.Drawing.Point(0, 400);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnUsers.Size = new System.Drawing.Size(250, 60);
@@ -306,7 +331,7 @@
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Image = global::inventarioAlmacen.Resource1.Reporte;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 280);
+            this.btnReportes.Location = new System.Drawing.Point(0, 340);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnReportes.Size = new System.Drawing.Size(250, 60);
@@ -368,5 +393,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnDevoluciones;
     }
 }

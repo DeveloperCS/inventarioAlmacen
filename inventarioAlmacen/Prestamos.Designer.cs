@@ -39,7 +39,6 @@
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbCategorias = new System.Windows.Forms.ComboBox();
             this.cbEmpleados = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,15 +64,16 @@
             // btnPrestar
             // 
             this.btnPrestar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
+            this.btnPrestar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrestar.FlatAppearance.BorderSize = 0;
             this.btnPrestar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.btnPrestar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnPrestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrestar.ForeColor = System.Drawing.Color.White;
-            this.btnPrestar.Location = new System.Drawing.Point(779, 499);
+            this.btnPrestar.Location = new System.Drawing.Point(768, 499);
             this.btnPrestar.Name = "btnPrestar";
-            this.btnPrestar.Size = new System.Drawing.Size(259, 63);
+            this.btnPrestar.Size = new System.Drawing.Size(270, 56);
             this.btnPrestar.TabIndex = 2;
             this.btnPrestar.Text = "Prestar";
             this.toolTip1.SetToolTip(this.btnPrestar, "Prestar Articulo");
@@ -141,6 +141,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.DimGray;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightBlue;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
@@ -149,20 +150,12 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(563, 499);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(191, 63);
+            this.btnCancelar.Size = new System.Drawing.Size(191, 56);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(-15, -15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
             // 
             // cbCategorias
             // 
@@ -181,7 +174,7 @@
             // 
             this.cbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEmpleados.FormattingEnabled = true;
-            this.cbEmpleados.Location = new System.Drawing.Point(809, 54);
+            this.cbEmpleados.Location = new System.Drawing.Point(865, 52);
             this.cbEmpleados.Name = "cbEmpleados";
             this.cbEmpleados.Size = new System.Drawing.Size(173, 28);
             this.cbEmpleados.TabIndex = 7;
@@ -202,9 +195,9 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.label2.Location = new System.Drawing.Point(711, 57);
+            this.label2.Location = new System.Drawing.Point(764, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 23);
+            this.label2.Size = new System.Drawing.Size(109, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Empleado:";
             // 
@@ -213,7 +206,7 @@
             this.lbDev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDev.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.lbDev.Location = new System.Drawing.Point(688, 102);
+            this.lbDev.Location = new System.Drawing.Point(730, 100);
             this.lbDev.Name = "lbDev";
             this.lbDev.Size = new System.Drawing.Size(102, 23);
             this.lbDev.TabIndex = 3;
@@ -221,7 +214,7 @@
             // 
             // dtRegreso
             // 
-            this.dtRegreso.Location = new System.Drawing.Point(796, 102);
+            this.dtRegreso.Location = new System.Drawing.Point(838, 101);
             this.dtRegreso.Name = "dtRegreso";
             this.dtRegreso.Size = new System.Drawing.Size(200, 20);
             this.dtRegreso.TabIndex = 8;
@@ -230,12 +223,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 600);
+            this.ClientSize = new System.Drawing.Size(1050, 580);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dtRegreso);
             this.Controls.Add(this.cbEmpleados);
             this.Controls.Add(this.cbCategorias);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.lbDev);
             this.Controls.Add(this.label2);
@@ -266,7 +258,6 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox cbEmpleados;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;

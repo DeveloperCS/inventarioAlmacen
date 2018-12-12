@@ -23,6 +23,8 @@ namespace inventarioAlmacen
             comboBoxCategoria.ForeColor = Color.DarkGray;
             comboBoxMedida.Text = "Tipo de Medida";
             comboBoxMedida.ForeColor = Color.DarkGray;
+            comboBoxCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMedida.DropDownStyle = ComboBoxStyle.DropDownList;
 
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -285,10 +287,33 @@ namespace inventarioAlmacen
         {
 
         }
-
+        int con = 0;
         private void comboBoxCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            if (comboBoxCategoria.Text.Equals("Herramientas y Otros"))
+            {
 
+                foreach (object o in comboBoxMedida.Items)
+                {
+
+                    if (o.Equals("Unidad"))
+                    {
+
+                        comboBoxMedida.SelectedIndex = con;
+                        comboBoxMedida.Enabled = false;
+                       
+                        con = 0;
+                        break;
+                    }
+                    con++;
+                }
+            }
+            else if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
+            {
+                comboBoxMedida.Enabled = true;
+                comboBoxMedida.SelectedIndex = 0;
+            }
         }
 
         private void nmCantidad_ValueChanged(object sender, EventArgs e)

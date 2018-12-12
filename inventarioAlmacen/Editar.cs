@@ -16,14 +16,21 @@ namespace inventarioAlmacen
         public Editar()
         {
             InitializeComponent();
-
+            comboBoxCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMedida.DropDownStyle = ComboBoxStyle.DropDownList;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-        int ci = 0;
+        
+        int ci = 0,ca=0;
         public  void cIni(int c1)
         {
-            ci = c1;
+            ci = c1;// cantidad inicial 
+        }
+        public void cAn(int c)
+        {
+            ca = c;// cantidad Stock
         }
 
         //Redondear esquinas
@@ -177,30 +184,106 @@ namespace inventarioAlmacen
 
         Datos d = new Datos();
         String q;
+        int con = 0;
+        public string cat = "", med = "";
+        private void Editar_Load(object sender, EventArgs e)
+        {
+            if (cat.Equals("Higiene y Limpieza"))
+            {
+                
+                foreach (object o in comboBoxEstado.Items)
+                {
+
+                    if (o.Equals("N/A"))
+                    {
+
+                        comboBoxEstado.SelectedIndex = con;
+                        comboBoxEstado.Enabled = false;
+                        con = 0;
+                        break;
+                    }
+                    con++;
+                }
+            }
+
+            if (med.Equals("Unidad")&& !cat.Equals("Higiene y Limpieza"))
+            {
+            
+                foreach (object o in comboBoxMedida.Items)
+                {
+                    MessageBox.Show(med);
+
+                    if (o.Equals(med))
+                    {
+                        
+                        comboBoxMedida.SelectedIndex = con;
+                        comboBoxMedida.Enabled = false;
+                        con = 0;
+                        break;
+                    }
+                    con++;
+                }
+                
+            }
+        }
+
+        private void comboBoxCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxCategoria.Text.Equals("Herramientas y Otros"))
+            {
+
+                foreach (object o in comboBoxMedida.Items)
+                {
+
+                    if (o.Equals("Unidad"))
+                    {
+
+                        comboBoxMedida.SelectedIndex = con;
+                        comboBoxMedida.Enabled = false;
+                        comboBoxEstado.Enabled = true;
+                        con = 0;
+                        break;
+                    }
+                    con++;
+                }
+            }
+            else if (comboBoxCategoria.Text.Equals("Higiene y Limpieza"))
+            {
+                foreach (object o in comboBoxEstado.Items)
+                {
+
+                    if (o.Equals("N/A"))
+                    {
+
+                        comboBoxEstado.SelectedIndex = con;
+                        comboBoxEstado.Enabled = false;
+                        comboBoxMedida.Enabled = true;
+                        con = 0;
+                        break;
+                    }
+                    con++;
+                }
+            }
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Desea Editar los Registros?","Editar",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
-                /*
-	                [IdArticulo] 
-                    [NombreArticulo
-                    [Categoria]
-                    [CantidadInicial
-                    [CantidadAlmacen] 
-	                [TipoMedida] 
-	                [Estado
-                 * 
-                 */
                 
-                if (ci>0)
+                
+                if (ca>0)
                 {
-                    ci = ci +Convert.ToInt32( numCant.Value);
-                    q = "UPDATE Articulos Set NombreArticulo='" + txtNombre.Text + "',Categoria='" + comboBoxCategoria.Text + "',CantidadInicial='"+ci+ "',CantidadAlmacen='" + ci + "',TipoMedida='"+comboBoxMedida.Text+"',Estado='"+comboBoxEstado.Text+"'  WHERE IdArticulo='" + labelID.Text + "' ";
-                    //MessageBox.Show(""+ci);
+                    ca = ca +Convert.ToInt32( numCant.Value);
+                    MessageBox.Show(""+ca);
+                    ci = ci + Convert.ToInt32(numCant.Value); 
+                    q = "UPDATE Articulos Set NombreArticulo='" + txtNombre.Text + "',Categoria='" + comboBoxCategoria.Text + "',CantidadInicial='"+ci+ "',CantidadAlmacen='" + ca + "',TipoMedida='"+comboBoxMedida.Text+"',Estado='"+comboBoxEstado.Text+"'  WHERE IdArticulo='" + labelID.Text + "' ";
+                    MessageBox.Show(""+ci);
                 }
-                else if(ci==0)
+                else if(ca==0)
                 {
-                    q = "UPDATE Articulos Set NombreArticulo='" + txtNombre.Text + "',Categoria='" + comboBoxCategoria.Text + "',CantidadInicial='"+numCant.Value+"',CantidadAlmacen='"+numCant.Value+ "',TipoMedida='" + comboBoxMedida.Text + "',Estado='" + comboBoxEstado.Text + "'  WHERE IdArticulo='" + labelID.Text + "' ";
+                    ci = ci+ Convert.ToInt32(numCant.Value);
+                    q = "UPDATE Articulos Set NombreArticulo='" + txtNombre.Text + "',Categoria='" + comboBoxCategoria.Text + "',CantidadInicial='"+ci+"',CantidadAlmacen='"+numCant.Value+ "',TipoMedida='" + comboBoxMedida.Text + "',Estado='" + comboBoxEstado.Text + "'  WHERE IdArticulo='" + labelID.Text + "' ";
                 }
 
 
@@ -208,6 +291,7 @@ namespace inventarioAlmacen
                 {
                     MessageBox.Show("Datos Actualizados!!","Exito",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                     ci = 0;
+                    ca = 0;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
