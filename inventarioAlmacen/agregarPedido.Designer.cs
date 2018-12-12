@@ -32,10 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregarPedido));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdHi = new System.Windows.Forms.RadioButton();
-            this.rdHer = new System.Windows.Forms.RadioButton();
-            this.rdTodo = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.datosTabla = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -53,7 +49,6 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -64,64 +59,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rdHi);
-            this.groupBox1.Controls.Add(this.rdHer);
-            this.groupBox1.Controls.Add(this.rdTodo);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(197, 96);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
-            // 
-            // rdHi
-            // 
-            this.rdHi.AutoSize = true;
-            this.rdHi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdHi.Location = new System.Drawing.Point(19, 70);
-            this.rdHi.Name = "rdHi";
-            this.rdHi.Size = new System.Drawing.Size(149, 22);
-            this.rdHi.TabIndex = 2;
-            this.rdHi.Text = "Higiene y Limpieza";
-            this.toolTip1.SetToolTip(this.rdHi, "Higiene y Limpieza");
-            this.rdHi.UseVisualStyleBackColor = true;
-            this.rdHi.CheckedChanged += new System.EventHandler(this.rdHi_CheckedChanged);
-            // 
-            // rdHer
-            // 
-            this.rdHer.AutoSize = true;
-            this.rdHer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdHer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdHer.Location = new System.Drawing.Point(19, 44);
-            this.rdHer.Name = "rdHer";
-            this.rdHer.Size = new System.Drawing.Size(168, 22);
-            this.rdHer.TabIndex = 1;
-            this.rdHer.Text = "Herramientas y Otros";
-            this.toolTip1.SetToolTip(this.rdHer, "Herramientas y Otros");
-            this.rdHer.UseVisualStyleBackColor = true;
-            this.rdHer.CheckedChanged += new System.EventHandler(this.rdHer_CheckedChanged);
-            // 
-            // rdTodo
-            // 
-            this.rdTodo.AutoSize = true;
-            this.rdTodo.Checked = true;
-            this.rdTodo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdTodo.Location = new System.Drawing.Point(19, 19);
-            this.rdTodo.Name = "rdTodo";
-            this.rdTodo.Size = new System.Drawing.Size(61, 22);
-            this.rdTodo.TabIndex = 0;
-            this.rdTodo.TabStop = true;
-            this.rdTodo.Text = "Todo";
-            this.toolTip1.SetToolTip(this.rdTodo, "Todo");
-            this.rdTodo.UseVisualStyleBackColor = true;
-            this.rdTodo.CheckedChanged += new System.EventHandler(this.rdTodo_CheckedChanged);
             // 
             // label1
             // 
@@ -155,14 +92,14 @@
             this.datosTabla.Location = new System.Drawing.Point(12, 159);
             this.datosTabla.Name = "datosTabla";
             this.datosTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datosTabla.Size = new System.Drawing.Size(516, 204);
+            this.datosTabla.Size = new System.Drawing.Size(381, 204);
             this.datosTabla.TabIndex = 9;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel5.Controls.Add(this.comboBoxMedida);
-            this.panel5.Location = new System.Drawing.Point(203, 374);
+            this.panel5.Location = new System.Drawing.Point(241, 374);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 36);
             this.panel5.TabIndex = 13;
@@ -228,7 +165,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(305, 438);
+            this.btnAgregar.Location = new System.Drawing.Point(170, 438);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(223, 35);
             this.btnAgregar.TabIndex = 16;
@@ -261,7 +198,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerr;
-            this.btnCerrar.Location = new System.Drawing.Point(504, 9);
+            this.btnCerrar.Location = new System.Drawing.Point(371, 9);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 25);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -275,7 +212,7 @@
             this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
-            this.btnMinimizar.Location = new System.Drawing.Point(474, 6);
+            this.btnMinimizar.Location = new System.Drawing.Point(341, 6);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -292,7 +229,7 @@
             this.bar.Controls.Add(this.label2);
             this.bar.Location = new System.Drawing.Point(0, 0);
             this.bar.Name = "bar";
-            this.bar.Size = new System.Drawing.Size(540, 45);
+            this.bar.Size = new System.Drawing.Size(406, 45);
             this.bar.TabIndex = 19;
             this.bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bar_MouseDown);
             // 
@@ -302,7 +239,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(163, 9);
+            this.label2.Location = new System.Drawing.Point(97, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 29);
             this.label2.TabIndex = 2;
@@ -329,7 +266,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(215, 110);
+            this.panel1.Location = new System.Drawing.Point(78, 107);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 35);
             this.panel1.TabIndex = 21;
@@ -338,7 +275,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.pictureBox1.Image = global::inventarioAlmacen.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(493, 110);
+            this.pictureBox1.Location = new System.Drawing.Point(358, 107);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -349,7 +286,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 485);
+            this.ClientSize = new System.Drawing.Size(406, 485);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bar);
@@ -357,7 +294,6 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.datosTabla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -366,8 +302,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "agregarPedido";
             this.Load += new System.EventHandler(this.agregarPedido_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -385,10 +319,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdHi;
-        private System.Windows.Forms.RadioButton rdHer;
-        private System.Windows.Forms.RadioButton rdTodo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView datosTabla;
         internal System.Windows.Forms.Panel panel5;

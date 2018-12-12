@@ -105,7 +105,7 @@ namespace inventarioAlmacen
         Datos dts = new Datos();
         private void agregarPedido_Load(object sender, EventArgs e)
         {
-            groupBox1.Visible = false;
+            //groupBox1.Visible = false;
            
             consult();
            

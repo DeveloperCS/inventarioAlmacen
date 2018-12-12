@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.panelCentral = new System.Windows.Forms.Panel();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,13 +47,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1050, 32);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.Location = new System.Drawing.Point(0, 32);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(1050, 568);
-            this.panelCentral.TabIndex = 11;
             // 
             // productoToolStripMenuItem
             // 
@@ -76,6 +69,13 @@
             this.eliminarToolStripMenuItem.Text = "Inventario";
             this.eliminarToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.Location = new System.Drawing.Point(0, 32);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(1050, 568);
+            this.panelCentral.TabIndex = 11;
             // 
             // Reportes
             // 
