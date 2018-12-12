@@ -14,11 +14,11 @@
    FROM [Articulos]
 
  CREATE VIEW ConsumoE
- AS SELECT IdUsuario AS [Clave Usuario],IdEmpleado AS [ Clave Empleado],NombreArticulo AS [Articulo], FechaSalida AS [Fecha Salida]
+ AS SELECT IdUsuario AS [Clave Usuario],IdEmpleado AS [ Clave Empleado],NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad], FechaSalida AS [Fecha Salida]
  FROM Electronico
 
  CREATE VIEW PrestadosR
- AS SELECT IdUsuario AS [Clave Usuario],IdEmpleado AS [CLave Empleado],NombreArticulo AS [Articulo],FechaSalida AS [Fecha Salida], 
+ AS SELECT IdUsuario AS [Clave Usuario],IdEmpleado AS [CLave Empleado], NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad],FechaSalida AS [Fecha Salida], 
  FechaEntrega AS [Fecha Entrada]
  FROM Recibos
 
