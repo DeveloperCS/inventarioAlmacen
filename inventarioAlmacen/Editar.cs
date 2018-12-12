@@ -211,7 +211,7 @@ namespace inventarioAlmacen
             
                 foreach (object o in comboBoxMedida.Items)
                 {
-                    MessageBox.Show(med);
+                   
 
                     if (o.Equals(med))
                     {
@@ -275,10 +275,10 @@ namespace inventarioAlmacen
                 if (ca>0)
                 {
                     ca = ca +Convert.ToInt32( numCant.Value);
-                    MessageBox.Show(""+ca);
+                   
                     ci = ci + Convert.ToInt32(numCant.Value); 
                     q = "UPDATE Articulos Set NombreArticulo='" + txtNombre.Text + "',Categoria='" + comboBoxCategoria.Text + "',CantidadInicial='"+ci+ "',CantidadAlmacen='" + ca + "',TipoMedida='"+comboBoxMedida.Text+"',Estado='"+comboBoxEstado.Text+"'  WHERE IdArticulo='" + labelID.Text + "' ";
-                    MessageBox.Show(""+ci);
+                    
                 }
                 else if(ca==0)
                 {
