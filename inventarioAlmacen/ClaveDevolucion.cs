@@ -15,8 +15,8 @@ namespace inventarioAlmacen
         public ClaveDevolucion()
         {
             InitializeComponent();
-            txtNombre.Text = "Digite su clave";
-            txtNombre.ForeColor = Color.DarkGray;
+            txtClave.Text = "clav";
+            txtClave.ForeColor = Color.DarkGray;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -34,19 +34,19 @@ namespace inventarioAlmacen
 
         private void txtNombre_Enter(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "Digite su clave")
+            if (txtClave.Text == "clav")
             {
-                txtNombre.Text = "";
-                txtNombre.ForeColor = Color.DimGray;
+                txtClave.Text = "";
+                txtClave.ForeColor = Color.DimGray;
             }
         }
 
         private void txtNombre_Leave(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "")
+            if (txtClave.Text == "")
             {
-                txtNombre.Text = "Digite su clave";
-                txtNombre.ForeColor = Color.DarkGray;
+                txtClave.Text = "clav";
+                txtClave.ForeColor = Color.DarkGray;
             }
         }
 

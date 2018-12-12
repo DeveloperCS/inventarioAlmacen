@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnDevolver = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbID = new System.Windows.Forms.Label();
             this.Panel2 = new System.Windows.Forms.Panel();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
             this.Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnAgregar
+            // btnDevolver
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(140, 157);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(223, 35);
-            this.btnAgregar.TabIndex = 14;
-            this.btnAgregar.Text = "Prestar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnDevolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
+            this.btnDevolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDevolver.FlatAppearance.BorderSize = 0;
+            this.btnDevolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnDevolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolver.ForeColor = System.Drawing.Color.White;
+            this.btnDevolver.Location = new System.Drawing.Point(140, 157);
+            this.btnDevolver.Name = "btnDevolver";
+            this.btnDevolver.Size = new System.Drawing.Size(223, 35);
+            this.btnDevolver.TabIndex = 14;
+            this.btnDevolver.Text = "Devolver";
+            this.btnDevolver.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
             // 
@@ -84,7 +84,7 @@
             // Panel2
             // 
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.Panel2.Controls.Add(this.txtNombre);
+            this.Panel2.Controls.Add(this.txtClave);
             this.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.Panel2.Location = new System.Drawing.Point(109, 92);
@@ -92,26 +92,27 @@
             this.Panel2.Size = new System.Drawing.Size(160, 36);
             this.Panel2.TabIndex = 16;
             // 
-            // txtNombre
+            // txtClave
             // 
-            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(9, 6);
-            this.txtNombre.MaxLength = 4;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.PasswordChar = '•';
-            this.txtNombre.Size = new System.Drawing.Size(141, 24);
-            this.txtNombre.TabIndex = 2;
-            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
-            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
+            this.txtClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClave.Location = new System.Drawing.Point(9, 6);
+            this.txtClave.MaxLength = 4;
+            this.txtClave.Name = "txtClave";
+            this.txtClave.PasswordChar = '•';
+            this.txtClave.Size = new System.Drawing.Size(141, 24);
+            this.txtClave.TabIndex = 2;
+            this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtClave.Enter += new System.EventHandler(this.txtNombre_Enter);
+            this.txtClave.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
             // ClaveDevolucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 209);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnDevolver);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.Panel2);
@@ -127,10 +128,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnDevolver;
         private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Label lbID;
         internal System.Windows.Forms.Panel Panel2;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtClave;
     }
 }

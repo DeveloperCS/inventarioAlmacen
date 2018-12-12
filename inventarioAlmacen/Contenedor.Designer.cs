@@ -62,16 +62,16 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.panelMenu.Controls.Add(this.btnDevoluciones);
+            this.panelMenu.Controls.Add(this.colorEs);
             this.panelMenu.Controls.Add(this.pictureBox3);
             this.panelMenu.Controls.Add(this.labelUser);
             this.panelMenu.Controls.Add(this.pictureBox1);
-            this.panelMenu.Controls.Add(this.colorEs);
             this.panelMenu.Controls.Add(this.btnPrestamos);
             this.panelMenu.Controls.Add(this.btnInv);
             this.panelMenu.Controls.Add(this.btnIni);
             this.panelMenu.Controls.Add(this.btnUsers);
             this.panelMenu.Controls.Add(this.btnReportes);
+            this.panelMenu.Controls.Add(this.btnDevoluciones);
             this.panelMenu.Location = new System.Drawing.Point(0, 70);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 580);
