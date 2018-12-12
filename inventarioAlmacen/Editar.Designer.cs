@@ -280,6 +280,7 @@
             this.comboBoxCategoria.Size = new System.Drawing.Size(281, 28);
             this.comboBoxCategoria.TabIndex = 6;
             this.toolTip1.SetToolTip(this.comboBoxCategoria, "Categoria");
+            this.comboBoxCategoria.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategoria_SelectedIndexChanged);
             this.comboBoxCategoria.Enter += new System.EventHandler(this.comboBoxCategoria_Enter);
             this.comboBoxCategoria.Leave += new System.EventHandler(this.comboBoxCategoria_Leave);
             // 
@@ -332,6 +333,7 @@
             this.Name = "Editar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar";
+            this.Load += new System.EventHandler(this.Editar_Load);
             this.bar.ResumeLayout(false);
             this.bar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();

@@ -23,7 +23,7 @@ namespace inventarioAlmacen
         Datos dts = new Datos();
         private void inventario_Load(object sender, EventArgs e)
         {
-
+            this.datosTabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             if (rdTodo.Checked == true)
             {
                 consult();
@@ -181,7 +181,10 @@ namespace inventarioAlmacen
                    // ed.numCant.Value = c;
                     ed.comboBoxMedida.SelectedIndex = tipoT;
                     ed.comboBoxEstado.SelectedIndex = est;
+                    ed.cat = cat;
+                    ed.med = tipo;
                     ed.cIni(c2);
+                    ed.cAn(c);
                     
                     if (ed.ShowDialog() == DialogResult.OK)
                     {
@@ -197,7 +200,10 @@ namespace inventarioAlmacen
                // ed.numCant.Value = c;
                 ed.comboBoxMedida.SelectedIndex = tipoT;
                 ed.comboBoxEstado.SelectedIndex = est;
-                //ed.cIni(c2);
+                ed.cat = cat;
+                ed.med = tipo;
+                ed.cIni(c2);
+                ed.cAn(c);
                 if (ed.ShowDialog() == DialogResult.OK)
                 {
                     consult();

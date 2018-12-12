@@ -28,7 +28,7 @@ namespace inventarioAlmacen
 
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
-
+            this.datosTabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             if (rdTodo.Checked == true)
             {
                 consult();
@@ -86,7 +86,7 @@ namespace inventarioAlmacen
         {
             consult();
         }
-        string h = "", f = "";
+        string h = "", f = "",TipRep="";
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (datosTabla.RowCount == 0)
@@ -95,6 +95,20 @@ namespace inventarioAlmacen
             }
             else if (datosTabla.RowCount >= 1)
             {
+                  
+                //if para saber el tipo de reporte de inventario
+                if (rdTodo.Checked==true)
+                {
+                    TipRep = "Todo";
+                }
+                if (rdHer.Checked==true)
+                {
+                    TipRep = "Herramientas y Otros";
+                }
+                if (rdHi.Checked==true)
+                {
+                    TipRep = "Higiene y Limpieza";
+                }
                 //hora y fecha
                 h = DateTime.Now.ToLongTimeString();
                 f = DateTime.Now.ToLongDateString();
@@ -107,25 +121,50 @@ namespace inventarioAlmacen
                     if (con == 1)
                     {
                         string filename = save.FileName;
-                        Document doc = new Document(PageSize.A3, 9, 9, 9, 9);
-                        Chunk encab = new Chunk("GYM CONTROL REPORT: " + "aa", FontFactory.GetFont("COURIER", 18));
-                        Chunk fechaC = new Chunk(f + "." + "\n" + h, FontFactory.GetFont("COURIER", 12));
+                        //lef, right   top,button
+                        Document doc = new Document(PageSize.A4, 30, 30, 15, 15);
+                       
+                        var image = iTextSharp.text.Image.GetInstance(@"../../img/logoT.png");
+                        var scalePercent = (PageSize.A4.Width / image.Width) * 10;
+                       
+
+                        image.ScalePercent(scalePercent);
+                        Chunk head = new Chunk("Instituto Tecnológico Superior de San Pedro de las Colonias",FontFactory.GetFont("Arial", 18,1));
+                        Chunk encab = new Chunk("CHECHSTORE:" + "Reporte de Inventario - " + TipRep, FontFactory.GetFont("Arial", 14));
+                        
+                        Chunk fechaC = new Chunk(f + "." + "\n" + h, FontFactory.GetFont("Arial", 12));
                         //  Chunk Usuario = new Chunk("Usuario: " + lbNomUS2.Text, FontFactory.GetFont("COURIER", 14));
-                        Chunk tot = new Chunk("Total: " + 4, FontFactory.GetFont("COURIER", 16));
+                        //Chunk tot = new Chunk("Total: " + 4, FontFactory.GetFont("COURIER", 16));
                         try
                         {
                             FileStream file = new FileStream(filename, FileMode.OpenOrCreate);
                             PdfWriter writer = PdfWriter.GetInstance(doc, file);
                             writer.ViewerPreferences = PdfWriter.PageModeUseThumbs;
                             writer.ViewerPreferences = PdfWriter.PageLayoutOneColumn;
+
+                           
                             doc.Open();
+
+                            Paragraph pi = new Paragraph();
+                            pi.Alignment = Element.ALIGN_RIGHT;
+                            pi.Add(image);
+                            doc.Add(pi);
+                          
+
+                            Paragraph pr = new Paragraph();
+                            pr.Alignment = Element.ALIGN_CENTER;
+                            pr.Add(head);
+                            doc.Add(pr);
+                            doc.Add(new Paragraph("\n"));
+                           
                             doc.Add(new Paragraph(encab));
                             doc.Add(new Paragraph(fechaC));
                             //  doc.Add(new Paragraph(Usuario));
                             doc.Add(new Paragraph("\n"));
-                            GenerarDocumentos(doc);
                             doc.Add(new Paragraph("\n"));
-                            doc.Add(new Paragraph(tot));
+                            GenerarDocumentos(doc);
+                            //doc.Add(new Paragraph("\n"));
+                           // doc.Add(new Paragraph(tot));
                             Process.Start(filename);
                             doc.Close();
 
@@ -138,35 +177,6 @@ namespace inventarioAlmacen
                     }
                     else
                     {
-                        string filename = save.FileName;
-                        Document doc = new Document(PageSize.A3, 9, 9, 9, 9);
-                        Chunk encab = new Chunk("GYM CONTROL REPORT: " + "aa", FontFactory.GetFont("COURIER", 18));
-                        Chunk fechaC = new Chunk(f + "." + "\n" + h, FontFactory.GetFont("COURIER", 12));
-                        // Chunk Usuario = new Chunk("Usuario: " + lbNomUS2.Text, FontFactory.GetFont("COURIER", 14));
-
-
-                        try
-                        {
-                            FileStream file = new FileStream(filename, FileMode.OpenOrCreate);
-                            PdfWriter writer = PdfWriter.GetInstance(doc, file);
-                            writer.ViewerPreferences = PdfWriter.PageModeUseThumbs;
-                            writer.ViewerPreferences = PdfWriter.PageLayoutOneColumn;
-                            doc.Open();
-                            doc.Add(new Paragraph(encab));
-                            doc.Add(new Paragraph(fechaC));
-                            // doc.Add(new Paragraph(Usuario));
-                            doc.Add(new Paragraph("\n"));
-                            GenerarDocumentos(doc);
-                            Process.Start(filename);
-                            doc.Close();
-
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message + " --" + ex.StackTrace.ToString());
-                        }
-
                     }
 
 
@@ -183,7 +193,8 @@ namespace inventarioAlmacen
             PdfPTable datatable = new PdfPTable(datosTabla.ColumnCount);
 
             //asignamos algunas propiedades para el diseño del pdf 
-            datatable.DefaultCell.Padding = 1;
+            datatable.DefaultCell.Padding = 5;
+
             float[] headerwidths = GetTamañoColumnas(datosTabla);
 
             datatable.SetWidths(headerwidths);
@@ -197,11 +208,12 @@ namespace inventarioAlmacen
             datatable.DefaultCell.BorderColor = iTextSharp.text.BaseColor.BLACK;
 
             //LA FUENTE DE NUESTRO TEXTO
-            iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA);
+            iTextSharp.text.Font fuente = new iTextSharp.text.Font(FontFactory.GetFont("Arial", 12));
 
             Phrase objP = new Phrase("A", fuente);
 
             datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            
 
             //SE GENERA EL ENCABEZADO DE LA TABLA EN EL PDF 
             for (int i = 0; i < datosTabla.ColumnCount; i++)
@@ -209,7 +221,6 @@ namespace inventarioAlmacen
 
                 objP = new Phrase(datosTabla.Columns[i].HeaderText, fuente);
                 datatable.HorizontalAlignment = Element.ALIGN_CENTER;
-
                 datatable.AddCell(objP);
 
             }
@@ -220,9 +231,15 @@ namespace inventarioAlmacen
             //SE GENERA EL CUERPO DEL PDF
             for (int i = 0; i < datosTabla.RowCount; i++)
             {
+             
+             
                 for (int j = 0; j < datosTabla.ColumnCount; j++)
                 {
                     objP = new Phrase(datosTabla[j, i].Value.ToString(), fuente);
+                    
+                       
+                        
+                    
                     datatable.AddCell(objP);
                 }
                 datatable.CompleteRow();

@@ -146,7 +146,7 @@ namespace inventarioAlmacen
 
                             idNuevo = idPrestamo(carte);
                             //idNuevo = "Ele";
-                            qIn = "INSERT INTO Recibos VALUES('"+idNuevo+ "" + row.Index + "','" + emp1 + "','"+idAr+"','"+emp1+"','"+nomAr+"',GETDATE(),GETDATE(),'"+descrip+"');";
+                            qIn = "INSERT INTO Recibos VALUES('"+idNuevo+ "" + row.Index + "','" + emp1 + "','"+idAr+"','"+emp1+"','"+nomAr+"',GETDATE(),'"+ dtRegreso.Value.ToString("yyyy/MM/dd") + "','"+descrip+"');";
                             if (datos.insertar(qIn) == true)
                             {
                                 qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0] + "' WHERE idArticulo= '" + idAr + "'";
@@ -259,7 +259,7 @@ namespace inventarioAlmacen
 
         private void Prestamos_Load(object sender, EventArgs e)
         {
-
+            this.dataLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             comprobarExis();
             llenarCbEm();
         }
@@ -374,7 +374,7 @@ namespace inventarioAlmacen
 
                 //MessageBox.Show(row[0]+"\n"+row[1]);
             }
-            id = "El" + id1;
+            id = "El-" + id1;
             /*
              * El-0001/1
              * El-0001/2
