@@ -28,3 +28,15 @@
  FROM Articulos
  WHERE CantidadAlmacen = 0
 
+
+
+ CREATE TABLE [dbo].[Articulos]
+(
+	[IdArticulo] NVARCHAR(7) NOT NULL PRIMARY KEY, 
+    [NombreArticulo] NVARCHAR(50) NOT NULL, 
+    [Categoria] NCHAR(25) NOT NULL, 
+    [CantidadInicial] INT NOT NULL, 
+    [CantidadAlmacen] INT NOT NULL, 
+    [TipoMedida] DOUBLE NOT NULL, 
+    [Estado] nVarchar NOT NULL
+)
