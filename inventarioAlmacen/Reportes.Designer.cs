@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelCentral = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,11 +48,18 @@
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // panelCentral
+            // 
+            this.panelCentral.Location = new System.Drawing.Point(0, 32);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(1050, 548);
+            this.panelCentral.TabIndex = 11;
+            // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.productoToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.if_plus_1646001;
+            this.productoToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.icons8_tomar_prestado_un_libro_48;
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(126, 28);
             this.productoToolStripMenuItem.Text = "Prestamos";
@@ -63,19 +70,12 @@
             // 
             this.eliminarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.eliminarToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.if_error_1646012;
+            this.eliminarToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.icons48;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(119, 28);
             this.eliminarToolStripMenuItem.Text = "Inventario";
             this.eliminarToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.Location = new System.Drawing.Point(0, 32);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(1050, 548);
-            this.panelCentral.TabIndex = 11;
             // 
             // Reportes
             // 

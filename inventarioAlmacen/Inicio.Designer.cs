@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,6 +45,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,6 +73,7 @@
             this.label1.Size = new System.Drawing.Size(286, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Articulos Prestados";
+            this.toolTip1.SetToolTip(this.label1, "Articulos Prestados");
             // 
             // panel2
             // 
@@ -103,6 +106,7 @@
             this.label2.Size = new System.Drawing.Size(95, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "Todos";
+            this.toolTip1.SetToolTip(this.label2, "Todos");
             // 
             // panel3
             // 
@@ -135,6 +139,7 @@
             this.label3.Size = new System.Drawing.Size(292, 31);
             this.label3.TabIndex = 1;
             this.label3.Text = "Herramientas y Otros";
+            this.toolTip1.SetToolTip(this.label3, "Herramientas y Otros");
             // 
             // panel4
             // 
@@ -167,6 +172,7 @@
             this.label4.Size = new System.Drawing.Size(260, 31);
             this.label4.TabIndex = 2;
             this.label4.Text = "Higiene y Limpieza";
+            this.toolTip1.SetToolTip(this.label4, "Higiene y Limpieza");
             // 
             // panel5
             // 
@@ -257,5 +263,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

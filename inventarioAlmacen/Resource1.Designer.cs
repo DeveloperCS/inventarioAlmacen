@@ -193,6 +193,46 @@ namespace inventarioAlmacen {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconoInvent {
+            get {
+                object obj = ResourceManager.GetObject("IconoInvent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons100 {
+            get {
+                object obj = ResourceManager.GetObject("icons100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons48 {
+            get {
+                object obj = ResourceManager.GetObject("icons48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons64 {
+            get {
+                object obj = ResourceManager.GetObject("icons64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_editar_propiedad_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_editar_propiedad_48", resourceCulture);
@@ -226,6 +266,16 @@ namespace inventarioAlmacen {
         internal static System.Drawing.Bitmap icons8_sincronizar_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8_sincronizar_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_tomar_prestado_un_libro_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-tomar-prestado-un-libro-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
