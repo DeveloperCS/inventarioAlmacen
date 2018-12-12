@@ -45,9 +45,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(723, 63);
+            this.panel1.Location = new System.Drawing.Point(621, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 35);
+            this.panel1.Size = new System.Drawing.Size(382, 35);
             this.panel1.TabIndex = 23;
             // 
             // txtBuscar
@@ -58,15 +58,17 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscar.Location = new System.Drawing.Point(8, 5);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(264, 24);
+            this.txtBuscar.Size = new System.Drawing.Size(368, 24);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Tag = "";
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.pictureBox1.Image = global::inventarioAlmacen.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(1003, 63);
+            this.pictureBox1.Location = new System.Drawing.Point(1003, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,7 +79,7 @@
             // 
             this.cbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEmpleados.FormattingEnabled = true;
-            this.cbEmpleados.Location = new System.Drawing.Point(356, 60);
+            this.cbEmpleados.Location = new System.Drawing.Point(429, 39);
             this.cbEmpleados.Name = "cbEmpleados";
             this.cbEmpleados.Size = new System.Drawing.Size(173, 28);
             this.cbEmpleados.TabIndex = 27;
@@ -87,7 +89,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.label2.Location = new System.Drawing.Point(258, 63);
+            this.label2.Location = new System.Drawing.Point(331, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(177, 23);
             this.label2.TabIndex = 25;
@@ -110,10 +112,10 @@
             this.dataLista.AllowUserToDeleteRows = false;
             this.dataLista.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataLista.Location = new System.Drawing.Point(12, 128);
+            this.dataLista.Location = new System.Drawing.Point(12, 129);
             this.dataLista.Name = "dataLista";
             this.dataLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataLista.Size = new System.Drawing.Size(1026, 327);
+            this.dataLista.Size = new System.Drawing.Size(1026, 353);
             this.dataLista.TabIndex = 24;
             // 
             // btnPrestar
@@ -125,9 +127,9 @@
             this.btnPrestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrestar.ForeColor = System.Drawing.Color.White;
-            this.btnPrestar.Location = new System.Drawing.Point(770, 509);
+            this.btnPrestar.Location = new System.Drawing.Point(768, 499);
             this.btnPrestar.Name = "btnPrestar";
-            this.btnPrestar.Size = new System.Drawing.Size(259, 63);
+            this.btnPrestar.Size = new System.Drawing.Size(270, 56);
             this.btnPrestar.TabIndex = 28;
             this.btnPrestar.Text = "Devolver";
             this.btnPrestar.UseVisualStyleBackColor = false;
