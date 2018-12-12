@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbEmpleados = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.dataLista = new System.Windows.Forms.DataGridView();
-            this.btnPrestar = new System.Windows.Forms.Button();
+            this.btnDevolver = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,19 +63,9 @@
             this.txtBuscar.Size = new System.Drawing.Size(368, 24);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Tag = "";
+            this.toolTip1.SetToolTip(this.txtBuscar, "Buscar");
             this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
             this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.pictureBox1.Image = global::inventarioAlmacen.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(1003, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
             // 
             // cbEmpleados
             // 
@@ -83,6 +75,7 @@
             this.cbEmpleados.Name = "cbEmpleados";
             this.cbEmpleados.Size = new System.Drawing.Size(173, 28);
             this.cbEmpleados.TabIndex = 27;
+            this.toolTip1.SetToolTip(this.cbEmpleados, "Empleado");
             // 
             // label2
             // 
@@ -118,28 +111,42 @@
             this.dataLista.Size = new System.Drawing.Size(1026, 353);
             this.dataLista.TabIndex = 24;
             // 
-            // btnPrestar
+            // btnDevolver
             // 
-            this.btnPrestar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
-            this.btnPrestar.FlatAppearance.BorderSize = 0;
-            this.btnPrestar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.btnPrestar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnPrestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrestar.ForeColor = System.Drawing.Color.White;
-            this.btnPrestar.Location = new System.Drawing.Point(768, 499);
-            this.btnPrestar.Name = "btnPrestar";
-            this.btnPrestar.Size = new System.Drawing.Size(270, 56);
-            this.btnPrestar.TabIndex = 28;
-            this.btnPrestar.Text = "Devolver";
-            this.btnPrestar.UseVisualStyleBackColor = false;
+            this.btnDevolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
+            this.btnDevolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDevolver.FlatAppearance.BorderSize = 0;
+            this.btnDevolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnDevolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolver.ForeColor = System.Drawing.Color.White;
+            this.btnDevolver.Location = new System.Drawing.Point(768, 499);
+            this.btnDevolver.Name = "btnDevolver";
+            this.btnDevolver.Size = new System.Drawing.Size(270, 56);
+            this.btnDevolver.TabIndex = 28;
+            this.btnDevolver.Text = "Devolver";
+            this.toolTip1.SetToolTip(this.btnDevolver, "Devolver");
+            this.btnDevolver.UseVisualStyleBackColor = false;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.pictureBox1.Image = global::inventarioAlmacen.Properties.Resources.buscar;
+            this.pictureBox1.Location = new System.Drawing.Point(1003, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
             // 
             // Devoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 600);
-            this.Controls.Add(this.btnPrestar);
+            this.ClientSize = new System.Drawing.Size(1050, 580);
+            this.Controls.Add(this.btnDevolver);
             this.Controls.Add(this.cbEmpleados);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbID);
@@ -151,8 +158,8 @@
             this.Text = "Devoluciones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,6 +173,7 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lbID;
         private System.Windows.Forms.DataGridView dataLista;
-        private System.Windows.Forms.Button btnPrestar;
+        private System.Windows.Forms.Button btnDevolver;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

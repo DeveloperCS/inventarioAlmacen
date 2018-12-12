@@ -131,6 +131,15 @@ namespace inventarioAlmacen
             btnReportes.BackColor = Color.FromArgb(83, 164, 227);
         }
 
+        private void btnDevoluciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new Devoluciones());
+            retornarColor();
+            txtTituloBar.Text = "Devoluciones";
+            colorEs.Location = new Point(-3, btnDevoluciones.Location.Y);
+            btnDevoluciones.BackColor = Color.FromArgb(83, 164, 227);
+        }
+
         private void retornarColor()
         {
             btnIni.BackColor = Color.FromArgb(34, 49, 65);
@@ -164,14 +173,7 @@ namespace inventarioAlmacen
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnDevoluciones_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new Devoluciones());
-            retornarColor();
-            txtTituloBar.Text = "Devoluciones";
-            colorEs.Location = new Point(-3, btnDevoluciones.Location.Y);
-            btnDevoluciones.BackColor = Color.FromArgb(83, 164, 227);
-        }
+        
 
 
         /* public DataTable tmpEntrada = new DataTable();

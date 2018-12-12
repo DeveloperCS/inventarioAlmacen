@@ -64,6 +64,7 @@
             // btnPrestar
             // 
             this.btnPrestar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
+            this.btnPrestar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrestar.FlatAppearance.BorderSize = 0;
             this.btnPrestar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.btnPrestar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
@@ -140,6 +141,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.DimGray;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightBlue;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
@@ -172,7 +174,7 @@
             // 
             this.cbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEmpleados.FormattingEnabled = true;
-            this.cbEmpleados.Location = new System.Drawing.Point(809, 54);
+            this.cbEmpleados.Location = new System.Drawing.Point(865, 52);
             this.cbEmpleados.Name = "cbEmpleados";
             this.cbEmpleados.Size = new System.Drawing.Size(173, 28);
             this.cbEmpleados.TabIndex = 7;
@@ -193,9 +195,9 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.label2.Location = new System.Drawing.Point(711, 57);
+            this.label2.Location = new System.Drawing.Point(764, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 23);
+            this.label2.Size = new System.Drawing.Size(109, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Empleado:";
             // 
@@ -204,7 +206,7 @@
             this.lbDev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDev.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.lbDev.Location = new System.Drawing.Point(688, 102);
+            this.lbDev.Location = new System.Drawing.Point(730, 100);
             this.lbDev.Name = "lbDev";
             this.lbDev.Size = new System.Drawing.Size(102, 23);
             this.lbDev.TabIndex = 3;
@@ -212,7 +214,7 @@
             // 
             // dtRegreso
             // 
-            this.dtRegreso.Location = new System.Drawing.Point(796, 102);
+            this.dtRegreso.Location = new System.Drawing.Point(838, 101);
             this.dtRegreso.Name = "dtRegreso";
             this.dtRegreso.Size = new System.Drawing.Size(200, 20);
             this.dtRegreso.TabIndex = 8;
@@ -221,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 600);
+            this.ClientSize = new System.Drawing.Size(1050, 580);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dtRegreso);
             this.Controls.Add(this.cbEmpleados);
