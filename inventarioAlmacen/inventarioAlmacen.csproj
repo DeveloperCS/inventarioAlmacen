@@ -334,6 +334,7 @@
     <None Include="Resources\icons64.png" />
     <None Include="Resources\icons48.png" />
     <None Include="Resources\icons8-tomar-prestado-un-libro-48.png" />
+    <None Include="Resources\AgrgarCarrito.png" />
     <Content Include="Resources\inicio.png" />
     <None Include="Resources\inventar.png" />
     <Content Include="Resources\inventario.png" />

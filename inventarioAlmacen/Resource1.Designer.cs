@@ -63,6 +63,16 @@ namespace inventarioAlmacen {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AgrgarCarrito {
+            get {
+                object obj = ResourceManager.GetObject("AgrgarCarrito", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boss_man_128 {
             get {
                 object obj = ResourceManager.GetObject("boss_man_128", resourceCulture);
