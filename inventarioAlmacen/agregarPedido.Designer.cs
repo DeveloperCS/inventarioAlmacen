@@ -111,7 +111,7 @@
             this.comboBoxMedida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMedida.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxMedida.ForeColor = System.Drawing.Color.Black;
             this.comboBoxMedida.FormattingEnabled = true;
             this.comboBoxMedida.Items.AddRange(new object[] {
             "kg",
@@ -252,7 +252,7 @@
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.Color.Gray;
+            this.txtBuscar.ForeColor = System.Drawing.Color.Black;
             this.txtBuscar.Location = new System.Drawing.Point(8, 5);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(264, 24);

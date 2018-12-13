@@ -138,7 +138,7 @@
             this.comboBoxCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCategoria.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxCategoria.ForeColor = System.Drawing.Color.Black;
             this.comboBoxCategoria.FormattingEnabled = true;
             this.comboBoxCategoria.Items.AddRange(new object[] {
             "Higiene y Limpieza",
@@ -158,7 +158,7 @@
             this.comboBoxMedida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMedida.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxMedida.ForeColor = System.Drawing.Color.Black;
             this.comboBoxMedida.FormattingEnabled = true;
             this.comboBoxMedida.Items.AddRange(new object[] {
             "kg",

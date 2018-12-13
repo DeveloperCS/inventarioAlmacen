@@ -21,7 +21,7 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             comboBoxEmpleados.Text = "Empleados";
-            comboBoxEmpleados.ForeColor = Color.DarkGray;
+            comboBoxEmpleados.ForeColor = Color.DimGray;
             comboBoxEmpleados.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
@@ -30,7 +30,7 @@ namespace inventarioAlmacen
             if (comboBoxEmpleados.Text == "Empleados")
             {
                 comboBoxEmpleados.Text = "";
-                comboBoxEmpleados.ForeColor = Color.DimGray;
+                comboBoxEmpleados.ForeColor = Color.Black;
             }
         }
 
@@ -39,7 +39,7 @@ namespace inventarioAlmacen
             if (comboBoxEmpleados.Text == "")
             {
                 comboBoxEmpleados.Text = "Empleados";
-                comboBoxEmpleados.ForeColor = Color.DarkGray;
+                comboBoxEmpleados.ForeColor = Color.DimGray;
             }
         }
         String idbuscar = "";

@@ -365,6 +365,11 @@ namespace inventarioAlmacen
             cbEmpleados.Enabled = true;
         }
 
+        private void cbCategorias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
         public string idPrestamo(int t)
         {
             String id1 = "";

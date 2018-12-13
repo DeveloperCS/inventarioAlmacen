@@ -141,7 +141,7 @@
             this.comboBoxTipoUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxTipoUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTipoUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTipoUser.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxTipoUser.ForeColor = System.Drawing.Color.Black;
             this.comboBoxTipoUser.FormattingEnabled = true;
             this.comboBoxTipoUser.Items.AddRange(new object[] {
             "Administrador",

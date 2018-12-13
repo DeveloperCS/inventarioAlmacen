@@ -16,7 +16,7 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             txtBuscar.Text = "Buscar";
-            txtBuscar.ForeColor = Color.DarkGray;
+            txtBuscar.ForeColor = Color.DimGray;
             
         }
 
@@ -65,7 +65,7 @@ namespace inventarioAlmacen
             if (txtBuscar.Text == "Buscar")
             {
                 txtBuscar.Text = "";
-                txtBuscar.ForeColor = Color.DimGray;
+                txtBuscar.ForeColor = Color.Black;
             }
         }
         //buscador
@@ -74,7 +74,7 @@ namespace inventarioAlmacen
             if (txtBuscar.Text == "")
             {
                 txtBuscar.Text = "Buscar";
-                txtBuscar.ForeColor = Color.DarkGray;
+                txtBuscar.ForeColor = Color.DimGray;
             }
 
         }

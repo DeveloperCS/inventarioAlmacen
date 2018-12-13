@@ -181,7 +181,7 @@
             this.comboBoxEstado.Cursor = System.Windows.Forms.Cursors.Default;
             this.comboBoxEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEstado.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxEstado.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEstado.FormattingEnabled = true;
             this.comboBoxEstado.Items.AddRange(new object[] {
             "N/A",
@@ -210,7 +210,7 @@
             this.comboBoxMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.comboBoxMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMedida.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxMedida.ForeColor = System.Drawing.Color.Black;
             this.comboBoxMedida.FormattingEnabled = true;
             this.comboBoxMedida.Items.AddRange(new object[] {
             "kg",
@@ -248,7 +248,7 @@
             // 
             // numCant
             // 
-            this.numCant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.numCant.ForeColor = System.Drawing.Color.Black;
             this.numCant.Location = new System.Drawing.Point(164, 7);
             this.numCant.Name = "numCant";
             this.numCant.Size = new System.Drawing.Size(120, 21);
@@ -270,7 +270,7 @@
             this.comboBoxCategoria.Cursor = System.Windows.Forms.Cursors.Default;
             this.comboBoxCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCategoria.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxCategoria.ForeColor = System.Drawing.Color.Black;
             this.comboBoxCategoria.FormattingEnabled = true;
             this.comboBoxCategoria.Items.AddRange(new object[] {
             "Higiene y Limpieza",

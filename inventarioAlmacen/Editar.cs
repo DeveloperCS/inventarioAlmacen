@@ -81,7 +81,7 @@ namespace inventarioAlmacen
                     if (txtNombre.Text == "Nombre del Articulo")
                     {
                         txtNombre.Text = "";
-                        txtNombre.ForeColor = Color.DimGray;
+                        txtNombre.ForeColor = Color.Black;
                     }
 
                     break;
@@ -89,7 +89,7 @@ namespace inventarioAlmacen
                     if (txtNombre.Text == "")
                     {
                         txtNombre.Text = "Nombre del Articulo";
-                        txtNombre.ForeColor = Color.DarkGray;
+                        txtNombre.ForeColor = Color.DimGray;
                     }
 
 
@@ -98,7 +98,7 @@ namespace inventarioAlmacen
                     if (comboBoxCategoria.Text == "Categoria")
                     {
                         comboBoxCategoria.Text = "";
-                        comboBoxCategoria.ForeColor = Color.DimGray;
+                        comboBoxCategoria.ForeColor = Color.Black;
                     }
 
                     break;
@@ -106,35 +106,35 @@ namespace inventarioAlmacen
                     if (comboBoxCategoria.Text == "")
                     {
                         comboBoxCategoria.Text = "Categoria";
-                        comboBoxCategoria.ForeColor = Color.DarkGray;
+                        comboBoxCategoria.ForeColor = Color.DimGray;
                     }
                     break;
                 case 5:
                     if (comboBoxMedida.Text == "Tipo de Medida")
                     {
                         comboBoxMedida.Text = "";
-                        comboBoxMedida.ForeColor = Color.DimGray;
+                        comboBoxMedida.ForeColor = Color.Black;
                     }
                     break;
                 case 6:
                     if (comboBoxMedida.Text == "")
                     {
                         comboBoxMedida.Text = "Tipo de Medida";
-                        comboBoxMedida.ForeColor = Color.DarkGray;
+                        comboBoxMedida.ForeColor = Color.DimGray;
                     }
                     break;
                 case 7:
                     if (comboBoxEstado.Text == "Estado")
                     {
                         comboBoxEstado.Text = "";
-                        comboBoxEstado.ForeColor = Color.DimGray;
+                        comboBoxEstado.ForeColor = Color.Black;
                     }
                     break;
                 case 8:
                     if (comboBoxEstado.Text == "")
                     {
                         comboBoxEstado.Text = "Estado";
-                        comboBoxEstado.ForeColor = Color.DarkGray;
+                        comboBoxEstado.ForeColor = Color.DimGray;
                     }
                     break;
 

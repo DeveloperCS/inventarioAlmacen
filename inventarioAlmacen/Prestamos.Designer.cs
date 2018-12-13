@@ -171,6 +171,7 @@
             this.cbCategorias.TabIndex = 7;
             this.cbCategorias.Text = "Selecciona Categoria..";
             this.toolTip1.SetToolTip(this.cbCategorias, "Categoria");
+            this.cbCategorias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbCategorias_KeyPress);
             // 
             // cbEmpleados
             // 

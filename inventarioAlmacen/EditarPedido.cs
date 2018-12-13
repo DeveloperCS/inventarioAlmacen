@@ -43,7 +43,7 @@ namespace inventarioAlmacen
             if (comboBoxMedida.Text == "Tipo de Medida")
             {
                 comboBoxMedida.Text = "";
-                comboBoxMedida.ForeColor = Color.DimGray;
+                comboBoxMedida.ForeColor = Color.Black;
             }
         }
 
@@ -52,7 +52,7 @@ namespace inventarioAlmacen
             if (comboBoxMedida.Text == "")
             {
                 comboBoxMedida.Text = "Tipo de Medida";
-                comboBoxMedida.ForeColor = Color.DarkGray;
+                comboBoxMedida.ForeColor = Color.DimGray;
             }
         }
 

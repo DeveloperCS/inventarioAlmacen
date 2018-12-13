@@ -17,9 +17,9 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             txtBuscar.Text = "Buscar";
-            txtBuscar.ForeColor = Color.DarkGray;
+            txtBuscar.ForeColor = Color.DimGray;
             comboBoxMedida.Text = "Tipo de Medida";
-            comboBoxMedida.ForeColor = Color.DarkGray;
+            comboBoxMedida.ForeColor = Color.DimGray;
             comboBoxMedida.DropDownStyle = ComboBoxStyle.DropDownList;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -71,7 +71,7 @@ namespace inventarioAlmacen
             if (comboBoxMedida.Text == "Tipo de Medida")
             {
                 comboBoxMedida.Text = "";
-                comboBoxMedida.ForeColor = Color.DimGray;
+                comboBoxMedida.ForeColor = Color.Black;
             }
         }
 
@@ -80,7 +80,7 @@ namespace inventarioAlmacen
             if (comboBoxMedida.Text == "")
             {
                 comboBoxMedida.Text = "Tipo de Medida";
-                comboBoxMedida.ForeColor = Color.DarkGray;
+                comboBoxMedida.ForeColor = Color.DimGray;
             }
         }
 
@@ -161,7 +161,7 @@ namespace inventarioAlmacen
             if (txtBuscar.Text == "Buscar")
             {
                 txtBuscar.Text = "";
-                txtBuscar.ForeColor = Color.DimGray;
+                txtBuscar.ForeColor = Color.Black;
             }
         }
 
@@ -170,7 +170,7 @@ namespace inventarioAlmacen
             if (txtBuscar.Text == "")
             {
                 txtBuscar.Text = "Buscar";
-                txtBuscar.ForeColor = Color.DarkGray;
+                txtBuscar.ForeColor = Color.DimGray;
             }
         }
 

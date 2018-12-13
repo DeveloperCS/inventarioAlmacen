@@ -67,7 +67,7 @@
             this.comboBoxMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.comboBoxMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMedida.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxMedida.ForeColor = System.Drawing.Color.Black;
             this.comboBoxMedida.FormattingEnabled = true;
             this.comboBoxMedida.Items.AddRange(new object[] {
             "kg",
@@ -106,7 +106,7 @@
             // 
             // numCant
             // 
-            this.numCant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.numCant.ForeColor = System.Drawing.Color.Black;
             this.numCant.Location = new System.Drawing.Point(164, 8);
             this.numCant.Name = "numCant";
             this.numCant.Size = new System.Drawing.Size(120, 20);

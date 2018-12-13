@@ -18,11 +18,11 @@ namespace inventarioAlmacen
             InitializeComponent();
 
             txtNombre.Text = "Nombre del Articulo";
-            txtNombre.ForeColor = Color.DarkGray;
+            txtNombre.ForeColor = Color.DimGray;
             comboBoxCategoria.Text = "Categoria";
-            comboBoxCategoria.ForeColor = Color.DarkGray;
+            comboBoxCategoria.ForeColor = Color.DimGray;
             comboBoxMedida.Text = "Tipo de Medida";
-            comboBoxMedida.ForeColor = Color.DarkGray;
+            comboBoxMedida.ForeColor = Color.DimGray;
             comboBoxCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMedida.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -175,42 +175,42 @@ namespace inventarioAlmacen
                     if (comboBoxMedida.Text == "Tipo de Medida")
                     {
                         comboBoxMedida.Text = "";
-                        comboBoxMedida.ForeColor = Color.DimGray;
+                        comboBoxMedida.ForeColor = Color.Black;
                     }
                     break;
                 case 2:
                     if (comboBoxMedida.Text == "")
                     {
                         comboBoxMedida.Text = "Tipo de Medida";
-                        comboBoxMedida.ForeColor = Color.DarkGray;
+                        comboBoxMedida.ForeColor = Color.DimGray;
                     }
                     break;
                 case 3:
                     if (comboBoxCategoria.Text == "")
                     {
                         comboBoxCategoria.Text = "Categoria";
-                        comboBoxCategoria.ForeColor = Color.DarkGray;
+                        comboBoxCategoria.ForeColor = Color.DimGray;
                     }
                     break;
                 case 4:
                     if (comboBoxCategoria.Text == "Categoria")
                     {
                         comboBoxCategoria.Text = "";
-                        comboBoxCategoria.ForeColor = Color.DimGray;
+                        comboBoxCategoria.ForeColor = Color.Black;
                     }
                     break;
                 case 5:
                     if (txtNombre.Text == "")
                     {
                         txtNombre.Text = "Nombre del Articulo";
-                        txtNombre.ForeColor = Color.DarkGray;
+                        txtNombre.ForeColor = Color.DimGray;
                     }
                     break;
                 case 6:
                     if (txtNombre.Text == "Nombre del Articulo")
                     {
                         txtNombre.Text = "";
-                        txtNombre.ForeColor = Color.DimGray;
+                        txtNombre.ForeColor = Color.Black;
                     }
                     break;
 
