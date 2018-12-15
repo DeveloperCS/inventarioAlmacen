@@ -95,8 +95,14 @@ namespace inventarioAlmacen
 
             if (cat.Equals("Her"))
             {
-                comboBoxMedida.Enabled = false;
-                comboBoxMedida.SelectedIndex = 4;
+                //comboBoxMedida.Enabled = false;
+                // comboBoxMedida.SelectedIndex = 4;
+                String val = "";
+                if (datosTabla.Rows.Count > 0)
+                {
+                    val = datosTabla.CurrentRow.Cells[3].Value.ToString();
+                    compruebaMedida(val, this.comboBoxMedida);
+                }
             }
 
         }
@@ -212,12 +218,12 @@ namespace inventarioAlmacen
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            cant = Convert.ToInt32(nmCantidad.Value);
+          
             float cantF = (float)(nmCantidad.Value);
             F = datosTabla.CurrentRow.Cells[0].Value.ToString();
             Ar = datosTabla.CurrentRow.Cells[1].Value.ToString();
             Cate = datosTabla.CurrentRow.Cells[2].Value.ToString();
-            CantT = Convert.ToString(cant) + " " + comboBoxMedida.Text;
+            CantT = Convert.ToString(cantF) + " " + comboBoxMedida.Text;
             if (cantF > 0.00)
             {
                 if (comboBoxMedida.Text == "Tipo de Medida")
@@ -226,7 +232,7 @@ namespace inventarioAlmacen
                 }
                 else
                 {
-                    if (MessageBox.Show("Detalles del producto a Agregar: \n -Nombre:" + Ar + " \n -Cantidad:" + cantF.ToString(), "Agregar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Detalles del producto a Agregar: \n -Nombre:" + Ar + " \n -Cantidad:" + CantT, "Agregar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         try
                         {
@@ -256,7 +262,7 @@ namespace inventarioAlmacen
 
                                 if (comprobarExis(F, cantidadDefinitiva) == true)
                                 {
-                                    String q = "UPDATE listaArPrestamos SET cantidad='" + Convert.ToString(cantidadDefinitiva) + " " + comboBoxMedida.Text + "' WHERE folio='" + F + "'";
+                                    String q = "UPDATE listaArPrestamos SET cantidad='" + Convert.ToString(CantT) + " " + comboBoxMedida.Text + "' WHERE folio='" + F + "'";
                                     if (dts.update(q) == true)
                                     {
                                         MessageBox.Show("Artitculo agregado");
@@ -274,7 +280,7 @@ namespace inventarioAlmacen
                             {
                                 if (comprobarExis(F, cantF) == true)
                                 {
-                                    String q = "INSERT INTO listaArPrestamos Values('" + F + "','" + Ar + "','" + Cate + "','" + cantF + "','" + idEmp + "' ); ";
+                                    String q = "INSERT INTO listaArPrestamos Values('" + F + "','" + Ar + "','" + Cate + "','" + CantT + "','" + idEmp + "' ); ";
                                     if (dts.insertar(q) == true)
                                     {
                                         MessageBox.Show("Artitculo agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);

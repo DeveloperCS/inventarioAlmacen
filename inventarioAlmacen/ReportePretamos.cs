@@ -83,15 +83,15 @@ namespace inventarioAlmacen
 
         private void rdHi_CheckedChanged(object sender, EventArgs e)
         {
-            
 
-            consult(comboBoxEmpleados.SelectedText.ToString(),"2");
-          
+            idbuscar = comboBoxEmpleados.SelectedValue.ToString();
+            consult(separa(idbuscar), "1");
         }
 
         private void rdHer_CheckedChanged(object sender, EventArgs e)
         {
-            consult(comboBoxEmpleados.SelectedText.ToString(), "1");
+            idbuscar = comboBoxEmpleados.SelectedValue.ToString();
+            consult(separa(idbuscar), "2");
         }
 
         private void comboBoxEmpleados_SelectedIndexChanged(object sender, EventArgs e)
@@ -153,6 +153,7 @@ namespace inventarioAlmacen
                         //Chunk tot = new Chunk("Total: " + 4, FontFactory.GetFont("COURIER", 16));
                         try
                         {
+                            MessageBox.Show(filename+"");
                             FileStream file = new FileStream(filename, FileMode.OpenOrCreate);
                             PdfWriter writer = PdfWriter.GetInstance(doc, file);
                             writer.ViewerPreferences = PdfWriter.PageModeUseThumbs;
