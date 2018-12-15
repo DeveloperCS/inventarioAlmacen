@@ -164,7 +164,7 @@
             "kg",
             "g",
             "L",
-            "l",
+            "ml",
             "Unidad"});
             this.comboBoxMedida.Location = new System.Drawing.Point(7, 4);
             this.comboBoxMedida.Name = "comboBoxMedida";
@@ -273,8 +273,14 @@
             // nmCantidad
             // 
             this.nmCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nmCantidad.DecimalPlaces = 2;
             this.nmCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.nmCantidad.Location = new System.Drawing.Point(112, 7);
+            this.nmCantidad.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nmCantidad.Name = "nmCantidad";
             this.nmCantidad.Size = new System.Drawing.Size(120, 21);
             this.nmCantidad.TabIndex = 5;

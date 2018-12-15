@@ -159,6 +159,8 @@
             // 
             // cbCategorias
             // 
+            this.cbCategorias.DisplayMember = "Seleccionar Categoria..";
+            this.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategorias.FormattingEnabled = true;
@@ -169,7 +171,6 @@
             this.cbCategorias.Name = "cbCategorias";
             this.cbCategorias.Size = new System.Drawing.Size(232, 28);
             this.cbCategorias.TabIndex = 7;
-            this.cbCategorias.Text = "Selecciona Categoria..";
             this.toolTip1.SetToolTip(this.cbCategorias, "Categoria");
             this.cbCategorias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbCategorias_KeyPress);
             // 

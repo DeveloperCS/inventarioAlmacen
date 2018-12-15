@@ -27,7 +27,7 @@ namespace inventarioAlmacen
 
         private void comboBoxEmpleados_Enter(object sender, EventArgs e)
         {
-            if (comboBoxEmpleados.Text == "Empleados")
+            if (comboBoxEmpleados.Text != "Empleados")
             {
                 comboBoxEmpleados.Text = "";
                 comboBoxEmpleados.ForeColor = Color.Black;
