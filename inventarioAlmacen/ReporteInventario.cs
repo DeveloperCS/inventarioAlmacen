@@ -135,6 +135,7 @@ namespace inventarioAlmacen
                         //Chunk tot = new Chunk("Total: " + 4, FontFactory.GetFont("COURIER", 16));
                         try
                         {
+                            MessageBox.Show(filename + "");
                             FileStream file = new FileStream(filename, FileMode.OpenOrCreate);
                             PdfWriter writer = PdfWriter.GetInstance(doc, file);
                             writer.ViewerPreferences = PdfWriter.PageModeUseThumbs;
