@@ -8,13 +8,13 @@ namespace inventarioAlmacen
 {
     class enviaCorreo
     {
-        string From = ""; //de quien procede, puede ser un alias
+        string From = "CHECKSTORE"; //de quien procede, puede ser un alias
         string To;  //a quien vamos a enviar el mail
         string Message;  //mensaje
         string Subject; //asunto
         List<string> Archivo = new List<string>(); //lista de archivos a enviar
-        string DE = "pato@gmail.com"; //nuestro usuario de smtp
-        string PASS = "tupass"; //nuestro password de smtp
+        string DE = "carlosjosiel.hernandez@sistemas.tecsanpedro.edu.mx"; //nuestro usuario de smtp
+        string PASS = "cJ_12121296"; //nuestro password de smtp
 
         System.Net.Mail.MailMessage Email;
 
@@ -83,10 +83,12 @@ namespace inventarioAlmacen
                 //en este caso me colgare de gmail
                 System.Net.Mail.SmtpClient smtpMail = new System.Net.Mail.SmtpClient("smtp.gmail.com");
 
-                smtpMail.EnableSsl = false;//le definimos si es conexión ssl
+                smtpMail.EnableSsl = true;//le definimos si es conexión ssl
                 smtpMail.UseDefaultCredentials = false; //le decimos que no utilice la credencial por defecto
                 smtpMail.Host = "smtp.gmail.com"; //agregamos el servidor smtp
-                smtpMail.Port = 465; //le asignamos el puerto, en este caso gmail utiliza el 465
+                //smtpMail.Port = 465; //le asignamos el puerto, en este caso gmail utiliza el 465
+                smtpMail.Port = 587;
+
                 smtpMail.Credentials = new System.Net.NetworkCredential(DE, PASS); //agregamos nuestro usuario y pass de gmail
 
                 //enviamos el mail

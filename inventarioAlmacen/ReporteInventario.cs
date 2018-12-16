@@ -166,13 +166,43 @@ namespace inventarioAlmacen
                            // doc.Add(new Paragraph(tot));
                             Process.Start(filename);
                             doc.Close();
-
+                           
 
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message + " --" + ex.StackTrace.ToString());
                         }
+
+                        try
+                        {
+                            //creamos nuestra lista de archivos a enviar
+                            List<string> lstArchivos = new List<string>();
+                            lstArchivos.Add(filename);
+
+                            //creamos nuestro objeto de la clase que hicimos
+                            enviaCorreo oMail = new enviaCorreo("carlosjosiel.hernandez@sistemas.tecsanpedro.edu.mx", "edgar.rosales@sistemas.tecsanpedro.edu.mx", "hola", "culito", lstArchivos);
+
+                            //y enviamos
+                            if (oMail.enviaMail())
+                            {
+
+                                MessageBox.Show("se envio el mail");
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("no se envio el mail: " + oMail.error);
+
+                            }
+                        }
+                        catch (Exception ec)
+                        {
+                           
+
+                        }
+
+
                     }
                     else
                     {
