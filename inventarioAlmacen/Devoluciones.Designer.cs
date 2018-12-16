@@ -76,6 +76,7 @@
             this.cbEmpleados.Size = new System.Drawing.Size(173, 28);
             this.cbEmpleados.TabIndex = 27;
             this.toolTip1.SetToolTip(this.cbEmpleados, "Empleado");
+            this.cbEmpleados.SelectedIndexChanged += new System.EventHandler(this.cbEmpleados_SelectedIndexChanged);
             // 
             // label2
             // 
