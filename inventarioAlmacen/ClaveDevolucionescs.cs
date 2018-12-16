@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventarioAlmacen.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,7 +40,22 @@ namespace inventarioAlmacen
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
+            string clav = "", claIngr = "";
+            claIngr = txtClave.Text;
+            foreach (DataRow row in tabla.Rows)
+            {
+                clav = row["clave"].ToString();
 
+                if (claIngr.Equals(clav))
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("La clave no coinside con el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void txtClave_Enter(object sender, EventArgs e)
@@ -58,6 +74,16 @@ namespace inventarioAlmacen
                 txtClave.Text = "clav";
                 txtClave.ForeColor = Color.DarkGray;
             }
+        }
+        public string id = "";
+        Datos dts = new Datos();
+        DataTable tabla = new DataTable();
+        private void ClaveDevolucionescs_Load(object sender, EventArgs e)
+        {
+            string q = "select ClaveEmpleado as clave from Empleados where idEmpleado LIKE '" + id + "%'  OR  idEmpleado LIKE '%" + id + "'";
+            DataSet dtSet = new DataSet();
+            dtSet = dts.consulta(q);
+            tabla = dtSet.Tables[0];
         }
     }
 }
