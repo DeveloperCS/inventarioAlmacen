@@ -16,7 +16,7 @@ CREATE VIEW ConsumoE
  AS SELECT IdElectronico AS [ClaveElectronico],IdUsuario AS [Clave Usuario],IdEmpleado AS [ Clave Empleado],NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad], FechaSalida AS [Fecha Salida]
  FROM Electronico
 
-  CREATE VIEW PrestadosR
+ CREATE VIEW PrestadosR
  AS SELECT IdRecibo AS [Clave Recibo],IdUsuario AS [Clave Usuario],IdEmpleado AS [CLave Empleado], NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad],FechaSalida AS [Fecha Salida], 
  FechaEntrega AS [Fecha Entrada], Descripcion AS [Descripcion]
  FROM Recibos
