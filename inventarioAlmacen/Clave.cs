@@ -17,7 +17,7 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             txtClave.Text = "clav";
-            txtClave.ForeColor = Color.DarkGray;
+            txtClave.ForeColor = Color.DimGray;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -44,7 +44,7 @@ namespace inventarioAlmacen
             if (txtClave.Text == "clav")
             {
                 txtClave.Text = "";
-                txtClave.ForeColor = Color.DimGray;
+                txtClave.ForeColor = Color.Black;
             }
         }
 
@@ -53,7 +53,7 @@ namespace inventarioAlmacen
             if (txtClave.Text == "")
             {
                 txtClave.Text = "clav";
-                txtClave.ForeColor = Color.DarkGray;
+                txtClave.ForeColor = Color.DimGray;
             }
         }
 
