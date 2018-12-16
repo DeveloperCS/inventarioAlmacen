@@ -17,6 +17,13 @@ namespace inventarioAlmacen
             InitializeComponent();
             txtBuscar.Text = "Buscar";
             txtBuscar.ForeColor = Color.DimGray;
+            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+            checkColumn.Name = "X";
+            checkColumn.HeaderText = "Seleccionar";
+            checkColumn.Width = 50;
+            checkColumn.ReadOnly = false;
+            checkColumn.FillWeight = 10; //if the datagridview is resized (on form resize) the checkbox won't take up too much; value is relative to the other columns' fill values
+            dataLista.Columns.Add(checkColumn);
         }
 
         private void txtBuscar_Enter(object sender, EventArgs e)
@@ -83,6 +90,29 @@ namespace inventarioAlmacen
         {
             idBuscar = cbEmpleados.SelectedValue.ToString();
             consult(separa(idBuscar));
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            string salida = "";
+            string[] pBusqueda = this.txtBuscar.Text.Split(' ');
+            foreach (string p in pBusqueda)
+            {
+                if (salida.Length == 0)
+                {
+                    salida = "(Articulo LIKE '% " + p + "%' OR Articulo LIKE '" + p + "%')";
+                }
+                else
+                {
+                    salida += "AND (Articulo LIKE '% " + p + "%' OR Articulo LIKE '" + p + "%')";
+                }
+            }
+            this.miFiltro.RowFilter = salida;
         }
     }
 }

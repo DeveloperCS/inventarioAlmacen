@@ -64,7 +64,9 @@
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Tag = "";
             this.toolTip1.SetToolTip(this.txtBuscar, "Buscar");
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
             // cbEmpleados
