@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.Label3 = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
             this.CheckBox1 = new System.Windows.Forms.CheckBox();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.Panel3 = new System.Windows.Forms.Panel();
@@ -44,7 +42,6 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Panel1.SuspendLayout();
             this.Panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -55,47 +52,21 @@
             // Panel1
             // 
             this.Panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.Panel1.Controls.Add(this.Label3);
             this.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panel1.Location = new System.Drawing.Point(0, 382);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(370, 58);
             this.Panel1.TabIndex = 1;
             // 
-            // Label3
-            // 
-            this.Label3.AutoSize = true;
-            this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.Label3.Location = new System.Drawing.Point(57, 21);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(111, 18);
-            this.Label3.TabIndex = 0;
-            this.Label3.Text = "Not a Member?";
-            // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
-            this.Label2.Location = new System.Drawing.Point(188, 315);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(122, 15);
-            this.Label2.TabIndex = 6;
-            this.Label2.Text = "Forgot Password?";
-            this.toolTip1.SetToolTip(this.Label2, "Olvidaste tu Contraseña");
-            // 
             // CheckBox1
             // 
             this.CheckBox1.AutoSize = true;
             this.CheckBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBox1.Location = new System.Drawing.Point(60, 314);
+            this.CheckBox1.Location = new System.Drawing.Point(60, 324);
             this.CheckBox1.Name = "CheckBox1";
-            this.CheckBox1.Size = new System.Drawing.Size(121, 19);
+            this.CheckBox1.Size = new System.Drawing.Size(85, 19);
             this.CheckBox1.TabIndex = 5;
-            this.CheckBox1.Text = "Remember Me";
+            this.CheckBox1.Text = "Recordar";
             this.toolTip1.SetToolTip(this.CheckBox1, "Recordar Usuario");
             this.CheckBox1.UseVisualStyleBackColor = true;
             // 
@@ -215,7 +186,6 @@
             this.ClientSize = new System.Drawing.Size(370, 440);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.Label2);
             this.Controls.Add(this.CheckBox1);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.Panel3);
@@ -229,8 +199,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Panel1.ResumeLayout(false);
-            this.Panel1.PerformLayout();
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();
             this.Panel2.ResumeLayout(false);
@@ -246,8 +214,6 @@
         #endregion
 
         internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.Label Label3;
-        internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.CheckBox CheckBox1;
         internal System.Windows.Forms.Button btnSignIn;
         internal System.Windows.Forms.Panel Panel3;

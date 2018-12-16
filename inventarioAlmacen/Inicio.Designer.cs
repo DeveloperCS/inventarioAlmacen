@@ -42,10 +42,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDevolverArt = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGenerarRepor = new System.Windows.Forms.Button();
+            this.btnAgregarPres = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -183,68 +183,80 @@
             this.dataGridView1.Size = new System.Drawing.Size(528, 294);
             this.dataGridView1.TabIndex = 4;
             // 
-            // button2
+            // btnDevolverArt
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(771, 428);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(255, 140);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDevolverArt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
+            this.btnDevolverArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolverArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolverArt.ForeColor = System.Drawing.Color.White;
+            this.btnDevolverArt.Image = global::inventarioAlmacen.Resource1.devolver;
+            this.btnDevolverArt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDevolverArt.Location = new System.Drawing.Point(570, 428);
+            this.btnDevolverArt.Name = "btnDevolverArt";
+            this.btnDevolverArt.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnDevolverArt.Size = new System.Drawing.Size(184, 140);
+            this.btnDevolverArt.TabIndex = 9;
+            this.btnDevolverArt.Text = "           Devolver            Articulo";
+            this.btnDevolverArt.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::inventarioAlmacen.Resource1.añadir_usuario;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(842, 274);
             this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(184, 140);
             this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
+            this.button3.Text = "            Añadir              Usuario";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnGenerarRepor
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(570, 428);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(184, 140);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnGenerarRepor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.btnGenerarRepor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarRepor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.btnGenerarRepor.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarRepor.Image = global::inventarioAlmacen.Resource1.añadir_reporte;
+            this.btnGenerarRepor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerarRepor.Location = new System.Drawing.Point(771, 428);
+            this.btnGenerarRepor.Name = "btnGenerarRepor";
+            this.btnGenerarRepor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGenerarRepor.Size = new System.Drawing.Size(255, 140);
+            this.btnGenerarRepor.TabIndex = 7;
+            this.btnGenerarRepor.Text = "        Generar          Reportes";
+            this.btnGenerarRepor.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnAgregarPres
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::inventarioAlmacen.Resource1.AgrgarCarrito;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(570, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 140);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Agregar  prestamo";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregarPres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.btnAgregarPres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarPres.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPres.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarPres.Image = global::inventarioAlmacen.Resource1.AgrgarCarrito;
+            this.btnAgregarPres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarPres.Location = new System.Drawing.Point(570, 274);
+            this.btnAgregarPres.Name = "btnAgregarPres";
+            this.btnAgregarPres.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAgregarPres.Size = new System.Drawing.Size(255, 140);
+            this.btnAgregarPres.TabIndex = 6;
+            this.btnAgregarPres.Text = "        Agregar          Prestamo";
+            this.btnAgregarPres.UseVisualStyleBackColor = false;
+            this.btnAgregarPres.Click += new System.EventHandler(this.button1_Click);
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 580);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnDevolverArt);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGenerarRepor);
+            this.Controls.Add(this.btnAgregarPres);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -281,9 +293,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAgregarPres;
+        private System.Windows.Forms.Button btnGenerarRepor;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDevolverArt;
     }
 }
