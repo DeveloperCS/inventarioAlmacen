@@ -121,6 +121,7 @@
             this.Name = "ClaveDevolucionescs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClaveDevolucionescs";
+            this.Load += new System.EventHandler(this.ClaveDevolucionescs_Load);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
             this.ResumeLayout(false);
