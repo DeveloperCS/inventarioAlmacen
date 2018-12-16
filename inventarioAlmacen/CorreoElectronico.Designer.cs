@@ -37,6 +37,7 @@
             this.txtCorreoPara = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(200, 193);
+            this.btnEnviar.Location = new System.Drawing.Point(200, 207);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(223, 35);
             this.btnEnviar.TabIndex = 14;
@@ -68,7 +69,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(12, 193);
+            this.btnCancelar.Location = new System.Drawing.Point(12, 207);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 15;
@@ -79,7 +80,7 @@
             // 
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.lbID.Location = new System.Drawing.Point(121, 35);
+            this.lbID.Location = new System.Drawing.Point(120, 19);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(221, 23);
             this.lbID.TabIndex = 13;
@@ -91,7 +92,7 @@
             this.Panel2.Controls.Add(this.txtCorreoDe);
             this.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.Panel2.Location = new System.Drawing.Point(93, 92);
+            this.Panel2.Location = new System.Drawing.Point(93, 61);
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(298, 36);
             this.Panel2.TabIndex = 16;
@@ -117,7 +118,7 @@
             this.panel1.Controls.Add(this.txtCorreoPara);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.panel1.Location = new System.Drawing.Point(93, 134);
+            this.panel1.Location = new System.Drawing.Point(93, 110);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(298, 36);
             this.panel1.TabIndex = 17;
@@ -142,7 +143,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.label1.Location = new System.Drawing.Point(26, 98);
+            this.label1.Location = new System.Drawing.Point(26, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 24);
             this.label1.TabIndex = 18;
@@ -153,17 +154,29 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.label2.Location = new System.Drawing.Point(26, 134);
+            this.label2.Location = new System.Drawing.Point(26, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 24);
             this.label2.TabIndex = 19;
             this.label2.Text = "Para:";
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.label3.Location = new System.Drawing.Point(90, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(313, 48);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Recuerda que tienes que tener configurada tu cuenta para poder enviar este correo" +
+    "";
+            // 
             // CorreoElectronico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 240);
+            this.ClientSize = new System.Drawing.Size(435, 258);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -194,5 +207,6 @@
         private System.Windows.Forms.TextBox txtCorreoPara;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
     }
 }
