@@ -156,6 +156,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Devoluciones";
             this.Text = "Devoluciones";
+            this.Load += new System.EventHandler(this.Devoluciones_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLista)).EndInit();

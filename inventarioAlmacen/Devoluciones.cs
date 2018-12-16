@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventarioAlmacen.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,22 @@ namespace inventarioAlmacen
         {
           ClaveDevolucionescs claveD = new ClaveDevolucionescs();
           claveD.Show();
+        }
+
+        
+        Datos datos = new Datos();
+        public void llenarCbEm()
+        {
+            cbEmpleados.DataSource = datos.consulta("Select idEmpleado+'/'+NombreEmpleado as Em From Empleados order by idEmpleado").Tables[0];
+            cbEmpleados.DisplayMember = "Empleados";
+            cbEmpleados.ValueMember = "Em";
+        }
+
+        private void Devoluciones_Load(object sender, EventArgs e)
+        {
+            this.dataLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            cbEmpleados.DropDownStyle = ComboBoxStyle.DropDownList;
+            llenarCbEm();
         }
     }
 }
