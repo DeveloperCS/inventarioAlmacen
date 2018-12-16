@@ -12,6 +12,7 @@ using iTextSharp.text.pdf;
 using System.IO;
 using System.Diagnostics;
 using inventarioAlmacen.Funciones;
+using System.Threading;
 
 namespace inventarioAlmacen
 {
@@ -45,6 +46,8 @@ namespace inventarioAlmacen
         String idbuscar = "";
         private void ReportePretamos_Load(object sender, EventArgs e)
         {
+            this.progressMsj.Visible = false;
+            this.lbProgressMsj.Visible = false;
             this.dataRepEmp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             llenarCbEm();
             idbuscar = comboBoxEmpleados.SelectedValue.ToString();
@@ -184,6 +187,46 @@ namespace inventarioAlmacen
                             // doc.Add(new Paragraph(tot));
                             Process.Start(filename);
                             doc.Close();
+                            if (MessageBox.Show("¿Desea enviar Reporte por Correo?", "Envio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                try
+                                {
+                                    //creamos nuestra lista de archivos a enviar
+                                    List<string> lstArchivos = new List<string>();
+                                    lstArchivos.Add(filename);
+
+                                    //creamos nuestro objeto de la clase que hicimos
+                                    enviaCorreo oMail = new enviaCorreo("carlosjosiel.hernandez@sistemas.tecsanpedro.edu.mx", "josie4175@gmail.com", "Reporte Nuevo", "Nuevo Reporte CHECKSTORE", lstArchivos);
+
+
+                                    if (!backgroundWorker1.IsBusy)
+                                    {
+                                        this.progressMsj.Visible = true;
+                                        this.lbProgressMsj.Visible = true;
+                                        backgroundWorker1.RunWorkerAsync();
+                                    }
+
+                                    //y enviamos
+                                    if (oMail.enviaMail())
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("no se envio el mail: " + oMail.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                                    }
+                                }
+                                catch (Exception ec)
+                                {
+
+                                    if (backgroundWorker1.IsBusy)
+                                    {
+                                        backgroundWorker1.CancelAsync();
+                                    }
+                                }
+                            }
 
 
                         }
@@ -200,6 +243,44 @@ namespace inventarioAlmacen
                 }
 
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            int pro = 100;
+            int delay = 100;
+            int index = 1;
+            try
+            {
+                for (int i = 0; i < pro; i++)
+                {
+                    if (!backgroundWorker1.CancellationPending)
+                    {
+                        backgroundWorker1.ReportProgress(index++ * 100 / pro, string.Format("Enviando Mensaje.....{0}% ", i));
+                        Thread.Sleep(delay);
+                    }
+                }
+            }
+            catch (Exception es)
+            {
+                backgroundWorker1.CancelAsync();
+                MessageBox.Show(es.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+            this.progressMsj.Visible = false;
+            this.lbProgressMsj.Visible = false;
+            MessageBox.Show("Se Envio el Reporte por Correo", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressMsj.Value = e.ProgressPercentage;
+            this.lbProgressMsj.Text = String.Format("Enviando Mensaje.....{0}%", e.ProgressPercentage);
+            progressMsj.Update();
         }
 
 
