@@ -30,8 +30,9 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panelCentral = new System.Windows.Forms.Panel();
-            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.InventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,8 +41,9 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productoToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
+            this.PrestamosToolStripMenuItem,
+            this.InventarioToolStripMenuItem,
+            this.devolucionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1050, 32);
@@ -55,27 +57,37 @@
             this.panelCentral.Size = new System.Drawing.Size(1050, 548);
             this.panelCentral.TabIndex = 11;
             // 
-            // productoToolStripMenuItem
+            // PrestamosToolStripMenuItem
             // 
-            this.productoToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.productoToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.icons8_tomar_prestado_un_libro_48;
-            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(126, 28);
-            this.productoToolStripMenuItem.Text = "Prestamos";
-            this.productoToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
+            this.PrestamosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrestamosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.PrestamosToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.icons8_tomar_prestado_un_libro_48;
+            this.PrestamosToolStripMenuItem.Name = "PrestamosToolStripMenuItem";
+            this.PrestamosToolStripMenuItem.Size = new System.Drawing.Size(126, 28);
+            this.PrestamosToolStripMenuItem.Text = "Prestamos";
+            this.PrestamosToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PrestamosToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
-            // eliminarToolStripMenuItem
+            // InventarioToolStripMenuItem
             // 
-            this.eliminarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.eliminarToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.icons48;
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(119, 28);
-            this.eliminarToolStripMenuItem.Text = "Inventario";
-            this.eliminarToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            this.InventarioToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InventarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.InventarioToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.icons48;
+            this.InventarioToolStripMenuItem.Name = "InventarioToolStripMenuItem";
+            this.InventarioToolStripMenuItem.Size = new System.Drawing.Size(119, 28);
+            this.InventarioToolStripMenuItem.Text = "Inventario";
+            this.InventarioToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.InventarioToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // devolucionesToolStripMenuItem
+            // 
+            this.devolucionesToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.devolucionesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.devolucionesToolStripMenuItem.Image = global::inventarioAlmacen.Resource1.DevolverPro;
+            this.devolucionesToolStripMenuItem.Name = "devolucionesToolStripMenuItem";
+            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(153, 28);
+            this.devolucionesToolStripMenuItem.Text = "Devoluciones";
+            this.devolucionesToolStripMenuItem.Click += new System.EventHandler(this.devolucionesToolStripMenuItem_Click);
             // 
             // Reportes
             // 
@@ -97,8 +109,9 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PrestamosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem InventarioToolStripMenuItem;
         private System.Windows.Forms.Panel panelCentral;
+        private System.Windows.Forms.ToolStripMenuItem devolucionesToolStripMenuItem;
     }
 }

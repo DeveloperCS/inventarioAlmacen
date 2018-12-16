@@ -15,7 +15,7 @@ namespace inventarioAlmacen
         {
             InitializeComponent();
             AbrirFormInPanel(new ReportePretamos());
-            productoToolStripMenuItem.BackColor = Color.FromArgb(83, 164, 227);
+            PrestamosToolStripMenuItem.BackColor = Color.FromArgb(83, 164, 227);
         }
 
         //metodo para abrir en panel
@@ -36,17 +36,25 @@ namespace inventarioAlmacen
         private void productoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new ReportePretamos());
-            productoToolStripMenuItem.BackColor = Color.FromArgb(83, 164, 227);
-            eliminarToolStripMenuItem.BackColor = Color.FromArgb(31, 49, 65);
+            PrestamosToolStripMenuItem.BackColor = Color.FromArgb(83, 164, 227);
+            InventarioToolStripMenuItem.BackColor = Color.FromArgb(31, 49, 65);
+            devolucionesToolStripMenuItem.BackColor = Color.FromArgb(31, 49, 65);
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new ReporteInventario());
-            eliminarToolStripMenuItem.BackColor = Color.FromArgb(83, 164, 227);
-            productoToolStripMenuItem.BackColor = Color.FromArgb(31, 49, 65);
+            InventarioToolStripMenuItem.BackColor = Color.FromArgb(83, 164, 227);
+            PrestamosToolStripMenuItem.BackColor = Color.FromArgb(31, 49, 65);
+            devolucionesToolStripMenuItem.BackColor = Color.FromArgb(31, 49, 65);
         }
 
-
+        private void devolucionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new ReporteDevoluciones());
+            devolucionesToolStripMenuItem.BackColor = Color.FromArgb(83, 164, 227);
+            InventarioToolStripMenuItem.BackColor = Color.FromArgb(31, 49, 65);
+            PrestamosToolStripMenuItem.BackColor = Color.FromArgb(31, 49, 65);
+        }
     }
 }

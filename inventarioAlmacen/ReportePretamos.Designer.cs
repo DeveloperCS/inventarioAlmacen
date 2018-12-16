@@ -32,7 +32,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBoxEmpleados = new System.Windows.Forms.ComboBox();
             this.dataRepEmp = new System.Windows.Forms.DataGridView();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnGenerarReportePrestamos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.rdHi = new System.Windows.Forms.RadioButton();
             this.rdHer = new System.Windows.Forms.RadioButton();
@@ -93,24 +93,24 @@
             this.dataRepEmp.Size = new System.Drawing.Size(1026, 351);
             this.dataRepEmp.TabIndex = 13;
             // 
-            // btnAgregar
+            // btnGenerarReportePrestamos
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(768, 455);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(270, 56);
-            this.btnAgregar.TabIndex = 21;
-            this.btnAgregar.Text = "Generar Reporte";
-            this.toolTip1.SetToolTip(this.btnAgregar, "Generar Reporte");
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnGenerarReportePrestamos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(169)))), ((int)(((byte)(226)))));
+            this.btnGenerarReportePrestamos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerarReportePrestamos.FlatAppearance.BorderSize = 0;
+            this.btnGenerarReportePrestamos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnGenerarReportePrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnGenerarReportePrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarReportePrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarReportePrestamos.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReportePrestamos.Location = new System.Drawing.Point(768, 455);
+            this.btnGenerarReportePrestamos.Name = "btnGenerarReportePrestamos";
+            this.btnGenerarReportePrestamos.Size = new System.Drawing.Size(270, 56);
+            this.btnGenerarReportePrestamos.TabIndex = 21;
+            this.btnGenerarReportePrestamos.Text = "Generar Reporte";
+            this.toolTip1.SetToolTip(this.btnGenerarReportePrestamos, "Generar Reporte");
+            this.btnGenerarReportePrestamos.UseVisualStyleBackColor = false;
+            this.btnGenerarReportePrestamos.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // rdHi
             // 
@@ -189,7 +189,7 @@
             this.Controls.Add(this.lbProgressMsj);
             this.Controls.Add(this.progressMsj);
             this.Controls.Add(this.grupfiltro);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnGenerarReportePrestamos);
             this.Controls.Add(this.dataRepEmp);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -210,7 +210,7 @@
         internal System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.ComboBox comboBoxEmpleados;
         private System.Windows.Forms.DataGridView dataRepEmp;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnGenerarReportePrestamos;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.GroupBox grupfiltro;
         private System.Windows.Forms.RadioButton rdHi;

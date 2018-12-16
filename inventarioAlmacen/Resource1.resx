@@ -139,17 +139,14 @@
   <data name="Unidad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Unidad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_exportar_pdf_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icons8-exportar-pdf-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-tomar-prestado-un-libro-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\icons8-tomar-prestado-un-libro-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\logoLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoContenedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\logoContenedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_exportar_pdf_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons8-exportar-pdf-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="item1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +178,12 @@
   <data name="inventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\inventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DevolverProd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DevolverProd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\icons100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,8 +208,11 @@
   <data name="prestar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\prestar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Usuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoContenedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\logoContenedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconoInvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\IconoInvent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +223,8 @@
   <data name="inicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\inicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Usuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dev" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Dev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +244,8 @@
   <data name="AgrgarCarrito" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AgrgarCarrito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\icons48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="añadir usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\añadir usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inventar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\inventar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,7 +262,7 @@
   <data name="nombreArticulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\nombreArticulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="añadir usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\añadir usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DevolverPro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DevolverPro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

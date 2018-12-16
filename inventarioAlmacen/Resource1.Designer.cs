@@ -213,6 +213,26 @@ namespace inventarioAlmacen {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DevolverPro {
+            get {
+                object obj = ResourceManager.GetObject("DevolverPro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DevolverProd {
+            get {
+                object obj = ResourceManager.GetObject("DevolverProd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dolar {
             get {
                 object obj = ResourceManager.GetObject("dolar", resourceCulture);
