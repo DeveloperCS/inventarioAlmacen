@@ -12,15 +12,28 @@
     [Descripcion] NVARCHAR(500) NOT NULL,
 )
 
-select * from ConsumoE
 CREATE VIEW ConsumoE
- AS SELECT IdUsuario AS [Clave Usuario],IdEmpleado AS [ Clave Empleado],NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad], FechaSalida AS [Fecha Salida]
+ AS SELECT IdElectronico AS [ClaveElectronico],IdUsuario AS [Clave Usuario],IdEmpleado AS [ Clave Empleado],NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad], FechaSalida AS [Fecha Salida]
  FROM Electronico
 
-  CREATE VIEW PrestadosR
- AS SELECT IdUsuario AS [Clave Usuario],IdEmpleado AS [CLave Empleado], NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad],FechaSalida AS [Fecha Salida], 
+ CREATE VIEW PrestadosR
+ AS SELECT IdRecibo AS [Clave Recibo],IdUsuario AS [Clave Usuario],IdEmpleado AS [CLave Empleado], NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad],FechaSalida AS [Fecha Salida], 
  FechaEntrega AS [Fecha Entrada], Descripcion AS [Descripcion]
  FROM Recibos
 
- ALTER TABLE Devolucion
+CREATE VIEW MostrarDevolucion
+AS SELECT IdDevolucion AS [Clave Devolucion],IdRecibo AS [CLave Recibo],IdUsuario AS [Clave Usuario],IdEmpleado AS [CLave Empleado], NombreArticulo AS [Articulo],CantidadArticulo AS [Cantidad],FechaSalida AS [Fecha Salida], 
+ FechaEntrega AS [Fecha Entrada], Descripcion AS [Descripcion]
+ FROM Devolucion
+
+ALTER TABLE Devolucion
 ADD FOREIGN KEY (IdRecibo) REFERENCES Recibos(IdRecibo);
+
+ALTER TABLE Devolucion
+ADD FOREIGN KEY (IdArticulo) REFERENCES Articulos(IdArticulo);
+
+ALTER TABLE Devolucion
+ADD FOREIGN KEY (IdUsuario) REFERENCES Usuario(IdUsuario);
+
+ALTER TABLE Devolucion
+ADD FOREIGN KEY (IdEmpleado) REFERENCES Empleados(IdEmpleado);
