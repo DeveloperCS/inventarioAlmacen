@@ -72,6 +72,8 @@
             // 
             this.datosTabla.AllowUserToAddRows = false;
             this.datosTabla.AllowUserToDeleteRows = false;
+            this.datosTabla.AllowUserToResizeColumns = false;
+            this.datosTabla.AllowUserToResizeRows = false;
             this.datosTabla.BackgroundColor = System.Drawing.SystemColors.Info;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -92,14 +94,15 @@
             this.datosTabla.Location = new System.Drawing.Point(12, 159);
             this.datosTabla.Name = "datosTabla";
             this.datosTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datosTabla.Size = new System.Drawing.Size(381, 204);
+            this.datosTabla.Size = new System.Drawing.Size(485, 204);
             this.datosTabla.TabIndex = 9;
+            this.datosTabla.SelectionChanged += new System.EventHandler(this.datosTabla_SelectionChanged);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel5.Controls.Add(this.comboBoxMedida);
-            this.panel5.Location = new System.Drawing.Point(241, 374);
+            this.panel5.Location = new System.Drawing.Point(337, 374);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 36);
             this.panel5.TabIndex = 13;
@@ -117,7 +120,7 @@
             "kg",
             "g",
             "L",
-            "l",
+            "ml",
             "Unidad"});
             this.comboBoxMedida.Location = new System.Drawing.Point(5, 4);
             this.comboBoxMedida.Name = "comboBoxMedida";
@@ -132,7 +135,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.nmCantidad);
-            this.panel4.Location = new System.Drawing.Point(12, 374);
+            this.panel4.Location = new System.Drawing.Point(29, 374);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(168, 36);
             this.panel4.TabIndex = 14;
@@ -150,7 +153,13 @@
             // nmCantidad
             // 
             this.nmCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nmCantidad.DecimalPlaces = 2;
             this.nmCantidad.Location = new System.Drawing.Point(90, 8);
+            this.nmCantidad.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nmCantidad.Name = "nmCantidad";
             this.nmCantidad.Size = new System.Drawing.Size(70, 20);
             this.nmCantidad.TabIndex = 5;
@@ -166,7 +175,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(170, 438);
+            this.btnAgregar.Location = new System.Drawing.Point(266, 438);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(223, 35);
             this.btnAgregar.TabIndex = 16;
@@ -185,7 +194,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(19, 438);
+            this.btnCancelar.Location = new System.Drawing.Point(36, 438);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 15;
@@ -199,7 +208,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = global::inventarioAlmacen.Resource1.cerr;
-            this.btnCerrar.Location = new System.Drawing.Point(371, 9);
+            this.btnCerrar.Location = new System.Drawing.Point(478, 9);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 25);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -213,7 +222,7 @@
             this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = global::inventarioAlmacen.Resource1.minimazar;
-            this.btnMinimizar.Location = new System.Drawing.Point(341, 6);
+            this.btnMinimizar.Location = new System.Drawing.Point(448, 6);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -230,7 +239,7 @@
             this.bar.Controls.Add(this.label2);
             this.bar.Location = new System.Drawing.Point(0, 0);
             this.bar.Name = "bar";
-            this.bar.Size = new System.Drawing.Size(406, 45);
+            this.bar.Size = new System.Drawing.Size(510, 45);
             this.bar.TabIndex = 19;
             this.bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bar_MouseDown);
             // 
@@ -240,7 +249,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(97, 9);
+            this.label2.Location = new System.Drawing.Point(153, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 29);
             this.label2.TabIndex = 2;
@@ -267,7 +276,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(78, 107);
+            this.panel1.Location = new System.Drawing.Point(174, 107);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 35);
             this.panel1.TabIndex = 21;
@@ -276,7 +285,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.pictureBox1.Image = global::inventarioAlmacen.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(358, 107);
+            this.pictureBox1.Location = new System.Drawing.Point(454, 107);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -287,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 485);
+            this.ClientSize = new System.Drawing.Size(509, 485);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bar);

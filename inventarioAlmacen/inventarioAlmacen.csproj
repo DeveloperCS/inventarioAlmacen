@@ -141,6 +141,7 @@
     <Compile Include="EditarUser.Designer.cs">
       <DependentUpon>EditarUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="enviaCorreo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -89,28 +89,38 @@ namespace inventarioAlmacen
         {
             String qy = "";
 
-            this.miFiltro = dts.consulta(qy = "Select Folio,Articulo,Categoria FROM InventarioArticulo Where Categoria like '"+cat+"%'").Tables[0].DefaultView;
+            this.miFiltro = dts.consulta(qy = "Select Folio,Articulo,Categoria,Medida FROM InventarioArticulo Where Categoria like '" + cat + "%'").Tables[0].DefaultView;
             datosTabla.DataSource = miFiltro;
 
 
             if (cat.Equals("Her"))
             {
-                comboBoxMedida.Enabled = false;
-                comboBoxMedida.SelectedIndex = 4;
+                //comboBoxMedida.Enabled = false;
+                // comboBoxMedida.SelectedIndex = 4;
+                String val = "";
+                if (datosTabla.Rows.Count > 0)
+                {
+                    val = datosTabla.CurrentRow.Cells[3].Value.ToString();
+                    compruebaMedida(val, this.comboBoxMedida);
+                }
             }
-            
+
         }
 
         DataView miFiltro;
         Datos dts = new Datos();
         private void agregarPedido_Load(object sender, EventArgs e)
         {
-            //groupBox1.Visible = false;
-           
+
+            this.datosTabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             consult();
-           
-            
-            
+            String val = "";
+            if (datosTabla.Rows.Count > 0)
+            {
+                val = datosTabla.CurrentRow.Cells[3].Value.ToString();
+                compruebaMedida(val,this.comboBoxMedida);
+            }
+
         }
 
         private void rdHer_CheckedChanged(object sender, EventArgs e)
@@ -177,7 +187,7 @@ namespace inventarioAlmacen
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
         {
             String salida = "";
-          
+
             if (salida.Length == 0)
             {
                 salida = "(Articulo LIKE '%" + txtBuscar.Text + "%' OR Articulo LIKE '" + txtBuscar.Text + "%' )";
@@ -191,18 +201,30 @@ namespace inventarioAlmacen
             this.miFiltro.RowFilter = salida;
         }
 
-        private String F, Ar, Cate,CantT;
+        private String F, Ar, Cate, CantT;
         private int cant = 0;
-        public String idEmp ="";
+        public String idEmp = "";
+
+        private void datosTabla_SelectionChanged(object sender, EventArgs e)
+        {
+            String val = "";
+            if (datosTabla.Rows.Count > 0)
+            {
+                val = datosTabla.CurrentRow.Cells[3].Value.ToString();
+                compruebaMedida(val, this.comboBoxMedida);
+            }
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            cant = Convert.ToInt32( nmCantidad.Value);
+          
+            float cantF = (float)(nmCantidad.Value);
             F = datosTabla.CurrentRow.Cells[0].Value.ToString();
             Ar = datosTabla.CurrentRow.Cells[1].Value.ToString();
             Cate = datosTabla.CurrentRow.Cells[2].Value.ToString();
-            CantT = Convert.ToString(cant)+" "+comboBoxMedida.Text;
-            if (cant>0)
+            CantT = Convert.ToString(cantF) + " " + comboBoxMedida.Text;
+            if (cantF > 0.00)
             {
                 if (comboBoxMedida.Text == "Tipo de Medida")
                 {
@@ -210,7 +232,7 @@ namespace inventarioAlmacen
                 }
                 else
                 {
-                    if (MessageBox.Show("Detalles del producto a Agregar: \n -Nombre:"+Ar+" \n -Cantidad:"+CantT, "Agregar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Detalles del producto a Agregar: \n -Nombre:" + Ar + " \n -Cantidad:" + CantT, "Agregar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         try
                         {
@@ -221,11 +243,11 @@ namespace inventarioAlmacen
                             tabla = dtSet.Tables[0];
                             string clav = "", claIngr = "";
                             int con = 0;
-                            string[] cantidadSola =null;
+                            string[] cantidadSola = null;
                             foreach (DataRow row in tabla.Rows)
                             {
                                 clav = row["f"].ToString();
-                                
+
                                 if (F.Equals(clav))
                                 {
                                     con++;
@@ -233,35 +255,17 @@ namespace inventarioAlmacen
                                     cantidadSola = claIngr.Split(' ');
                                 }
                             }
-                            if (con>0)
+                            if (con > 0)
                             {
-                                int cantidadDefinitiva = 0;
-                                cantidadDefinitiva = int.Parse(cantidadSola[0])+cant;
+                                float cantidadDefinitiva = 0;
+                                cantidadDefinitiva = float.Parse(cantidadSola[0]) + cantF;
 
-                                if (comprobarExis(F, cantidadDefinitiva)==true)
+                                if (comprobarExis(F, cantidadDefinitiva) == true)
                                 {
-                                    String q = "UPDATE listaArPrestamos SET cantidad='" + Convert.ToString(cantidadDefinitiva) + " " + comboBoxMedida.Text + "' WHERE folio='" + F + "'";
+                                    String q = "UPDATE listaArPrestamos SET cantidad='" + Convert.ToString(CantT) + " " + comboBoxMedida.Text + "' WHERE folio='" + F + "'";
                                     if (dts.update(q) == true)
                                     {
                                         MessageBox.Show("Artitculo agregado");
-                                        this.DialogResult = DialogResult.OK;
-                                        this.Close();
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("No Cuentas con suficientes articulos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                                }
-                                
-                            }
-                            else if(con<=0)
-                            {
-                                if (comprobarExis(F, cant) == true)
-                                {
-                                    String q = "INSERT INTO listaArPrestamos Values('" + F + "','" + Ar + "','" + Cate + "','" + CantT + "','" + idEmp + "' ); ";
-                                    if (dts.insertar(q) == true)
-                                    {
-                                        MessageBox.Show("Artitculo agregado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                                         this.DialogResult = DialogResult.OK;
                                         this.Close();
                                     }
@@ -272,11 +276,29 @@ namespace inventarioAlmacen
                                 }
 
                             }
-                            
+                            else if (con <= 0)
+                            {
+                                if (comprobarExis(F, cantF) == true)
+                                {
+                                    String q = "INSERT INTO listaArPrestamos Values('" + F + "','" + Ar + "','" + Cate + "','" + CantT + "','" + idEmp + "' ); ";
+                                    if (dts.insertar(q) == true)
+                                    {
+                                        MessageBox.Show("Artitculo agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        this.DialogResult = DialogResult.OK;
+                                        this.Close();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No Cuentas con suficientes articulos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+                            }
+
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message.ToString(),"Error");
+                            MessageBox.Show(ex.Message.ToString(), "Error");
                         }
                     }
                     else
@@ -284,40 +306,76 @@ namespace inventarioAlmacen
 
                     }
                 }
-                
+
             }
             else
             {
-                MessageBox.Show("Seleccion Uno o Más Articulos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Seleccion Uno o Más Articulos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-     
-        public bool comprobarExis(String f,int cantDef)
+
+        public bool comprobarExis(String f, float cantDef)
         {
 
-            string q1 = "select CantidadAlmacen as c from Articulos WHERE idArticulo='"+f+"' ";
+            string q1 = "select CantidadAlmacen as c from Articulos WHERE idArticulo='" + f + "' ";
             DataSet dtSet = new DataSet();
             DataTable tabla = new DataTable();
             dtSet = dts.consulta(q1);
             tabla = dtSet.Tables[0];
             string claIngr = "";
-            int con = 0;
+            float con = 0;
             Boolean res = false;
             foreach (DataRow row in tabla.Rows)
             {
                 claIngr = row["c"].ToString();
-                con = int.Parse(claIngr);
+                con = float.Parse(claIngr);
                 if (con >= cantDef)
                 {
-                    res =true;
+                    res = true;
                 }
                 else
                 {
-                    res= false;
+                    res = false;
                 }
             }
 
             return res;
         }
+
+        /// <summary>
+        /// Metodo para comprobar que tipo de medida es originalmente el articulo 
+        /// y asi poder prestar solo los tipos de medida.
+        /// </summary>
+        /// <param name="val">La Celda donde se encuentra el tipo de medida</param>
+        /// <param name="combo">nombre del comboBox</param>
+        public void compruebaMedida(String val,ComboBox combo)
+        {
+            /*
+             * kg g  L ml Unidad
+             */
+            if (val.Equals("Unidad"))
+            {
+                combo.Items.Clear();
+                combo.Items.Add("Unidad");
+            }
+            if (val.Equals("kg") || val.Equals("g"))
+            {
+                combo.Items.Clear();
+                combo.Items.Add("kg");
+                combo.Items.Add("g");
+            }
+            if (val.Equals("L") || val.Equals("ml"))
+            {
+                combo.Items.Clear();
+                combo.Items.Add("L");
+                combo.Items.Add("ml");
+            }
+
+
+        }
+
+
+
+
     }
 }

@@ -17,6 +17,7 @@ namespace inventarioAlmacen
             InitializeComponent();
             cbCategorias.DropDownStyle = ComboBoxStyle.DropDownList;
             cbEmpleados.DropDownStyle = ComboBoxStyle.DropDownList;
+            
             comprobarExis();
             llenarCbEm();
 
@@ -194,11 +195,11 @@ namespace inventarioAlmacen
                                     cant = dataLista[4, row.Index].Value.ToString();
                            
                             idNuevo = idPrestamo(t);
-                            string qIn1 = "INSERT INTO Electronico VALUES('"+idNuevo+ "','Us-0001','" + idAr + "','" + emp1 + "','" + nomAr + "','"+int.Parse(cantidadSola[0])+"', GETDATE() );";
+                            string qIn1 = "INSERT INTO Electronico VALUES('"+idNuevo+ "','Us-0001','" + idAr + "','" + emp1 + "','" + nomAr + "','"+float.Parse(cantidadSola[0])+"', GETDATE() );";
                      
                             if (datos.insertar(qIn1) == true)
                             {
-                                    qIn1 = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + int.Parse(cantidadSola[0]) + "' WHERE IdArticulo= '"+idAr+"'";
+                                    qIn1 = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + float.Parse(cantidadSola[0]) + "' WHERE IdArticulo= '"+idAr+"'";
                                     if (datos.update(qIn1)==true)
                                     {
                                          contador--;
