@@ -36,6 +36,9 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.datosTabla = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.progressMsj = new System.Windows.Forms.ProgressBar();
+            this.lbProgressMsj = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).BeginInit();
             this.SuspendLayout();
@@ -131,11 +134,39 @@
             this.datosTabla.Size = new System.Drawing.Size(1026, 351);
             this.datosTabla.TabIndex = 22;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // progressMsj
+            // 
+            this.progressMsj.ForeColor = System.Drawing.Color.GreenYellow;
+            this.progressMsj.Location = new System.Drawing.Point(12, 488);
+            this.progressMsj.Name = "progressMsj";
+            this.progressMsj.Size = new System.Drawing.Size(552, 23);
+            this.progressMsj.TabIndex = 24;
+            // 
+            // lbProgressMsj
+            // 
+            this.lbProgressMsj.AutoSize = true;
+            this.lbProgressMsj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProgressMsj.Location = new System.Drawing.Point(151, 455);
+            this.lbProgressMsj.Name = "lbProgressMsj";
+            this.lbProgressMsj.Size = new System.Drawing.Size(240, 24);
+            this.lbProgressMsj.TabIndex = 25;
+            this.lbProgressMsj.Text = "Enviando Mensaje.....0%";
+            // 
             // ReporteInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 548);
+            this.Controls.Add(this.lbProgressMsj);
+            this.Controls.Add(this.progressMsj);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.datosTabla);
             this.Controls.Add(this.groupBox1);
@@ -147,6 +178,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datosTabla)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -159,5 +191,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView datosTabla;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ProgressBar progressMsj;
+        private System.Windows.Forms.Label lbProgressMsj;
     }
 }

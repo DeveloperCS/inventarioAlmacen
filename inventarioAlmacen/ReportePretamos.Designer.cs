@@ -37,6 +37,9 @@
             this.rdHi = new System.Windows.Forms.RadioButton();
             this.rdHer = new System.Windows.Forms.RadioButton();
             this.grupfiltro = new System.Windows.Forms.GroupBox();
+            this.lbProgressMsj = new System.Windows.Forms.Label();
+            this.progressMsj = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataRepEmp)).BeginInit();
             this.grupfiltro.SuspendLayout();
@@ -152,11 +155,31 @@
             this.grupfiltro.TabStop = false;
             this.grupfiltro.Text = "Filtros";
             // 
+            // lbProgressMsj
+            // 
+            this.lbProgressMsj.AutoSize = true;
+            this.lbProgressMsj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProgressMsj.Location = new System.Drawing.Point(174, 455);
+            this.lbProgressMsj.Name = "lbProgressMsj";
+            this.lbProgressMsj.Size = new System.Drawing.Size(240, 24);
+            this.lbProgressMsj.TabIndex = 27;
+            this.lbProgressMsj.Text = "Enviando Mensaje.....0%";
+            // 
+            // progressMsj
+            // 
+            this.progressMsj.ForeColor = System.Drawing.Color.GreenYellow;
+            this.progressMsj.Location = new System.Drawing.Point(35, 488);
+            this.progressMsj.Name = "progressMsj";
+            this.progressMsj.Size = new System.Drawing.Size(552, 23);
+            this.progressMsj.TabIndex = 26;
+            // 
             // ReportePretamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 548);
+            this.Controls.Add(this.lbProgressMsj);
+            this.Controls.Add(this.progressMsj);
             this.Controls.Add(this.grupfiltro);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataRepEmp);
@@ -170,6 +193,7 @@
             this.grupfiltro.ResumeLayout(false);
             this.grupfiltro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -183,5 +207,8 @@
         private System.Windows.Forms.GroupBox grupfiltro;
         private System.Windows.Forms.RadioButton rdHi;
         private System.Windows.Forms.RadioButton rdHer;
+        private System.Windows.Forms.Label lbProgressMsj;
+        private System.Windows.Forms.ProgressBar progressMsj;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
