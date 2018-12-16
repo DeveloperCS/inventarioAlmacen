@@ -376,26 +376,43 @@ namespace inventarioAlmacen
         {
             String id1 = "";
             String id = "";
+            int con=0;
             DataTable dt = new DataTable();
-             
-
             if (cbCategorias.Text.Equals("Herramientas y Otros"))
             {
                 //dt = datos.spID("AGIDRe");
-                dt = datos.spID("AGIDE");
+                MessageBox.Show("her");
+                dt = datos.spID("AGIDRe");
+                con = 1;
             }
             else if (cbCategorias.Text.Equals("Higiene y Limpieza"))
             {
                 //dt = datos.spID("AGIDEl");
-                dt = datos.spID("AGIDE");
+                dt = datos.spID("AGIDEl");
+                MessageBox.Show("hig");
+                con = 2;
             }
             
             foreach (DataRow row in dt.Rows)
             {
-                id1 = row[0].ToString()+row[1].ToString();
-
+                id1 = row[1].ToString();
+                if (id1.Equals(""))
+                {
+                    id1 = "0001";
+                }
+                MessageBox.Show(row[0].ToString() + "\n" + row[1].ToString());
             }
-            id = id1 +"/"+ t.ToString();
+            String p = "";
+            if (con == 1)
+            {
+                p = "Re-";
+                id = p+""+id1 + "/" + t.ToString();
+            }
+            else if (con==2)
+            {
+                p = "El-";
+                id = p +""+ id1 + "/" + t.ToString();
+            }
            
             /*
              * El-0001/1
