@@ -55,7 +55,7 @@ namespace inventarioAlmacen
         }
 
         //metodo para abrir en panel
-        private void AbrirFormInPanel(object formhijo)
+        public void AbrirFormInPanel(object formhijo)
         {
             if (this.panelCentral.Controls.Count>0)
             {

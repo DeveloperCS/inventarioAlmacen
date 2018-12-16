@@ -156,13 +156,14 @@ namespace inventarioAlmacen
                                 if (datos.update(qIn) == true)
                                 {
                                     contador--;
-                                    if (contador==0)
+                                    if (contador == 0)
                                     {
                                         lbDev.Visible = false;
                                         dtRegreso.Visible = false;
                                         cbCategorias.Enabled = true;
                                         cbEmpleados.Enabled = true;
                                         this.btnCancelar.Enabled = false;
+                                        
                                         eliminarLista();
                                     }
 
