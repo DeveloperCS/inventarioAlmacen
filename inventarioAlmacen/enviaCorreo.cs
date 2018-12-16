@@ -52,8 +52,7 @@ namespace inventarioAlmacen
                 return false;
             }
 
-            //aqui comenzamos el proceso
-            //comienza-------------------------------------------------------------------------
+          
             try
             {
                 //creamos un objeto tipo MailMessage

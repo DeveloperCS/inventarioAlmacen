@@ -140,16 +140,13 @@ namespace inventarioAlmacen
                             PdfWriter writer = PdfWriter.GetInstance(doc, file);
                             writer.ViewerPreferences = PdfWriter.PageModeUseThumbs;
                             writer.ViewerPreferences = PdfWriter.PageLayoutOneColumn;
-
-                           
+                            
                             doc.Open();
-
                             Paragraph pi = new Paragraph();
                             pi.Alignment = Element.ALIGN_CENTER;
                             pi.Add(image);
                             doc.Add(pi);
                           
-
                             Paragraph pr = new Paragraph();
                             pr.Alignment = Element.ALIGN_CENTER;
                             pr.Add(head);
@@ -166,6 +163,37 @@ namespace inventarioAlmacen
                            // doc.Add(new Paragraph(tot));
                             Process.Start(filename);
                             doc.Close();
+
+                            if (MessageBox.Show("¿Desea enviar Reporte por Correo?","Envio",MessageBoxButtons.OK,MessageBoxIcon.Question)==DialogResult.OK)
+                            {
+                                try
+                                {
+                                    //creamos nuestra lista de archivos a enviar
+                                    List<string> lstArchivos = new List<string>();
+                                    lstArchivos.Add(filename);
+
+                                    //creamos nuestro objeto de la clase que hicimos
+                                    enviaCorreo oMail = new enviaCorreo("carlosjosiel.hernandez@sistemas.tecsanpedro.edu.mx", "josie4175@gmail.com", "Reporte Nuevo", "Nuevo Reporte CHECKSTORE", lstArchivos);
+
+                                    //y enviamos
+                                    if (oMail.enviaMail())
+                                    {
+
+                                        MessageBox.Show("se envio el mail","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("no se envio el mail: " + oMail.error,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+                                    }
+                                }
+                                catch (Exception ec)
+                                {
+
+
+                                }
+                            }
                            
 
                         }
@@ -174,33 +202,7 @@ namespace inventarioAlmacen
                             MessageBox.Show(ex.Message + " --" + ex.StackTrace.ToString());
                         }
 
-                        try
-                        {
-                            //creamos nuestra lista de archivos a enviar
-                            List<string> lstArchivos = new List<string>();
-                            lstArchivos.Add(filename);
-
-                            //creamos nuestro objeto de la clase que hicimos
-                            enviaCorreo oMail = new enviaCorreo("carlosjosiel.hernandez@sistemas.tecsanpedro.edu.mx", "edgar.rosales@sistemas.tecsanpedro.edu.mx", "hola", "culito", lstArchivos);
-
-                            //y enviamos
-                            if (oMail.enviaMail())
-                            {
-
-                                MessageBox.Show("se envio el mail");
-
-                            }
-                            else
-                            {
-                                MessageBox.Show("no se envio el mail: " + oMail.error);
-
-                            }
-                        }
-                        catch (Exception ec)
-                        {
-                           
-
-                        }
+                        
 
 
                     }
