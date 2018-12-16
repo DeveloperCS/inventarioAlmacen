@@ -69,5 +69,15 @@ namespace inventarioAlmacen
                 txtCorreoPara.ForeColor = Color.DimGray;
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

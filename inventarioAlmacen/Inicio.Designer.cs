@@ -197,6 +197,7 @@
             this.btnDevolverArt.Size = new System.Drawing.Size(184, 140);
             this.btnDevolverArt.TabIndex = 9;
             this.btnDevolverArt.Text = "           Devolver            Articulo";
+            this.toolTip1.SetToolTip(this.btnDevolverArt, "Devolver Articulo");
             this.btnDevolverArt.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -213,6 +214,7 @@
             this.button3.Size = new System.Drawing.Size(184, 140);
             this.button3.TabIndex = 8;
             this.button3.Text = "            Añadir              Usuario";
+            this.toolTip1.SetToolTip(this.button3, "Añadir Usuario");
             this.button3.UseVisualStyleBackColor = false;
             // 
             // btnGenerarRepor
@@ -229,6 +231,7 @@
             this.btnGenerarRepor.Size = new System.Drawing.Size(255, 140);
             this.btnGenerarRepor.TabIndex = 7;
             this.btnGenerarRepor.Text = "        Generar          Reportes";
+            this.toolTip1.SetToolTip(this.btnGenerarRepor, "Generar Reportes");
             this.btnGenerarRepor.UseVisualStyleBackColor = false;
             // 
             // btnAgregarPres
@@ -245,6 +248,7 @@
             this.btnAgregarPres.Size = new System.Drawing.Size(255, 140);
             this.btnAgregarPres.TabIndex = 6;
             this.btnAgregarPres.Text = "        Agregar          Prestamo";
+            this.toolTip1.SetToolTip(this.btnAgregarPres, "Agregar Prestamo");
             this.btnAgregarPres.UseVisualStyleBackColor = false;
             this.btnAgregarPres.Click += new System.EventHandler(this.button1_Click);
             // 

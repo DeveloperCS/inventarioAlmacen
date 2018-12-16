@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbID = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +59,9 @@
             this.btnEnviar.Size = new System.Drawing.Size(223, 35);
             this.btnEnviar.TabIndex = 14;
             this.btnEnviar.Text = "Enviar";
+            this.toolTip1.SetToolTip(this.btnEnviar, "Enviar");
             this.btnEnviar.UseVisualStyleBackColor = false;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // btnCancelar
             // 
@@ -74,7 +78,9 @@
             this.btnCancelar.Size = new System.Drawing.Size(114, 35);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lbID
             // 
@@ -109,6 +115,7 @@
             this.txtCorreoDe.Size = new System.Drawing.Size(280, 24);
             this.txtCorreoDe.TabIndex = 2;
             this.txtCorreoDe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtCorreoDe, "Emisor");
             this.txtCorreoDe.Enter += new System.EventHandler(this.txtCorreoDe_Enter);
             this.txtCorreoDe.Leave += new System.EventHandler(this.txtCorreoDe_Leave);
             // 
@@ -135,6 +142,7 @@
             this.txtCorreoPara.Size = new System.Drawing.Size(280, 24);
             this.txtCorreoPara.TabIndex = 2;
             this.txtCorreoPara.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtCorreoPara, "Receptor");
             this.txtCorreoPara.Enter += new System.EventHandler(this.txtCorreoPara_Enter);
             this.txtCorreoPara.Leave += new System.EventHandler(this.txtCorreoPara_Leave);
             // 
@@ -170,6 +178,8 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Recuerda que tienes que tener configurada tu cuenta para poder enviar este correo" +
     "";
+            this.toolTip1.SetToolTip(this.label3, "Recuerda que tienes que tener configurada tu cuenta para poder enviar este correo" +
+        "");
             // 
             // CorreoElectronico
             // 
@@ -208,5 +218,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
