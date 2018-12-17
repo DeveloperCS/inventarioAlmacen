@@ -175,27 +175,5 @@ namespace inventarioAlmacen
 
         
 
-
-        /* public DataTable tmpEntrada = new DataTable();
-public void tablaT()
-{
-    //>Definimos la tabla para las ventas Temporales
-    DataColumn idColumn = new DataColumn("id", typeof(int));
-    idColumn.Unique = true;
-    idColumn.AutoIncrement = true;
-    idColumn.AutoIncrementSeed = 1;
-    idColumn.AutoIncrementStep = 1;
-    tmpEntrada.Columns.Add(idColumn);
-    //declaramos el resto de los campos
-    tmpEntrada.Columns.Add("Folio", typeof(string));
-    tmpEntrada.Columns.Add("Articulo", typeof(string));
-    tmpEntrada.Columns.Add("Categoria", typeof(string));
-    tmpEntrada.Columns.Add("Cantidad", typeof(string));
-
-    //agregamos un primary key
-    tmpEntrada.PrimaryKey = new DataColumn[] { tmpEntrada.Columns["id"] };
-    //<termina la deficinicón de la tabla temporal
-}*/
-
     }
 }

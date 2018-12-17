@@ -199,6 +199,7 @@
             this.btnDevolverArt.Text = "           Devolver            Articulo";
             this.toolTip1.SetToolTip(this.btnDevolverArt, "Devolver Articulo");
             this.btnDevolverArt.UseVisualStyleBackColor = false;
+            this.btnDevolverArt.Click += new System.EventHandler(this.btnDevolverArt_Click);
             // 
             // button3
             // 
@@ -216,6 +217,7 @@
             this.button3.Text = "            Añadir              Usuario";
             this.toolTip1.SetToolTip(this.button3, "Añadir Usuario");
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnGenerarRepor
             // 
@@ -233,6 +235,7 @@
             this.btnGenerarRepor.Text = "        Generar          Reportes";
             this.toolTip1.SetToolTip(this.btnGenerarRepor, "Generar Reportes");
             this.btnGenerarRepor.UseVisualStyleBackColor = false;
+            this.btnGenerarRepor.Click += new System.EventHandler(this.btnGenerarRepor_Click);
             // 
             // btnAgregarPres
             // 
