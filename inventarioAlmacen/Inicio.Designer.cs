@@ -32,13 +32,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbT = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbHer = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbHig = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -46,6 +46,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnGenerarRepor = new System.Windows.Forms.Button();
             this.btnAgregarPres = new System.Windows.Forms.Button();
+            this.timerCheck = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,23 +79,23 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lbT);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(24, 75);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(334, 180);
             this.panel2.TabIndex = 1;
             // 
-            // label5
+            // lbT
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(153, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 25);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "#";
+            this.lbT.AutoSize = true;
+            this.lbT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbT.ForeColor = System.Drawing.Color.White;
+            this.lbT.Location = new System.Drawing.Point(153, 106);
+            this.lbT.Name = "lbT";
+            this.lbT.Size = new System.Drawing.Size(24, 25);
+            this.lbT.TabIndex = 3;
+            this.lbT.Text = "#";
             // 
             // label2
             // 
@@ -111,23 +112,23 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
-            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.lbHer);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(358, 75);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(334, 180);
             this.panel3.TabIndex = 2;
             // 
-            // label6
+            // lbHer
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(153, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 25);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "#";
+            this.lbHer.AutoSize = true;
+            this.lbHer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHer.ForeColor = System.Drawing.Color.White;
+            this.lbHer.Location = new System.Drawing.Point(153, 106);
+            this.lbHer.Name = "lbHer";
+            this.lbHer.Size = new System.Drawing.Size(24, 25);
+            this.lbHer.TabIndex = 4;
+            this.lbHer.Text = "#";
             // 
             // label3
             // 
@@ -144,23 +145,23 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.lbHig);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(692, 75);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(334, 180);
             this.panel4.TabIndex = 2;
             // 
-            // label7
+            // lbHig
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(157, 106);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 25);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "#";
+            this.lbHig.AutoSize = true;
+            this.lbHig.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHig.ForeColor = System.Drawing.Color.White;
+            this.lbHig.Location = new System.Drawing.Point(157, 106);
+            this.lbHig.Name = "lbHig";
+            this.lbHig.Size = new System.Drawing.Size(24, 25);
+            this.lbHig.TabIndex = 5;
+            this.lbHig.Text = "#";
             // 
             // label4
             // 
@@ -255,6 +256,10 @@
             this.btnAgregarPres.UseVisualStyleBackColor = false;
             this.btnAgregarPres.Click += new System.EventHandler(this.button1_Click);
             // 
+            // timerCheck
+            // 
+            this.timerCheck.Tick += new System.EventHandler(this.timerCheck_Tick);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +277,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Inicio";
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -292,11 +298,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbT;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbHer;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbHig;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -304,5 +310,6 @@
         private System.Windows.Forms.Button btnGenerarRepor;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnDevolverArt;
+        public System.Windows.Forms.Timer timerCheck;
     }
 }
