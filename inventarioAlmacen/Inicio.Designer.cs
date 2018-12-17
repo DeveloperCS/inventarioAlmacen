@@ -40,7 +40,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbHig = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataPres = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnDevolverArt = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPres)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -175,14 +175,18 @@
             this.label4.Text = "Higiene y Limpieza";
             this.toolTip1.SetToolTip(this.label4, "Higiene y Limpieza");
             // 
-            // dataGridView1
+            // dataPres
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 274);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(528, 294);
-            this.dataGridView1.TabIndex = 4;
+            this.dataPres.AllowUserToAddRows = false;
+            this.dataPres.AllowUserToDeleteRows = false;
+            this.dataPres.AllowUserToOrderColumns = true;
+            this.dataPres.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataPres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataPres.Location = new System.Drawing.Point(24, 274);
+            this.dataPres.Name = "dataPres";
+            this.dataPres.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataPres.Size = new System.Drawing.Size(528, 294);
+            this.dataPres.TabIndex = 4;
             // 
             // btnDevolverArt
             // 
@@ -269,7 +273,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnGenerarRepor);
             this.Controls.Add(this.btnAgregarPres);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataPres);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -286,7 +290,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPres)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,7 +308,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbHig;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataPres;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnAgregarPres;
         private System.Windows.Forms.Button btnGenerarRepor;

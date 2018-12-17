@@ -16,6 +16,7 @@ namespace inventarioAlmacen
         public Inicio()
         {
             InitializeComponent();
+          
         }
         Form nuevaFrom = new Form();
         private void button1_Click(object sender, EventArgs e)
@@ -52,7 +53,11 @@ namespace inventarioAlmacen
             nuevaFrom.MinimizeBox = false;
             nuevaFrom.MaximizeBox = false;
             nuevaFrom.Load += new EventHandler(nuevaFrom_load);
-            nuevaFrom.ShowDialog();
+            
+            if (nuevaFrom.ShowDialog()==DialogResult.OK)
+            {
+                timerCheck.Start();
+            }
         }
         Panel panelCentral = new Panel();
         Panel barra = new Panel();
@@ -93,13 +98,12 @@ namespace inventarioAlmacen
             nuevaFrom.Controls.Add(barra);
             barra.Controls.Add(pic);
             nuevaFrom.Controls.Add(panelCentral);
-
-
-
+            
         }
         //Boton cerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.nuevaFrom.DialogResult = DialogResult.OK;
             this.nuevaFrom.Close();
         }
 
@@ -131,19 +135,20 @@ namespace inventarioAlmacen
             fn.Show();
         }
         Datos datos = new Datos();
-        string qVis = "", qMem = "";
-
+       
         private void Inicio_Load(object sender, EventArgs e)
         {
-        
+            consult();
             timerCheck.Start();
             timerCheck.Enabled = true;
             timerCheck.Interval = 25;
+            this.dataPres.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void timerCheck_Tick(object sender, EventArgs e)
         {
             String id = "";
+            consult();
             DataTable dt = new DataTable();
             dt = datos.spID("ContadorEl");
             int contador = 0, tot=0;
@@ -172,6 +177,16 @@ namespace inventarioAlmacen
             }
 
             lbT.Text = tot + "";
+            timerCheck.Stop();
+        }
+
+        DataView miFiltro;
+        public void consult()
+        {
+            String qy = "";
+          
+           this.miFiltro = datos.consulta(qy = "Select Folio,[CLave Empleado]as [Clave Empleado],Articulo,Cantidad,[Fecha Salida],[Fecha Entrada] FROM PrestadosR").Tables[0].DefaultView;
+            dataPres.DataSource = miFiltro;
         }
     }
 }
