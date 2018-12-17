@@ -7,7 +7,13 @@ RIGHT('/'+
 convert(Varchar(11), RIGHT(MAX(IdRecibo),4)+1),4) from Recibos
 END
 
-CREATE PROC Contador
+CREATE PROC ContadorRe
+as
+begin
+select count (IdRecibo) from Recibos
+end
+
+CREATE PROC ContadorEl
 as
 begin
 select count (IdRecibo) from Recibos
