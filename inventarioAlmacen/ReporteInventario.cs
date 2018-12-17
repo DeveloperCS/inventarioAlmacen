@@ -177,21 +177,13 @@ namespace inventarioAlmacen
 
                                     try
                                     {
-                                        //creamos nuestra lista de archivos a enviar
-                                        // List<string> lstArchivos = new List<string>();
-                                        //lstArchivos.Add(filename);
-                                        //creamos nuestro objeto de la clase que hicimos
-                                        //  enviaCorreo oMail = new enviaCorreo("carlosjosiel.hernandez@sistemas.tecsanpedro.edu.mx", "josie4175@gmail.com", "Reporte Nuevo", "Nuevo Reporte CHECKSTORE", lstArchivos);
                                         
-                                     
                                         if (!backgroundWorker1.IsBusy)
                                         {
                                             this.progressMsj.Visible = true;
                                             this.lbProgressMsj.Visible = true;
                                             backgroundWorker1.RunWorkerAsync();
                                         }
-
-                                       
                                         
                                     }
                                     catch (Exception ec)

@@ -55,6 +55,7 @@
             this.btnGenerarReportesDevoluciones.Text = "Generar Reporte";
             this.toolTip1.SetToolTip(this.btnGenerarReportesDevoluciones, "Generar Reporte");
             this.btnGenerarReportesDevoluciones.UseVisualStyleBackColor = false;
+            this.btnGenerarReportesDevoluciones.Click += new System.EventHandler(this.btnGenerarReportesDevoluciones_Click);
             // 
             // dataDevoluciones
             // 

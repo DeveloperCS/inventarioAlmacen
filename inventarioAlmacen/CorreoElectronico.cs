@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventarioAlmacen.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,6 +54,16 @@ namespace inventarioAlmacen
                 txtCorreoDe.Text = "Correo electronico";
                 txtCorreoDe.ForeColor = Color.DimGray;
             }
+            if (funciones.validaCorreo(txtCorreoDe.Text))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Direccion de correo no valida,el correo debe terner el fromato: nombre@dominio.com","Validacion de Correo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txtCorreoDe.SelectAll();
+                txtCorreoDe.Focus();
+            }
         }
 
         private void txtCorreoPara_Enter(object sender, EventArgs e)
@@ -70,6 +81,16 @@ namespace inventarioAlmacen
             {
                 txtCorreoPara.Text = "Correo electronico";
                 txtCorreoPara.ForeColor = Color.DimGray;
+            }
+            if (funciones.validaCorreo(txtCorreoPara.Text))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Direccion de correo no valida,el correo debe terner el fromato: nombre@dominio.com", "Validacion de Correo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCorreoPara.SelectAll();
+                txtCorreoPara.Focus();
             }
         }
 

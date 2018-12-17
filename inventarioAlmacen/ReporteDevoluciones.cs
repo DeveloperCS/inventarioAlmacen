@@ -36,5 +36,10 @@ namespace inventarioAlmacen
                 comboBoxEmpleados.ForeColor = Color.DimGray;
             }
         }
+
+        private void btnGenerarReportesDevoluciones_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
