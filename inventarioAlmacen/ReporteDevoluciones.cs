@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventarioAlmacen.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,11 +36,47 @@ namespace inventarioAlmacen
                 comboBoxEmpleados.Text = "Empleados";
                 comboBoxEmpleados.ForeColor = Color.DimGray;
             }
+           
         }
-
+        DataView miFiltro;
+        Datos datos = new Datos();
+        public void llenarCbEm()
+        {
+            comboBoxEmpleados.DataSource = datos.consulta("Select idEmpleado+'/'+NombreEmpleado as Em From Empleados order by idEmpleado").Tables[0];
+            comboBoxEmpleados.DisplayMember = "Empleados";
+            comboBoxEmpleados.ValueMember = "Em";
+        }
+        public string separa(string nC)
+        {
+            string[] codigoSolo = nC.Split('/');
+            return codigoSolo[0];
+        }
         private void btnGenerarReportesDevoluciones_Click(object sender, EventArgs e)
         {
 
+        }
+        String idbuscar = "";
+        private void ReporteDevoluciones_Load(object sender, EventArgs e)
+        {
+            llenarCbEm();
+            idbuscar = comboBoxEmpleados.SelectedValue.ToString();
+
+            consult(separa(idbuscar));
+        }
+        public void consult(String id)
+        {
+            String qy = "";
+           
+                this.miFiltro = datos.consulta(qy = "Select * FROM MostrarDevolucion Where [CLave Empleado] like '" + id + "%'").Tables[0].DefaultView;
+         
+
+            dataDevoluciones.DataSource = miFiltro;
+        }
+
+        private void comboBoxEmpleados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idbuscar = comboBoxEmpleados.SelectedValue.ToString();
+            consult(separa(idbuscar));
         }
     }
 }

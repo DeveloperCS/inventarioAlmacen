@@ -87,20 +87,12 @@
             this.comboBoxEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxEmpleados.ForeColor = System.Drawing.Color.Black;
             this.comboBoxEmpleados.FormattingEnabled = true;
-            this.comboBoxEmpleados.Items.AddRange(new object[] {
-            "Todos los Empleados",
-            "Empleado1",
-            "Empleado2",
-            "Empleado3",
-            "Empleado4",
-            "Empleado5",
-            "Empleado6",
-            "EmpleadoN"});
             this.comboBoxEmpleados.Location = new System.Drawing.Point(7, 4);
             this.comboBoxEmpleados.Name = "comboBoxEmpleados";
             this.comboBoxEmpleados.Size = new System.Drawing.Size(281, 28);
             this.comboBoxEmpleados.TabIndex = 6;
             this.toolTip1.SetToolTip(this.comboBoxEmpleados, "Empleados");
+            this.comboBoxEmpleados.SelectedIndexChanged += new System.EventHandler(this.comboBoxEmpleados_SelectedIndexChanged);
             this.comboBoxEmpleados.Enter += new System.EventHandler(this.comboBoxEmpleados_Enter);
             this.comboBoxEmpleados.Leave += new System.EventHandler(this.comboBoxEmpleados_Leave);
             // 
@@ -115,6 +107,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReporteDevoluciones";
             this.Text = "ReporteDevoluciones";
+            this.Load += new System.EventHandler(this.ReporteDevoluciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataDevoluciones)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);

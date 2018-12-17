@@ -32,6 +32,7 @@ namespace inventarioAlmacen
         {
             che = new CheckBox();
             che.Size = new Size(15, 15);
+            che.Location = new Point(10,10);
             this.dataLista.Controls.Add(che);
         }
         private void selectTodo1(CheckBox ch)
@@ -69,6 +70,7 @@ namespace inventarioAlmacen
         String emp1 = "";
         string idAr, nomAr, descrip, cant;
         String idNuevo = "";
+        int contador = 0;
         private void btnDevolver_Click(object sender, EventArgs e)
         {
             if (dataLista.Rows.Count > 0)
@@ -77,48 +79,56 @@ namespace inventarioAlmacen
                 {
                     if (Convert.ToBoolean(dataLista.Rows[i].Cells["X"].Value) == true)
                     {
-                        emp1 = dataLista.CurrentRow.Cells[2].Value.ToString();
-
+                        emp1 = dataLista.Rows[i].Cells[4].Value.ToString();
+                        MessageBox.Show(emp1);
                         ClaveDevolucionescs claveD = new ClaveDevolucionescs();
                         claveD.id = emp1;
                         if (claveD.ShowDialog() == DialogResult.OK)
                         {
-                            /*t = int.Parse(dataLista[0, row.Index].Value.ToString());
-                            idAr = dataLista[1, row.Index].Value.ToString();
-                            nomAr = dataLista[2, row.Index].Value.ToString();
-                            String nC = "";
-                            nC = dataLista[4, row.Index].Value.ToString();
-                            string[] cantidadSola = nC.Split(' ');
-                            
-                            descrip = "Cantida:" + nC;
-
-                            //  idNuevo = idPrestamo(t);
-                            idNuevo = idDev();
-                          String qIn = "INSERT INTO Recibos VALUES('" + idNuevo + "','Us-0001','" + idAr + "','" + emp1 + "','" + nomAr + "','" + cantidadSola[0] + "',GETDATE(),'" + dtRegreso.Value.ToString("yyyy/MM/dd") + "','" + descrip + "');";
-                            if (datos.insertar(qIn) == true)
+                            foreach (DataGridViewRow row in dataLista.Rows)
                             {
-                                qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen - '" + cantidadSola[0] + "' WHERE idArticulo= '" + idAr + "'";
-                                if (datos.update(qIn) == true)
+                                if (Convert.ToBoolean(dataLista.Rows[row.Index].Cells["X"].Value) == true)
                                 {
-                                    contador--;
-                                    if (contador == 0)
+                                    String iDev = dataLista[1, row.Index].Value.ToString();
+                                    String iRec = dataLista[1, row.Index].Value.ToString();
+                                    String iUs = dataLista[2, row.Index].Value.ToString();
+                                    String idAr = dataLista[3, row.Index].Value.ToString();
+                                    String iEmp = dataLista[4, row.Index].Value.ToString();
+                                    String nmAr=  dataLista[5, row.Index].Value.ToString();
+                                    String cAr = dataLista[6, row.Index].Value.ToString();
+                                   /* DateTime fI = Convert.ToDateTime(dataLista[7, row.Index].Value.ToString());
+                                    DateTime fF = Convert.ToDateTime(dataLista[8, row.Index].Value.ToString());*/
+                                    String desc = dataLista[9, row.Index].Value.ToString();
+
+                                 
+                                    String qIn = "INSERT INTO Devolucion VALUES('"+ iDev + "','"+ iRec + "','"+ iUs + "','"+ idAr + "','"+ iEmp + "','"+ nmAr + "','"+ cAr + "','12/10/2018','12/12/2018','"+ desc + "');";
+                                    if (datos.insertar(qIn) == true)
                                     {
-                                        lbDev.Visible = false;
-                                        dtRegreso.Visible = false;
-                                        cbCategorias.Enabled = true;
-                                        cbEmpleados.Enabled = true;
-                                        this.btnCancelar.Enabled = false;
+                                        qIn = "UPDATE Articulos SET CantidadAlmacen = CantidadAlmacen + '" + cAr + "' WHERE IdArticulo= '" + idAr + "'";
+                                        if (datos.update(qIn) == true)
+                                        {
+                                            qIn = "DELETE FROM Recibos WHERE IdRecibo="+iRec;
+                                            if (datos.eliminar(qIn)==true)
+                                            {
+                                                // contador--;
+                                                if (contador == 0)
+                                                {
 
-                                        eliminarLista();
+                                                }
+
+                                                MessageBox.Show("Delete herr" + contador);
+                                            }
+                                           
+                                        }
                                     }
-
-                                    MessageBox.Show("siinsert herr" + contador);
+                                    else
+                                    {
+                                        MessageBox.Show("noinsert herr");
+                                    }
                                 }
                             }
-                            else
-                            {
-                                MessageBox.Show("noinsert herr");
-                            }*/
+                           
+                            
                         }
                     }
                     else
@@ -204,7 +214,7 @@ namespace inventarioAlmacen
             }
             this.miFiltro.RowFilter = salida;
         }
-
+/*
         public string idDev()
         {
             String id1 = "";
@@ -218,11 +228,11 @@ namespace inventarioAlmacen
                 id1 = row[0].ToString() + row[1].ToString();
 
             }
-            //id = id1 + "/" + t.ToString();
+            
             id = id1;
             return id;
         }
-
+        */
 
 
     }

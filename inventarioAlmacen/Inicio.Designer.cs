@@ -191,6 +191,7 @@
             // btnDevolverArt
             // 
             this.btnDevolverArt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
+            this.btnDevolverArt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDevolverArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevolverArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevolverArt.ForeColor = System.Drawing.Color.White;
@@ -209,6 +210,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(164)))), ((int)(((byte)(227)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.button3.ForeColor = System.Drawing.Color.White;
@@ -227,6 +229,7 @@
             // btnGenerarRepor
             // 
             this.btnGenerarRepor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.btnGenerarRepor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerarRepor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarRepor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.btnGenerarRepor.ForeColor = System.Drawing.Color.White;
@@ -245,6 +248,7 @@
             // btnAgregarPres
             // 
             this.btnAgregarPres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.btnAgregarPres.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarPres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarPres.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPres.ForeColor = System.Drawing.Color.White;
