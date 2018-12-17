@@ -95,7 +95,7 @@ namespace inventarioAlmacen
                         
                         try
                         {
-                            MessageBox.Show(filename + "");
+                            
                             FileStream file = new FileStream(filename, FileMode.OpenOrCreate);
                             PdfWriter writer = PdfWriter.GetInstance(doc, file);
                             writer.ViewerPreferences = PdfWriter.PageModeUseThumbs;
@@ -133,7 +133,7 @@ namespace inventarioAlmacen
 
                                     try
                                     {
-                                        MessageBox.Show("Cancelo el try", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                       
                                         if (!backgroundWorker1.IsBusy)
                                         {
                                             this.progressMsj.Visible = true;
@@ -144,7 +144,7 @@ namespace inventarioAlmacen
                                     }
                                     catch (Exception ec)
                                     {
-                                        MessageBox.Show("Cancele ec", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                       ;
                                         if (backgroundWorker1.IsBusy)
                                         {
                                             backgroundWorker1.CancelAsync();

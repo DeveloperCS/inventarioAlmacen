@@ -50,8 +50,6 @@ namespace inventarioAlmacen
                         
                         if (ped.ShowDialog() == DialogResult.OK)
                         {
-                            // aqui vuelves a ir ala bd ( debes de tener alguno metodo para llenar el grid
-                            // y cargas de nuevo el grid
                             consultaLis();
                             comprobarExis();
                         }
@@ -66,8 +64,7 @@ namespace inventarioAlmacen
                         cbEmpleados.Enabled = false;
                         if (ped.ShowDialog() == DialogResult.OK)
                         {
-                            // aqui vuelves a ir ala bd ( debes de tener alguno metodo para llenar el grid
-                            // y cargas de nuevo el grid
+                            
                             consultaLis();
                             comprobarExis();
                         }
@@ -168,12 +165,12 @@ namespace inventarioAlmacen
                                         eliminarLista();
                                     }
 
-                                    MessageBox.Show("siinsert herr"+contador);
+                                    MessageBox.Show("Se inserto Correctamente","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("noinsert herr");
+                                MessageBox.Show("Error al insertar","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                             }
                             
                         }
