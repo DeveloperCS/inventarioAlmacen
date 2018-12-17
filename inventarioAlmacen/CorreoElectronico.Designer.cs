@@ -109,9 +109,8 @@
             this.txtCorreoDe.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCorreoDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreoDe.Location = new System.Drawing.Point(9, 6);
-            this.txtCorreoDe.MaxLength = 4;
+            this.txtCorreoDe.MaxLength = 1000;
             this.txtCorreoDe.Name = "txtCorreoDe";
-            this.txtCorreoDe.PasswordChar = '•';
             this.txtCorreoDe.Size = new System.Drawing.Size(280, 24);
             this.txtCorreoDe.TabIndex = 2;
             this.txtCorreoDe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -136,9 +135,8 @@
             this.txtCorreoPara.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCorreoPara.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreoPara.Location = new System.Drawing.Point(9, 6);
-            this.txtCorreoPara.MaxLength = 4;
+            this.txtCorreoPara.MaxLength = 1000;
             this.txtCorreoPara.Name = "txtCorreoPara";
-            this.txtCorreoPara.PasswordChar = '•';
             this.txtCorreoPara.Size = new System.Drawing.Size(280, 24);
             this.txtCorreoPara.TabIndex = 2;
             this.txtCorreoPara.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -196,6 +194,7 @@
             this.Controls.Add(this.Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CorreoElectronico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CorreoElectronico";
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
@@ -212,12 +211,12 @@
         private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Label lbID;
         internal System.Windows.Forms.Panel Panel2;
-        private System.Windows.Forms.TextBox txtCorreoDe;
         internal System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtCorreoPara;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.TextBox txtCorreoDe;
+        public System.Windows.Forms.TextBox txtCorreoPara;
     }
 }

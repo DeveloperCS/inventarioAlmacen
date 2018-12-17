@@ -90,6 +90,7 @@ namespace inventarioAlmacen
             consult();
         }
         string h = "", f = "",TipRep="";
+        public static String de, para;
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (datosTabla.RowCount == 0)
@@ -169,42 +170,42 @@ namespace inventarioAlmacen
 
                             if (MessageBox.Show("¿Desea enviar Reporte por Correo?","Envio",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                             {
-                                try
+                                CorreoElectronico cor = new CorreoElectronico();
+                                cor.parametrosCorreo(filename);
+                                if (cor.ShowDialog()==DialogResult.OK)
                                 {
-                                    //creamos nuestra lista de archivos a enviar
-                                    List<string> lstArchivos = new List<string>();
-                                    lstArchivos.Add(filename);
 
-                                    //creamos nuestro objeto de la clase que hicimos
-                                    enviaCorreo oMail = new enviaCorreo("carlosjosiel.hernandez@sistemas.tecsanpedro.edu.mx", "josie4175@gmail.com", "Reporte Nuevo", "Nuevo Reporte CHECKSTORE", lstArchivos);
+                                    try
+                                    {
+                                        //creamos nuestra lista de archivos a enviar
+                                        // List<string> lstArchivos = new List<string>();
+                                        //lstArchivos.Add(filename);
+                                        //creamos nuestro objeto de la clase que hicimos
+                                        //  enviaCorreo oMail = new enviaCorreo("carlosjosiel.hernandez@sistemas.tecsanpedro.edu.mx", "josie4175@gmail.com", "Reporte Nuevo", "Nuevo Reporte CHECKSTORE", lstArchivos);
+                                        
+                                     
+                                        if (!backgroundWorker1.IsBusy)
+                                        {
+                                            this.progressMsj.Visible = true;
+                                            this.lbProgressMsj.Visible = true;
+                                            backgroundWorker1.RunWorkerAsync();
+                                        }
 
-               
-                                    if (!backgroundWorker1.IsBusy)
-                                    {
-                                        this.progressMsj.Visible = true;
-                                        this.lbProgressMsj.Visible = true;
-                                        backgroundWorker1.RunWorkerAsync();
-                                    }
-                                    
-                                    //y enviamos
-                                    if (oMail.enviaMail())
-                                    {
+                                       
                                         
                                     }
-                                    else
+                                    catch (Exception ec)
                                     {
-                                        MessageBox.Show("no se envio el mail: " + oMail.error,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                                       
 
+                                        if (backgroundWorker1.IsBusy)
+                                        {
+                                            backgroundWorker1.CancelAsync();
+                                        }
                                     }
                                 }
-                                catch (Exception ec)
+                                else
                                 {
-
-                                    if (backgroundWorker1.IsBusy)
-                                    {
-                                        backgroundWorker1.CancelAsync();
-                                    }
+                                    MessageBox.Show("Cancelo el Envio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                            

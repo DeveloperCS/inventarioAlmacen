@@ -395,12 +395,13 @@ namespace inventarioAlmacen
             
             foreach (DataRow row in dt.Rows)
             {
-                id1 = row[1].ToString();
+                MessageBox.Show(row[0].ToString() + "\n" + row[1].ToString()+"sdf");
+                id1 = row[0].ToString();
                 if (id1.Equals(""))
                 {
                     id1 = "0001";
                 }
-                MessageBox.Show(row[0].ToString() + "\n" + row[1].ToString());
+                MessageBox.Show(row[0].ToString() + "\n" + row[1].ToString()+"sdf");
             }
             String p = "";
             if (con == 1)

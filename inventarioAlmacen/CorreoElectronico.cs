@@ -21,7 +21,10 @@ namespace inventarioAlmacen
             txtCorreoPara.ForeColor = Color.DimGray;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+            
         }
+        List<string> lstArchivos = new List<string>();
         //Redondear esquinas
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -77,7 +80,36 @@ namespace inventarioAlmacen
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            if (txtCorreoDe.Equals("")|| txtCorreoDe.Equals(null)&&txtCorreoPara.Equals("")|| txtCorreoPara.Equals(null))
+            {
+                MessageBox.Show("Campos requeridos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("¿Desa Mandar el correo con estos datos?","Enviar",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                {
 
+                    enviaCorreo oMail = new enviaCorreo(txtCorreoDe.Text.Trim(), txtCorreoPara.Text.Trim(), "Reporte Nuevo", "Nuevo Reporte CHECKSTORE", lstArchivos);
+                    //y enviamos
+                    if (oMail.enviaMail())
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("no se envio el mail: " + oMail.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        this.Close();
+                    }
+
+                    
+                }
+            }
+        }
+        public void parametrosCorreo(String list)
+        {
+            lstArchivos.Add(list);
         }
     }
 }
