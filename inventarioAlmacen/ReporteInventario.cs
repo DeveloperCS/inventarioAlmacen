@@ -177,7 +177,7 @@ namespace inventarioAlmacen
 
                                     try
                                     {
-                                        
+                                        MessageBox.Show("Cancelo el try", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         if (!backgroundWorker1.IsBusy)
                                         {
                                             this.progressMsj.Visible = true;
@@ -188,14 +188,14 @@ namespace inventarioAlmacen
                                     }
                                     catch (Exception ec)
                                     {
-
+                                        MessageBox.Show("Cancele ec", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         if (backgroundWorker1.IsBusy)
                                         {
                                             backgroundWorker1.CancelAsync();
                                         }
                                     }
                                 }
-                                else
+                                else 
                                 {
                                     MessageBox.Show("Cancelo el Envio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }

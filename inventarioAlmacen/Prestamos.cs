@@ -148,7 +148,7 @@ namespace inventarioAlmacen
                             //descrip = "Cantida:" + nC + "Categoria:" + dataLista[3, row.Index].Value.ToString();
                             descrip = "Cantida:" + nC ;
 
-                            idNuevo = idPrestamo(t);
+                            idNuevo = idPrestamo();
                             //idNuevo = "Ele";
                             qIn = "INSERT INTO Recibos VALUES('"+idNuevo+ "','Us-0001','"+idAr+"','"+emp1+"','"+nomAr+"','"+cantidadSola[0]+"',GETDATE(),'"+ dtRegreso.Value.ToString("yyyy/MM/dd") + "','"+descrip+"');";
                             if (datos.insertar(qIn) == true)
@@ -194,7 +194,7 @@ namespace inventarioAlmacen
                                     string[] cantidadSola = nC.Split(' ');
                                     cant = dataLista[4, row.Index].Value.ToString();
                            
-                            idNuevo = idPrestamo(t);
+                            idNuevo = idPrestamo();
                             string qIn1 = "INSERT INTO Electronico VALUES('"+idNuevo+ "','Us-0001','" + idAr + "','" + emp1 + "','" + nomAr + "','"+float.Parse(cantidadSola[0])+"', GETDATE() );";
                      
                             if (datos.insertar(qIn1) == true)
@@ -352,7 +352,6 @@ namespace inventarioAlmacen
                 lbDev.Visible = false;
                 dtRegreso.Visible = false;
                 btnCancelar.Enabled = false;
-               // llenarCbEm();
                 consultaLis();
             }
         }
@@ -372,55 +371,46 @@ namespace inventarioAlmacen
             
         }
 
-        public string idPrestamo(int t)
+        public string idPrestamo()
         {
             String id1 = "";
             String id = "";
-            int con=0;
+            String com = "";
             DataTable dt = new DataTable();
             if (cbCategorias.Text.Equals("Herramientas y Otros"))
             {
-                //dt = datos.spID("AGIDRe");
-                MessageBox.Show("her");
+                
                 dt = datos.spID("AGIDRe");
-                con = 1;
+                com = "Re-";
+                
             }
             else if (cbCategorias.Text.Equals("Higiene y Limpieza"))
             {
-                //dt = datos.spID("AGIDEl");
+               
                 dt = datos.spID("AGIDEl");
-                MessageBox.Show("hig");
-                con = 2;
+                com = "El-";
             }
             
             foreach (DataRow row in dt.Rows)
             {
-                MessageBox.Show(row[0].ToString() + "\n" + row[1].ToString()+"sdf");
-                id1 = row[0].ToString();
+               
+                id1 = row["i"].ToString();
                 if (id1.Equals(""))
                 {
-                    id1 = "0001";
+                    id = "0001";
                 }
-                MessageBox.Show(row[0].ToString() + "\n" + row[1].ToString()+"sdf");
+                else
+                {
+                    String nEm = "";
+                    string[] emp = id1.Split('-');
+                    nEm = emp[1];
+                    int nu = int.Parse(nEm);
+                    nu = nu + 1;
+                    id = String.Format("{0:0000}", nu); ;
+                }
+
             }
-            String p = "";
-            if (con == 1)
-            {
-                p = "Re-";
-                id = p+""+id1 + "/" + t.ToString();
-            }
-            else if (con==2)
-            {
-                p = "El-";
-                id = p +""+ id1 + "/" + t.ToString();
-            }
-           
-            /*
-             * El-0001/1
-             * El-0001/2
-             * Re-0001/1
-             */
-            return id;
+            return com+id;
         }
       
     }

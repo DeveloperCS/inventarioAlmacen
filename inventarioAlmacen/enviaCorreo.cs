@@ -101,7 +101,7 @@ namespace inventarioAlmacen
             }
             catch (Exception ex)
             {
-                //si ocurre un error regresamos false y el error
+               
                 error = "Ocurrio un error: " + ex.Message;
                 return false;
             }

@@ -107,23 +107,42 @@ namespace inventarioAlmacen
             }
             else
             {
+                int con = 0;
                 if (MessageBox.Show("¿Desa Mandar el correo con estos datos?","Enviar",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                 {
-
                     enviaCorreo oMail = new enviaCorreo(txtCorreoDe.Text.Trim(), txtCorreoPara.Text.Trim(), "Reporte Nuevo", "Nuevo Reporte CHECKSTORE", lstArchivos);
-                    //y enviamos
-                    if (oMail.enviaMail())
+                    try
+                    {
+                        //y enviamos
+                        if (oMail.enviaMail()==true)
+                        {
+                            //this.DialogResult = DialogResult.OK;
+                            //this.Close();
+                            con++;
+                        }
+                        else if(oMail.enviaMail()==false)
+                        {
+                            MessageBox.Show("no se envio el mail: " + oMail.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //this.DialogResult = DialogResult.No;
+                            //this.Close();
+                            con = 0;
+                        }
+
+                    }
+                    catch (Exception es)
+                    {
+                        MessageBox.Show("no se envio el mail: " + es.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        con = 0;
+                        //this.Close();
+                    }
+                    if (con>0)
                     {
                         this.DialogResult = DialogResult.OK;
-                        this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("no se envio el mail: " + oMail.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        this.Close();
+                        this.DialogResult = DialogResult.No;
                     }
-
                     
                 }
             }
