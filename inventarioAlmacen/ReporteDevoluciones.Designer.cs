@@ -34,6 +34,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBoxEmpleados = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lbProgressMsj = new System.Windows.Forms.Label();
+            this.progressMsj = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataDevoluciones)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -96,11 +99,31 @@
             this.comboBoxEmpleados.Enter += new System.EventHandler(this.comboBoxEmpleados_Enter);
             this.comboBoxEmpleados.Leave += new System.EventHandler(this.comboBoxEmpleados_Leave);
             // 
+            // lbProgressMsj
+            // 
+            this.lbProgressMsj.AutoSize = true;
+            this.lbProgressMsj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProgressMsj.Location = new System.Drawing.Point(156, 477);
+            this.lbProgressMsj.Name = "lbProgressMsj";
+            this.lbProgressMsj.Size = new System.Drawing.Size(240, 24);
+            this.lbProgressMsj.TabIndex = 27;
+            this.lbProgressMsj.Text = "Enviando Mensaje.....0%";
+            // 
+            // progressMsj
+            // 
+            this.progressMsj.ForeColor = System.Drawing.Color.GreenYellow;
+            this.progressMsj.Location = new System.Drawing.Point(17, 510);
+            this.progressMsj.Name = "progressMsj";
+            this.progressMsj.Size = new System.Drawing.Size(552, 23);
+            this.progressMsj.TabIndex = 26;
+            // 
             // ReporteDevoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 548);
+            this.Controls.Add(this.lbProgressMsj);
+            this.Controls.Add(this.progressMsj);
             this.Controls.Add(this.btnGenerarReportesDevoluciones);
             this.Controls.Add(this.dataDevoluciones);
             this.Controls.Add(this.panel3);
@@ -111,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataDevoluciones)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -121,5 +145,8 @@
         internal System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.ComboBox comboBoxEmpleados;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label lbProgressMsj;
+        private System.Windows.Forms.ProgressBar progressMsj;
     }
 }
