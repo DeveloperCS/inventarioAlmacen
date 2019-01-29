@@ -146,6 +146,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.datosTabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.datosTabla.RowHeadersVisible = false;
+            this.datosTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datosTabla.Size = new System.Drawing.Size(1026, 357);
             this.datosTabla.TabIndex = 6;
             // 

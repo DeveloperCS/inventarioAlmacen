@@ -19,7 +19,28 @@ namespace inventarioAlmacen
 
         private void productoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AgregarUser().Show();
+             AgregarUser us = new AgregarUser();
+            if (rdEm.Checked==true)
+            {
+                us.tipo = "Em-";
+            }
+            else if (rdUs.Checked==true)
+            {
+                us.tipo = "Us-";
+            }
+            if (us.ShowDialog()==DialogResult.OK)
+            {
+                MessageBox.Show("Usuario Agregado");
+                if (rdUs.Checked == true)
+                {
+                    consult();
+                }
+                else
+                {
+                    consult1();
+                }
+            }
+          
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,6 +60,10 @@ namespace inventarioAlmacen
             if (rdUs.Checked == true)
             {
                 consult();
+            }
+            else
+            {
+                consult1();
             }
         }
         public void consult()

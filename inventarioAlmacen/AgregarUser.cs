@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventarioAlmacen.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -199,9 +200,23 @@ namespace inventarioAlmacen
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+           
         }
 
+        public bool valida(String a)
+        {
+
+            if (txtNombreUser.Text == "Nombre de Usuario" || txtPuesto.Text == "Puesto de Usuario"|| comboBoxTipoUser.Text == "Tipo de Usuario"||txtContraseña.Text == "Contraseña"|| txtConfirmarContraseña.Text == "Confirmar Contraseña")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+   
+           
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -211,6 +226,31 @@ namespace inventarioAlmacen
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        Datos datos = new Datos();
+        public string tipo = "";
+        private void AgregarUser_Load(object sender, EventArgs e)
+        {
+            String id = "";
+            DataTable dt = new DataTable();
+            if (tipo.Equals("Em-"))
+            {
+                dt = datos.spID("AGIDE");
+            }
+            else if (tipo.Equals("Us-"))
+            {
+                dt = datos.spID("AGIDU");
+            }
+            
+            foreach (DataRow row in dt.Rows)
+            {
+                id = row[1].ToString();
+                if (id.Equals(""))
+                {
+                    id = "0001";
+                }
+            }
+            lbID.Text = tipo + id;
         }
     }
 }

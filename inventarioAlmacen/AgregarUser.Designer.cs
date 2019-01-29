@@ -48,6 +48,7 @@
             this.Usuarios = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lbID = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -88,8 +89,9 @@
             this.comboBoxTipoUser.ForeColor = System.Drawing.Color.Black;
             this.comboBoxTipoUser.FormattingEnabled = true;
             this.comboBoxTipoUser.Items.AddRange(new object[] {
-            "Higiene y Limpieza",
-            "Herramientas y Otros"});
+            "Usuario",
+            "Administrador",
+            "Empleado"});
             this.comboBoxTipoUser.Location = new System.Drawing.Point(7, 4);
             this.comboBoxTipoUser.Name = "comboBoxTipoUser";
             this.comboBoxTipoUser.Size = new System.Drawing.Size(281, 28);
@@ -102,7 +104,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel3.Controls.Add(this.comboBoxTipoUser);
-            this.panel3.Location = new System.Drawing.Point(24, 130);
+            this.panel3.Location = new System.Drawing.Point(24, 146);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(295, 36);
             this.panel3.TabIndex = 11;
@@ -111,7 +113,7 @@
             // 
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Panel2.Controls.Add(this.txtNombreUser);
-            this.Panel2.Location = new System.Drawing.Point(24, 35);
+            this.Panel2.Location = new System.Drawing.Point(24, 51);
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(295, 36);
             this.Panel2.TabIndex = 10;
@@ -132,6 +134,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.lbID);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.panel6);
@@ -142,7 +145,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 290);
+            this.groupBox1.Size = new System.Drawing.Size(343, 303);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro";
@@ -151,7 +154,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel4.Controls.Add(this.txtPuesto);
-            this.panel4.Location = new System.Drawing.Point(24, 83);
+            this.panel4.Location = new System.Drawing.Point(24, 99);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(295, 36);
             this.panel4.TabIndex = 11;
@@ -173,7 +176,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel5.Controls.Add(this.txtContraseña);
-            this.panel5.Location = new System.Drawing.Point(24, 178);
+            this.panel5.Location = new System.Drawing.Point(24, 194);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(295, 36);
             this.panel5.TabIndex = 11;
@@ -195,7 +198,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel6.Controls.Add(this.txtConfirmarContraseña);
-            this.panel6.Location = new System.Drawing.Point(24, 226);
+            this.panel6.Location = new System.Drawing.Point(24, 242);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(295, 36);
             this.panel6.TabIndex = 11;
@@ -298,6 +301,15 @@
             this.panel1.Size = new System.Drawing.Size(367, 430);
             this.panel1.TabIndex = 10;
             // 
+            // lbID
+            // 
+            this.lbID.Location = new System.Drawing.Point(228, 17);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(100, 23);
+            this.lbID.TabIndex = 12;
+            this.lbID.Text = "ID";
+            this.toolTip1.SetToolTip(this.lbID, "ID Articulo");
+            // 
             // AgregarUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,6 +320,7 @@
             this.Name = "AgregarUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarUser";
+            this.Load += new System.EventHandler(this.AgregarUser_Load);
             this.panel3.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
@@ -348,5 +361,6 @@
         private System.Windows.Forms.Label Usuarios;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.Label lbID;
     }
 }
